@@ -1,0 +1,2572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cursos SIAF SIGA SEACE Perú 2026 | Diplomados Gestión Pública | R&C Consulting</title>
+	<meta name="description" content="Cursos y diplomados SIAF, SIGA, SEACE, Presupuesto Público y Contrataciones del Estado en Perú. Capacitación virtual con certificación oficial SERVIR. ¡Inscríbete ahora!">
+	<meta name="author" content="R&C Consulting">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://rc-consulting.org/">
+	<meta name="keywords" content="cursos siaf peru, diplomado siaf siga seace, gestion publica peru, capacitacion servidores publicos, certificacion siga, cursos virtuales peru, presupuesto publico, contrataciones del estado, siaf virtual, siga mef, seace 3.0">
+	
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Cursos SIAF SIGA SEACE Perú 2026 | R&C Consulting">
+	<meta property="og:description" content="Cursos y diplomados en SIAF, SIGA, SEACE, Presupuesto Público y Contrataciones del Estado. Capacitación virtual con certificación oficial.">
+	<meta property="og:url" content="https://rc-consulting.org/">
+	<meta property="og:image" content="https://rc-consulting.org/img/logo-rc-consulting-sin-fondo.webp">
+	<meta property="og:locale" content="es_PE">
+	<meta property="og:site_name" content="R&C Consulting">
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Cursos SIAF SIGA SEACE Perú 2026 | R&C Consulting">
+	<meta name="twitter:description" content="Cursos y diplomados en Gestión Pública con certificación oficial. ¡Capacítate y certificado ya!">
+	<meta name="twitter:image" content="https://rc-consulting.org/img/logo-rc-consulting-sin-fondo.webp">
+	
+	<link rel="icon" href="./img/logo-rc-consulting-icono.ico" sizes="32x32">
+	<meta name="theme-color" content="#0A1F5C">
+	
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"name": "R&C Consulting",
+				"url": "https://rc-consulting.org/",
+				"logo": "https://rc-consulting.org/img/logo-rc-consulting-sin-fondo.webp",
+				"description": "Líder en capacitación para el sector público peruano. Cursos y diplomados en SIAF, SIGA, SEACE, Presupuesto Público y Contrataciones del Estado.",
+				"sameAs": [
+					"https://www.facebook.com/rcconsultingperu/",
+					"https://www.youtube.com/@CursosGestionPublica",
+					"https://www.instagram.com/rycconsulting_/",
+					"https://pe.linkedin.com/company/ryc-consulting"
+				],
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+51-950-883-155",
+					"contactType": "sales",
+					"availableLanguage": "Spanish"
+				},
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Av. Petit Thouars 2166",
+					"addressLocality": "Lince",
+					"addressRegion": "Lima",
+					"addressCountry": "PE"
+				}
+			},
+			{
+				"@type": "WebSite",
+				"name": "R&C Consulting - Cursos de Gestión Pública",
+				"url": "https://rc-consulting.org/",
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": "https://rc-consulting.org/?s={search_term_string}",
+					"query-input": "required name=search_term_string"
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Inicio",
+						"item": "https://rc-consulting.org/"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Cursos Virtuales",
+						"item": "https://rc-consulting.org/cursos-virtuales/"
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						"name": "Diplomados",
+						"item": "https://rc-consulting.org/diplomas-virtuales/"
+					}
+				]
+			},
+			{
+				"@type": "Course",
+				"name": "Curso de SIAF-SP",
+				"description": "Aprende a utilizar el Sistema Integrado de Administración Financiera del Sector Público Peruano",
+				"provider": {
+					"@type": "Organization",
+					"name": "R&C Consulting",
+					"url": "https://rc-consulting.org/"
+				},
+				"offers": {
+					"@type": "Offer",
+					"priceCurrency": "PEN",
+					"availability": "https://schema.org/InStock"
+				},
+				"courseMode": "online",
+				"inLanguage": "es"
+			}
+		]
+	}
+	</script>
+	
+	<!-- CSS externo -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+	<!-- CSS unificado del proyecto -->
+	<link rel="stylesheet" href="./css/rc-main.css?v=11">
+
+	<!-- JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	<!-- GTM -->
+	<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WBXMSZS7');
+	</script>
+
+	<style>
+	.popup-compras {
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
+		background: linear-gradient(135deg, #0A1F5C 0%, #1a3a7a 100%);
+		border-radius: 20px;
+		box-shadow: 
+			0 15px 50px rgba(10, 31, 92, 0.35),
+			0 5px 20px rgba(0, 0, 0, 0.2),
+			inset 0 1px 0 rgba(255, 255, 255, 0.1);
+		padding: 20px 24px;
+		max-width: 320px;
+		z-index: 99999;
+		font-family: 'Poppins', sans-serif;
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	@keyframes popupCompraEntra {
+		from { transform: translateY(30px) scale(0.95); opacity: 0; }
+		to { transform: translateY(0) scale(1); opacity: 1; }
+	}
+	@keyframes popupCompraSale {
+		from { transform: translateY(0) scale(1); opacity: 1; }
+		to { transform: translateY(20px) scale(0.95); opacity: 0; }
+	}
+	.popup-compras.show { 
+		display: block; 
+		opacity: 1;
+		visibility: visible;
+		animation: popupCompraEntra 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+	}
+	.popup-compras.ocultar {
+		animation: popupCompraSale 0.4s ease forwards;
+	}
+	.popup-compras .contenido {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+	.popup-compras .icono { 
+		font-size: 22px; 
+		color: #FFD700;
+		background: rgba(255, 215, 0, 0.15);
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		border: 2px solid rgba(255, 215, 0, 0.3);
+	}
+	.popup-compras .icono i {
+		filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+	}
+	.popup-compras .texto {
+		flex: 1;
+		min-width: 0;
+	}
+	.popup-compras .nombre { 
+		font-weight: 700; 
+		color: #ffffff; 
+		font-size: 14px;
+		line-height: 1.3;
+		margin-bottom: 4px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.popup-compras .curso { 
+		color: rgba(255, 255, 255, 0.85); 
+		font-size: 13px; 
+		font-weight: 400;
+		line-height: 1.3;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.popup-compras .badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		background: rgba(255, 215, 0, 0.15);
+		color: #FFD700;
+		padding: 6px 12px;
+		border-radius: 30px;
+		font-size: 11px;
+		font-weight: 600;
+		margin-top: 10px;
+		border: 1px solid rgba(255, 215, 0, 0.2);
+	}
+	.popup-compras .badge i {
+		font-size: 10px;
+	}
+	.popup-compras .cerrar {
+		position: absolute;
+		top: 8px;
+		right: 10px;
+		cursor: pointer;
+		color: rgba(255, 255, 255, 0.4);
+		font-size: 18px;
+		line-height: 1;
+		transition: all 0.3s;
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+	}
+	.popup-compras .cerrar:hover {
+		color: #fff;
+		background: rgba(255, 255, 255, 0.1);
+		transform: rotate(90deg);
+	}
+	.viewing-count {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		background: rgba(0,0,0,.7);
+		color: #fff;
+		padding: 4px 10px;
+		border-radius: 20px;
+		font-size: 11px;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		z-index: 15;
+	}
+	.viewing-count::before {
+		content: '';
+		width: 8px;
+		height: 8px;
+		background: #4CAF50;
+		border-radius: 50%;
+		animation: blink 1s infinite;
+	}
+	@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+	
+	/* MODAL OFERTA ESTILO TEMU ANIMACIONES + COLORES R&C */
+	@keyframes temuPop {
+		0% { transform: scale(0.8); opacity: 0; }
+		100% { transform: scale(1); opacity: 1; }
+	}
+	@keyframes temuShake {
+		0%, 100% { transform: translateX(0); }
+		10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+		20%, 40%, 60%, 80% { transform: translateX(5px); }
+	}
+	@keyframes temuPulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.05); }
+	}
+	@keyframes temuGlow {
+		0%, 100% { box-shadow: 0 0 20px rgba(10, 31, 92, 0.3); }
+		50% { box-shadow: 0 0 40px rgba(10, 31, 92, 0.6), 0 0 60px rgba(200, 16, 46, 0.3); }
+	}
+	@keyframes floatIcon {
+		0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+		25% { transform: translateY(-15px) rotate(-8deg) scale(1.1); }
+		50% { transform: translateY(0) rotate(0deg) scale(1); }
+		75% { transform: translateY(10px) rotate(8deg) scale(0.95); }
+	}
+	@keyframes shakeIcon {
+		0%, 100% { transform: rotate(0deg); }
+		25% { transform: rotate(-15deg); }
+		75% { transform: rotate(15deg); }
+	}
+	.icono-oferta-flotante {
+		position: fixed;
+		top: 100px;
+		right: 20px;
+		width: 70px;
+		height: 70px;
+		background: linear-gradient(135deg, #0A1F5C 0%, #03206A 100%);
+		border-radius: 50%;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 9998;
+		box-shadow: 0 10px 30px rgba(10, 31, 92, 0.4);
+		animation: temuPop 0.4s ease forwards, floatIcon 2s ease-in-out infinite 0.5s;
+		border: 3px solid #fff;
+	}
+	.icono-oferta-flotante:hover {
+		animation: temuPop 0.2s ease;
+	}
+	.icono-oferta-flotante::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: linear-gradient(135deg, #C8102E, #0A1F5C);
+		z-index: -1;
+		animation: temuPulse 2s ease-in-out infinite;
+	}
+	.icono-oferta-flotante i {
+		font-size: 30px;
+		color: #fff;
+		text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+	}
+	.icono-oferta-flotante .badge-descuento {
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		background: #C8102E;
+		color: #fff;
+		font-size: 11px;
+		font-weight: 800;
+		padding: 4px 8px;
+		border-radius: 20px;
+		font-family: 'Montserrat', sans-serif;
+		animation: temuPulse 1.5s ease-in-out infinite;
+	}
+	.modal-oferta-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(10, 31, 92, 0.95);
+		z-index: 99999;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	.modal-oferta-overlay.active {
+		display: flex;
+		opacity: 1;
+		animation: temuShake 0.5s ease;
+	}
+	.modal-oferta-content {
+		background: linear-gradient(145deg, #ffffff 0%, #f5f7fa 100%);
+		border-radius: 20px;
+		padding: 40px;
+		max-width: 800px;
+		width: 95%;
+		position: relative;
+		box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+		border: 3px solid #0A1F5C;
+		animation: temuPop 0.5s ease;
+	}
+	.modal-oferta-cerrar {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		font-size: 28px;
+		color: #0A1F5C;
+		cursor: pointer;
+		transition: transform 0.3s ease;
+		z-index: 10;
+	}
+	.modal-oferta-cerrar:hover {
+		transform: rotate(90deg) scale(1.2);
+		color: #C8102E;
+	}
+	.modal-oferta-titulo {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.modal-oferta-titulo h2 {
+		font-family: 'Poppins', sans-serif;
+		font-size: 28px;
+		font-weight: 800;
+		color: #0A1F5C;
+		margin-bottom: 8px;
+	}
+	.modal-oferta-titulo p {
+		font-family: 'Poppins', sans-serif;
+		font-size: 14px;
+		color: #666;
+	}
+	.modal-oferta-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: 15px;
+		max-height: 350px;
+		overflow-y: auto;
+		padding: 10px;
+	}
+	.modal-curso-item {
+		background: #fff;
+		border: 2px solid #e0e0e0;
+		border-radius: 12px;
+		padding: 15px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		text-align: center;
+	}
+	.modal-curso-item:hover {
+		border-color: #0A1F5C;
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(10, 31, 92, 0.2);
+		animation: temuGlow 1s ease-in-out infinite;
+	}
+	.modal-curso-item:hover .curso-nombre {
+		color: #C8102E;
+		font-weight: 700;
+	}
+	.modal-curso-item .curso-nombre {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 13px;
+		font-weight: 600;
+		color: #0A1F5C;
+		margin-bottom: 5px;
+	}
+	.modal-curso-item .curso-tag {
+		font-size: 11px;
+		color: #C8102E;
+		font-weight: 700;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	.modal-curso-item:hover .curso-tag {
+		opacity: 1;
+	}
+	.modal-oferta-resultado {
+		display: none;
+		text-align: center;
+		padding: 20px;
+	}
+	.modal-oferta-resultado.mostrar {
+		display: block;
+		animation: temuPop 0.5s ease;
+	}
+	.modal-oferta-codigo {
+		background: linear-gradient(135deg, #0A1F5C, #03206A);
+		color: #fff;
+		padding: 20px 40px;
+		border-radius: 12px;
+		display: inline-block;
+		margin: 20px 0;
+		font-family: 'Montserrat', sans-serif;
+	}
+	.modal-oferta-codigo span {
+		display: block;
+		font-size: 12px;
+		opacity: 0.8;
+		margin-bottom: 5px;
+	}
+	.modal-oferta-codigo strong {
+		font-size: 28px;
+		letter-spacing: 3px;
+		color: #FFD700;
+		text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+	}
+	.modal-oferta-btn {
+		background: linear-gradient(135deg, #25D366 0%, #20b858 100%);
+		color: #fff;
+		border: none;
+		padding: 16px 40px;
+		font-size: 16px;
+		font-weight: 700;
+		border-radius: 50px;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		transition: all 0.3s ease;
+		box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+		font-family: 'Poppins', sans-serif;
+	}
+	.modal-oferta-btn:hover {
+		transform: scale(1.05);
+		box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+	}
+	.modal-oferta-aviso {
+		font-size: 11px;
+		color: #888;
+		margin-top: 15px;
+		font-family: 'Poppins', sans-serif;
+	}
+	
+	/* OVERLAY Y CONTENEDOR DE CURSOS CON HOVER */
+	.overlay-oferta {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 99990;
+		display: none;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	.overlay-oferta.active {
+		display: block;
+		opacity: 1;
+	}
+	.cursos-hover-container {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.9);
+		z-index: 99991;
+		display: none;
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+		width: 90%;
+		max-width: 900px;
+	}
+	.cursos-hover-container::before {
+		content: '';
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		right: -20px;
+		bottom: -20px;
+		background: linear-gradient(45deg, transparent 30%, rgba(255,215,0,0.6) 50%, transparent 70%);
+		background-size: 200% 200%;
+		animation: estelaAmarilla 2s linear;
+		border-radius: 25px;
+		z-index: -1;
+		filter: blur(15px);
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	.cursos-hover-container.active::before {
+		opacity: 1;
+	}
+	.cursos-hover-container.active.con-estela::before {
+		animation: estelaAmarilla 2s linear;
+	}
+	@keyframes estelaAmarilla {
+		0% { background-position: 200% 50%; }
+		100% { background-position: -200% 50%; }
+	}
+	.cursos-hover-container.active {
+		display: block;
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+	.cursos-hover-titulo {
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	.cursos-hover-titulo h3 {
+		font-family: 'Poppins', sans-serif;
+		font-size: 24px;
+		font-weight: 800;
+		color: #fff;
+		text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+	}
+	.cursos-hover-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 15px;
+		max-height: 55vh;
+		overflow-y: auto;
+		padding: 20px;
+		background: rgba(255,255,255,0.15);
+		border-radius: 15px;
+	}
+	@media(max-width:768px){
+		.cursos-hover-grid { grid-template-columns: repeat(2, 1fr); }
+	}
+	@media(max-width:480px){
+		.cursos-hover-grid { grid-template-columns: 1fr; }
+	}
+	.curso-hover-item {
+		position: relative;
+		background: #fff;
+		border-radius: 12px;
+		overflow: hidden;
+		cursor: pointer;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+	.curso-hover-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 20px rgba(10, 31, 92, 0.25);
+	}
+	.curso-hover-item img {
+		width: 100%;
+		height: 140px;
+		object-fit: contain;
+		object-position: center;
+		background: #f5f5f5;
+	}
+	.curso-hover-item:hover img {
+		transform: none;
+	}
+	.curso-hover-info {
+		padding: 12px;
+		background: linear-gradient(to top, #fff 0%, #f8f9fa 100%);
+	}
+	.curso-hover-info h4 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 12px;
+		font-weight: 800;
+		color: #0A1F5C;
+		margin-bottom: 4px;
+		line-height: 1.2;
+	}
+	.curso-hover-info .fecha {
+		font-size: 11px;
+		color: #666;
+		font-weight: 500;
+	}
+	.curso-hover-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(135deg, rgba(10, 31, 92, 0.9), rgba(200, 16, 46, 0.8));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	.curso-hover-item:hover .curso-hover-overlay {
+		opacity: 1;
+	}
+	.curso-hover-overlay span {
+		color: #fff;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 11px;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+	
+	/* MODAL RESULTADO FIJO */
+	.modal-oferta-resultado-fijo {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.8);
+		z-index: 99992;
+		display: none;
+		opacity: 0;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+	.modal-oferta-resultado-fijo.active {
+		display: block;
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+	.modal-resultado-content {
+		background: #0A1F5C;
+		border-radius: 15px;
+		padding: 35px;
+		text-align: center;
+		box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+		border: 2px solid #fff;
+		max-width: 380px;
+		position: relative;
+		overflow: hidden;
+	}
+	.resultado-contenido {
+		display: none;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+	.resultado-contenido.mostrar {
+		display: block;
+		opacity: 1;
+	}
+	.cerrar-resultado {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		font-size: 28px;
+		color: #fff;
+		cursor: pointer;
+		transition: transform 0.2s;
+	}
+	.cerrar-resultado:hover {
+		transform: rotate(90deg) scale(1.2);
+		color: #FFD700;
+	}
+	.resultado-icono {
+		width: 80px;
+		height: 80px;
+		background: #fff;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 20px;
+		box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+	}
+	.resultado-icono i {
+		font-size: 35px;
+		color: #0A1F5C;
+	}
+	.modal-resultado-content h2 {
+		font-family: 'Poppins', sans-serif;
+		font-size: 22px;
+		font-weight: 800;
+		color: #fff;
+		margin-bottom: 5px;
+	}
+	.modal-resultado-content p {
+		font-size: 13px;
+		color: rgba(255,255,255,0.8);
+		margin-bottom: 20px;
+	}
+	.codigo-box {
+		background: #03206A;
+		padding: 20px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		border: 1px solid rgba(255,255,255,0.2);
+	}
+	.codigo-box span {
+		display: block;
+		font-size: 11px;
+		color: rgba(255,255,255,0.7);
+		margin-bottom: 5px;
+		font-family: 'Poppins', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	.codigo-box strong {
+		font-size: 28px;
+		color: #FFD700;
+		letter-spacing: 4px;
+		text-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+	}
+	.btn-whatsapp-oferta {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		background: linear-gradient(135deg, #25D366, #20b858);
+		color: #fff;
+		padding: 14px 30px;
+		border-radius: 50px;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 15px;
+		transition: all 0.3s ease;
+		box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+	}
+	.btn-whatsapp-oferta:hover {
+		transform: scale(1.05);
+		box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+	}
+	.btn-unico-oferta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		background: #C8102E;
+		color: #fff;
+		padding: 14px 30px;
+		border-radius: 8px;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 14px;
+		transition: transform 0.2s ease, background 0.2s ease;
+	}
+	.btn-unico-oferta:hover {
+		transform: scale(1.03);
+		background: #a00d24;
+	}
+	@keyframes botonPulse {
+		0%, 100% { box-shadow: 0 5px 25px rgba(10, 31, 92, 0.4), 0 0 20px rgba(200, 16, 46, 0.2); }
+		50% { box-shadow: 0 8px 35px rgba(10, 31, 92, 0.6), 0 0 35px rgba(200, 16, 46, 0.4); }
+	}
+	.aviso-codigo {
+		font-size: 11px;
+		color: rgba(255,255,255,0.6);
+		margin-top: 15px;
+	}
+	
+	/* POPUP OFERTA IMAGEN */
+	.popup-oferta-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.7);
+		z-index: 99999;
+		display: none;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	.popup-oferta-overlay.active {
+		display: block;
+		opacity: 1;
+	}
+	.popup-oferta-imagen {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.8);
+		z-index: 100000;
+		display: none;
+		opacity: 0;
+		transition: all 0.3s ease;
+		max-width: 95%;
+		max-height: 95%;
+	}
+	@media (max-width: 991px) {
+		.popup-oferta-imagen {
+			width: 95% !important;
+		}
+	}
+	.popup-oferta-imagen.active {
+		display: block;
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+	.popup-oferta-link {
+		display: block;
+		cursor: pointer;
+	}
+	.popup-oferta-link img {
+		max-width: 450px;
+		max-height: 80vh;
+		border-radius: 12px;
+		box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+	}
+	.popup-oferta-cerrar {
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		width: 42px;
+		height: 42px;
+		background: #C8102E;
+		color: #fff;
+		font-size: 26px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		z-index: 10;
+		border: 3px solid #fff;
+	}
+	.popup-oferta-cerrar:hover {
+		background: #a00d24;
+		transform: rotate(90deg) scale(1.1);
+	}
+	
+	/* POPUP OFERTA CARRUSEL */
+	.popup-oferta-container {
+		background: #fff;
+		border-radius: 20px;
+		padding: 30px;
+		box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+		border: 4px solid #0A1F5C;
+		transition: background 0.5s ease;
+		max-width: 90vw;
+	}
+	.popup-oferta-titulo {
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	.popup-oferta-titulo span {
+		background: #0A1F5C;
+		color: #FFD700;
+		padding: 15px 40px;
+		border-radius: 10px;
+		font-size: 22px;
+		font-weight: 800;
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: 2px;
+	}
+	.popup-oferta-carrusel {
+		position: relative;
+		overflow: hidden;
+		border-radius: 15px;
+	}
+	.popup-oferta-slides {
+		display: flex;
+		transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	.popup-oferta-slide {
+		min-width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.popup-oferta-slide img {
+		width: 100%;
+		max-width: 900px;
+		height: 500px;
+		object-fit: cover;
+		border-radius: 15px;
+		box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+		display: block;
+	}
+	.popup-oferta-slide a {
+		display: block;
+		width: 100%;
+	}
+	.popup-oferta-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 50px;
+		height: 50px;
+		background: rgba(10, 31, 92, 0.9);
+		color: #fff;
+		border: none;
+		border-radius: 50%;
+		font-size: 24px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.popup-oferta-nav:hover {
+		background: #0A1F5C;
+		transform: translateY(-50%) scale(1.1);
+	}
+	.popup-oferta-prev {
+		left: 15px;
+	}
+	.popup-oferta-next {
+		right: 15px;
+	}
+	
+	/* RESPONSIVE POPUP OFERTA CARRUSEL */
+	@media (max-width: 991px) {
+		.popup-oferta-container {
+			padding: 20px;
+			max-width: 95vw;
+		}
+		.popup-oferta-titulo span {
+			font-size: 18px;
+			padding: 12px 30px;
+		}
+		.popup-oferta-slide img {
+			height: 380px;
+		}
+	}
+	@media (max-width: 576px) {
+		.popup-oferta-container {
+			padding: 15px;
+		}
+		.popup-oferta-titulo span {font-size: 14px;
+			padding: 10px 20px;
+		}
+		.popup-oferta-slide img {
+			height: 280px;
+		}
+		.popup-oferta-nav {
+			width: 40px;
+			height: 40px;
+			font-size: 18px;
+		}
+	}
+	.popup-oferta-dots {
+		text-align: center;
+		margin-top: 20px;
+	}
+	.popup-oferta-dots .dot {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		background: #ccc;
+		border-radius: 50%;
+		margin: 0 6px;
+		cursor: pointer;
+		transition: all 0.3s;
+		border: 2px solid transparent;
+	}
+	.popup-oferta-dots .dot.active {
+		background: #0A1F5C;
+		transform: scale(1.3);
+		border-color: #FFD700;
+	}
+	</style>
+
+
+
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+	<style>
+	/* ═══════════════════════════════════════════
+	   ESTILOS INDEX 2 — BANNER, NAV, CARDS, etc.
+	   ═══════════════════════════════════════════ */
+
+	/* --- Reset & Base --- */
+	* { box-sizing: border-box; margin: 0; padding: 0; }
+	body { font-family: 'Poppins','Inter',sans-serif; color: #1A1A2E; background: #fff; overflow-x: hidden; }
+	.inner-wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+	/* ══ BANNER PÚRPURA ══ */
+	.banner-purpura { background:#5044c2; color:#fff; padding:12px 0; font-family:'Montserrat',sans-serif; position:relative; z-index:1100; }
+	.contenido-banner-purpura { display:flex; justify-content:space-evenly; align-items:center; gap:20px; max-width:1200px; margin:0 auto; padding:0 20px; }
+	.banner-item { display:flex; align-items:center; gap:12px; text-align:left; }
+	.banner-icon img { width:32px; height:auto; filter:brightness(0) invert(1); }
+	.banner-text b { display:block; font-size:13px; line-height:1.2; }
+	.banner-text span { font-size:11px; font-weight:400; opacity:.9; }
+	.highlight-yellow { color:#FFD700; }
+	.btn-cotizar { background:#FFD700; color:#5044c2!important; padding:8px 20px; border-radius:6px; font-weight:800; text-decoration:none; font-size:13px; display:flex; align-items:center; gap:8px; transition:transform .2s; box-shadow:0 3px 0 #ccac00; }
+	.btn-cotizar:hover { transform:translateY(-2px); background:#ffdb1f; }
+	@media(max-width:991px){ .banner-purpura{display:none!important;} }
+
+	/* ══ NAVBAR ══ */
+	.rc-navbar { background:#fff!important; box-shadow:0 2px 12px rgba(0,0,0,.08); position:sticky; top:0; z-index:1050; padding:6px 0; }
+	.rc-logo { height:42px; width:auto; }
+	.rc-navbar .nav-link { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#0A1F5C!important; padding:8px 12px; }
+	.rc-navbar .nav-link:hover { color:#C8102E!important; }
+	.rc-navbar .dropdown-menu { border:none; box-shadow:0 8px 24px rgba(0,0,0,.1); border-radius:10px; }
+	.rc-navbar .dropdown-item { font-family:'Poppins',sans-serif; font-size:13px; padding:8px 18px; }
+	.rc-navbar .dropdown-item:hover { background:#0A1F5C; color:#fff; }
+	.rc-buttons { display:flex; gap:8px; flex-shrink:0; }
+	.rc-buttons a { border-radius:50px; padding:8px 18px; font-size:13px; font-weight:700; font-family:'Montserrat',sans-serif; display:flex; align-items:center; gap:5px; text-decoration:none; color:#fff; transition:transform .2s; }
+	.rc-buttons a:hover { transform:translateY(-1px); }
+	.btn-wsp { background:#25D366; }
+	.btn-aula { background:#136EF0; }
+	.btn-tienda { background:#FF044D; }
+
+	/* ══ CAROUSEL ══ */
+	.slidem { min-height:480px; background-size:cover; background-position:center; background-repeat:no-repeat; display:block; }
+	.slide-1 { background-image:url('./img/slider/fondonavidad.webp'); }
+	.slide-2 { background-image:url('./img/slider/bg-fondo-7.webp'); }
+	.slide-3 { background-image:url('./img/slider/fondo-2x1-curso.png'); }
+	@media(min-width:992px){ .slidem{min-height:540px;} }
+	@media(max-width:768px){ .slide-1{background-image:url('./img/slider/slide1-mobile.webp');} .slidem{min-height:340px;} }
+	.carousel-control-prev,.carousel-control-next { width:50px; opacity:.7; }
+
+	/* ══ SECCIÓN CURSOS ══ */
+	.seccion-titulo { text-align:center; padding:50px 20px 10px; }
+	.seccion-titulo h2 { font-family:'Poppins',sans-serif; font-size:32px; font-weight:700; color:#0A1F5C; }
+	.seccion-titulo p { font-family:'Poppins',sans-serif; font-size:15px; color:#666; margin-top:8px; }
+
+	/* Tabs */
+	.filtro-tabs { display:flex; justify-content:center; gap:2px; margin:25px auto 35px; max-width:1200px; border:none; border-radius:8px; overflow:hidden; background:#0A1F5C; padding:3px; }
+	.filtro-tab { flex:1; padding:10px 15px; text-align:center; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#fff; background:transparent; cursor:pointer; border:none; border-radius:6px; transition:all .3s ease; }
+	.filtro-tab:last-child { border-right:none; }
+	.filtro-tab:hover { background:rgba(255,255,255,.15); }
+	.filtro-tab.active { background:#fff; color:#0A1F5C; }
+
+	/* Grid */
+	.cursos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1200px; margin:0 auto; padding:0 20px 50px; }
+
+	/* Card */
+	.curso-card { background:#E9E9E9; border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.08); transition:transform .3s,box-shadow .3s; display:flex; flex-direction:column; }
+	.curso-card:hover { transform:translateY(-4px); box-shadow:0 8px 30px rgba(0,0,0,.14); }
+	.curso-card.proximo-iniciar { border:3px solid #FFD700; box-shadow:0 0 20px rgba(255,215,0,.5); animation: pulso-dorado 2s infinite; }
+	.curso-card__img { position:relative; width:100%; aspect-ratio:16/12; overflow:hidden; }
+	.curso-card__img img { width:100%; height:100%; object-fit:cover; display:block; }
+	.curso-card__body { padding:16px 18px 20px; display:flex; flex-direction:column; gap:10px; flex:1; }
+	.curso-card__badges { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+	.badge-tipo { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:800; color:#fff; padding:5px 10px; border-radius:4px; text-transform:uppercase; background:#03206A; }
+	.badge-dcto { font-family:'Montserrat',sans-serif; font-size:11px; font-weight:800; color:#fff; background:#FF044D; padding:5px 10px; border-radius:4px; }
+	.curso-card__info { display:flex; justify-content:space-between; gap:10px; }
+	.info-item { display:flex; align-items:center; gap:6px; font-family:'Poppins',sans-serif; font-size:14px; color:#444; }
+	.info-item i { font-size:16px; color:#0A1F5C; }
+	.info-item strong { font-weight:700; }
+	.curso-card__extra { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:2px; }
+	.tag-envivo { display:inline-flex; align-items:center; gap:5px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:#C8102E; }
+	.tag-envivo i { font-size:10px; }
+	.tag-duracion { display:inline-flex; align-items:center; gap:5px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; color:#C8102E; }
+	.tag-duracion i { font-size:8px; }
+	.tag-horas { display:inline-flex; align-items:center; gap:5px; font-family:'Poppins',sans-serif; font-size:12px; font-weight:600; color:#03206A; }
+	.tag-horas strong { font-weight:700; }
+	.curso-card__btn { display:block; width:100%; padding:12px; border:3px solid #0A1F5C; border-radius:8px; background:#fff; color:#0A1F5C; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:800; text-align:center; text-decoration:none; cursor:pointer; transition:all .25s; margin-top:auto; }
+	.curso-card__btn:hover { background:#0A1F5C; color:#fff; }
+	.badge-proximo { position:absolute; top:10px; right:10px; background:#FFB800; color:#000; font-family:'Montserrat',sans-serif; font-size:10px; font-weight:800; padding:5px 10px; border-radius:4px; z-index:2; }
+	.curso-card.inicia-hoy .badge-proximo { display: none; }
+	@keyframes pulso-dorado { 0%{box-shadow:0 0 0 0 rgba(255,215,0,.7)} 50%{box-shadow:0 0 20px 8px rgba(255,215,0,.35)} 100%{box-shadow:0 0 0 0 rgba(255,215,0,.7)} }
+	@keyframes parpadeo-rojo { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+	.proximo-inicio-animado { animation:pulso-dorado 2s infinite; }
+	.tag-envivo i { font-size:8px; animation: parpadeo-rojo 1.5s ease-in-out infinite; }
+	
+	.curso-card { position: relative; }
+	.curso-card__img img { transition: filter 0.3s ease; }
+	
+	.sticker-progreso, .sticker-inicia-hoy { display: none; }
+	
+	.curso-card.ya-iniciado .sticker-progreso {
+		display: block;
+		position: absolute;
+		top: 25px;
+		right: -35px;
+		background: #6c757d;
+		color: #fff;
+		font-family: 'Montserrat',sans-serif;
+		font-size: 9px;
+		font-weight: 800;
+		padding: 4px 30px;
+		transform: rotate(45deg);
+		z-index: 10;
+		letter-spacing: 0.5px;
+	}
+	.curso-card.ya-iniciado .curso-card__img img { filter: grayscale(100%); }
+	
+	.curso-card.inicia-hoy .sticker-inicia-hoy {
+
+		display: block;
+
+		position: absolute;
+
+		top: 25px;
+
+		right: -35px;
+
+		background: #FF044D;
+
+		color: #fff;
+
+		font-family: 'Montserrat',sans-serif;
+
+		font-size: 9px;
+
+		font-weight: 800;
+
+		padding: 4px 30px;
+
+		transform: rotate(45deg);
+
+		z-index: 10;
+
+		letter-spacing: 0.5px;
+
+		animation: pulse-rojo 1s ease-in-out infinite, pulso-dorado 2s infinite;
+
+	}
+	/* Botones ver más */
+	.seccion-botones { display:flex; justify-content:center; gap:20px; padding:0 20px 60px; flex-wrap:wrap; }
+	.btn-ver-mas { font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; padding:14px 30px; border-radius:8px; border:none; cursor:pointer; text-decoration:none; color:#fff; transition:all .3s; }
+	.btn-ver-mas.cursos { background:#0A1F5C; }
+	.btn-ver-mas.cursos:hover { background:#0d2a75; }
+	.btn-ver-mas.diplomas { background:#C8102E; }
+	.btn-ver-mas.diplomas:hover { background:#a00d24; }
+
+	/* Optimizaciones de rendimiento GPU */
+	.curso-card, .popup-compras, .icono-oferta-flotante, .overlay-oferta, .cursos-hover-container {
+		transform: translateZ(0);
+		-webkit-transform: translateZ(0);
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+	.curso-card {
+		will-change: transform, box-shadow;
+	}
+
+	/* ══ RESPONSIVE ══ */
+	@media(max-width:991px){
+		.cursos-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+		.filtro-tabs{max-width:95%;}
+		.filtro-tab{font-size:11px;padding:10px 6px;}
+		.seccion-titulo h2{font-size:24px;}
+		.rc-buttons{flex-wrap:wrap;justify-content:center;}
+	}
+	@media(max-width:576px){
+		.cursos-grid{grid-template-columns:1fr;gap:18px;padding:0 14px 40px;}
+		.filtro-tabs{flex-wrap:nowrap;overflow-x:auto;border-radius:8px;}
+		.filtro-tab{white-space:nowrap;font-size:11px;padding:10px 12px;flex:0 0 auto;}
+		.seccion-botones{flex-direction:column;align-items:center;}
+		.grid-programas{gap:14px;}
+		.card-programa{width:140px;padding:20px 14px;}
+		/* Reducir animaciones en mobile para mejor rendimiento */
+		.curso-card { transition: transform .2s, box-shadow .2s; }
+		.popup-compras { animation: popupCompraEntra .2s ease; }
+	}
+	
+	/* ══ BANNER DE COOKIES ══ */
+	.cookie-banner {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(135deg, #0A1F5C 0%, #03206A 100%);
+		color: #fff;
+		padding: 20px;
+		z-index: 2147483647;
+		display: none;
+		box-shadow: 0 -5px 30px rgba(0,0,0,0.3);
+		font-family: 'Poppins', sans-serif;
+	}
+	.cookie-banner.show { display: block; animation: slideUp 0.5s ease; }
+	@keyframes slideUp {
+		from { transform: translateY(100%); opacity: 0; }
+		to { transform: translateY(0); opacity: 1; }
+	}
+	.cookie-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
+	}
+	.cookie-text {
+		flex: 1;
+		min-width: 280px;
+	}
+	.cookie-text p {
+		font-size: 14px;
+		margin: 0;
+		line-height: 1.5;
+	}
+	.cookie-text a {
+		color: #FFD700;
+		text-decoration: underline;
+	}
+	.cookie-buttons {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+	.cookie-btn {
+		padding: 10px 20px;
+		border-radius: 6px;
+		font-size: 13px;
+		font-weight: 700;
+		cursor: pointer;
+		border: none;
+		transition: all 0.3s ease;
+		font-family: 'Poppins', sans-serif;
+	}
+	.cookie-btn-accept {
+		background: #25D366;
+		color: #fff;
+	}
+	.cookie-btn-accept:hover { background: #20b858; transform: scale(1.05); }
+	.cookie-btn-necessary {
+		background: transparent;
+		color: #fff;
+		border: 2px solid #fff;
+	}
+	.cookie-btn-necessary:hover { background: rgba(255,255,255,0.1); }
+	.cookie-btn-settings {
+		background: #C8102E;
+		color: #fff;
+	}
+	.cookie-btn-settings:hover { background: #a00d24; }
+	
+	/* Panel de ajustes de cookies */
+	.cookie-settings-panel {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.9);
+		background: #fff;
+		border-radius: 15px;
+		padding: 30px;
+		max-width: 500px;
+		width: 90%;
+		z-index: 2147483647;
+		display: none;
+		box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+	}
+	.cookie-settings-panel.show {
+		display: block;
+		animation: popIn 0.3s ease;
+	}
+	@keyframes popIn {
+		from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+		to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+	}
+	.cookie-settings-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0,0,0,0.6);
+		z-index: 2147483646;
+		display: none;
+	}
+	.cookie-settings-overlay.show { display: block; }
+	.cookie-settings-panel h3 {
+		color: #0A1F5C;
+		font-size: 20px;
+		margin-bottom: 20px;
+		font-weight: 800;
+	}
+	.cookie-option {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 0;
+		border-bottom: 1px solid #eee;
+	}
+	.cookie-option:last-child { border-bottom: none; }
+	.cookie-option label {
+		font-weight: 600;
+		color: #333;
+	}
+	.cookie-option input[type="checkbox"] {
+		width: 20px;
+		height: 20px;
+		accent-color: #0A1F5C;
+	}
+	.cookie-settings-buttons {
+		display: flex;
+		gap: 10px;
+		margin-top: 20px;
+	}
+	.cookie-settings-buttons .cookie-btn {
+		flex: 1;
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+
+<!-- ICONO FLOTANTE OFERTA -->
+<div class="icono-oferta-flotante" id="iconoOferta">
+	<i class="fas fa-gift"></i>
+	<span class="badge-descuento">30%</span>
+</div>
+
+<!-- OVERLAY OFERTA (oscurece toda la página) -->
+<div class="overlay-oferta" id="overlayOferta"></div>
+
+<!-- CONTENEDOR DE CURSOS CON HOVER -->
+<div class="cursos-hover-container" id="cursosHoverContainer">
+	<div class="cursos-hover-titulo">
+		<h3>¡Selecciona un curso para obtener tu descuento!</h3>
+	</div>
+	<div class="cursos-hover-grid" id="cursosHoverGrid"></div>
+</div>
+
+<!-- MODAL RESULTADO OFERTA -->
+<div class="modal-oferta-resultado-fijo" id="modalResultadoOferta">
+	<div class="modal-resultado-content">
+		<span class="cerrar-resultado" id="cerrarResultado">&times;</span>
+		<div class="resultado-contenido">
+			<div class="resultado-icono"><i class="fas fa-tag"></i></div>
+			<h2>¡Código generado!</h2>
+			<p>Presenta este código a tu asesora</p>
+			<div class="codigo-box">
+				<span>Tu código</span>
+				<strong id="codigoDisplay">CURSOSP2026</strong>
+			</div>
+			<a href="#" id="btnVerCurso" class="btn-unico-oferta">
+				<i class="fas fa-eye"></i> Ver Curso y Contactar Asesora
+			</a>
+			<p class="aviso-codigo">Válido por 48 horas</p>
+		</div>
+	</div>
+</div>
+
+<!-- POPUP OFERTA CARRUSEL -->
+<div class="popup-oferta-imagen" id="popupOfertaImagen">
+	<div class="popup-oferta-container" id="popupOfertaContainer">
+		<div class="popup-oferta-titulo"><span id="popupOfertaTitulo">OFERTAS Y CURSOS</span></div>
+		<div class="popup-oferta-carrusel">
+			<div class="popup-oferta-slides" id="popupOfertaSlides"></div>
+			<button class="popup-oferta-nav popup-oferta-prev" id="popupOfertaPrev">&#10094;</button>
+			<button class="popup-oferta-nav popup-oferta-next" id="popupOfertaNext">&#10095;</button>
+		</div>
+		<div class="popup-oferta-dots" id="popupOfertaDots"></div>
+	</div>
+	<span class="popup-oferta-cerrar" id="cerrarPopupOferta">&times;</span>
+</div>
+<div class="popup-oferta-overlay" id="popupOfertaOverlay"></div>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBXMSZS7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- ══ BANNER PÚRPURA (Index 2) ══ -->
+<div class="banner-purpura">
+	<div class="contenido-banner-purpura">
+		<div class="banner-item">
+			<div class="banner-icon"><img src="Recurso 85@4x.webp" alt="PDP"></div>
+			<div class="banner-text"><b>Cumple con el PDP 2026</b><span>Alinea tu capacitación In-House</span></div>
+		</div>
+		<div class="banner-item">
+			<div class="banner-icon"><img src="Recurso 86@4x.webp" alt="Directiva"></div>
+			<div class="banner-text"><b class="highlight-yellow">CURSOS IN HOUSE</b><span>Nueva Directiva 00214-2025-SERVIR-PE</span></div>
+		</div>
+		<div class="banner-action">
+			<a href="https://api.whatsapp.com/send?phone=51950883155&text=Solicito%20Información%20sobre%20las%20capacitaciones" class="btn-cotizar" target="_blank"><i class="fas fa-handshake"></i> ¡Cotizalo aqui!</a>
+		</div>
+	</div>
+</div>
+
+<!-- ══ NAVBAR (Index 2) ══ -->
+<nav class="navbar navbar-expand-lg rc-navbar">
+	<div class="container-fluid px-4">
+		<a class="navbar-brand" href="https://rc-consulting.org"><img src="./img/logo-rc-consulting-sin-fondo.webp" class="rc-logo" alt="R&C Consulting"></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="mainNav">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item"><a class="nav-link" href="https://rc-consulting.org">Inicio</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nosotros</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="https://rc-consulting.org/nosotros/">Sobre Nosotros</a></li>
+						<li><a class="dropdown-item" href="https://rc-consulting.org/experiencia/">Experiencia y Alianzas</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programas</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="https://rc-consulting.org/cursos-virtuales/">Cursos</a></li>
+						<li><a class="dropdown-item" href="https://rc-consulting.org/diplomas-virtuales/">Diplomados</a></li>
+						<li><a class="dropdown-item" href="https://www.rc-consulting.edu.pe/">Aula Virtual</a></li>
+						<li><a class="dropdown-item" href="https://rc-consulting.org/suscripciones/">Membresía Premium</a></li>
+						<li><a class="dropdown-item" href="https://rc-consulting.org/preguntas-frecuentes/">Preguntas Frecuentes</a></li>
+					</ul>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="https://rc-consulting.org/cursos-inhouse/" target="_blank">In House</a></li>
+			</ul>
+			<div class="rc-buttons">
+				<a href="https://api.whatsapp.com/send?phone=51950883155&text=Buen%20d%C3%ADa,%20he%20visitado%20la%20web%20de%20*R%26C%20Consulting*" target="_blank" class="btn-wsp"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg> 950 883 155</a>
+				<a href="https://www.rc-consulting.edu.pe/" target="_blank" class="btn-aula"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/><path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/></svg> Aula Virtual</a>
+				<a href="https://escueladegobierno.edu.pe/tienda/" target="_blank" class="btn-tienda"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/></svg> Tienda Virtual</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<h1 class="visually-hidden">Cursos y Diplomados en Gestión Pública Perú | R&C Consulting - SIAF, SIGA, SEACE</h1>
+
+<!-- ══ CAROUSEL (Index 2) ══ -->
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+	<div class="carousel-inner">
+		<div class="carousel-item active"><a class="slidem slide-1 d-block w-100" target="_blank" href="https://rc-consulting.org/online/curso-siaf-sp-rp/"></a></div>
+		<div class="carousel-item"><a class="slidem slide-2 d-block w-100" target="_blank" href="https://rc-consulting.org/online/diplomado-contrataciones-publicas/"></a></div>
+		<div class="carousel-item"><a class="slidem slide-3 d-block w-100" target="_blank" href="https://rc-consulting.org/cursos-inhouse/"></a></div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
+</div>
+
+<!-- ══ TÍTULO + TABS + GRID CURSOS (Index 2) ══ -->
+<div class="seccion-titulo">
+	<h1 class="visually-hidden">Cursos y Diplomados de Gestión Pública en Perú | SIAF, SIGA, SEACE</h1>
+	<h2>¿En qué te gustaría capacitarte?</h2>
+	<p>Encuentra aquí los <strong>cursos de SIAF</strong>, <strong>SIGA</strong>, <strong>SEACE</strong>, <strong>Presupuesto Público</strong> y más. ¡Cursos de Alta Especialización, Disponibles Ahora!</p>
+</div>
+
+<div class="filtro-tabs" id="filtroTabs">
+	<button class="filtro-tab active" data-filter="proximos-inicios">Próximos Inicios</button>
+	<button class="filtro-tab" data-filter="CursosEnvivo">Cursos</button>
+	<button class="filtro-tab" data-filter="todo">Todo</button>
+	<button class="filtro-tab" data-filter="DiplomadosEnvivo">Diplomados</button>
+</div>
+
+<div class="cursos-grid" id="cursosGrid">
+	@foreach($cursosEnVivo as $curso)
+	<div class="curso-card" data-category="CursosEnvivo proximos-inicios todo" data-fecha="{{ $curso['fecha_inicio'] }}">
+		<div class="curso-card__img">
+			<img src="./img/curso/{{ $curso['image'] }}" alt="{{ $curso['title'] }}">
+			<span class="sticker-inicia-hoy">INICIA HOY</span>
+			<span class="sticker-progreso">EN PROGRESO</span>
+		</div>
+		<div class="curso-card__body">
+			<div class="curso-card__badges"><span class="badge-tipo curso">Curso</span><span class="badge-dcto">30% Dcto.</span></div>
+			<div class="curso-card__info">
+				<div class="info-item"><i class="fas fa-calendar-alt"></i><span><strong>Inicio:</strong><br/>{{ $curso['fecha_inicio'] }}</span></div>
+				<div class="info-item"><i class="fas fa-clock"></i><span><strong>Duración:</strong><br/>{{ $curso['sesiones'] ?? 12 }} sesiones</span></div>
+			</div>
+			<div class="curso-card__extra">
+				<span class="tag-envivo"><i class="fas fa-circle"></i> Clases en vivo</span>
+				<div class="info-item" style="margin-left:auto;"><i class="fas fa-certificate"></i><span>{{ $curso['hours'] }} horas<div>Certificadas</div></span></div>
+			</div>
+			<a href="{{ $curso['link'] }}" target="_blank" class="curso-card__btn">Mas información</a>
+		</div>
+	</div>
+	@endforeach
+
+	@foreach($diplomadosEnVivo as $curso)
+	<div class="curso-card" data-category="DiplomadosEnvivo proximos-inicios todo" data-fecha="{{ $curso['fecha_inicio'] }}">
+		<div class="curso-card__img">
+			<img src="./img/curso/{{ $curso['image'] }}" alt="{{ $curso['title'] }}">
+			<span class="sticker-inicia-hoy">INICIA HOY</span>
+			<span class="sticker-progreso">EN PROGRESO</span>
+		</div>
+		<div class="curso-card__body">
+			<div class="curso-card__badges"><span class="badge-tipo diplomado">Diplomado</span><span class="badge-dcto">30% Dcto.</span></div>
+			<div class="curso-card__info">
+				<div class="info-item"><i class="fas fa-calendar-alt"></i><span><strong>Inicio:</strong><br/>{{ $curso['fecha_inicio'] }}</span></div>
+				<div class="info-item"><i class="fas fa-clock"></i><span><strong>Duración:</strong><br/>{{ $curso['sesiones'] ?? 12 }} sesiones</span></div>
+			</div>
+			<div class="curso-card__extra">
+				<span class="tag-envivo"><i class="fas fa-circle"></i> Clases en vivo</span>
+				<div class="info-item" style="margin-left:auto;"><i class="fas fa-certificate"></i><span>{{ $curso['hours'] }} horas<div>Certificadas</div></span></div>
+			</div>
+			<a href="{{ $curso['link'] }}" target="_blank" class="curso-card__btn">Mas información</a>
+		</div>
+	</div>
+	@endforeach
+
+	@foreach($cursosOnline as $curso)
+	<div class="curso-card" data-category="CursosOnline todo">
+		<div class="curso-card__img">
+			<img src="./img/curso/{{ $curso['image'] }}" alt="{{ $curso['title'] }}">
+			@if($curso['featured'])
+			<span class="badge-proximo">Destacado</span>
+			@endif
+		</div>
+		<div class="curso-card__body">
+			<div class="curso-card__badges"><span class="badge-tipo curso">Curso Online</span><span class="badge-dcto">30% Dcto.</span></div>
+			<div class="curso-card__info"><div class="info-item"><i class="fas fa-play-circle"></i><span><strong>¡Inicia</strong> ahora y capacítate!</span></div></div>
+			<div class="curso-card__extra">
+				<span class="tag-envivo"><i class="fas fa-play-circle"></i> Clases grabadas</span>
+				<div class="info-item" style="margin-left:auto;"><i class="fas fa-certificate"></i><span>{{ $curso['hours'] }} horas<div>Certificadas</div></span></div>
+			</div>
+			<a href="{{ $curso['link'] }}" target="_blank" class="curso-card__btn">Mas información</a>
+		</div>
+	</div>
+	@endforeach
+
+	@foreach($diplomadosOnline as $curso)
+	<div class="curso-card" data-category="DiplomadosOnline todo">
+		<div class="curso-card__img">
+			<img src="./img/curso/{{ $curso['image'] }}" alt="{{ $curso['title'] }}">
+			@if($curso['featured'])
+			<span class="badge-proximo">Destacado</span>
+			@endif
+		</div>
+		<div class="curso-card__body">
+			<div class="curso-card__badges"><span class="badge-tipo diplomado">Diplomado Online</span><span class="badge-dcto">30% Dcto.</span></div>
+			<div class="curso-card__info"><div class="info-item"><i class="fas fa-play-circle"></i><span><strong>¡Inicia</strong> ahora y capacítate!</span></div></div>
+			<div class="curso-card__extra">
+				<span class="tag-envivo"><i class="fas fa-play-circle"></i> Clases grabadas</span>
+				<div class="info-item" style="margin-left:auto;"><i class="fas fa-certificate"></i><span>{{ $curso['hours'] }} horas<div>Certificadas</div></span></div>
+			</div>
+			<a href="{{ $curso['link'] }}" target="_blank" class="curso-card__btn">Mas información</a>
+		</div>
+	</div>
+	@endforeach
+</div>
+
+<div class="seccion-botones">
+	<a href="https://rc-consulting.org/cursos-virtuales/" class="btn-ver-mas cursos">Ver más Cursos Online</a>
+	<a href="https://rc-consulting.org/diplomas-virtuales/" class="btn-ver-mas diplomas">Ver más Diplomados Online</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     DESDE AQUÍ: SECCIONES DEL INDEX 1
+     (Programas especializados → Banner azul → Aprende hoy → Entidades → Ayuda → Footer)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- SECCION DE PROGRAMAS ESPECIALIZADOS (Index 1) -->
+<section class="programas-container">
+    <div class="container text-center">
+        <h2 class="titulo-principal">Programas especializados en Gestión Pública</h2>
+        <p class="subtitulo">Cursos y diplomados para entidades públicas: SIAF, SIGA, SEACE, Presupuesto Público y más.</p>
+
+        <div class="grid-programas">
+			<div class="card-programa">
+				<img src="paginaPrincipal/img/icons/1.svg" alt="Cursos Online">
+				<a href="https://rc-consulting.org/cursos-virtuales/" class="btn-rojo" target="_blank" rel="noopener">Cursos Online</a>
+			</div>
+			<div class="card-programa">
+				<img src="paginaPrincipal/img/icons/2.svg" alt="Diplomados Online">
+				<a href="https://rc-consulting.org/diplomas-virtuales/" class="btn-rojo" target="_blank" rel="noopener">Diplomados Online</a>
+			</div>
+			<div class="card-programa">
+				<img src="paginaPrincipal/img/icons/3.svg" alt="Cursos In House">
+				<a href="https://rc-consulting.org/cursos-inhouse/" class="btn-rojo" target="_blank" rel="noopener">Cursos In House</a>
+			</div>
+			<div class="card-programa card-lower">
+				<img src="paginaPrincipal/img/icons/4.svg" alt="Consultorías">
+				<a href="https://rc-consulting.org/consultoria-asistencia-tecnica/" class="btn-rojo" target="_blank" rel="noopener">Consultorías</a>
+			</div>
+			<div class="card-programa card-lower">
+				<img src="paginaPrincipal/img/icons/5.svg" alt="Certificación Laboral">
+				<a href="https://rc-consulting.org/certificacion-de-competencias-laborales/" class="btn-rojo" target="_blank" rel="noopener">Certificación Laboral</a>
+			</div>
+		</div>
+    </div>
+</section>
+
+<!-- BANNER AZUL - INFORMATIVO (Index 1) -->
+<section class="banner-azul-full">
+    <div class="container-bloques">
+        <div class="bloque-item">
+            <img src="paginaPrincipal/img/info/info1.png" alt="23 años capacitante">
+        </div>
+        <div class="bloque-item">
+            <img src="paginaPrincipal/img/info/info2.png" alt="Patrocinado por Google">
+        </div>
+        <div class="bloque-item">
+            <img src="paginaPrincipal/img/info/info3.png" alt="Plataforma 24/7">
+        </div>
+        <div class="bloque-item">
+            <img src="paginaPrincipal/img/info/info4.png" alt="+1000 instituciones">
+        </div>
+    </div>
+</section>
+
+<!-- SECCION DE APRENDE HOY (Index 1) -->
+<section class="aprende-hoy py-5" style="background-color: #eaeaea;">
+    <div class="container">
+        <h2 class="titulo-aprende text-center">Capacitación virtual en Gestión Pública</h2>
+        <div class="row align-items-center mt-5">
+            <div class="col-md-5 pe-md-5">
+                <p class="desc-aprende">Conéctate, aprende y certifícate en cursos SIAF, SIGA, SEACE:</p>
+				<p class="desc-aprende">desde cualquier lugar y a tu ritmo.</p>
+                <div class="lista-checks">
+                    <div class="check-item animar-bloque">
+                        <img src="paginaPrincipal/img/icons/senial.svg" alt="Clases en vivo" class="img-check">
+                        <span>Clases en vivo + grabadas</span></div>
+                    <div class="check-item animar-bloque">
+                        <img src="paginaPrincipal/img/icons/laptop.svg" alt="Plataforma" class="img-check">
+                        <span>Plataforma fácil y rápida.</span>
+                    </div>
+                    <div class="check-item animar-bloque">
+                        <img src="paginaPrincipal/img/icons/cuadrado.svg" alt="Certificado" class="img-check">
+                        <span>Certificado digital + físico</span>
+                    </div>
+                    <div class="check-item animar-bloque">
+                        <img src="paginaPrincipal/img/icons/check.svg" alt="Calidad" class="img-check">
+                        <span>Calidad respaldada (R&C)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 ps-md-5 text-center">
+                <img src="paginaPrincipal/img/laptoprc.png" alt="Mockup Campus Virtual" class="img-fluid laptop-mockup">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCION ENTIDADES (Index 1) -->
+<section class="seccion-entidades-carrusel">
+    <div class="contenedor-texto-centrado">
+        <h2 class="titulo-carrusel">Entidades que ya nos eligieron</h2>
+        <p class="subtitulo-carrusel">Instituciones del Estado con las que R&C CONSULTING ha trabajado y más de <strong>1000 instituciones públicas y privadas.</strong></p>
+    </div>
+
+    <div class="carousel-outer-pdp">
+        <div class="carousel-track-pdp" id="carouselTrackPdp">
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/1.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/2.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/3.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/4.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/5.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/6.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/7.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/8.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/9.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/10.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/11.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/12.png" alt="Entidad"></div>
+            <!-- Duplicados para loop infinito -->
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/1.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/2.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/3.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/4.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/5.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/6.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/7.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/8.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/9.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/10.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/11.webp" alt="Entidad"></div>
+            <div class="carousel-card-pdp"><img src="paginaPrincipal/img/entidades/12.png" alt="Entidad"></div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCION AYUDA (Index 1) -->
+<section class="ayuda-section py-5">
+    <div class="container text-center">
+        <h2 class="titulo-ayuda">¿Necesitas información sobre nuestros cursos?</h2>
+        
+        <div class="row justify-content-center mt-5 gap-4">
+            <div class="col-lg-3 col-md-5 help-card">
+                <img src="paginaPrincipal/img/icons/help1.svg" alt="Soporte" class="help-icon">
+                <h3>Consultas y certificados</h3>
+                <p>Revisa tus certificaciones y tu progreso en un solo mensaje.</p>
+                <a href="https://wa.me/51950883155?text=Buen%20día,%20tengo%20una%20consulta%20sobre%20mis%20certificados,%20deseo%20que%20me%20ayuden%20por%20favor." target="_blank" class="btn-whatsapp-custom">
+					<img src="paginaPrincipal/img/icons/wspBoton.svg" alt="icon" class="btn-icon"> 950 883 155
+				</a>
+            </div>
+
+            <div class="col-lg-3 col-md-5 help-card">
+                <img src="paginaPrincipal/img/icons/help2.svg" alt="Información" class="help-icon">
+                <h3>Información de cursos y diplomados</h3>
+                <p>Te orientamos para elegir el programa ideal y separas tu vacante.</p>
+                <a href="https://wa.me/51950883155?text=Buen%20día,%20solicito%20información%20sobre%20los%20cursos%20y%20diplomados,%20por%20favor." target="_blank" class="btn-whatsapp-custom">
+					<img src="paginaPrincipal/img/icons/wspBoton.svg" alt="icon" class="btn-icon"> 950 883 155
+				</a>
+            </div>
+
+            <div class="col-lg-3 col-md-5 help-card inhouse-gradient">
+                <img src="paginaPrincipal/img/icons/help3.svg" alt="In House" class="help-icon white-icon">
+                <h3 class="text-white">Capacitación In House para tu entidad</h3>
+                <p class="text-white">Diseñamos el programa a medida para tu entidad: fechas, temario y modalidad.</p>
+                <a href="https://rc-consulting.org/cursos-inhouse/" class="btn-inhouse-custom" target="_blank" rel="noopener">
+					Cotizar In House
+				</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER (Index 1) -->
+<footer class="main-footer">
+    <div class="footer-container-full">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="footer-logo-box">
+                    <img src="./img/added/logofooter.webp" alt="R&C Consulting" class="footer-logo">
+                </div>
+                <h3>Contáctanos:</h3>
+                <div class="contact-info">
+                    <p>Av. Petit Thouars 2166.<br/>Lince, Lima - Perú</p>
+                    <p>Lunes a Viernes de 8:30 a 6:00 pm</p>
+                    <p><a href="mailto:informes@rc-consulting.org" class="email-link">informes@rc-consulting.org</a></p>
+                    <p>012661067 anexo: 100, 101, 104</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <h3>Enlaces</h3>
+                <ul class="footer-links">
+                    <li><a href="https://rc-consulting.org/cursos-virtuales/">Cursos</a></li>
+                    <li><a href="https://rc-consulting.org/diplomas-virtuales/">Diplomados</a></li>
+                    <li><a href="https://rc-consulting.org/cursos-inhouse/">Inhouse</a></li>
+                    <li><a href="https://rc-consulting.org/consultoria-asistencia-tecnica/">Consultorías</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h3>Información</h3>
+                <ul class="footer-links mb-4">
+                    <li><a href="https://rc-consulting.org/politicas-de-proteccion-de-datos/">Políticas de privacidad</a></li>
+                    <li><a href="https://escueladegobierno.edu.pe/terminos-y-condiciones/">Términos y condiciones</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+                <h4 class="payment-title">Métodos de pago</h4>
+                <img src="./img/added/payment.webp" alt="Métodos de pago" class="payment-img">
+            </div>
+
+            <div class="col-md-3">
+                <h3>Certificados</h3>
+                <a href="https://rc-consulting.org/app-certificados/version1/" class="btn-cert-f" target="_blank">
+                    <i class="fas fa-search"></i> Consulta tu certificado
+                </a>
+                
+                <div class="reclamaciones-box">
+                    <img src="./img/added/lreclamaciones.svg" alt="Libro de reclamaciones">
+                    <a href="https://rc-consulting.org/libro-de-reclamaciones/">Libro de reclamaciones</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://pe.linkedin.com/company/ryc-consulting" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/rycconsulting_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@CursosGestionPublica" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/rcconsultingperu/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@ryc_consulting" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>R&C Consulting 2026 — Todos los derechos reservados</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Filtro de tabs (Index 2) -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+	/* Ordenar y bloquear cursos por fecha (hora Perú) */
+	const DIAS_PARA_BLOQUEAR = 3;
+	const DIAS_PARA_BYN = 0;
+	
+	function getDiasTranscurridos(fechaInicio) {
+		const meses = {
+		'ENE':0,'ENERO':0,'FEB':1,'FEBRERO':1,'MAR':2,'MARZO':2,'ABR':3,'ABRIL':3,'ABRI':3,
+		'MAY':4,'MAYO':4,'JUN':5,'JUNIO':5,'JUL':6,'JULIO':6,'AGO':7,'AGOSTO':7,
+		'SET':8,'SEP':8,'SEPTIEMBRE':8,'OCT':9,'OCTUBRE':9,'NOV':10,'NOVIEMBRE':10,'DIC':11,'DICIEMBRE':11
+	};
+		const match = fechaInicio.match(/(\d+)\s*([A-Z]+)/i);
+		if (!match) return -1;
+		const fecha = new Date(2026, meses[match[2].toUpperCase()], parseInt(match[1]));
+		const ahora = new Date();
+		return Math.floor((ahora - fecha) / (1000 * 60 * 60 * 24));
+	}
+	
+	var cards = document.querySelectorAll('.curso-card');
+	cards.forEach(function(card) {
+		var fecha = card.getAttribute('data-fecha');
+		if (!fecha) return;
+		var dias = getDiasTranscurridos(fecha);
+		if (dias > DIAS_PARA_BLOQUEAR) {
+			card.classList.add('oculto-total');
+		} else if (dias >= DIAS_PARA_BYN) {
+			card.classList.add('ya-iniciado');
+		}
+	});
+	
+	var tabs=document.querySelectorAll('.filtro-tab');
+	var cards=document.querySelectorAll('.curso-card');
+	
+	function applyFilter(filter){
+		cards.forEach(function(card){
+			var cat=card.getAttribute('data-category');
+			var yaIniciado=card.classList.contains('ya-iniciado');
+			var ocultoTotal=card.classList.contains('oculto-total');
+			
+			if(ocultoTotal){
+				card.style.display='none';
+			}
+			else if(filter==='todo'){
+				card.style.display='';
+			}
+			else if(cat&&cat.indexOf(filter)!==-1){
+				if(yaIniciado){
+					card.style.display='none';
+				} else {
+					card.style.display='';
+				}
+			}
+			else{
+				card.style.display='none';
+			}
+		});
+	}
+	
+	tabs.forEach(function(tab){
+		tab.addEventListener('click',function(){
+			tabs.forEach(function(t){t.classList.remove('active')});
+			this.classList.add('active');
+			applyFilter(this.getAttribute('data-filter'));
+		});
+	});
+	
+	var activeTab=document.querySelector('.filtro-tab.active');
+	if(activeTab){
+		applyFilter(activeTab.getAttribute('data-filter'));
+	}
+	
+	// Por defecto: mostrar "Próximos Inicios"
+	applyFilter('proximos-inicios');
+});
+</script>
+
+<!-- Ordenar cursos por fecha (Index 1) -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	const meses = {
+		'ENERO': 1, 'ENE': 1,
+		'FEBRERO': 2, 'FEB': 2,
+		'MARZO': 3, 'MAR': 3,
+		'ABRIL': 4, 'ABRI': 4, 'ABR': 4,
+		'MAYO': 5, 'MAY': 5,
+		'JUNIO': 6, 'JUN': 6,
+		'JULIO': 7, 'JUL': 7,
+		'AGOSTO': 8, 'AGO': 8,
+		'SEPTIEMBRE': 9, 'SEP': 9, 'SET': 9,
+		'OCTUBRE': 10, 'OCT': 10,
+		'NOVIEMBRE': 11, 'NOV': 11,
+		'DICIEMBRE': 12, 'DIC': 12
+	};
+
+	function parsearFecha(texto) {
+		texto = texto.trim().toUpperCase();
+		const match = texto.match(/(\d+)\s*([A-Z]{3,5})/);
+		if (!match) return new Date(2026, 0, 1);
+		const dia = parseInt(match[1]) || 1;
+		let mes = meses[match[2]];
+		if (mes === undefined) {
+			mes = meses[match[2].substring(0, 4)] || meses[match[2].substring(0, 3)] || 0;
+		}
+		return new Date(2026, mes, dia);
+	}
+
+	const items = Array.from(document.querySelectorAll('.curso-card'));
+	if (items.length === 0) return;
+	
+	const contenedor = items[0].parentElement;
+	const hoy = new Date();
+	hoy.setHours(0, 0, 0, 0);
+	
+	items.forEach(function(item) {
+		const fechaAttr = item.getAttribute('data-fecha');
+		if (fechaAttr) {
+			const fecha = parsearFecha(fechaAttr);
+			const diffTime = hoy.getTime() - fecha.getTime();
+			const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+			
+			if (diffDays === 0) {
+				item.classList.add('inicia-hoy');
+			} else if (diffDays > 0) {
+				if (diffDays <= 4) {
+					item.classList.add('ya-iniciado');
+				} else {
+					item.classList.add('oculto-total');
+				}
+			}
+		}
+	});
+	
+	// avances 23 03 RMT REBUILD LLMSS2 RBCK FEED 2.3: Si no hay cursos iniciados, marcar aleatoriamente algunos como "ya iniciado" para mostrar variedad
+	var cursosIniciados = items.filter(function(i) { return i.classList.contains('ya-iniciado') || i.classList.contains('oculto-total'); });
+	if (cursosIniciados.length === 0 && items.length > 0) {
+		var numDemo = Math.min(2, items.length);
+		for (var j = 0; j < numDemo; j++) {
+			var idx = Math.floor(Math.random() * items.length);
+			if (!items[idx].classList.contains('inicia-hoy')) {
+				items[idx].classList.add('ya-iniciado');
+			}
+		}
+	}
+	
+	items.sort((a, b) => {
+		const iniciaHoyA = a.classList.contains('inicia-hoy') ? -1 : 0;
+		const iniciaHoyB = b.classList.contains('inicia-hoy') ? -1 : 0;
+		if (iniciaHoyA !== iniciaHoyB) return iniciaHoyA - iniciaHoyB;
+		
+		const yaInicioA = a.classList.contains('ya-iniciado') ? 1 : 0;
+		const yaInicioB = b.classList.contains('ya-iniciado') ? 1 : 0;
+		if (yaInicioA !== yaInicioB) return yaInicioA - yaInicioB;
+		
+		const fechaA = a.getAttribute('data-fecha') ? parsearFecha(a.getAttribute('data-fecha')) : new Date(9999, 0);
+		const fechaB = b.getAttribute('data-fecha') ? parsearFecha(b.getAttribute('data-fecha')) : new Date(9999, 0);
+		return fechaA - fechaB;
+	});
+	items.forEach(item => contenedor.appendChild(item));
+	
+	
+	const proximos = Array.from(items).filter(i => !i.classList.contains('inicia-hoy') && !i.classList.contains('ya-iniciado'));
+	if (proximos.length > 0) {
+		proximos[0].classList.add('proximo-iniciar');
+	}
+});
+</script>
+
+<!-- Crisp Chat -->
+<script>window.$crisp=[];window.CRISP_WEBSITE_ID="5ce07c61-272a-42a6-ba43-64712a6360ac";(function(){var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s)})();</script>
+
+<!-- JS del proyecto: Notificaciones desde JSON -->
+<script>
+(function() {
+    var notificacionesData = [];
+    var indiceActual = 0;
+    
+    // Cargar notificaciones desde JSON
+    fetch('./notificaciones.json')
+        .then(function(response) { 
+            return response.json(); 
+        })
+        .then(function(data) {
+            notificacionesData = data;
+            if (notificacionesData.length > 0) {
+                iniciarNotificaciones();
+            }
+        })
+        .catch(function(error) {
+            // Fallback: datos por defecto si no carga el JSON
+            notificacionesData = [
+                {"nombre": "NATHALY MELLANIE RIOS MENDOZA", "curso": "CURSO DE GESTIÓN PÚBLICA", "tiempo": "hace 3 min"},
+                {"nombre": "KEVIN ITALO VELASQUEZ MENDOZA", "curso": "SISTEMA NACIONAL DE PROGRAMACIÓN", "tiempo": "hace 6 min"},
+                {"nombre": "ADRIANA VALERIA NAZAR VARGAYA", "curso": "GOBIERNO DIGITAL", "tiempo": "hace 9 min"},
+                {"nombre": "CARMEN SOLEDAD SOLANO CHUMPITAZ", "curso": "SIAF", "tiempo": "hace 12 min"},
+                {"nombre": "NURITH JIMÉNEZ ORTIZ", "curso": "PRESUPUESTO PUBLICO", "tiempo": "hace 15 min"},
+                {"nombre": "LESLYEE KELY MONTELUISA GARCIA", "curso": "GESTIÓN PÚBLICA", "tiempo": "hace 18 min"},
+                {"nombre": "IVAN ERICK CELSO GÓMEZ AGUIRRE", "curso": "SIAF SP Y RP", "tiempo": "hace 21 min"},
+                {"nombre": "SELKY SANDY DELGADO SÁNCHEZ", "curso": "SIGA MEF", "tiempo": "hace 24 min"},
+                {"nombre": "SILVIA PATRICIA CAMPERO ALVARADO", "curso": "CONTRATACIONES PÚBLICAS", "tiempo": "hace 27 min"},
+                {"nombre": "JIMENA DEL CARMEN MIRANDA LUNA", "curso": "SIGA MEF", "tiempo": "hace 30 min"}
+            ];
+            iniciarNotificaciones();
+        });
+    
+    function iniciarNotificaciones() {
+        var container = document.createElement('div');
+        container.className = 'popup-compras';
+        container.id = 'popup-compras';
+        container.innerHTML = 
+            '<span class="cerrar" onclick="cerrarNotificacion()">&times;</span>' +
+            '<div class="contenido">' +
+                '<div class="icono"><i class="fas fa-check"></i></div>' +
+                '<div class="texto">' +
+                    '<div class="nombre"></div>' +
+                    '<div class="curso"></div>' +
+                    '<div class="badge"><i class="fas fa-graduation-cap"></i>Inscrito exitosamente</div>' +
+                '</div>' +
+            '</div>';
+        document.body.appendChild(container);
+        
+        setTimeout(mostrarNotificacion, 2000);
+    }
+    
+    function mostrarNotificacion() {
+        if (notificacionesData.length === 0) return;
+        
+        var container = document.getElementById('popup-compras');
+        if (!container) return;
+        
+        var notif = notificacionesData[indiceActual];
+        indiceActual = (indiceActual + 1) % notificacionesData.length;
+        
+        container.querySelector('.nombre').textContent = notif.nombre;
+        container.querySelector('.curso').textContent = notif.curso;
+        
+        container.classList.remove('ocultar');
+        container.classList.add('show');
+        
+        setTimeout(function() {
+            container.classList.add('ocultar');
+            setTimeout(function() {
+                container.classList.remove('show');
+                container.classList.remove('ocultar');
+                var tiempoEspera = Math.floor(Math.random() * 11000) + 15000;
+                setTimeout(mostrarNotificacion, tiempoEspera);
+            }, 400);
+        }, 5000);
+    }
+    
+    window.cerrarNotificacion = function() {
+        var container = document.getElementById('popup-compras');
+        if (container) {
+            container.classList.add('ocultar');
+            setTimeout(function() {
+                container.classList.remove('show');
+                container.classList.remove('ocultar');
+                var tiempoEspera = Math.floor(Math.random() * 11000) + 15000;
+                setTimeout(mostrarNotificacion, tiempoEspera);
+            }, 400);
+        }
+    };
+})();
+</script>
+
+<!-- Viewing Counts - Personas viendo este curso -->
+<script>
+(function() {
+    var viewingData = [];
+    for (var i = 0; i < 50; i++) {
+        viewingData.push(Math.floor(Math.random() * 30) + 10);
+    }
+    
+    function initViewingCounts() {
+        var cards = document.querySelectorAll('.curso-card__img');
+        cards.forEach(function(imgContainer) {
+            if (!imgContainer.querySelector('.viewing-count')) {
+                var viewers = viewingData[Math.floor(Math.random() * viewingData.length)];
+                var badge = document.createElement('span');
+                badge.className = 'viewing-count';
+                badge.innerHTML = '<span style="color:#4CAF50;">●</span> ' + viewers + ' viendo esto';
+                imgContainer.appendChild(badge);
+            }
+        });
+    }
+    
+    // Ejecutar después de que el DOM esté listo y después de ordenar cursos
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initViewingCounts, 100);
+        });
+    } else {
+        setTimeout(initViewingCounts, 100);
+    }
+})();
+</script>
+
+<!-- POPUP OFERTA CARRUSEL -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.getElementById('popupOfertaImagen');
+    var overlay = document.getElementById('popupOfertaOverlay');
+    var cerrar = document.getElementById('cerrarPopupOferta');
+    var container = document.getElementById('popupOfertaContainer');
+    var slidesContainer = document.getElementById('popupOfertaSlides');
+    var dotsContainer = document.getElementById('popupOfertaDots');
+    var prevBtn = document.getElementById('popupOfertaPrev');
+    var nextBtn = document.getElementById('popupOfertaNext');
+    
+    var delayMs = 2000;
+    var currentSlide = 0;
+    var slides = [];
+    var autoSlideInterval;
+    
+    // Cursos que inician hoy - PRIMERO
+    var items = [];
+    var cursosInicianHoy = document.querySelectorAll('.curso-card.inicia-hoy');
+    cursosInicianHoy.forEach(function(card) {
+        var img = card.querySelector('.curso-card__img img');
+        var btn = card.querySelector('.curso-card__btn');
+        if (img && btn) {
+            items.push({
+                src: img.src,
+                link: btn.href,
+                alt: 'Curso que inicia hoy'
+            });
+        }
+    });
+    
+    // Luego la promoción
+    items.push({
+        src: './img/imagenOferta2.webp',
+        link: 'https://rc-consulting.org/online/Preparacion%20intensiva%20para%20el%20examen%20de%20Certificacion%20OECE%202026,%20incluye%20simulador%20del%20Examen%20OECE/',
+        alt: 'Promoción'
+    });
+    
+    // Crear slides
+    items.forEach(function(item, index) {
+        var slide = document.createElement('div');
+        slide.className = 'popup-oferta-slide';
+        slide.innerHTML = '<a href="' + item.link + '" target="_blank"><img src="' + item.src + '" alt="' + item.alt + '"></a>';
+        slidesContainer.appendChild(slide);
+        
+        // Crear dot
+        var dot = document.createElement('span');
+        dot.className = 'dot' + (index === 0 ? ' active' : '');
+        dot.addEventListener('click', function() {
+            goToSlide(index);
+        });
+        dotsContainer.appendChild(dot);
+    });
+    
+    slides = slidesContainer.querySelectorAll('.popup-oferta-slide');
+    
+    // Cambiar título según si hay cursos que inician hoy
+    var tituloEl = document.getElementById('popupOfertaTitulo');
+    var cursosInicianHoyCount = document.querySelectorAll('.curso-card.inicia-hoy').length;
+    if (cursosInicianHoyCount > 0) {
+        tituloEl.textContent = '¡INICIA HOY!';
+    }
+    
+    // Ocultar navegación si solo hay 1 slide
+    if (slides.length <= 1) {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        dotsContainer.style.display = 'none';
+    }
+    
+    function goToSlide(index) {
+        currentSlide = index;
+        slidesContainer.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+        
+        var dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach(function(dot, i) {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+    }
+    
+    function nextSlide() {
+        goToSlide((currentSlide + 1) % slides.length);
+    }
+    
+    function prevSlide() {
+        goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+    
+    // Navegación
+    nextBtn.addEventListener('click', function() {
+        nextSlide();
+        resetAutoSlide();
+    });
+    
+    prevBtn.addEventListener('click', function() {
+        prevSlide();
+        resetAutoSlide();
+    });
+    
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+    
+    // Obtener color dominante
+    function obtenerColorDominante(imgEl, callback) {
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        canvas.width = 50;
+        canvas.height = 50;
+        ctx.drawImage(imgEl, 0, 0, 50, 50);
+        
+        var data = ctx.getImageData(0, 0, 50, 50).data;
+        var r = 0, g = 0, b = 0, count = 0;
+        
+        for (var i = 0; i < data.length; i += 4) {
+            if (data[i+3] > 128) {
+                r += data[i];
+                g += data[i+1];
+                b += data[i+2];
+                count++;
+            }
+        }
+        
+        if (count > 0) {
+            r = Math.floor(r / count);
+            g = Math.floor(g / count);
+            b = Math.floor(b / count);
+            
+            if (r + g + b < 200) {
+                r = Math.min(255, r + 60);
+                g = Math.min(255, g + 60);
+                b = Math.min(255, b + 60);
+            }
+            
+            callback('rgb(' + r + ',' + g + ',' + b + ')');
+        }
+    }var promoImg = document.querySelector('.popup-oferta-slide img');
+    if (promoImg && promoImg.complete) {
+        obtenerColorDominante(promoImg, function(color) {
+            container.style.background = 'linear-gradient(135deg, ' + color + ' 0%, #fff 50%, ' + color + ' 100%)';
+        });
+    } else if (promoImg) {
+        promoImg.onload = function() {
+            obtenerColorDominante(promoImg, function(color) {
+                container.style.background = 'linear-gradient(135deg, ' + color + ' 0%, #fff 50%, ' + color + ' 100%)';
+            });
+        };
+    }
+    
+    function mostrarPopup() {
+        popup.classList.add('active');
+        overlay.classList.add('active');
+        startAutoSlide();
+    }
+    
+    function cerrarPopup() {
+        popup.classList.remove('active');
+        overlay.classList.remove('active');
+        clearInterval(autoSlideInterval);
+    }
+    
+    setTimeout(mostrarPopup, delayMs);
+    
+    cerrar.addEventListener('click', cerrarPopup);
+    overlay.addEventListener('click', cerrarPopup);
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            cerrarPopup();
+        }
+    });
+});
+</script>
+
+<!-- SCRIPT OFERTA FLOTANTE -->
+<script>
+function getCookie(name) {
+	var value = "; " + document.cookie;
+	var parts = value.split("; " + name + "=");
+	if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+function setCookie(name, value, days) {
+	var expires = "";
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+		expires = "; expires=" + date.toUTCString();
+	}
+	document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+(function() {
+	var icono = document.getElementById('iconoOferta');
+	var overlay = document.getElementById('overlayOferta');
+	var container = document.getElementById('cursosHoverContainer');
+	var grid = document.getElementById('cursosHoverGrid');
+	var modalResultado = document.getElementById('modalResultadoOferta');
+	var cerrarResultado = document.getElementById('cerrarResultado');
+	var codigoDisplay = document.getElementById('codigoDisplay');
+	var btnVerCurso = document.getElementById('btnVerCurso');
+	
+	var ofertaMostrada = localStorage.getItem('ofertaMostrada');
+	var cursoActual = null;
+	
+	function generarCodigo(nombre) {
+		var prefix = nombre.substring(0, 4).toUpperCase().replace(/[^A-Z]/g, 'X');
+		var año = new Date().getFullYear().toString().slice(-2);
+		var random = Math.floor(Math.random() * 900) + 100;
+		return prefix + año + random;
+	}
+	
+	// Obtener cursos próximos de la página
+	function obtenerCursosProximos() {
+		var cursos = [];
+		// Primero buscar con la categoría específica
+		var cards = document.querySelectorAll('.curso-card[data-category*="proximos-inicios"]');
+		// Si no hay cursos próximos, buscar cualquier curso
+		if (cards.length === 0) {
+			cards = document.querySelectorAll('.curso-card');
+		}
+		// Tomar todos los cursos disponibles
+		var cardsArray = Array.from(cards);
+		cardsArray.forEach(function(card) {
+			var img = card.querySelector('.curso-card__img img');
+			var btn = card.querySelector('.curso-card__btn');
+			var fecha = card.querySelector('.info-item span');
+			
+			var nombreEl = card.querySelector('.badge-tipo');
+			var nombre = nombreEl ? nombreEl.textContent.trim() : 'Curso';
+			
+			cursos.push({
+				nombre: nombre,
+				imagen: img ? img.src : '',
+				fecha: fecha ? fecha.textContent.trim() : '',
+				link: btn ? btn.href : '#'
+			});
+		});
+		return cursos;
+	}
+	
+	// Renderizar cursos en el grid
+	var cursosData = obtenerCursosProximos();
+	cursosData.forEach(function(curso) {
+		var item = document.createElement('div');
+		item.className = 'curso-hover-item';
+		item.innerHTML = 
+			'<img src="' + curso.imagen + '" alt="' + curso.nombre + '">' +
+			'<div class="curso-hover-info">' +
+				'<h4>' + curso.nombre + '</h4>' +
+				'<div class="fecha">' + curso.fecha + '</div>' +
+			'</div>' +
+			'<div class="curso-hover-overlay"><span>¡Obtén descuento!</span></div>';
+		
+		item.addEventListener('click', function() {
+			cursoActual = curso;
+			var codigo = generarCodigo(curso.nombre);
+			codigoDisplay.textContent = codigo;
+			btnVerCurso.href = curso.link;
+			container.classList.remove('active');
+			setTimeout(function() {
+				container.style.display = 'none';
+				modalResultado.classList.add('active');
+				var contenido = modalResultado.querySelector('.resultado-contenido');
+				if (contenido) {
+					setTimeout(function() {
+						contenido.classList.add('mostrar');
+					}, 100);
+				}
+			}, 200);
+		});
+		
+		grid.appendChild(item);
+	});
+	
+	// Función para mostrar la oferta del regalo (se llama después de aceptar cookies)
+	function initGiftOffer() {
+		var consent = getCookie('cookieConsent');
+		
+		if (!consent || consent === 'necessary') {
+			return;
+		}
+		
+		var ofertaGuardada = getCookie('rcSession');
+		
+		// 49% de probabilidad
+		if (!ofertaGuardada && Math.random() < 0.49) {
+			icono.style.display = 'flex';
+			setCookie('rcSession', 'true', 1);
+		}
+	}
+	
+	// Animacion para abrir
+	icono.addEventListener('click', function() {
+		overlay.style.display = 'block';
+		overlay.classList.add('active');
+		container.style.display = 'block';
+		
+		// Solo mostrar estela una vez
+		var yaVioEstela = getCookie('rcEstela');
+		if (!yaVioEstela) {
+			container.classList.add('con-estela');
+			setCookie('rcEstela', 'true', 30);
+		}
+		
+		setTimeout(function() {
+			container.classList.add('active');
+		}, 50);
+	});
+	
+	// Cerrar
+	function cerrarOferta() {
+		modalResultado.classList.remove('active');
+		container.classList.remove('active');
+		container.classList.remove('con-estela');
+		overlay.classList.remove('active');
+		var contenido = modalResultado.querySelector('.resultado-contenido');
+		if (contenido) {
+			contenido.classList.remove('mostrar');
+		}
+		setTimeout(function() {
+			container.style.display = 'none';
+			overlay.style.display = 'none';
+		}, 300);
+	}
+	
+	overlay.addEventListener('click', cerrarOferta);
+	cerrarResultado.addEventListener('click', function(e) {
+		e.stopPropagation();
+		cerrarOferta();
+	});
+	
+	// Hacer funcion accesible globalmente para botones de cookies
+	window.initGiftOffer = initGiftOffer;
+})();
+});
+</script>
+
+<!-- BANNER DE COOKIES -->
+<div class="cookie-banner" id="cookieBanner">
+	<div class="cookie-content">
+		<div class="cookie-text">
+			<p><i class="fas fa-cookie-bite"></i> <strong>Usamos cookies</strong> para mejorar tu experiencia en nuestro sitio web.</p>
+			<p style="font-size:12px;margin-top:5px;opacity:0.9;"><i class="fas fa-circle" style="font-size:8px;color:#0A1F5C;"></i> <strong>Necesarias:</strong> funcionamiento basico | <i class="fas fa-chart-bar"></i> <strong>Analytics:</strong> estadisticas de visita | <i class="fas fa-bullhorn"></i> <strong>Marketing:</strong> promociones personalizadas</p>
+			<p style="font-size:11px;margin-top:5px;"><a href="politica-cookies.html" target="_blank" style="color:#FFD700;text-decoration:underline;"><i class="fas fa-external-link-alt"></i> Ver Politica de Cookies</a></p>
+		</div>
+		<div class="cookie-buttons">
+			<button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()"><i class="fas fa-check"></i> Aceptar todas</button>
+			<button class="cookie-btn cookie-btn-necessary" onclick="acceptNecessaryCookies()"><i class="fas fa-cookie"></i> Solo necesarias</button>
+			<button class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()"><i class="fas fa-sliders-h"></i> Ajustes</button>
+		</div>
+	</div>
+</div>
+
+<!-- PANEL DE AJUSTES DE COOKIES -->
+<div class="cookie-settings-overlay" id="cookieSettingsOverlay" onclick="hideCookieSettings()"></div>
+<div class="cookie-settings-panel" id="cookieSettingsPanel">
+	<h3><i class="fas fa-sliders-h"></i> Configuracion de Cookies</h3>
+	<p style="font-size:13px;color:#666;margin-bottom:15px;">Selecciona que cookies quieres que utilicemos:</p>
+	<div class="cookie-option">
+		<div>
+			<label style="display:block;font-weight:700;color:#0A1F5C;"><i class="fas fa-circle" style="font-size:10px;color:#0A1F5C;"></i> Necesarias</label>
+			<span style="font-size:11px;color:#888;">Cookies esenciales para el funcionamiento del sitio. Siempre activas.</span>
+		</div>
+		<input type="checkbox" checked disabled>
+	</div>
+	<div class="cookie-option">
+		<div>
+			<label style="display:block;font-weight:700;color:#0A1F5C;"><i class="fas fa-chart-bar"></i> Analytics</label>
+			<span style="font-size:11px;color:#888;">Nos ayudan a entender como navegas por nuestro sitio (Google Analytics).</span>
+		</div>
+		<input type="checkbox" id="cookieAnalytics">
+	</div>
+	<div class="cookie-option">
+		<div>
+			<label style="display:block;font-weight:700;color:#0A1F5C;"><i class="fas fa-bullhorn"></i> Marketing</label>
+			<span style="font-size:11px;color:#888;">Usadas para mostrarte promociones personalizadas en redes sociales.</span>
+		</div>
+		<input type="checkbox" id="cookieMarketing">
+	</div>
+	<div class="cookie-settings-buttons">
+		<button class="cookie-btn cookie-btn-accept" onclick="saveCookieSettings()"><i class="fas fa-save"></i> Guardar preferencias</button>
+		<button class="cookie-btn cookie-btn-necessary" onclick="hideCookieSettings()"><i class="fas fa-times"></i> Cancelar</button>
+	</div>
+	<p style="font-size:11px;color:#888;margin-top:15px;text-align:center;">
+		<a href="politica-cookies.html" target="_blank" style="color:#0A1F5C;"><i class="fas fa-external-link-alt"></i> Ver Politica de Cookies completa</a>
+	</p>
+</div>
+
+<!-- SCRIPT DE COOKIES -->
+<script>
+function showCookieBanner() {
+	var consent = getCookie('cookieConsent');
+	if (!consent) {
+		document.getElementById('cookieBanner').classList.add('show');
+	}
+}
+
+function acceptAllCookies() {
+	setCookie('cookieConsent', 'all', 30);
+	setCookie('cookieAnalytics', 'true', 30);
+	setCookie('cookieMarketing', 'true', 30);
+	document.getElementById('cookieBanner').classList.remove('show');
+	initGiftOffer();
+}
+
+function acceptNecessaryCookies() {
+	setCookie('cookieConsent', 'necessary', 30);
+	setCookie('cookieAnalytics', 'false', 30);
+	setCookie('cookieMarketing', 'false', 30);
+	document.getElementById('cookieBanner').classList.remove('show');
+	initGiftOffer();
+}
+
+function showCookieSettings() {
+	document.getElementById('cookieSettingsOverlay').classList.add('show');
+	document.getElementById('cookieSettingsPanel').classList.add('show');
+	var analytics = getCookie('cookieAnalytics');
+	var marketing = getCookie('cookieMarketing');
+	document.getElementById('cookieAnalytics').checked = (analytics === 'true');
+	document.getElementById('cookieMarketing').checked = (marketing === 'true');
+}
+
+function hideCookieSettings() {
+	document.getElementById('cookieSettingsOverlay').classList.remove('show');
+	document.getElementById('cookieSettingsPanel').classList.remove('show');
+}
+
+function saveCookieSettings() {
+	var analytics = document.getElementById('cookieAnalytics').checked;
+	var marketing = document.getElementById('cookieMarketing').checked;
+	var consent = (analytics && marketing) ? 'all' : ((!analytics && !marketing) ? 'necessary' : 'custom');
+	setCookie('cookieConsent', consent, 30);
+	setCookie('cookieAnalytics', analytics ? 'true' : 'false', 30);
+	setCookie('cookieMarketing', marketing ? 'true' : 'false', 30);
+	hideCookieSettings();
+	document.getElementById('cookieBanner').classList.remove('show');
+	initGiftOffer();
+}
+
+// Inicializar banner de cookies al cargar
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', showCookieBanner);
+} else {
+	showCookieBanner();
+}
+</script>
+
+<!-- Datos de cursos para chatbot -->
+<script>
+window.RC_CURSOS = {
+    cursosEnVivo: @json(array_slice($cursosEnVivo ?? [], 0, 3)),
+    cursosOnline: @json(array_slice($cursosOnline ?? [], 0, 3)),
+    diplomadosOnline: @json(array_slice($diplomadosOnline ?? [], 0, 3)),
+    diplomadosEnVivo: @json(array_slice($diplomadosEnVivo ?? [], 0, 3)),
+    todasAsesoras: {
+        'Vanessa Vertiz': { wsp: '51956991632' },
+        'Yajaira Hinostroza': { wsp: '51990035466' },
+        'Estefany Espejo': { wsp: '51950883155' },
+        'Estefani': { wsp: '51950883155' },
+        'Romina Sirlopu': { wsp: '51999551532' }
+    },
+    wspGeneral: '51950883155'
+};
+</script>
+
+<!-- Chatbot Virtual R&C Consulting -->
+<script src="./js/chatbot.js"></script>
+
+</body>
+</html>

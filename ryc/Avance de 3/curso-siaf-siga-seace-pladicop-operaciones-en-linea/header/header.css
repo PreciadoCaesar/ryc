@@ -1,0 +1,283 @@
+/* ═════════ HEADER R&C LIMPIO FULL WIDTH ═════════ */
+
+/* ELIMINA ESPACIOS GLOBALES */
+body{
+    margin:0;
+    padding:0;
+}
+
+/* TOP BAR */
+.rc-topbar{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+.rc-topbar img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* NAVBAR FULL WIDTH */
+.rc-navbar{
+    width:100%;
+    background:#0A1F5C;
+    position:sticky;
+    top:0;
+    z-index:999;
+    padding:0;
+    margin:0;
+}
+
+/* IMPORTANTE → elimina margen del container */
+.rc-navbar .container{
+    max-width:100% !important;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+/* Logo */
+.rc-logo{
+    height:45px;
+}
+
+/* Links */
+.rc-navbar .nav-link{
+    color:#000000 !important;
+    font-weight:600;
+    font-size:14px;
+    padding:18px 14px !important;
+    transition:0.3s;
+}
+
+.rc-navbar .nav-link:hover{
+    color:#000000 !important;
+}
+
+/* Toggler */
+.navbar-toggler{
+    border:none;
+}
+
+/* BOTONES */
+.rc-buttons{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.rc-buttons a{
+    display:flex;
+    align-items:center;
+    gap:6px; /* espacio icono-texto */
+    padding:8px 16px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:13px;
+    color:#fff;
+    transition:0.3s;
+}
+
+/* ICONOS PERFECTAMENTE CENTRADOS */
+.rc-buttons svg{
+    width:18px;
+    height:18px;
+    display:block;
+}
+
+/* COLORES ORIGINALES */
+.btn-wsp{ background:#038814; }
+.btn-aula{ background:#136EF0; }
+.btn-tienda{ background:#FF044D; }
+
+.rc-buttons a:hover{
+    opacity:0.9;
+}
+
+/* RESPONSIVE */
+/* RESPONSIVE - TABLET 768px - 1024px */
+@media(max-width:1024px){
+
+    .navbar-collapse{
+        background:#0A1F5C;
+        padding:15px 20px;
+    }
+
+    /* Menú UL pegado a la derecha */
+    .navbar-nav {
+        text-align: right;
+    }
+
+    .navbar-nav .nav-link {
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    .rc-buttons{
+        justify-content: center;  /* Botones centrados */
+        margin-top: 10px;
+    }
+
+    .rc-buttons a{
+        width: auto;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .rc-buttons a{
+        width: auto;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    /* Solo icono WhatsApp, resto con texto */
+    .btn-wsp span{
+        display:none;
+    }
+
+    .btn-aula span, .btn-tienda span{
+        display:inline;
+    }
+
+    /* Botón WhatsApp grande y redondo */
+    .btn-wsp {
+        width: 38px;
+        height: 38px;
+        border-radius: 50% !important;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-sizing: border-box;
+        flex-shrink: 0;
+    }
+
+    .btn-wsp svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* RESPONSIVE - MOVIL 390px - 767px */
+@media(max-width:767px){
+
+    .navbar-collapse{
+        padding:10px 15px;
+    }
+
+    /* Menú UL pegado a la derecha */
+    .navbar-nav {
+        text-align: right;
+    }
+
+    .navbar-nav .nav-link {
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    .rc-buttons{
+        justify-content: center;  /* Botones centrados */
+    }
+
+    .rc-buttons a{
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .rc-buttons svg{
+        width: 14px;
+        height: 14px;
+    }
+
+    .rc-buttons a{
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .rc-buttons svg{
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Solo icono WhatsApp, resto con texto */
+    .btn-wsp span{
+        display:none;
+    }
+
+    .btn-aula span, .btn-tienda span{
+        display:inline;
+    }
+
+    /* Botón WhatsApp grande y redondo */
+    .btn-wsp {
+        width: 32px;
+        height: 32px;
+        border-radius: 50% !important;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-sizing: border-box;
+        flex-shrink: 0;
+    }
+
+    .btn-wsp svg {
+        width: 16px;
+        height: 16px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.btn-wsp, .btn-aula, .btn-tienda {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Links - más espaciado */
+.rc-navbar .nav-link{
+    color:#000000 !important;
+    font-weight:600;
+    font-size:14px;
+    padding:18px 22px !important;
+    transition:0.3s;
+    white-space: nowrap;
+}
+
+/* Menú ocupa todo el espacio disponible */
+.rc-navbar .navbar-nav{
+    flex-grow: 1;
+    justify-content: space-evenly;
+    margin: 0 30px;
+}
+
+/* BOTONES - tamaño más consistente */
+.rc-buttons{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink: 0;
+}
+
+.rc-buttons a{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:13px;
+    color:#fff;
+    transition:0.3s;
+    white-space: nowrap;
+}
