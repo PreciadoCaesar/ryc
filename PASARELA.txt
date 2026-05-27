@@ -1,0 +1,243 @@
+ Pagar con Yape
+Esta casuística permite a los usuarios realizar un pago utilizando el código Yape. El usuario ingresa un código OTP generado desde la APP de Yape y este es validado en nuestro checkout para completar la transacción y procesar el pago.
+
+Objetivo
+Aprenderás a:
+
+Crear el objeto de configuración
+Inicializar el formulario de pago.
+Mostrar el Checkout.
+Ejemplo de respuesta.
+1. Creando el objeto de configuración
+A continuación se muestra un ejemplo de configuración para el método de pago con Yape.
+
+const iziConfig = {
+  transactionId: '{TRANSACTION_ID}',
+  action: 'pay',
+  merchantCode: '{MERCHANT_CODE}',
+  order: {
+    orderNumber: '{ORDER_NUMBER}',
+    currency: 'PEN',
+    amount: '149.00',
+    processType: 'AT',
+    merchantBuyerId: '{MERCHANT_BUYER_ID}',
+    dateTimeTransaction: '{DATETIME_TRANSACTION}',
+    payMethod: 'YAPE_CODE'
+  },
+  billing: {
+    firstName: 'Lucho',
+    lastName: 'Torres',
+    email: 'luchotorres@izipay.pe',
+    phoneNumber: '989897960',
+    street: 'Av. Jorge Chávez 275',
+    city: 'Lima',
+    state: 'Lima',
+    country: 'PE',
+    postalCode: '15000',
+    documentType: 'DNI',
+    document: '12345678'
+  },
+  shipping: {
+    firstName: 'Lucho',
+    lastName: 'Torres',
+    email: 'luchotorres@izipay.pe',
+    phoneNumber: '989897960',
+    street: 'Av. Jorge Chávez 275',
+    city: 'Lima',
+    state: 'Lima',
+    country: 'PE',
+    postalCode: '15000',
+    documentType: 'DNI',
+    document: '12345679'
+  }
+};
+
+2. Instanciando la clase
+const checkout = new Izipay({ config: iziConfig });
+
+3. Mostrando el checkout
+const callbackResponsePayment = (response) => {
+  console.log(response);
+};
+
+try {
+  checkout &&
+    checkout.LoadForm({
+      authorization: '{TOKEN_SESSION}',
+      keyRSA: '{KEY_RSA}',
+      callbackResponse: callbackResponsePayment,
+    });
+} catch (error) {
+  console.log(error.message, error.Errors, error.date);
+};
+
+Importante
+Si el comercio solo tiene configurado como método de pago YAPE y el monto excede el límite establecido, no se mostrará el checkout.
+Si el comercio tiene configurado varios métodos de pago, entre ellos YAPE y el monto excede el límite establecido, no se mostrará la hoja de pago.
+4. Respuesta
+Al finalizar la transacción, nuestro checkout enviará al comercio la respuesta en formato JSON.
+
+EXITOSO
+RESTRICCIÓN YAPE
+LÍMITE DIARIO
+CUENTA BLOQUEADA POR OTP
+RESTRICCIÓN EMISOR
+OTP VENCIDO
+OTP INVÁLIDO
+{
+    "code": "00",
+    "message": "Operación exitosa",
+    "messageUser": "Operación exitosa",
+    "messageUserEng": "Successful",
+    "response": {
+      "payMethod": "YAPE_CODE",
+      "order": [
+        {
+          "payMethodAuthorization": "YAPE_CODE",
+          "codeAuth": "000500",
+          "currency": "PEN",
+          "amount": "149.00",
+          "installment": "00",
+          "deferred": "0",
+          "orderNumber": "1704995421",
+          "stateMessage": "Autorizado",
+          "dateTransaction": "20240111",
+          "timeTransaction": "125141",
+          "uniqueId": "0111175141811583",
+          "referenceNumber": "1177350"
+        }
+      ],
+      "card": {
+        "brand": "VS",
+        "pan": "449577******9759",
+        "save": "false"
+      },
+      "billing": {
+        "firstName": "Lucho",
+        "lastName": "Torres",
+        "email": "luchotorres@izipay.pe",
+        "phoneNumber": "989897960",
+        "street": "Av. Jorge Chávez 275",
+        "city": "Lima",
+        "state": "Lima",
+        "country": "PE",
+        "postalCode": "15000",
+        "documentType": "DNI",
+        "document": "12345678",
+        "companyName": ""
+      },
+      "merchant": {
+        "merchantCode": "5599795",
+        "facilitatorCode": ""
+      },
+      "token": {
+        "merchantBuyerId": "GDTI4562_009",
+        "cardToken": "",
+        "alias": ""
+      },
+      "authentication": {
+        "result": ""
+      },
+      "customFields": [
+        {
+          "name": "field1",
+          "value": ""
+        },
+        {
+          "name": "field2",
+          "value": ""
+        },
+        {
+          "name": "field3",
+          "value": ""
+        },
+        {
+          "name": "field4",
+          "value": ""
+        },
+        {
+          "name": "field5",
+          "value": ""
+        },
+        {
+          "name": "field6",
+          "value": ""
+        },
+        {
+          "name": "field7",
+          "value": ""
+        },
+        {
+          "name": "field8",
+          "value": ""
+        },
+        {
+          "name": "field9",
+          "value": ""
+        },
+        {
+          "name": "field10",
+          "value": ""
+        }
+      ]
+    },
+    "payloadHttp": "{\"code\":\"00\",\"message\":\"Operación exitosa\",\"messageUser\":\"Operación exitosa\",\"messageUserEng\":\"Successful\",\"response\":{\"payMethod\":\"YAPE_CODE\",\"order\":[{\"payMethodAuthorization\":\"YAPE_CODE\",\"codeAuth\":\"000500\",\"currency\":\"PEN\",\"amount\":\"149.00\",\"installment\":\"00\",\"deferred\":\"0\",\"orderNumber\":\"1704995421\",\"stateMessage\":\"Autorizado\",\"dateTransaction\":\"20240111\",\"timeTransaction\":\"125141\",\"uniqueId\":\"0111175141811583\",\"referenceNumber\":\"1177350\"}],\"card\":{\"brand\":\"VS\",\"pan\":\"449577******9759\",\"save\":\"false\"},\"billing\":{\"firstName\":\"Lucho\",\"lastName\":\"Torres\",\"email\":\"luchotorres@izipay.pe\",\"phoneNumber\":\"989897960\",\"street\":\"Av. Jorge Chávez 275\",\"city\":\"Lima\",\"state\":\"Lima\",\"country\":\"PE\",\"postalCode\":\"15000\",\"documentType\":\"DNI\",\"document\":\"12345678\",\"companyName\":\"\"},\"merchant\":{\"merchantCode\":\"5599795\",\"facilitatorCode\":\"\"},\"token\":{\"merchantBuyerId\":\"GDTI4562_009\",\"cardToken\":\"\",\"alias\":\"\"},\"authentication\":{\"result\":\"\"},\"customFields\":[{\"name\":\"field1\",\"value\":\"\"},{\"name\":\"field2\",\"value\":\"a\"},{\"name\":\"field3\",\"value\":\"\"},{\"name\":\"field4\",\"value\":\"\"},{\"name\":\"field5\",\"value\":\"\"},{\"name\":\"field6\",\"value\":\"\"},{\"name\":\"field7\",\"value\":\"\"},{\"name\":\"field8\",\"value\":\"\"},{\"name\":\"field9\",\"value\":\"\"},{\"name\":\"field10\",\"value\":\"\"}]},\"transactionId\":\"170499542026900\"}",
+    "signature": "wXlqracZYHEtr0glhT8L9PxeSQjgupdiKJZ41zTnf0I=",
+    "transactionId": "170499542026900"
+  }
+
+Demo
+A continuación, te invitamos a explorar nuestra demo interactiva.
+
+Editor en vivo
+  const config = {
+    action: 'pay',
+    order: {
+      payMethod: 'YAPE_CODE'
+    },
+    billing: {
+      firstName: 'Lucho',
+      lastName: 'Torres',
+      email: 'luchotorres@izipay.pe',
+      phoneNumber: '989897960',
+      street: 'Av. Jorge Chávez 275',
+      city: 'Lima',
+      state: 'Lima',
+      country: 'PE',
+      postalCode: '15000',
+      documentType: 'DNI',
+      document: '12345678',
+   },
+   shipping: {
+      firstName: 'Lucho',
+      lastName: 'Torres',
+      email: 'luchotorres@izipay.pe',
+      phoneNumber: '989897960',
+      street: 'Av. Jorge Chávez 275',
+      city: 'Lima',
+      state: 'Lima',
+      country: 'PE',
+      postalCode: '15000',
+      documentType: 'DNI',
+      document: '12345679',
+    },
+    render: {
+      typeForm: 'pop-up'
+    }
+  }
+
+  render (
+    <Izipay
+      config={config}
+    />
+  )
+Resultado
+Cargar checkout
+{
+  "transactionId": "17793090057630",
+  "orderNumber": "1779309005",
+  "paymentMethod": "YAPE_CODE",
+  "title": "Transacción cancelada",
+  "message": "El formulario de compra fue cerrado. la transacción ha sido cancelada",
+  "code": "021"
+}

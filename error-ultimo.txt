@@ -1,0 +1,110 @@
+Internal Server Error
+
+Copy as Markdown
+ParseError
+resources\views\cursos\landing.blade.php:1001
+syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+
+LARAVEL
+12.58.0
+PHP
+8.2.12
+UNHANDLED
+CODE 0
+500
+GET
+http://localhost/ryc/curso/Curso-en-gestion-publica-2026
+
+Exception trace
+Illuminate\Filesystem\Filesystem::Illuminate\Filesystem\{closure}()
+resources\views\cursos\landing.blade.php:1001
+
+996    if (panel) { panel.style.display = width <= 1024 ? 'none' : ''; }
+997}
+998window.addEventListener('load', hidePanelAmarillo);
+999window.addEventListener('resize', hidePanelAmarillo);
+1000</script>
+1001@endsection
+1002
+58 vendor frames
+
+Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+index.php:20
+
+Queries
+1-9 of 9
+sqlite
+select * from "sessions" where "id" = 'r66tHNte7T9DXnI6oHsOt6f76pppLHN5PNFkVs5d' limit 1
+2.28ms
+sqlite
+select * from "courses" where "slug" = 'Curso-en-gestion-publica-2026' limit 1
+0.36ms
+sqlite
+select * from "advisors" where "advisors"."id" in (12)
+0.19ms
+sqlite
+select "professors".*, "course_professor"."course_id" as "pivot_course_id", "course_professor"."professor_id" as "pivot_professor_id" from "professors" inner join "course_professor" on "professors"."id" = "course_professor"."professor_id" where "course_professor"."course_id" in (20)
+0.25ms
+sqlite
+select * from "course_objetivos" where "course_objetivos"."course_id" in (20) order by "orden" asc
+0.19ms
+sqlite
+select * from "course_participantes" where "course_participantes"."course_id" in (20) order by "orden" asc
+0.16ms
+sqlite
+select * from "course_sesiones" where "course_sesiones"."course_id" in (20) order by "numero" asc
+0.21ms
+sqlite
+select * from "course_pages" where "course_pages"."course_id" in (20)
+0.15ms
+sqlite
+select * from "users" where "id" = 4 limit 1
+0.23ms
+Headers
+host
+localhost
+connection
+keep-alive
+cache-control
+max-age=0
+upgrade-insecure-requests
+1
+user-agent
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+accept
+text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+sec-fetch-site
+same-origin
+sec-fetch-mode
+navigate
+sec-fetch-user
+?1
+sec-fetch-dest
+document
+sec-ch-ua
+"Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-platform
+"Windows"
+referer
+http://localhost/ryc/admin/cursos/create
+accept-encoding
+gzip, deflate, br, zstd
+accept-language
+es,es-ES;q=0.9
+cookie
+remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IlJlQ1I3ZTNnUysvMTVwMXdMSzFJOEE9PSIsInZhbHVlIjoiNTNKNFI0VkVVVzdMYUN2NHU4ZzFQRGZIYUFOekJPajUzY1VoMWdTRm5pa1JMNExKMzBBZDlJbWZHbFN0YnRueGZja3FnRkNna216T2R0czU2UEk3aDhsM2s4dEwrc2F5VzRPVXZPOWVKQ0J6ZnB5MFV6aXNQTlI0amNGYkl5U2gzTllnc1VsdXVGSzFLbWhiUkRmbUdxeUlWNTJCa3A0b2lNWkhuanFSZk9IVWl0RHZiRXByQjMzQ056M3JObDMrQmhEaXJDbk5pTzMrV0k0azFVQlE2SjlnTXMreEQrUVl0Tk5oZFd5T0NxUT0iLCJtYWMiOiI0N2IwZDMyODg5ZTJmMzMwNmM2Njg0YTFiMDQ2ODE3MjA4NTEyNGVhNTYyZGJiOTUxYTIyMGY4OGZlNzgxZTUwIiwidGFnIjoiIn0%3D; XSRF-TOKEN=eyJpdiI6IkxuVE5QcmhpTHpNb2FoOGNQWVpZSGc9PSIsInZhbHVlIjoiTk10dHZTcVoweGJjeU9BRWtxNUZpSDJ5dHR6OHpKUEo0YzU1UlVSZmtsMVdPTit4emV4a0I0Z0Y0c3VYOFZUMlNzVU5wZ3ZsVkswR2xIQ2FXTk5aN0dwaGx1dmNXZmpRMDl0R1d3T0ZHaGJPQnBaNFI1VFNxZ3VRU01VUEtRaksiLCJtYWMiOiIyMzhiZTA1NGVlYmY5MjRkYjBhOTQzZWE0YjU2ZDFhODU5ZWE0ZjljNDU4OTg0NTE3NzgzN2FhMWY3MWY2NTQzIiwidGFnIjoiIn0%3D; laravel-session=eyJpdiI6Im01aE5LTi82NjNnTWE4NmFjWVo5WFE9PSIsInZhbHVlIjoiMlV1UTRKZTZYZmtHbFBWd2ZQVG1JV2lDNXdzMTgzNys0KzFyblB2bk5RN1pDT1lNcFI5S1B6SlN1dE5RSWx2bG9OVVRHSjdRWlc1VmRmbTlkSXRzRGxmbm1ON1h0SmxlSFJnNGdyanhYZzdiR0NSWVRqUkw3M0d3bXV6N3NuNHQiLCJtYWMiOiIwNGUwMjBhZmExNThjMjc4OWJkZTliZjJkNTY0MWI0ZTFkZDBiNTZjZWRhNWQyNWYyZGIyZDYxMGY3N2IyOGVjIiwidGFnIjoiIn0%3D
+Body
+// No request body
+Routing
+controller
+App\Http\Controllers\CursoController@mostrar
+route name
+curso.mostrar
+middleware
+web
+Routing parameters
+{
+    "slug": "Curso-en-gestion-publica-2026"
+}

@@ -1,0 +1,1266 @@
+/* ══ IMPORTACIÓN DE FUENTES ══ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;600&display=swap');
+
+/* ══ ROOT VARS ══ */
+:root {
+    --rojo: #C8102E;
+    --rojo-dark: #9E0A22;
+    --azul: #0A1F5C;
+    --azul-oscuro: #00206b; /* Azul sólido de la imagen */
+    --azul-medio: #1A3A7A;
+    --verde-wsp: #25D366;
+    --verde-wsp-dark: #1DA851;
+    --amarillo: #FFB800;
+    --gris-claro: #F5F7FA;
+    --gris-medio: #E8ECF0;
+    --texto-oscuro: #1A1A2E;
+    --texto-medio: #4A5568;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', 'Inter';
+    color: var(--texto-oscuro);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* ══ LAYOUT GLOBAL ══ */
+.inner-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Centered content */
+footer .inner-wrap {
+    max-width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/* Footer Responsive*/
+@media(max-width:991px){
+    footer .inner-wrap {
+        max-width: 100%;
+        padding: 0 32px;
+    }
+}
+
+
+/* ══ BANNER PÚRPURA  ══ */
+.banner-purpura {
+    background: #5044c2;
+    color: #fff;
+    padding: 15px 0; 
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenido-banner-purpura {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left; 
+}
+
+.banner-icon img {
+    width: 35px; /* Ajusta según el tamaño de tus iconos */
+    height: auto;
+    filter: brightness(0) invert(1); /* Vuelve el icono blanco */
+}
+
+.banner-text b {
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.banner-text span {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.highlight-yellow {
+    color: #FFD700; /* Color amarillo para "CURSOS IN HOUSE" */
+}
+
+/* ══ ESTILO DEL BOTÓN AMARILLO ══ */
+.btn-cotizar {
+    background: #FFD700;
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 0px #ccac00; /* Efecto de profundidad */
+}
+
+.btn-cotizar:hover {
+    transform: translateY(-2px);
+    background: #ffdb1f;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 991px) {
+    .contenido-banner-purpura {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    .banner-item {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* ══ NAVBAR ══ */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    position: sticky;
+    z-index: 1050;
+}
+
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul) !important;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul) !important;
+}
+
+.botones-a {
+    border-radius: 50px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #fff !important;
+    margin-left: 7px;
+}
+
+.botones-a.verde { background: var(--verde-wsp); }
+.botones-a.azul { background: var(--azul-medio); }
+.botones-a.rojo { background: var(--rojo); }
+
+/* ══ HERO (DISEÑO R&C - POPPINS) ══ */
+.hero {
+    background: var(--azul-oscuro);
+    padding: 110px 0;
+    width: 100%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-container-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text { flex: 1.2; }
+
+
+
+.hero-pretitle {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.hero h1 {
+    font-size: clamp(26px, 3.8vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero h1 span { font-weight: 700; }
+
+.hero-sub {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.hero-stats-footer {
+    display: flex;
+    gap: 30px;
+    
+    /*border-top: 1px solid rgba(255, 255, 255, 0.15);*/
+    padding-top: 25px;
+}
+
+.h-stat { display: flex; align-items: center; gap: 12px; }
+.h-stat i { font-size: 28px; opacity: 0.9; }
+.h-stat-info strong { display: block; font-size: 14px; font-weight: 700; }
+.h-stat-info span { font-size: 14px; color: white; }
+
+
+
+/* Definimos la animación de pulso */
+@keyframes pulso-suave {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15); /* Crece un 15% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.clase-icon {
+    width: 70px;         
+    height: 70px;
+    object-fit: contain; 
+    filter: brightness(0) invert(1); 
+    opacity: 0.9;
+    
+    animation: pulso-suave 2s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+
+.h-stat:hover .clase-icon {
+    animation-play-state: paused; 
+    transform: scale(1.2); 
+    opacity: 1;
+}
+
+
+.h-stat {
+    display: flex;
+    align-items: center; 
+    gap: 15px;           
+    flex: 1;             
+}
+
+/* Ajuste del texto al lado del icono */
+.h-stat-info strong {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    margin-bottom: 2px;
+}
+
+.h-stat-info span {
+    font-size: 12px;
+    line-height: 1.2;
+    display: block;
+}
+
+/* Lado Imagen */
+.hero-visual { flex: 1; display: flex; justify-content: flex-end; }
+
+.video-thumbnail {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    background: #000;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.video-text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.video-text-overlay h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.video-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    opacity: 0.7;
+}
+
+
+#trayectoria{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+#edad{
+    margin-top: 0px;
+    font-size: 40px;
+}
+#capacitando{
+    font-size: 14px;
+
+}
+
+/*SOBRE NOOSOTROS*/
+/* ══ SECCIÓN ACERCA DE NOSOTROS (REPLICADO) ══ */
+
+.acercaNostros{
+    font-size: 50px;
+    font-weight: 600;
+}
+.trayectoriaCompromiso{
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+.acerca-section {
+    padding: 80px 0;
+    text-align: center;
+    background: #fff;
+}
+
+.acerca-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    margin-bottom: 10px;
+}
+
+.acerca-section .sub {
+    font-size: 16px;
+    color: var(--texto-medio);
+    margin-bottom: 50px;
+}
+
+/* Bloque Historia */
+.historia-card {
+    display: flex;
+    background: var(--gris-claro);
+    border-radius: 24px;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 30px;
+    align-items: stretch;
+}
+
+.historia-img {
+    flex: 1;
+    min-height: 350px;
+}
+
+.historia-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.historia-content {
+    flex: 1.5;
+    padding: 50px;
+}
+
+.historia-content h3 {
+    font-family: 'Poppins';
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.historia-content p {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--texto-oscuro);
+    margin-bottom: 15px;
+}
+
+.historia-content span{
+
+    font-family: 'Poppins';
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1b;
+
+}
+
+/* Grid Misión y Visión */
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.mv-card {
+    background: var(--gris-claro);
+    padding: 45px;
+    border-radius: 24px;
+    text-align: left;
+    font-family: 'Poppins';
+}
+
+
+
+.mv-card p {
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--texto-oscuro);
+}
+
+.mv-card span {
+    font-family: 'Poppins';
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1b;
+}
+
+
+.form-item-acerca {
+    display: flex;         
+    align-items: flex-start; 
+    gap: 12px;             
+}
+
+.form-icon-acerca {
+    width: 25px;           
+    height: auto;
+    margin-top:9px;       
+    flex-shrink: 0;        
+}
+
+
+/* ══ RESPONSIVE ACERCA DE ══ */
+@media (max-width: 991px) {
+    .historia-card {
+        flex-direction: column;
+    }
+    .historia-img {
+        min-height: 250px;
+        font-family: 'Poppins';
+    }
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+    .historia-content, .mv-card {
+        padding: 30px;
+    }
+}
+
+
+.acerca-nostros{
+    font-weight: 200;
+}
+
+/* NUESTROS LOGROS*/
+/* ══ SECCIÓN LOGROS Y APORTES ══ */
+.logros-aportes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-row {
+    display: flex;
+    min-height: 500px; /* Altura de los cuadros */
+}
+
+.grid-row.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.grid-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Colores */
+.bg-gris-box { background-color: #ededed; }
+.bg-fucsia { background-color: #ff004d; }
+
+.content-padding {
+    padding: 10% 15%; /* Espaciado interno para el texto */
+    text-align: left;
+}
+
+.title-bold {
+    font-family: 'Poppins',;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--texto-oscuro);
+}
+
+.list-logros {
+    list-style: none;
+    padding: 0;
+}
+
+.list-logros li {
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.desc-text {
+    font-family: 'Poppins';
+    font-size: 17px;
+    line-height: 1.8;
+    color: black;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .grid-row, .grid-row.row-reverse {
+        flex-direction: column; 
+        min-height: auto;
+    }
+
+    .bg-fucsia.d-none-mobile {
+        display: none; 
+    }
+
+    .content-padding {
+        padding: 60px 25px;
+    }
+
+    .title-bold {
+        font-size: 26px;
+    }
+}
+
+/* LISTOS PARA FORTALECER TU EQUIPO*/
+
+/* --- ESTILOS LOGROS Y APORTES --- */
+.grid-stats { width: 100%; display: flex; flex-direction: column; }
+.stat-row { display: flex; min-height: 450px; }
+.stat-row.row-reverse { flex-direction: row-reverse; }
+.stat-box { flex: 1; display: flex; align-items: center; justify-content: center; }
+.bg-light-gray { background: #eeeeee; }
+.bg-fucsia { background: #ff004d; }
+.box-inner { padding: 60px; max-width: 600px; }
+
+.section-title-alt { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 32px; margin-bottom: 25px; }
+.stats-list { list-style: none; padding: 0; }
+.stats-list li { margin-bottom: 15px; font-size: 14px; line-height: 1.6; color: var(--texto-medio); }
+
+/* --- ESTILOS FORMULARIO Y CTA --- */
+.cta-blue-banner { font-family: 'Poppins';  background: #00206b; padding: 100px 0; text-align: center; color: #fff; }
+.cta-blue-banner h2 { font-size: 30px; font-weight: 600; margin-bottom: 10px; }
+.cta-blue-banner p {font-family: 'Poppins'; font-weight: 400; margin-top: 20px;}
+.cta-btns { display: flex; gap: 15px; justify-content: center; margin-top: 10px; }
+
+.btn-white {font-size: 17px;   background: #fff; color: #00206b; padding: 12px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.btn-green { font-size: 17px; font-family: 'Poppins'; font-weight: 600;  background: #1da851; color: #fff; padding: 12px 25px; border-radius: 8px;  text-decoration: none; }
+
+.btn-white, .btn-green {
+    display: inline-block; 
+    transition: all 0.3s ease; 
+}
+
+
+.btn-white:hover {
+    background-color: #f0f0f0; 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+
+.btn-green:hover {
+    background-color: #158a42; 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 15px rgba(29, 168, 81, 0.3); 
+}
+
+.btn-white:active, .btn-green:active {
+    transform: translateY(-1px); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.form-container-wrap { background: #f4f4f4; padding: 80px 0; }
+.form-flex { display: flex; gap: 50px; align-items: flex-start; }
+.form-info { flex: 1; }
+
+.form-info p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #00206b;
+    margin-bottom: 30px; 
+}
+
+.form-item {
+    display: flex;         
+    align-items: flex-start; 
+    gap: 12px;             
+}
+
+.form-icon {
+    width: 18px;           
+    height: auto;
+    margin-top: 3px;       
+    flex-shrink: 0;        
+}
+
+.form-card { 
+    font-family: 'Poppins';
+    flex: 1; 
+    background: #fff; 
+    padding: 40px; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+
+}
+
+.form-card p{
+    color: #afafaf;
+    font-family: 'Poppins';
+    font-size: 10px;
+}
+
+
+
+
+
+
+.badge-fucsia { background: #ff004d; color: #fff; padding: 10px 15px; border-radius: 5px; font-weight: 600; font-size: 19; }
+.form-title { font-size: 36px; font-weight: 800; color: #00206b; margin: 15px 0; }
+
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 19px; font-weight: 600; margin-bottom: 5px; }
+.input-group input, .input-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+
+.btn-submit-blue { width: 100%; background: #00206b; color: #fff; padding: 15px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+
+/* --- MEDIA QUERIES FAST --- */
+@media (max-width: 991px) {
+    .stat-row, .stat-row.row-reverse { flex-direction: column; min-height: auto; }
+    .d-mobile-none { display: none; }
+    .box-inner { padding: 40px 20px; }
+    .form-flex { flex-direction: column; gap: 40px; }
+    .cta-btns { flex-direction: column; }
+}
+
+/* ══ SECCIONES Y MODALES ══ */
+.sec { padding: 40px 0; }
+footer{background:#0A1F5C;color:rgba(255,255,255,.82);padding:52px 0 0;}
+footer h3 { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #fff; margin-bottom: 15px; }
+footer ul { list-style: none; }
+footer a { color: inherit; text-decoration: none; font-size: 13px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 30px; padding-top: 20px; text-align: center; font-size: 11px; }
+
+.social-icons { display: flex; gap: 10px; margin-top: 15px; }
+.social-icons a { 
+    width: 32px; height: 32px; background: rgba(255,255,255,0.1); 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+
+.wa-float {
+    position: fixed; bottom: 20px; left: 20px; z-index: 999;
+    background: var(--verde-wsp); color: #fff; padding: 10px 18px;
+    border-radius: 50px; text-decoration: none; display: flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 991px) {
+    .hero-container-flex { flex-direction: column; text-align: center; }
+    .hero-text { order: 1; }
+    .hero-visual { order: 2; width: 100%; justify-content: center; }
+    .hero-sub { margin: 0 auto 30px; }
+    .hero-stats-footer strong{
+        font-size: 1000px;
+    }
+    
+    
+    .h-stat {
+        flex-direction: column; /* Icono arriba del texto en móvil */
+        align-items: center;
+        text-align: center;
+    }
+
+    .contenedorAcercaNosotros{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .clase-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .clase-icon-acerca-nosotros {
+        width: 20px;            /* Ajusta el ancho según necesites */
+    height: auto;           /* Mantiene la proporción */
+    display: block;         /* Evita espacios extra debajo de la imagen */
+    }
+
+    h3 {
+    margin: 0;              /* Quitamos el margen por defecto del h3 */
+    font-weight: 600;       /* Tu Semi Bold */
+}
+
+    #edad {
+        font-size: 36px;
+    }
+}
+
+
+
+/* 1. Estilo base para TODOS los inputs y textareas */
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px; /* Padding normal para el que no tiene icono */
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* 2. SOLO si el padre tiene la clase 'input-with-icon', aplicamos el espacio extra */
+.input-with-icon .relative-container input,
+.input-with-icon .relative-container textarea {
+    padding-left: 45px !important; /* Forzamos el espacio solo aquí */
+}
+
+/* 3. Posicionamiento de los iconos */
+.relative-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%; /* Lo centra verticalmente */
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* 4. Ajuste especial para el textarea si decidieras ponerle icono (opcional) */
+.input-with-icon .relative-container textarea ~ .input-icon {
+    top: 15px;
+    transform: none;
+}
+
+/* PATE RESPONSIVE SOBRE NUESTROS LOGROS*/
+/* Solo aplica el espacio cuando la pantalla es pequeña (móvil) */
+@media (max-width: 768px) {
+    .img-mobile-spacing {
+        margin-bottom: 25px !important; /* Ajusta los px a tu gusto */
+        margin-top: 10px !important;    /* Opcional: un poco de espacio arriba también */
+    }
+}
+
+
+/* ══ AJUSTES ESPECÍFICOS PARA MÓVIL ══ */
+@media (max-width: 768px) {
+    
+    /* 1. Espaciado para que la imagen no choque con el bloque azul/gris */
+    .img-mobile-spacing {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        min-height: 300px !important; /* Asegura que la imagen sea visible */
+    }
+
+    /* 2. Alineación de etiquetas del formulario a la izquierda */
+    .form-card, 
+    .form-container-wrap, 
+    .input-group {
+        text-align: left !important;
+    }
+
+    .input-group label {
+        text-align: left !important;
+        display: block !important;
+        width: 100%;
+        padding-left: 2px; /* Alineación visual fina con el borde del input */
+    }
+
+    /* 3. Ajuste de padding en móvil para que el texto no toque los bordes */
+    .content-padding {
+        padding: 40px 20px !important;
+    }
+}
+
+
+/* Texto en mobile placeholder Cuentanos sobre la capacitacion*/
+@media (max-width: 768px) {
+    /* Ocultamos el texto original del placeholder en móvil */
+    #input-mensaje::placeholder {
+        color: transparent;
+    }
+
+    #input-mensaje::placeholder {
+        content: "Describe tus objetivos y cantidad de personas";
+        color: #afafaf; 
+    }
+}
+
+
+/***/
+
+footer {
+    background: var(--azul); /* #0A1F5C */
+    color: rgba(255, 255, 255, 0.82);
+    padding: 52px 0 0;
+}
+
+footer .inner-wrap {
+    max-width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+footer h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: .02em;
+}
+
+footer p, footer li {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+footer ul { list-style: none; padding: 0; }
+footer ul li { margin-bottom: 7px; }
+
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color .2s;
+    font-size: 14px;
+}
+
+footer a:hover { color: var(--amarillo); }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 18px 0;
+    margin-top: 36px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.48);
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s;
+}
+
+.social-icons a:hover {
+    background: #FF044D;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-cert-f {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FF044D;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+/* Responsive Móvil */
+@media(max-width:600px){
+    footer .inner-wrap { padding: 0 20px; }
+    .footer-bottom { margin-top: 24px; padding: 14px 0; }
+}
+
+@media (max-width: 991px) {
+    .hero-stats-footer {
+        display: flex !important;
+        flex-direction: row !important; /* Forzamos que sea fila */
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px; /* Espacio entre los dos bloques */
+        padding-top: 25px;
+        width: 100%;
+    }
+
+    .h-stat {
+        flex: 1; /* Hace que ambos ocupen el mismo espacio */
+        display: flex;
+        flex-direction: column; /* Icono arriba, texto abajo */
+        align-items: center;
+        text-align: center;
+        min-width: 140px; /* Evita que se compriman demasiado */
+    }
+
+    /* Ajuste de los números para que no se vean gigantes */
+    #edad {
+        font-size: 24px !important; /* Tamaño sugerido para que quepan en línea */
+        display: block;
+        margin: 5px 0;
+    }
+
+    .h-stat-info span {
+        font-size: 11px !important;
+        line-height: 1.2;
+        display: block;
+    }
+
+    .clase-icon {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+
+@media (max-width: 991px) {
+    /* Esto oculta el banner morado original en celulares */
+    .banner-purpura {
+        display: none !important;
+    }
+
+    /* Si creaste el banner de abajo con la clase 'mobile-banner-bottom', 
+       asegúrate de que ESE sí se vea: */
+    .mobile-banner-bottom {
+        display: block !important;
+    }
+}
+
+
+
+/* ================================================================
+   FOOTER R&C CONSULTING - CÓDIGO UNIFICADO Y CORREGIDO
+   ================================================================ */
+
+footer {
+    background: #00206b; /* Azul institucional */
+    color: rgba(255, 255, 255, 0.78);
+    padding: 60px 0 0 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 1. CORRECCIÓN DEL CONTENEDOR (El que causaba el fallo) */
+footer .inner-wrap {
+    max-width: 100% !important; /* Ocupa todo el ancho disponible */
+    padding-left: 80px;         /* Margen interno izquierdo simétrico */
+    padding-right: 80px;        /* Margen interno derecho simétrico */
+    margin: 0 auto;
+    display: block;
+}
+
+/* 2. TIPOGRAFÍA Y CABECERAS */
+footer h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+footer p, 
+footer li {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* 3. ENLACES */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 6px;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #FFB800; /* Color amarillo de hover */
+}
+
+/* 4. BOTÓN DE CERTIFICADOS */
+.btn-cert-f {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FF044D;
+    color: #fff !important;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: background 0.2s;
+    border: none;
+}
+
+.btn-cert-f:hover {
+    background: #D0033E;
+}
+
+/* 5. ICONOS SOCIALES */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.social-icons a:hover {
+    background: #FF044D;
+    transform: translateY(-3px);
+}
+
+/* 6. PIE DE PÁGINA (COPYRIGHT) */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.42);
+    margin: 0;
+}
+
+/* 7. RESPONSIVO */
+@media (max-width: 1200px) {
+    footer .inner-wrap {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    footer .inner-wrap {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    footer .col-md-3 {
+        margin-bottom: 40px; /* Espacio entre columnas al apilarse */
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        padding-top: 40px;
+    }
+    
+    footer .inner-wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* uploads form section */
+.upload-form-section {
+    background-color: #f4f7f6;
+    padding-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.upload-form-section .header-logo {
+    background: #212529;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+.upload-form-section .header-logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.upload-form-section .header-logo p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+.upload-form-section .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.upload-form-section .card-title {
+    color: #0d6efd;
+    font-weight: bold;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+.upload-form-section .btn-primary {
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: bold;
+}
+.upload-form-section .leyenda {
+    font-size: 0.85rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+.upload-form-section .preview-item {
+    background: #e9ecef;
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.upload-form-section .file-name-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    min-width: 0;
+}
+.upload-form-section .file-info {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+
+/* LIBRO DE RECLAMACIONES */
+
+/* SECCION DIV GRIS*/
+/* Estilos para el bloque de image_9cf225.png */
+.info-post-registro {
+    background-color: #808080; /* Color gris oscuro de la imagen */
+    /*color: #ffffff;      */    
+    padding: 50px 0;           /* Espaciado vertical */
+    width: 100%;
+    display: block;
+    padding: 16px 0px 16px 0px;
+}
+
+.info-post-registro p {
+    margin: 0 auto;
+    max-width: 1100px;         /* Ancho máximo para legibilidad */
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;           /* Tamaño de fuente estándar */
+    line-height: 1.6;          /* Interlineado para mejor lectura */
+    font-weight: 400;
+    
+}
+
+/* Adaptación para dispositivos móviles (Responsive) */
+@media (max-width: 991px) {
+    .info-post-registro {
+        padding: 40px 20px;
+    }
+    .info-post-registro p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-post-registro {
+        padding: 30px 15px;
+    }
+    .info-post-registro p {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify; /* Opcional para móviles si el texto es muy largo */
+    }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0A1F5C"/>
+  <rect x="100" y="100" width="600" height="400" rx="20" fill="#1A3A7A"/>
+  <text x="400" y="220" font-family="Poppins, Arial, sans-serif" font-size="60" font-weight="bold" fill="#FFB800" text-anchor="middle">R&amp;C</text>
+  <text x="400" y="290" font-family="Poppins, Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff" text-anchor="middle">Consulting</text>
+  <text x="400" y="370" font-family="Arial, sans-serif" font-size="20" fill="#FF044D" text-anchor="middle">Curso de Especialización</text>
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="14" fill="#8899AA" text-anchor="middle">Gestión Pública</text>
+</svg>

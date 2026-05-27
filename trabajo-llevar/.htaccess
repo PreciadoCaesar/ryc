@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /proyecto-oauth/
+
+# 1. PERMITIR ACCESO DIRECTO A ARCHIVOS EXISTENTES EN PUBLIC (Imágenes, CSS, JS)
+# Si lo que piden existe dentro de la carpeta public, sírvelo directamente
+RewriteCond %{DOCUMENT_ROOT}/proyecto-oauth/public/$1 -f
+RewriteRule ^(.*)$ public/$1 [L]
+
+# 2. PUENTE ESPECÍFICO PARA CALLBACK
+RewriteRule ^callback\.php$ public/callback.php [L]
+
+# 3. REDIRECCIÓN GENERAL
+# Si no es un archivo físico y no estamos ya en public, manda todo a public
+RewriteCond %{REQUEST_URI} !^/proyecto-oauth/public/
+RewriteRule ^(.*)$ public/$1 [L]

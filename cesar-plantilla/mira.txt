@@ -1,0 +1,1081 @@
+<section class="sec bg-white">
+                    <div class="inner-wrap">
+
+                        <h2 style="text-align: center;" class="section-title left">Temario del curso</h2>
+                        <br>
+                        <a class="btn-brochure"
+                            href="https://drive.google.com/file/d/1AvCdgR4_Xsix7Z1sloyzsy9Sx8P_w8a_/view?usp=sharing"
+                            target="_blank" rel="noopener">
+                            <i class="fas fa-download"></i> DESCARGAR BROCHURE (PDF)
+                        </a>
+                        <br>
+
+                        <!-- ============================================================ -->
+                        <!-- DESPLEGABLE PRINCIPAL DEL CURSO -->
+                        <!-- ============================================================ -->
+                        <div class="temario-wrap">
+                            <div class="temario-header" data-bs-toggle="collapse" data-bs-target="#temarioContent"
+                                aria-expanded="true" style="border-radius: 12px; cursor: pointer;">
+                                <span>Diplomado Online Gesión Pública</span>
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <span class="pill-sesiones">18 Sesiones</span>
+                                    <i style="color:#fff;" class="fas fa-chevron-down temario-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="collapse show" id="temarioContent">
+                                <div class="temario-body"
+                                    style="background:#E9E9E9; border-radius: 0 0 12px 12px; padding: 15px;">
+
+                                    <!-- ============================================================ -->
+                                    <!-- SUB-CURSO 1: PRESUPUESTO PÚBLICO 2026 -->
+                                    <!-- ============================================================ -->
+                                    <div class="accordion-item"
+                                        style="border: none; background: transparent; margin-bottom: 12px;">
+                                        <button class="accordion-button collapsed btn-curso" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#curso1" aria-expanded="false"
+                                            style="background: #1a252f; color: white; border-radius: 8px; font-weight: bold; box-shadow: none; font-size: 1.05em; display: flex; justify-content: space-between; align-items: center;">
+                                            <span>CURSO 1: PRESUPUESTO PÚBLICO 2026</span>
+                                            <i class="fas fa-chevron-down curso-arrow" style="color:#fff;"></i>
+                                        </button>
+                                        <div id="curso1" class="collapse" style="padding-top: 10px;">
+                                            <div class="accordion" style="padding-left: 10px;">
+
+                                                <!-- MÓDULO I -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c1mod1"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO I: PLANEAMIENTO Y GESTIÓN ESTRATÉGICA DEL PRESUPUESTO
+                                                        PÚBLICO 2026 BAJO LA LEY N° 32513
+                                                    </button>
+                                                    <div id="c1mod1" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c1s1"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 1: Análisis Estratégico de la Ley N° 32513 -
+                                                                    Presupuesto 2026
+                                                                </button>
+                                                                <div id="c1s1" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <br>
+                                                                        <p><strong>El Presupuesto Público</strong></p>
+                                                                        <ul>
+                                                                            <li>¿Qué es el presupuesto público y por qué
+                                                                                es importante?</li>
+                                                                            <li>Fases del presupuesto público
+                                                                                (Programación, Formulación, Ejecución y
+                                                                                Evaluación)</li>
+                                                                            <li>El enfoque del presupuesto público para
+                                                                                resultados</li>
+                                                                            <li>Directiva de ejecución del Presupuesto
+                                                                                público para el año fiscal 2026</li>
+                                                                            <li>Alcance de las medidas de austeridad y
+                                                                                control del gasto</li>
+                                                                            <li>Responsabilidad Fiscal: Implicancias
+                                                                                sobre acciones administrativas sin
+                                                                                crédito presupuestario.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c1s2"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 2: Los 4 Cambios que Reordenan el Gasto, las
+                                                                    Inversiones y las Contrataciones Públicas Reordenan
+                                                                    el Gasto público 2026
+                                                                </button>
+                                                                <div id="c1s2" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>El Presupuesto Público 2026 en Perú
+                                                                                reordena el gasto priorizando.
+                                                                                (Servicios Sociales, Educación, Salud y
+                                                                                Seguridad ciudadana)</li>
+                                                                            <li>Priorización Social y Servicios
+                                                                                Esenciales</li>
+                                                                            <li>Énfasis en la Continuidad de Inversiones
+                                                                                y Descentralización</li>
+                                                                            <li>Responsabilidad Fiscal y Estabilidad
+                                                                            </li>
+                                                                            <li>Eficiencia en Contrataciones y Gestión
+                                                                                Pública</li>
+                                                                            <li><strong>Nombramiento de Personal para el
+                                                                                    Sector Salud:</strong>
+                                                                                <ul>
+                                                                                    <li>Profesionales, técnicos y
+                                                                                        Auxiliares</li>
+                                                                                    <li>Personal Administrativo - CAS
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><strong>Nombramiento de Personal para el
+                                                                                    Sector Educación:</strong>
+                                                                                <ul>
+                                                                                    <li>Docente (Educación Básica
+                                                                                        Regular - EBR)</li>
+                                                                                    <li>Docentes Universitarios</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- MÓDULO II -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c1mod2"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO II: GESTIÓN Y EJECUCIÓN PRESUPUESTAL 2026: DE LA
+                                                        ARTICULACIÓN POI - PIA AL DOMINIO OPERATIVO EN EL SIAF WEB
+                                                    </button>
+                                                    <div id="c1mod2" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c1s3"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 3: Programación y Formulación Alineada (POI -
+                                                                    PIA)
+                                                                </button>
+                                                                <div id="c1s3" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Articulación del Plan Operativo (POI)
+                                                                                con el Presupuesto (PIA).</li>
+                                                                            <li>Estructura Funcional Programática 2026 y
+                                                                                Clasificadores de Gasto actualizados.
+                                                                            </li>
+                                                                            <li>Presupuesto por Resultados (PPR): Diseño
+                                                                                de indicadores de desempeño y metas
+                                                                                físicas reales.</li>
+                                                                            <li><strong>Caso Práctico:</strong>
+                                                                                Corrección de errores comunes en la
+                                                                                certificación de crédito presupuestario.
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c1s4"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 4: Ejecución Presupuestaria y SIAF Web
+                                                                </button>
+                                                                <div id="c1s4" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>La Cadena de Gasto en el SIAF Web:
+                                                                                Certificación, Compromiso, Devengado y
+                                                                                Girado.</li>
+                                                                            <li>Modificaciones Presupuestarias: Notas de
+                                                                                modificación tipo 3 y tipo 4.</li>
+                                                                            <li>Calendario de Pagos y Programación de
+                                                                                Compromisos Anuales (PCA).</li>
+                                                                            <li>Gestión de Inversiones: Continuidad de
+                                                                                inversiones y su financiamiento.</li>
+                                                                            <li><strong>Taller:</strong> Registro de
+                                                                                operaciones y saneamiento de partidas
+                                                                                restringidas.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- MÓDULO III -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c1mod3"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO III: EVALUACIÓN, CIERRE PRESUPUESTAL Y CALIDAD DEL GASTO:
+                                                        OPTIMIZACIÓN Y ANÁLISIS CON INTELIGENCIA ARTIFICIAL
+                                                    </button>
+                                                    <div id="c1mod3" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c1s5"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 5: Evaluación, Calidad del Gasto y Cierre
+                                                                    Presupuestal
+                                                                </button>
+                                                                <div id="c1s5" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Evaluación Presupuestaria Semestral y
+                                                                                Anual: Análisis de variaciones.</li>
+                                                                            <li>Calidad del Gasto: Eficacia, Eficiencia
+                                                                                y Economía (Valor por Dinero).</li>
+                                                                            <li>El rol de la Contraloría y la Auditoría
+                                                                                de Desempeño.</li>
+                                                                            <li>Cierre presupuestal y conciliación de
+                                                                                marco legal.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c1s6"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 6: Masterclass: Inteligencia Artificial en la
+                                                                    Gestión del Presupuesto Público
+                                                                </button>
+                                                                <div id="c1s6" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li><strong>Introducción a la IA
+                                                                                    Generativa:</strong> Diferencias
+                                                                                prácticas entre Google, Gemini, ChatGPT,
+                                                                                Claude y Perplexity para el gestor
+                                                                                público.</li>
+                                                                            <li><strong>Ingeniería de Prompts
+                                                                                    (Ingeniería de
+                                                                                    Instrucciones):</strong> Estructura
+                                                                                de 4 pasos (Rol, Contexto, Tarea y
+                                                                                Restricción) para obtener resultados
+                                                                                técnicos legales con IA.</li>
+                                                                            <li><strong>Análisis Automatizado de
+                                                                                    Ejecución de Gasto:</strong> Cómo
+                                                                                cargar reportes de ejecución (exportados
+                                                                                del SIAF en Excel) a la IA para
+                                                                                identificar cuellos de botella,
+                                                                                proyectar el devengado a fin de año y
+                                                                                optimizar el Calendario de Pagos.</li>
+                                                                            <li><strong>Redacción de Informes de
+                                                                                    Evaluación Presupuestaria:</strong>
+                                                                                Uso de IA para transformar cuadros
+                                                                                numéricos en informes narrativos para la
+                                                                                Evaluación Semestral y Anual,
+                                                                                justificando las variaciones y
+                                                                                sustentando la "Calidad del Gasto" en
+                                                                                minutos.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ============================================================ -->
+                                    <!-- SUB-CURSO 2: CONTRATACIONES PÚBLICAS 2026 -->
+                                    <!-- ============================================================ -->
+                                    <div class="accordion-item"
+                                        style="border: none; background: transparent; margin-bottom: 12px;">
+                                        <button class="accordion-button collapsed btn-curso" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#curso2" aria-expanded="false"
+                                            style="background: #1a252f; color: white; border-radius: 8px; font-weight: bold; box-shadow: none; font-size: 1.05em; display: flex; justify-content: space-between; align-items: center;">
+                                            <span>CURSO 2: CONTRATACIONES PÚBLICAS 2026</span>
+                                            <i class="fas fa-chevron-down curso-arrow" style="color:#fff;"></i>
+                                        </button>
+                                        <div id="curso2" class="collapse" style="padding-top: 10px;">
+                                            <div class="accordion" style="padding-left: 10px;">
+
+                                                <!-- LECTURAS PREVIAS -->
+                                                <div
+                                                    style="background:#fff; border-radius:8px; padding:12px; margin-bottom:10px; border-left: 4px solid #2c3e50;">
+                                                    <p style="margin-bottom:8px;"><strong>Lecturas Previas
+                                                            Obligatorias:</strong></p>
+                                                    <ul style="margin-bottom:0;">
+                                                        <li>Ley Nº 32069 - Ley General de Contrataciones Públicas</li>
+                                                        <li>Reglamento de la Ley aprobado por DS Nº 009-2025-EF</li>
+                                                        <li>Modificatoria al Reglamento aprobado por DS Nº 001-2026-EF
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <!-- MÓDULO IV -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c2mod1"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO IV: FUNDAMENTOS Y ACTUACIONES PREPARATORIAS EN LA
+                                                        CONTRATACIÓN PÚBLICA
+                                                    </button>
+                                                    <div id="c2mod1" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c2s7"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 7: Aspectos Generales de la Contratación
+                                                                    Pública
+                                                                </button>
+                                                                <div id="c2s7" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Abastecimiento Público y Gestión Pública
+                                                                            </li>
+                                                                            <li>Sistemas Administrativos en la
+                                                                                Contratación Pública</li>
+                                                                            <li>Modelos de contratación Pública</li>
+                                                                            <li>Aspectos Generales de la Contratación
+                                                                                Pública</li>
+                                                                            <li>Actores en la Contratación Pública</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c2s8"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 8: Actos Preparatorios
+                                                                </button>
+                                                                <div id="c2s8" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Requerimiento</li>
+                                                                            <li>Estrategias de Contratación</li>
+                                                                            <li>Expediente de Contratación</li>
+                                                                            <li>Documentos del Procedimiento de
+                                                                                selección.</li>
+                                                                            <li>Disposiciones especiales para la fase de
+                                                                                Actuaciones Preparatorias</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- MÓDULO V -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c2mod2"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO V: FASE Y PROCEDIMIENTOS DE SELECCIÓN EN LA CONTRATACIÓN
+                                                        PÚBLICA
+                                                    </button>
+                                                    <div id="c2mod2" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c2s9"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 9: Disposiciones Generales para la Fase de
+                                                                    Selección
+                                                                </button>
+                                                                <div id="c2s9" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Aspectos generales de la fase selectiva
+                                                                            </li>
+                                                                            <li>Etapas de los procedimientos
+                                                                                competitivos</li>
+                                                                            <li>Metodologías de Calificación y
+                                                                                Evaluación de Ofertas</li>
+                                                                            <li>Situaciones especiales del
+                                                                                procedimiento, declaración de desierto,
+                                                                                cancelación y nulidad del procedimiento
+                                                                            </li>
+                                                                            <li>Apelación.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c2s10"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 10: Procedimientos de Selección
+                                                                </button>
+                                                                <div id="c2s10" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Procedimientos Competitivos</li>
+                                                                            <li>Modalidades Diferenciadas</li>
+                                                                            <li>Procedimientos no competitivos</li>
+                                                                            <li>Disposiciones especiales en la fase de
+                                                                                selección</li>
+                                                                            <li>Disposiciones especiales para
+                                                                                consultorías y obras.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- MÓDULO VI -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c2mod3"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO VI: EJECUCIÓN CONTRACTUAL E INTELIGENCIA ARTIFICIAL EN LA
+                                                        CONTRATACIÓN PÚBLICA
+                                                    </button>
+                                                    <div id="c2mod3" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c2s11"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 11: Disposiciones Generales de Ejecución
+                                                                    Contractual
+                                                                </button>
+                                                                <div id="c2s11" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Desarrollo de la ejecución contractual
+                                                                            </li>
+                                                                            <li>Modificaciones al contrato</li>
+                                                                            <li>Conformidad y pago</li>
+                                                                            <li>Incumplimientos, penalidades y
+                                                                                resolución contractual</li>
+                                                                            <li>Efectos de la resolución contractual,
+                                                                                sanciones administrativas.</li>
+                                                                            <li>Adelantos, garantías y excepciones.</li>
+                                                                            <li>Prestaciones Adicionales, reducciones.
+                                                                            </li>
+                                                                            <li>Ampliación de Plazo</li>
+                                                                            <li>Modificaciones convencionales al
+                                                                                contrato</li>
+                                                                            <li>Modalidades especiales en ejecución de
+                                                                                obra.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c2s12"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 12: Inteligencia Artificial para las Compras
+                                                                    Públicas Eficientes
+                                                                </button>
+                                                                <div id="c2s12" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li><strong>Introducción a la IA
+                                                                                    Generativa:</strong> Diferencias
+                                                                                prácticas entre Google, Gemini, ChatGPT,
+                                                                                Claude y Perplexity para el gestor
+                                                                                público.</li>
+                                                                            <li><strong>Ingeniería de Prompts
+                                                                                    (Ingeniería de
+                                                                                    Instrucciones):</strong> Estructura
+                                                                                de 4 pasos (Rol, Contexto, Tarea y
+                                                                                Restricción) para obtener resultados
+                                                                                técnicos legales con IA.</li>
+                                                                            <li><strong>Automatización de
+                                                                                    Documentos:</strong> Redacción de
+                                                                                TDR (Términos de Referencia) y EETT
+                                                                                (Especificaciones Técnicas) alineados a
+                                                                                la Ley N° 32069.</li>
+                                                                            <li><strong>Inteligencia en el Estudio de
+                                                                                    Mercado:</strong> Uso de IA para
+                                                                                análisis comparativo de cotizaciones y
+                                                                                determinación del "Valor por Dinero".
+                                                                            </li>
+                                                                            <li><strong>Control Preventivo con
+                                                                                    IA:</strong> Identificación de
+                                                                                errores críticos, cláusulas de
+                                                                                direccionamiento y riesgos de nulidad en
+                                                                                las Bases, nulidades y sanciones.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ============================================================ -->
+                                    <!-- SUB-CURSO 3: PLANEAMIENTO ESTRATÉGICO EN SECTOR PÚBLICO -->
+                                    <!-- ============================================================ -->
+                                    <div class="accordion-item"
+                                        style="border: none; background: transparent; margin-bottom: 12px;">
+                                        <button class="accordion-button collapsed btn-curso" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#curso3" aria-expanded="false"
+                                            style="background: #1a252f; color: white; border-radius: 8px; font-weight: bold; box-shadow: none; font-size: 1.05em; display: flex; justify-content: space-between; align-items: center;">
+                                            <span>CURSO 3: PLANEAMIENTO ESTRATÉGICO EN SECTOR PÚBLICO</span>
+                                            <i class="fas fa-chevron-down" style="color:#fff; margin-left: auto;"></i>
+                                        </button>
+                                        <div id="curso3" class="collapse" style="padding-top: 10px;">
+                                            <div class="accordion" style="padding-left: 10px;">
+
+                                                <!-- MÓDULO VII -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c3mod1"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO VII: SISTEMA NACIONAL DE PLANEAMIENTO ESTRATÉGICO Y
+                                                        POLÍTICAS NACIONALES
+                                                    </button>
+                                                    <div id="c3mod1" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c3s13"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 13: El Sistema Nacional de Planeamiento
+                                                                    Estratégico
+                                                                </button>
+                                                                <div id="c3s13" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Conceptos técnicos y normativos del
+                                                                                SINAPLAN y su alcance.</li>
+                                                                            <li>Ciclo del Planeamiento y la metodología
+                                                                                para su desarrollo.</li>
+                                                                            <li>El rol del órgano rector CEPLAN y
+                                                                                funciones.</li>
+                                                                            <li>La Cadena de Valor para entender la
+                                                                                acción pública.</li>
+                                                                            <li>El enfoque de resultados para una
+                                                                                gestión estratégica</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c3s14"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 14: Planeamiento Estratégico y las Políticas
+                                                                    Nacionales
+                                                                </button>
+                                                                <div id="c3s14" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Objetivos de Desarrollo Sostenible (ODS)
+                                                                                de la Agenda 2030 y la Visión al 2050.
+                                                                            </li>
+                                                                            <li>Implementación del Plan Estratégico de
+                                                                                Desarrollo Nacional – PEDN.</li>
+                                                                            <li>Políticas Nacionales.</li>
+                                                                            <li>Planeamiento estratégico participativo.
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- MÓDULO VIII -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c3mod2"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO VIII: PLANEAMIENTO ESTRATÉGICO SECTORIAL Y TERRITORIAL
+                                                    </button>
+                                                    <div id="c3mod2" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c3s15"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 15: Planificación Estratégica - Sectorial
+                                                                </button>
+                                                                <div id="c3s15" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Plan Estratégico Sectorial Multianual
+                                                                                (PESEM) y Plan Estratégico
+                                                                                Multisectorial (PEM).</li>
+                                                                            <li>Elaboración (fases/etapas).</li>
+                                                                            <li><strong>Matrices</strong>
+                                                                                <ul>
+                                                                                    <li>Articulación del PEDN y PESEM.
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c3s16"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 16: Planificación Estratégica Territorial
+                                                                </button>
+                                                                <div id="c3s16" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Planeamiento Estratégico Territorial:
+                                                                                Plan de Desarrollo Regional/Local
+                                                                                Concertado (PDRC/PDLC).</li>
+                                                                            <li>Formulación (fases/etapas).</li>
+                                                                            <li><strong>Matrices</strong>
+                                                                                <ul>
+                                                                                    <li>Articulación del PEDN y PDRC.
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- MÓDULO IX -->
+                                                <div class="accordion-item"
+                                                    style="border: none; background: transparent; margin-bottom: 10px;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#c3mod3"
+                                                        aria-expanded="false"
+                                                        style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                                                        MÓDULO IX: PLANEAMIENTO ESTRATÉGICO INSTITUCIONAL E INTELIGENCIA
+                                                        ARTIFICIAL
+                                                    </button>
+                                                    <div id="c3mod3" class="collapse" style="padding-top: 10px;">
+                                                        <div class="accordion">
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c3s17"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 17: El Planeamiento Estratégico Institucional
+                                                                    como Hoja de Ruta para la Transformación de las
+                                                                    Entidades Públicas
+                                                                </button>
+                                                                <div id="c3s17" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Plan Estratégico Institucional (PEI).
+                                                                            </li>
+                                                                            <li>Formulación del PEI.</li>
+                                                                            <li>Vinculación del PEI con otros planes.
+                                                                            </li>
+                                                                            <li>Matrices y Ruta Estratégica.</li>
+                                                                            <li>Gestión del Plan Operativo
+                                                                                Institucional.</li>
+                                                                            <li>POI Multianual y POI Anual consistente
+                                                                                con el PIA.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="accordion-item"
+                                                                style="border:none; margin-bottom:5px;">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse" data-bs-target="#c3s18"
+                                                                    style="border-radius: 8px;">
+                                                                    SESIÓN 18: Aplicaciones Prácticas de IA para el
+                                                                    Planeamiento Estratégico en el Sector Público
+                                                                </button>
+                                                                <div id="c3s18" class="collapse">
+                                                                    <div class="accordion-body"
+                                                                        style="background:white; border-radius:0 0 8px 8px;">
+                                                                        <ul><br>
+                                                                            <li>Introducción al uso de herramientas de
+                                                                                inteligencia artificial para apoyar
+                                                                                procesos de planeamiento en entidades
+                                                                                públicas.</li>
+                                                                            <li>Diseño de prompts desde cero.</li>
+                                                                            <li>Uso de IA para diagnóstico de problemas
+                                                                                institucionales, análisis de tendencias,
+                                                                                construcción preliminar de escenarios,
+                                                                                apoyo en la formulación de OEI, AEI e
+                                                                                indicadores, y redacción de borradores
+                                                                                de seguimiento y evaluación.</li>
+                                                                            <li>Aplicación práctica con casos reales del
+                                                                                sector público vinculados al PEI, POI y
+                                                                                la gestión por resultados.</li>
+                                                                            <li>Uso de herramientas de apoyo como el
+                                                                                Observatorio Nacional de Prospectiva, la
+                                                                                Guía de Prospectiva del SINAPLAN, el
+                                                                                Aplicativo CEPLAN y la Consulta CEPLAN.
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ============================================================ -->
+<!-- SUB-CURSO 4: SISTEMAS INFORMÁTICOS: SIAF SP, SIGA MEF Y SEACE Y PLADICOP -->
+<!-- ============================================================ -->
+<div class="accordion-item"
+    style="border: none; background: transparent; margin-bottom: 12px;">
+    <button class="accordion-button collapsed btn-curso" type="button"
+        data-bs-toggle="collapse" data-bs-target="#curso4" aria-expanded="false"
+        style="background: #1a252f; color: white; border-radius: 8px; font-weight: bold; box-shadow: none; font-size: 1.05em; display: flex; justify-content: space-between; align-items: center;">
+        <span>CURSO 4: SISTEMAS INFORMÁTICOS: SIAF SP, SIGA MEF Y SEACE Y PLADICOP</span>
+        <i class="fas fa-chevron-down curso-arrow" style="color:#fff;"></i>
+    </button>
+    <div id="curso4" class="collapse" style="padding-top: 10px;">
+        <div class="accordion" style="padding-left: 10px;">
+
+            <!-- MÓDULO X -->
+            <div class="accordion-item"
+                style="border: none; background: transparent; margin-bottom: 10px;">
+                <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#c4mod1"
+                    aria-expanded="false"
+                    style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                    MÓDULO X: GESTIÓN OPERATIVA DEL SIGA MEF 2026 PARA CENTROS DE COSTO:
+                    REGISTRO, APROBACIÓN Y TRAZABILIDAD DE REQUERIMIENTOS
+                </button>
+                <div id="c4mod1" class="collapse" style="padding-top: 10px;">
+                    <div class="accordion">
+
+                        <div class="accordion-item"
+                            style="border:none; margin-bottom:5px;">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#c4s19"
+                                style="border-radius: 8px;">
+                                SESIÓN 19: El SIAF SP y su Aplicación en Presupuesto y Logística
+                            </button>
+                            <div id="c4s19" class="collapse">
+                                <div class="accordion-body"
+                                    style="background:white; border-radius:0 0 8px 8px;">
+                                    <ul><br>
+                                        <li>D. L. N° 1436: Decreto Legislativo Marco de la
+                                            Administración Financiera del Sector Público.</li>
+                                        <li>Leyes Generales de los Sistemas Nacionales (Presupuesto,
+                                            Contabilidad, Tesorería) y su relación con el SIAF.</li>
+                                        <li>Definición conceptual: ¿Qué es el SIAF?.</li>
+                                        <li>Evolución del sistema: El SIAF-SP, el SIAF-RP y el nuevo
+                                            entorno SIAF WEB 2026.</li>
+                                        <li>Identificación de las Directivas y Guías de Ejecución
+                                            vigentes.</li>
+                                        <li>Presupuesto Institucional de Apertura (PIA) y Notas
+                                            Modificatorias.</li>
+                                        <li>Actos Preparatorios: Registro del Certificado de Crédito
+                                            Presupuestal en la Plataforma SIAF.</li>
+                                        <li>Autorización del certificado presupuestal en el SIAF WEB
+                                            MADAF.</li>
+                                        <li>Administración y gestión de Consultas y Reportes de
+                                            expedientes.</li>
+                                        <li>Generación de reportes y detalles de notas de
+                                            certificación de crédito presupuestal.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item"
+                            style="border:none; margin-bottom:5px;">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#c4s20"
+                                style="border-radius: 8px;">
+                                SESIÓN 20: Ejecución de Tesorería, Contabilidad y Cierre del Gasto
+                            </button>
+                            <div id="c4s20" class="collapse">
+                                <div class="accordion-body"
+                                    style="background:white; border-radius:0 0 8px 8px;">
+                                    <ul><br>
+                                        <li>Registro de Proveedores: RUC del Cliente y Registro de
+                                            Beneficiarios OPE.</li>
+                                        <li>Fases de Ejecución del Gasto: Compromiso Mensual,
+                                            Devengado, Girado y Pagado.</li>
+                                        <li>Documentos que agrupan el gasto en la fase Devengado o
+                                            Rendición.</li>
+                                        <li>Manejo de Impuestos a la SUNAT y Constancias de pago
+                                            (SIAF WEB).</li>
+                                        <li>Consultas operativas: Movimientos bancarios y Consulta
+                                            CCI en el SIAF WEB.</li>
+                                        <li>Procedimientos de corrección: Modificación de registro
+                                            SIAF y tipos de recurso.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- MÓDULO XI -->
+            <div class="accordion-item"
+                style="border: none; background: transparent; margin-bottom: 10px;">
+                <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#c4mod2"
+                    aria-expanded="false"
+                    style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                    MÓDULO XI: GESTIÓN OPERATIVA EN EL PLADICOP Y SEACE: ESTANDARIZACIÓN DE
+                    BIENES, BUSCADORES PÚBLICOS Y EJECUCIÓN DE CONTRATOS MENORES
+                </button>
+                <div id="c4mod2" class="collapse" style="padding-top: 10px;">
+                    <div class="accordion">
+
+                        <div class="accordion-item"
+                            style="border:none; margin-bottom:5px;">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#c4s21"
+                                style="border-radius: 8px;">
+                                SESIÓN 21: Marco Normativo del SIGA MEF
+                            </button>
+                            <div id="c4s21" class="collapse">
+                                <div class="accordion-body"
+                                    style="background:white; border-radius:0 0 8px 8px;">
+                                    <ul><br>
+                                        <li><strong>Marco Normativo de la Cadena de Abastecimiento
+                                                Público:</strong> Principales lineamientos del
+                                            Decreto Legislativo N° 1439 y su relación con la Ley de
+                                            Contrataciones del Estado.</li>
+                                        <li><strong>Definición y Propósito:</strong> ¿Qué es el SIGA
+                                            MEF, por qué es de uso obligatorio y cuáles son los
+                                            beneficios de su implementación para la entidad?</li>
+                                        <li><strong>Interoperabilidad de Sistemas:</strong> Cómo se
+                                            articula la información ingresada en el SIGA con el SIAF
+                                            y el presupuesto institucional.</li>
+                                        <li><strong>Estructura Organizacional en el Sistema:</strong>
+                                            Conceptos clave sobre Unidades Ejecutoras, Centros de
+                                            Costo, Actividades Operativas y Metas Presupuestales.
+                                        </li>
+                                        <li><strong>Catálogo Institucional de Bienes y
+                                                Servicios:</strong> Criterios para la búsqueda y
+                                            selección correcta de ítems (clasificadores de gasto y
+                                            catálogo ONU).</li>
+                                        <li><strong>Acceso al entorno real:</strong> Ingreso al DEMO
+                                            SIGA 2026, configuración de perfiles
+                                            <ul>
+                                                <li>Centro de Costo</li>
+                                                <li>Catálogo Institucional</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item"
+                            style="border:none; margin-bottom:5px;">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#c4s22"
+                                style="border-radius: 8px;">
+                                SESIÓN 22: Operaciones Fundamentales: Registro de Pedidos y
+                                Requerimientos
+                            </button>
+                            <div id="c4s22" class="collapse">
+                                <div class="accordion-body"
+                                    style="background:white; border-radius:0 0 8px 8px;">
+                                    <ul><br>
+                                        <li><strong>Registro práctico en:</strong>
+                                            <ul>
+                                                <li><strong>Bienes:</strong> Registro paso a paso de
+                                                    tu primer Pedido de Compra (desde útiles de
+                                                    oficina hasta suministros especializados).</li>
+                                                <li><strong>Servicios:</strong> Creación de un
+                                                    Pedido de Servicio impecable, vinculación de
+                                                    Términos de Referencia y justificación técnica
+                                                    en el sistema.</li>
+                                            </ul>
+                                        </li>
+                                        <li>Aprobación de pedidos en el SIGA MEF.</li>
+                                        <li>Casuística práctica de cómo tu requerimiento se
+                                            convierte en una Orden de Compra o Servicio consolidada.
+                                        </li>
+                                        <li><strong>Interfase SIGA-SIAF en la práctica:</strong> Lo
+                                            que todo asistente debe verificar sobre la Certificación
+                                            Presupuestal (CCP) para asegurar el presupuesto de su
+                                            área.</li>
+                                        <li><strong>Gestión con Almacén:</strong> Procedimiento
+                                            correcto para visualizar el ingreso de bienes y la
+                                            generación de PECOSAS (Pedido Comprobante de Salida).
+                                        </li>
+                                        <li>Solución en vivo de los errores, bloqueos y alertas más
+                                            comunes que enfrentan los usuarios de los Centros de
+                                            Costo.</li>
+                                        <li>Emisión, exportación e impresión de los formatos
+                                            oficiales obligatorios para el archivo del área usuaria.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- MÓDULO XII -->
+            <div class="accordion-item"
+                style="border: none; background: transparent; margin-bottom: 10px;">
+                <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#c4mod3"
+                    aria-expanded="false"
+                    style="background: #2c3e50; color: white; border-radius: 8px; font-weight: bold; box-shadow: none;">
+                    MÓDULO XII: OPERATIVIDAD DEL SEACE, PLADICOP Y GESTIÓN DE CONTRATACIONES
+                    MENORES
+                </button>
+                <div id="c4mod3" class="collapse" style="padding-top: 10px;">
+                    <div class="accordion">
+
+                        <div class="accordion-item"
+                            style="border:none; margin-bottom:5px;">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#c4s23"
+                                style="border-radius: 8px;">
+                                SESIÓN 23: Plataforma Digital de Contrataciones Públicas - PLADICOP
+                                y Sistema Electrónico de Contrataciones del Estado SEACE
+                            </button>
+                            <div id="c4s23" class="collapse">
+                                <div class="accordion-body"
+                                    style="background:white; border-radius:0 0 8px 8px;">
+                                    <ul><br>
+                                        <li>¿Qué es el PLADICOP?</li>
+                                        <li>¿Qué es el SEACE?</li>
+                                        <li>Certificado SEACE</li>
+                                        <li>Tipos de Usuarios del SEACE</li>
+                                        <li>Listado de Bienes y Servicios Comunes (Fichas Técnicas
+                                            Aprobadas)</li>
+                                        <li>Consulta de Fichas Técnicas Aprobadas</li>
+                                        <li>Consulta de Proyectos de Fichas Técnicas</li>
+                                        <li>Fichas Homologadas</li>
+                                        <li>Consulta de Fichas de Homologación aprobadas vigentes
+                                        </li>
+                                        <li>Consulta de Proyectos de Fichas de Homologación</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item"
+                            style="border:none; margin-bottom:5px;">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#c4s24"
+                                style="border-radius: 8px;">
+                                SESIÓN 24: Principales buscadores en el SEACE y Contratos menores
+                            </button>
+                            <div id="c4s24" class="collapse">
+                                <div class="accordion-body"
+                                    style="background:white; border-radius:0 0 8px 8px;">
+                                    <ul><br>
+                                        <li>Acceso a Buscadores Públicos</li>
+                                        <ul>
+                                            <li>Revisión de Planes Anuales</li>
+                                        <li>Revisión del buscador CUBSO</li>
+                                        <li>Revisión de Oportunidades de Negocio</li>
+                                        <li>Revisión de procedimientos de contratación</li>
+                                        <li>Aplicativo Móvil "Búsqueda de Oportunidades de Negocio"
+                                        </li>
+                                        </ul>
+                                        <li>Ley 32069 y su Reglamento</li>
+                                        <ul>
+                                            <li>Anuncio de Contratación Futura</li>
+                                        <li>Contratos Menores</li>
+                                        </ul>
+                                        <li>Órdenes de Compra y órdenes de Servicio</li>
+                                        <ul>
+                                            <li>Búsqueda de Órdenes de Compra y Órdenes de Servicio</li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>

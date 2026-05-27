@@ -1,0 +1,192 @@
+@extends('layouts.app-main')
+
+@section('title', 'Pagar | R&C Consulting')
+
+@section('styles')
+<link rel="stylesheet"
+      href="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic-reset.css">
+<script src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
+        kr-public-key="{{ $publicKey }}"
+        kr-post-url-success="{{ route('checkout.success') }}"
+        kr-post-url-error="{{ route('checkout.cancel') }}"
+        kr-post-url-cancel="{{ route('checkout.cancel') }}"
+        kr-language="es-PE">
+</script>
+<script src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js"></script>
+<style>
+    .payment-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .payment-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #0A1F5C;
+        margin-bottom: 30px;
+    }
+    .payment-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+    @media (max-width: 768px) {
+        .payment-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .payment-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 25px;
+    }
+    .payment-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0A1F5C;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #f0f0f0;
+    }
+    .payment-info-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 14px;
+    }
+    .payment-info-row:last-child {
+        border-bottom: none;
+    }
+    .payment-total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 700;
+        color: #0A1F5C;
+        padding-top: 15px;
+        margin-top: 10px;
+        border-top: 2px solid #e0e0e0;
+    }
+    .payment-contact {
+        font-size: 14px;
+        color: #666;
+        margin-top: 15px;
+        padding: 12px;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+    .payment-contact strong {
+        color: #0A1F5C;
+    }
+    .payment-footer-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 13px;
+        color: #999;
+    }
+    .payment-footer-text i {
+        color: #5044c2;
+    }
+
+    #payment-form-wrapper {
+        min-height: 380px;
+    }
+    #payment-form-wrapper .kr-embedded {
+        min-height: 320px;
+    }
+
+    #payment-form-wrapper .kr-payment-button {
+        background: #5044c2 !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+        padding: 14px 30px !important;
+        border: none !important;
+        color: #fff !important;
+        width: 100% !important;
+        text-transform: none !important;
+        transition: opacity 0.3s !important;
+    }
+    #payment-form-wrapper .kr-payment-button:hover {
+        opacity: 0.9 !important;
+    }
+
+    #payment-form-wrapper .kr-pan,
+    #payment-form-wrapper .kr-expiry,
+    #payment-form-wrapper .kr-security-code {
+        border: 1px solid #d0d0d0 !important;
+        border-radius: 8px !important;
+        padding: 12px 15px !important;
+        font-size: 14px !important;
+        transition: border-color 0.3s !important;
+    }
+    #payment-form-wrapper .kr-pan:focus,
+    #payment-form-wrapper .kr-expiry:focus,
+    #payment-form-wrapper .kr-security-code:focus {
+        border-color: #5044c2 !important;
+        outline: none !important;
+    }
+    #payment-form-wrapper .kr-form-error {
+        color: #dc3545 !important;
+        font-size: 13px !important;
+        margin-top: 8px !important;
+    }
+</style>
+@endSection
+
+@section('content')
+<div class="payment-container">
+    <h1 class="payment-title"><i class="fas fa-lock" style="color:#5044c2;margin-right:10px;"></i>Pagar</h1>
+
+    <div class="payment-grid">
+        <div class="payment-card">
+            <h3><i class="fas fa-receipt"></i> Resumen del Pedido</h3>
+
+            @foreach($purchases as $purchase)
+                <div class="payment-info-row">
+                    <span>{{ $purchase->course->title ?? 'Curso' }}</span>
+                    <span style="font-weight:600;color:#FF044D;">
+                        S/ {{ number_format($purchase->amount, 0) }}
+                    </span>
+                </div>
+            @endforeach
+
+            <div class="payment-total">
+                <span>Total</span>
+                <span>S/ {{ number_format($total, 0) }}</span>
+            </div>
+
+            <div class="payment-contact">
+                <strong><i class="fas fa-user"></i> {{ $contact['name'] }}</strong><br>
+                <i class="fas fa-envelope"></i> {{ $contact['email'] }}<br>
+                <i class="fas fa-phone"></i> {{ $contact['phone'] }}
+            </div>
+        </div>
+
+        <div class="payment-card">
+            <h3><i class="fas fa-credit-card"></i> Pago con Tarjeta</h3>
+            <p style="font-size:14px;color:#888;margin-bottom:20px;">
+                Paga de forma segura con Visa, Mastercard, American Express o Yape.
+            </p>
+
+            <div id="payment-form-wrapper">
+                <div class="kr-embedded"
+                     kr-form-token="{{ $formToken }}">
+                    <div class="kr-pan"></div>
+                    <div class="kr-expiry"></div>
+                    <div class="kr-security-code"></div>
+                    <button class="kr-payment-button"></button>
+                    <div class="kr-form-error"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-footer-text">
+        <i class="fas fa-shield-alt"></i> Tus datos están protegidos con <strong>Izipay</strong> &middot; Pago 100% seguro
+    </div>
+</div>
+@endSection

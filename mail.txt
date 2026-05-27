@@ -1,0 +1,18 @@
+Mail Client Configuration
+POP3 Settings
+Server	rc-consulting.org
+Port	110 / 995 (SSL)
+Security	STARTTLS
+IMAP Settings
+Server	rc-consulting.org
+Port	143 / 993 (SSL)
+Security	STARTTLS
+SMTP Settings
+Server	rc-consulting.org
+Port	25 / 587 / 465 (SSL)
+Security	STARTTLS
+Sieve Settings
+Server	rc-consulting.org
+Port	4190
+Security	None (Plain)
+Purpose	Email Filtering

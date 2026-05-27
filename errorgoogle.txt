@@ -1,0 +1,97 @@
+Internal Server Error
+
+Copy as Markdown
+Error
+app\Http\Controllers\Auth\GoogleController.php:15
+Class "Laravel\Socialite\Facades\Socialite" not found
+
+LARAVEL
+12.56.0
+PHP
+8.2.12
+UNHANDLED
+CODE 0
+500
+GET
+http://localhost:8000/auth/google
+
+Exception trace
+App\Http\Controllers\Auth\GoogleController->redirect()
+app\Http\Controllers\Auth\GoogleController.php:15
+
+10
+11class GoogleController extends Controller
+12{
+13    public function redirect()
+14    {
+15        return Socialite::driver('google')->redirect();
+16    }
+17
+18    public function callback()
+19    {
+20        try {
+21            $googleUser = Socialite::driver('google')->stateless()->user();
+22            
+23            // Buscar usuario por google_id o email
+24            $user = User::where('google_id', $googleUser->id)
+25                        ->orWhere('email', $googleUser->email)
+26                        ->first();
+27
+47 vendor frames
+
+Illuminate\Foundation\Application->handleRequest(object(Illuminate\Http\Request))
+public\index.php:20
+
+1 vendor frame
+
+Queries
+1-1 of 1
+sqlite
+select * from "sessions" where "id" = 'rWubRe5tcxwy7qM7hJf97j8eDlxmCXSmgf4kUdXs' limit 1
+1.65ms
+Headers
+host
+localhost:8000
+connection
+keep-alive
+sec-ch-ua
+"Brave";v="147", "Not.A/Brand";v="8", "Chromium";v="147"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-platform
+"Windows"
+upgrade-insecure-requests
+1
+user-agent
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
+accept
+text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+sec-gpc
+1
+accept-language
+es-ES,es;q=0.9
+sec-fetch-site
+same-origin
+sec-fetch-mode
+navigate
+sec-fetch-user
+?1
+sec-fetch-dest
+document
+referer
+http://localhost:8000/
+accept-encoding
+gzip, deflate, br, zstd
+cookie
+crisp-client%2Fsession%2F5ce07c61-272a-42a6-ba43-64712a6360ac=session_ad9c9371-5eea-432c-8c3e-9ee2e0c80d03; XSRF-TOKEN=eyJpdiI6Im96SVlLdTc4ek9qVDU1TVhkaDUxV1E9PSIsInZhbHVlIjoiR1ZGcXg5Tm15SmExR2ZBQjZ3eVoxZ3RZeEd1aFVKZmVFMXdZMVZCdTRiTkxxRkY1U0l4MjJOYVdpYW9wVGJmMGQ0NnEwRDBWRHc3aENOb2V6SEc3Z1p0KzNnVmNvcC90NkQzcURxT2o5b1hIazIwaWxaS1VJcS9PZGRweklac1kiLCJtYWMiOiJlMjFlNWM3ZGZiODA4MDhkMjQyOTU5NDE1YTIwYTQ1MDBmY2MxMzQyN2M3ZjBhYjM2MmZiZDg0YmI0NWZhMmExIiwidGFnIjoiIn0%3D; laravel-session=eyJpdiI6IjFxUmZLeldiUjlVZnAzQWxWQ1JCOXc9PSIsInZhbHVlIjoiMVNxdnBhUEt1MTFZOVQ0Z0dXWmN2SE1KN1dqSGF4VGZGK0dZWGxaQ3dnbGdqbUcxNEdTR01LL0R4KzJ6ZUxUTXIrN0VtdDRzSFA1cFZaa1lpa3hFZFoyKzBRSVl3ZWxnbGY5VThvaklBN1JjZUxYR21oZE01ZnhIa3Jxdk02ZVciLCJtYWMiOiJmYmQzMGYxNjU0OWRjZTViY2U1NDIwNjUyZWJiNzNhMjkzZTY2NDY0MTM5MjVhM2ViZDk3ZGM4YWY3OTRkYmJhIiwidGFnIjoiIn0%3D
+Body
+// No request body
+Routing
+controller
+App\Http\Controllers\Auth\GoogleController@redirect
+route name
+auth.google
+middleware
+web
+Routing parameters
+// No routing parameters

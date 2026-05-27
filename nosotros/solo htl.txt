@@ -1,0 +1,17 @@
+.contenedorAcercaNosotros {
+    display: flex;         /* Pone los elementos en línea */
+    align-items: center;    /* Alinea verticalmente al centro (importante) */
+    justify-content: center; /* Mantiene el grupo centrado en la tarjeta */
+    gap: 10px;              /* Separa el icono del texto sin usar margin */
+}
+
+.clase-icon-acerca-nosotros {
+    width: 20px;            /* Ajusta el ancho según necesites */
+    height: auto;           /* Mantiene la proporción */
+    display: block;         /* Evita espacios extra debajo de la imagen */
+}
+
+h3 {
+    margin: 0;              /* Quitamos el margen por defecto del h3 */
+    font-weight: 600;       /* Tu Semi Bold */
+}

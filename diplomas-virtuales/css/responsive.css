@@ -1,0 +1,270 @@
+/* ==========================================================================
+   1. FILTROS TIPO COMBOBOX (Desde 1128px)
+   Se activa una clase ".abierto" vía JavaScript para control total.
+   ========================================================================== */
+   /* ==========================================================================
+   1. REORGANIZACIÓN FILTROS (Tablets y Laptops pequeñas: 1128px a 769px)
+   Aquí se muestran los botones normales, pero en dos filas (4 y 3).
+   ========================================================================== */
+@media (max-width: 1128px) and (min-width: 769px) {
+    .filtro-tabs {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        /* justify-content: center hace que la fila de 3 quede centrada bajo la de 4 */
+        justify-content: center !important; 
+        gap: 12px !important;
+        background: transparent !important;
+        /* Limitamos el ancho para obligar a que el 5to elemento salte de línea */
+        max-width: 920px !important; 
+        margin: 20px auto 25px !important;
+        padding: 0 15px !important;
+    }
+
+    .filtro-tab {
+        /* flex: 0 0 [ancho] garantiza que todos midan lo mismo y no se estiren */
+        flex: 0 0 calc(25% - 12px) !important; 
+        min-width: 155px !important;
+        max-width: 220px !important;
+        
+        text-align: center !important;
+        padding: 10px 5px !important;
+        border-radius: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 25px !important;
+    }
+}
+/* Oculto por defecto en PC */
+.titulo-filtro-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Se activa solo en móviles */
+    .titulo-filtro-mobile {
+        display: block !important;
+        margin: 0px 20px 5px ; /* Alineado con el combo de abajo */
+        color: #0A1F5C;
+        font-weight: 700;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        text-align: left;
+    }
+
+    /* Ajustamos el margen superior del combo para que no esté tan pegado al texto */
+    .filtro-tabs {
+        margin-top: 5px !important;
+    }
+}
+/* ==========================================================================
+   2. FILTROS TIPO COMBOBOX (Baja de 1128px a 768px)
+   Solo se activa en pantallas de celular.
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* CONTENEDOR PRINCIPAL */
+    .filtro-tabs {
+        display: flex !important;
+        flex-direction: column !important;
+        width: calc(100vw - 40px) !important;
+        height: 44px !important; 
+        margin: 10px auto 20px auto !important;
+        position: relative !important;
+        padding: 0 !important;
+        border: 1.5px solid #0A1F5C !important;
+        border-radius: 8px !important;
+        background: #fff !important;
+        overflow: hidden !important;
+        transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 999;
+    }
+
+    /* ESTADO ABIERTO */
+    .filtro-tabs.abierto {
+        height: auto !important;
+        max-height: 600px !important;
+        background: #f4f6f8 !important; 
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        padding: 44px 0 0 0 !important; 
+        gap: 0 !important; 
+        box-shadow: 0 12px 25px rgba(10, 31, 92, 0.15) !important;
+        overflow: visible !important;
+    }
+
+    /* BARRA SUPERIOR ROJA */
+    .filtro-tab.active {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        position: absolute !important; 
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 44px !important;
+        background: #FF044D !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        font-size: 14px !important;
+        padding: 0 20px !important;
+        z-index: 100 !important;
+        border: none !important;
+        box-sizing: border-box !important;
+        border-radius: 6px 6px 0 0 !important;
+    }
+
+    /* LOGICA DE FLECHAS (Iconos) */
+    .filtro-tab.active::after {
+        content: '▼' !important; /* Flecha para abajo por defecto */
+        font-size: 12px !important;
+        color: #fff !important;
+        transition: transform 0.2s ease !important;
+    }
+
+    .filtro-tabs.abierto .filtro-tab.active::after {
+        content: '▲' !important; /* Flecha para arriba cuando está abierto */
+    }
+
+    /* LAS OPCIONES (Sin cajas, con líneas azules) */
+    .filtro-tab:not(.active) {
+        display: none; 
+        align-items: center !important;
+        justify-content: left !important; 
+        width: 100% !important;
+        min-height: 48px !important;
+        padding-left: 20px !important; /* Alineación con el texto de arriba */
+        background: transparent !important; 
+        color: #0A1F5C !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(10, 31, 92, 0.1) !important; 
+        box-sizing: border-box !important;
+        opacity: 0 !important;
+        transform: translateY(10px) !important;
+        transition: opacity 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .filtro-tab:not(.active):nth-child(odd) {
+        border-right: 1px solid rgba(10, 31, 92, 0.1) !important;
+    }
+
+    .filtro-tabs.abierto .filtro-tab:not(.active) {
+        display: flex !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0.15s !important;
+    }
+
+    .filtro-tab:not(.active):hover {
+        background: rgba(10, 31, 92, 0.05) !important;
+        color: #FF044D !important;
+    }
+
+    .filtro-tabs.abierto .filtro-tab.active {
+        position: absolute !important;
+        grid-column: span 2 !important;
+    }
+}
+/* ==========================================================================
+   2. AJUSTES MÓVILES (768px) - TÍTULO, SUBTÍTULO Y BUSCADOR
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* Ocultar elementos originales largos */
+    .seccion-titulo h2, 
+    .seccion-titulo p {
+        display: none !important;
+    }
+
+    .seccion-titulo {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0 15px 10px !important;
+    }
+
+    /* Nuevo Título 38px con espacio recuperado */
+    .seccion-titulo::before {
+        content: "DIPLOMADOS ONLINE";
+        order: 1;
+        display: block;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px !important;
+        font-weight: 700;
+        color: #0A1F5C;
+        margin-top: 30px !important;
+        margin-bottom: 8px !important;
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+    /* Subtítulo debajo del título y arriba del buscador */
+    .seccion-titulo::after {
+        content: "Programas avanzados para fortalecer tu perfil profesional";
+        order: 2;
+        display: block;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px !important;
+        color: #0A1F5C;
+        text-align: center;
+        margin-bottom: 25px;
+        line-height: 1.3;
+    }
+
+    /* Buscador Simplificado */
+    .buscador-container-custom {
+        order: 3;
+        width: 100% !important;
+        padding: 0 5px !important;
+    }
+
+    .buscador-wrapper {
+        position: relative; /* Necesario para el ::after */
+    }
+
+    #inputBuscadorCursos {
+        height: 50px !important;
+        padding: 10px 20px 10px 55px !important;
+        font-size: 16px !important;
+        border: 1.5px solid #0A1F5C !important;
+        border-radius: 5px !important;
+        width: 100%;
+    }
+
+    /* Forzamos que el placeholder original sea invisible */
+    #inputBuscadorCursos::placeholder {
+        color: transparent !important;
+    }
+
+    /* Texto corto inyectado: "Buscar diplomado..." */
+    .buscador-wrapper::after {
+        content: "Buscar diplomado...";
+        position: absolute;
+        left: 55px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #0A1F5C;
+        opacity: 0.6;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 10;
+    }
+
+    /* LÓGICA PARA OCULTAR: 
+       Si el wrapper tiene un input con el foco O si el input NO está mostrando el placeholder (tiene texto) 
+    */
+    .buscador-wrapper:has(#inputBuscadorCursos:focus)::after,
+    .buscador-wrapper:has(#inputBuscadorCursos:not(:placeholder-shown))::after {
+        opacity: 0 !important;
+        display: none !important;
+    }
+
+    /* Cursos en 1 columna */
+    .cursos-grid {
+        grid-template-columns: 1fr !important;
+        padding: 10px 15px 50px !important;
+    }
+
+}

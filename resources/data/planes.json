@@ -1,0 +1,113 @@
+{
+    "planes": [
+        {
+            "id": 1,
+            "nombre": "Plan Personal",
+            "slug": "plan-personal",
+            "precio": 370,
+            "moneda": "PEN",
+            "descripcion_corta": "Ideal para empezar",
+            "descripcion_larga": "Perfecto para profesionales que inician su camino en la gestión pública",
+            "caracteristicas": [
+                "1 acceso individual",
+                "Cursos grabados",
+                "Certificación digital",
+                "Material exclusivo",
+                "Teleconferencias gratuitas"
+            ],
+            "destacado": false,
+            "badge": null,
+            "activo": true,
+            "orden": 1
+        },
+        {
+            "id": 2,
+            "nombre": "Plan Premium",
+            "slug": "plan-premium",
+            "precio": 570,
+            "moneda": "PEN",
+            "descripcion_corta": "Mejor relación valor-beneficio",
+            "descripcion_larga": "La opción más completa para tu desarrollo profesional",
+            "caracteristicas": [
+                "Todo lo del plan personal",
+                "Diplomados grabados",
+                "3 cursos y 1 diplomado en vivo por año",
+                "Certificación física y digital",
+                "Asesoría académica especializada"
+            ],
+            "destacado": true,
+            "badge": "MÁS ELEGIDO",
+            "activo": true,
+            "orden": 2
+        },
+        {
+            "id": 3,
+            "nombre": "Plan Dual",
+            "slug": "plan-dual",
+            "precio": 970,
+            "moneda": "PEN",
+            "descripcion_corta": "Acceso para 2 personas",
+            "descripcion_larga": "Ideal para colegas o dupla profesional",
+            "caracteristicas": [
+                "Todo lo del plan premium",
+                "2 accesos a la plataforma",
+                "6 cursos y 2 diplomados en vivo por año",
+                "2 sesiones de asesoría",
+                "Ideal para colegas o dupla profesional"
+            ],
+            "destacado": false,
+            "badge": null,
+            "activo": true,
+            "orden": 3
+        },
+        {
+            "id": 4,
+            "nombre": "Plan Institucional",
+            "slug": "plan-institucional",
+            "precio": null,
+            "moneda": "PEN",
+            "descripcion_corta": "Gestión para equipos y entidades",
+            "descripcion_larga": "Soluciones corporativas para instituciones públicas y privadas",
+            "caracteristicas": [
+                "Acceso corporativo",
+                "Cursos y diplomados grabados ilimitados",
+                "Reportes y seguimiento académico",
+                "Certificación personalizada",
+                "Soporte personalizado"
+            ],
+            "caracteristicas_extra": [
+                "Basados en normativa SERVIR",
+                "Respaldo académico desde 2003",
+                "Experiencia en cursos, diplomados y programas institucionales"
+            ],
+            "destacado": false,
+            "badge": null,
+            "es_institucional": true,
+            "activo": true,
+            "orden": 4
+        }
+    ],
+    "financiamiento": {
+        "titulo": "¿CÓMO FINANCIAR TU MEMBRECÍA?",
+        "descripcion": "Financia tu membrecía en cómodas cuotas sin costo adicional.",
+        "whatsapp_text": "Hola! Me interesa financiar mi membrecía en cuotas sin costo adicional. ¿Podrían darme más información?"
+    },
+    "faq": [
+        {
+            "pregunta": "¿Qué tengo que estudiar primero para trabajar con el Estado?",
+            "respuesta": "Dependiendo la entidad, área y cargo que deseas postular, en líneas generales podemos darte las mínimas recomendaciones para que trabajes con el Estado..."
+        },
+        {
+            "pregunta": "¿Los cursos tienen validez oficial?",
+            "respuesta": "Sí, nuestros cursos están diseñados bajo las competencias del perfil de puesto de SERVIR y cuentan con certificación válida."
+        },
+        {
+            "pregunta": "¿Cómo accedo a los cursos después de comprar?",
+            "respuesta": "Recibirás un correo con tus credenciales de acceso a nuestra plataforma virtual disponible 24/7."
+        },
+        {
+            "pregunta": "¿Puedo obtener factura?",
+            "respuesta": "Sí, emitimos factura electrónica para todos nuestros cursos y planes de membresía."
+        }
+    ]
+}

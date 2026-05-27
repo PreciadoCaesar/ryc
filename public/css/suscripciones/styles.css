@@ -1,0 +1,2705 @@
+/* ══ IMPORTACIÓN DE FUENTES ══ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;600&display=swap');
+
+/* ══ ROOT VARS ══ */
+:root {
+    --rojo: #C8102E;
+    --rojo-dark: #9E0A22;
+    --azul: #0A1F5C;
+    --azul-oscuro: #00206b; /* Azul sólido de la imagen */
+    --azul-medio: #1A3A7A;
+    --verde-wsp: #25D366;
+    --verde-wsp-dark: #1DA851;
+    --amarillo: #FFB800;
+    --gris-claro: #F5F7FA;
+    --gris-medio: #E8ECF0;
+    --texto-oscuro: #1A1A2E;
+    --texto-medio: #4A5568;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', 'Inter';
+    color: var(--texto-oscuro);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* ══ LAYOUT GLOBAL ══ */
+.inner-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Centered content */
+footer .inner-wrap {
+    max-width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/* Footer Responsive*/
+@media(max-width:991px){
+    footer .inner-wrap {
+        max-width: 100%;
+        padding: 0 32px;
+    }
+}
+
+
+/* ══ BANNER PÚRPURA  ══ */
+.banner-purpura {
+    background: #5044c2;
+    color: #fff;
+    padding: 15px 0; 
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenido-banner-purpura {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left; 
+}
+
+.banner-icon img {
+    width: 35px; /* Ajusta según el tamaño de tus iconos */
+    height: auto;
+    filter: brightness(0) invert(1); /* Vuelve el icono blanco */
+}
+
+.banner-text b {
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.banner-text span {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.highlight-yellow {
+    color: #FFD700; /* Color amarillo para "CURSOS IN HOUSE" */
+}
+
+/* ══ ESTILO DEL BOTÓN AMARILLO ══ */
+.btn-cotizar {
+    background: #FFD700;
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 0px #ccac00; /* Efecto de profundidad */
+}
+
+.btn-cotizar:hover {
+    transform: translateY(-2px);
+    background: #ffdb1f;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 991px) {
+    .contenido-banner-purpura {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    .banner-item {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* ══ NAVBAR ══ */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    position: sticky;
+    z-index: 1050;
+}
+
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul) !important;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul) !important;
+}
+
+.botones-a {
+    border-radius: 50px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #fff !important;
+    margin-left: 7px;
+}
+
+.botones-a.verde { background: var(--verde-wsp); }
+.botones-a.azul { background: var(--azul-medio); }
+.botones-a.rojo { background: var(--rojo); }
+
+/* ══ HERO (DISEÑO R&C - POPPINS) ══ */
+.hero {
+    background: var(--azul-oscuro);
+    padding: 110px 0;
+    width: 100%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-container-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text { flex: 1.2; }
+
+
+
+.hero-pretitle {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.hero h1 {
+    font-size: clamp(26px, 3.8vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero h1 span { font-weight: 700; }
+
+.hero-sub {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.hero-stats-footer {
+    display: flex;
+    gap: 30px;
+    
+    /*border-top: 1px solid rgba(255, 255, 255, 0.15);*/
+    padding-top: 25px;
+}
+
+.h-stat { display: flex; align-items: center; gap: 12px; }
+.h-stat i { font-size: 28px; opacity: 0.9; }
+.h-stat-info strong { display: block; font-size: 14px; font-weight: 700; }
+.h-stat-info span { font-size: 14px; color: white; }
+
+
+
+/* Definimos la animación de pulso */
+@keyframes pulso-suave {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15); /* Crece un 15% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.clase-icon {
+    width: 70px;         
+    height: 70px;
+    object-fit: contain; 
+    filter: brightness(0) invert(1); 
+    opacity: 0.9;
+    
+    animation: pulso-suave 2s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+
+.h-stat:hover .clase-icon {
+    animation-play-state: paused; 
+    transform: scale(1.2); 
+    opacity: 1;
+}
+
+
+.h-stat {
+    display: flex;
+    align-items: center; 
+    gap: 15px;           
+    flex: 1;             
+}
+
+/* Ajuste del texto al lado del icono */
+.h-stat-info strong {
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    margin-bottom: 2px;
+}
+
+.h-stat-info span {
+    font-size: 12px;
+    line-height: 1.2;
+    display: block;
+}
+
+/* Lado Imagen */
+.hero-visual { flex: 1; display: flex; justify-content: flex-end; }
+
+.video-thumbnail {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    background: #000;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.video-text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.video-text-overlay h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.video-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    opacity: 0.7;
+}
+
+
+#trayectoria{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+#edad{
+    margin-top: 0px;
+    font-size: 40px;
+}
+#capacitando{
+    font-size: 14px;
+
+}
+
+/*SOBRE NOOSOTROS*/
+/* ══ SECCIÓN ACERCA DE NOSOTROS (REPLICADO) ══ */
+
+.acercaNostros{
+    font-size: 50px;
+    font-weight: 600;
+}
+.trayectoriaCompromiso{
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+.acerca-section {
+    padding: 80px 0;
+    text-align: center;
+    background: #fff;
+}
+
+.acerca-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    margin-bottom: 10px;
+}
+
+.acerca-section .sub {
+    font-size: 16px;
+    color: var(--texto-medio);
+    margin-bottom: 50px;
+}
+
+/* Bloque Historia */
+.historia-card {
+    display: flex;
+    background: var(--gris-claro);
+    border-radius: 24px;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 30px;
+    align-items: stretch;
+}
+
+.historia-img {
+    flex: 1;
+    min-height: 350px;
+}
+
+.historia-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.historia-content {
+    flex: 1.5;
+    padding: 50px;
+}
+
+.historia-content h3 {
+    font-family: 'Poppins';
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.historia-content p {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--texto-oscuro);
+    margin-bottom: 15px;
+}
+
+.historia-content span{
+
+    font-family: 'Poppins';
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1b;
+
+}
+
+/* Grid Misión y Visión */
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.mv-card {
+    background: var(--gris-claro);
+    padding: 45px;
+    border-radius: 24px;
+    text-align: left;
+    font-family: 'Poppins';
+}
+
+
+
+.mv-card p {
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--texto-oscuro);
+}
+
+.mv-card span {
+    font-family: 'Poppins';
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1b;
+}
+
+
+.form-item-acerca {
+    display: flex;         
+    align-items: flex-start; 
+    gap: 12px;             
+}
+
+.form-icon-acerca {
+    width: 25px;           
+    height: auto;
+    margin-top:9px;       
+    flex-shrink: 0;        
+}
+
+
+/* ══ RESPONSIVE ACERCA DE ══ */
+@media (max-width: 991px) {
+    .historia-card {
+        flex-direction: column;
+    }
+    .historia-img {
+        min-height: 250px;
+        font-family: 'Poppins';
+    }
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+    .historia-content, .mv-card {
+        padding: 30px;
+    }
+}
+
+
+.acerca-nostros{
+    font-weight: 200;
+}
+
+/* NUESTROS LOGROS*/
+/* ══ SECCIÓN LOGROS Y APORTES ══ */
+.logros-aportes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-row {
+    display: flex;
+    min-height: 500px; /* Altura de los cuadros */
+}
+
+.grid-row.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.grid-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Colores */
+.bg-gris-box { background-color: #ededed; }
+.bg-fucsia { background-color: #ff004d; }
+
+.content-padding {
+    padding: 10% 15%; /* Espaciado interno para el texto */
+    text-align: left;
+}
+
+.title-bold {
+    font-family: 'Poppins',;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--texto-oscuro);
+}
+
+.list-logros {
+    list-style: none;
+    padding: 0;
+}
+
+.list-logros li {
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.desc-text {
+    font-family: 'Poppins';
+    font-size: 17px;
+    line-height: 1.8;
+    color: black;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+    .grid-row, .grid-row.row-reverse {
+        flex-direction: column; 
+        min-height: auto;
+    }
+
+    .bg-fucsia.d-none-mobile {
+        display: none; 
+    }
+
+    .content-padding {
+        padding: 60px 25px;
+    }
+
+    .title-bold {
+        font-size: 26px;
+    }
+}
+
+/* LISTOS PARA FORTALECER TU EQUIPO*/
+
+/* --- ESTILOS LOGROS Y APORTES --- */
+.grid-stats { width: 100%; display: flex; flex-direction: column; }
+.stat-row { display: flex; min-height: 450px; }
+.stat-row.row-reverse { flex-direction: row-reverse; }
+.stat-box { flex: 1; display: flex; align-items: center; justify-content: center; }
+.bg-light-gray { background: #eeeeee; }
+.bg-fucsia { background: #ff004d; }
+.box-inner { padding: 60px; max-width: 600px; }
+
+.section-title-alt { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 32px; margin-bottom: 25px; }
+.stats-list { list-style: none; padding: 0; }
+.stats-list li { margin-bottom: 15px; font-size: 14px; line-height: 1.6; color: var(--texto-medio); }
+
+/* --- ESTILOS FORMULARIO Y CTA --- */
+.cta-blue-banner { font-family: 'Poppins';  background: #00206b; padding: 100px 0; text-align: center; color: #fff; }
+.cta-blue-banner h2 { font-size: 30px; font-weight: 600; margin-bottom: 10px; }
+.cta-blue-banner p {font-family: 'Poppins'; font-weight: 400; margin-top: 20px;}
+.cta-btns { display: flex; gap: 15px; justify-content: center; margin-top: 10px; }
+
+.btn-white {font-size: 17px;   background: #fff; color: #00206b; padding: 12px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.btn-green { font-size: 17px; font-family: 'Poppins'; font-weight: 600;  background: #1da851; color: #fff; padding: 12px 25px; border-radius: 8px;  text-decoration: none; }
+
+.btn-white, .btn-green {
+    display: inline-block; 
+    transition: all 0.3s ease; 
+}
+
+
+.btn-white:hover {
+    background-color: #f0f0f0; 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+
+.btn-green:hover {
+    background-color: #158a42; 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 15px rgba(29, 168, 81, 0.3); 
+}
+
+.btn-white:active, .btn-green:active {
+    transform: translateY(-1px); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.form-container-wrap { background: #f4f4f4; padding: 80px 0; }
+.form-flex { display: flex; gap: 50px; align-items: flex-start; }
+.form-info { flex: 1; }
+
+.form-info p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #00206b;
+    margin-bottom: 30px; 
+}
+
+.form-item {
+    display: flex;         
+    align-items: flex-start; 
+    gap: 12px;             
+}
+
+.form-icon {
+    width: 30px;           
+    height: auto;
+    margin-top: 3px;       
+    flex-shrink: 0;        
+}
+
+.form-card { 
+    font-family: 'Poppins';
+    flex: 1; 
+    background: #fff; 
+    padding: 40px; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+
+}
+
+.form-card p{
+    color: #afafaf;
+    font-family: 'Poppins';
+    font-size: 10px;
+}
+
+
+
+
+
+
+.badge-fucsia { background: #ff004d; color: #fff; padding: 10px 15px; border-radius: 5px; font-weight: 600; font-size: 19; }
+.form-title { font-size: 36px; font-weight: 800; color: #00206b; margin: 15px 0; }
+
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 19px; font-weight: 600; margin-bottom: 5px; }
+.input-group input, .input-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+
+.btn-submit-blue { width: 100%; background: #00206b; color: #fff; padding: 15px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+
+/* --- MEDIA QUERIES FAST --- */
+@media (max-width: 991px) {
+    .stat-row, .stat-row.row-reverse { flex-direction: column; min-height: auto; }
+    .d-mobile-none { display: none; }
+    .box-inner { padding: 40px 20px; }
+    .form-flex { flex-direction: column; gap: 40px; }
+    .cta-btns { flex-direction: column; }
+}
+
+/* ══ SECCIONES Y MODALES ══ */
+.sec { padding: 40px 0; }
+
+
+.social-icons { display: flex; gap: 10px; margin-top: 15px; }
+.social-icons a { 
+    width: 32px; height: 32px; background: rgba(255,255,255,0.1); 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+
+.wa-float {
+    position: fixed; bottom: 20px; left: 20px; z-index: 999;
+    background: var(--verde-wsp); color: #fff; padding: 10px 18px;
+    border-radius: 50px; text-decoration: none; display: flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 991px) {
+    .hero-container-flex { flex-direction: column; text-align: center; }
+    .hero-text { order: 1; }
+    .hero-visual { order: 2; width: 100%; justify-content: center; }
+    .hero-sub { margin: 0 auto 30px; }
+    .hero-stats-footer strong{
+        font-size: 1000px;
+    }
+    
+    
+    .h-stat {
+        flex-direction: column; /* Icono arriba del texto en móvil */
+        align-items: center;
+        text-align: center;
+    }
+
+    .contenedorAcercaNosotros{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .clase-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .clase-icon-acerca-nosotros {
+        width: 20px;            /* Ajusta el ancho según necesites */
+    height: auto;           /* Mantiene la proporción */
+    display: block;         /* Evita espacios extra debajo de la imagen */
+    }
+
+    h3 {
+    margin: 0;              /* Quitamos el margen por defecto del h3 */
+    font-weight: 600;       /* Tu Semi Bold */
+}
+
+    #edad {
+        font-size: 36px;
+    }
+}
+
+
+
+/* 1. Estilo base para TODOS los inputs y textareas */
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px; /* Padding normal para el que no tiene icono */
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* 2. SOLO si el padre tiene la clase 'input-with-icon', aplicamos el espacio extra */
+.input-with-icon .relative-container input,
+.input-with-icon .relative-container textarea {
+    padding-left: 45px !important; /* Forzamos el espacio solo aquí */
+}
+
+/* 3. Posicionamiento de los iconos */
+.relative-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%; /* Lo centra verticalmente */
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* 4. Ajuste especial para el textarea si decidieras ponerle icono (opcional) */
+.input-with-icon .relative-container textarea ~ .input-icon {
+    top: 15px;
+    transform: none;
+}
+
+/* PATE RESPONSIVE SOBRE NUESTROS LOGROS*/
+/* Solo aplica el espacio cuando la pantalla es pequeña (móvil) */
+@media (max-width: 768px) {
+    .img-mobile-spacing {
+        margin-bottom: 25px !important; /* Ajusta los px a tu gusto */
+        margin-top: 10px !important;    /* Opcional: un poco de espacio arriba también */
+    }
+}
+
+
+/* ══ AJUSTES ESPECÍFICOS PARA MÓVIL ══ */
+@media (max-width: 768px) {
+    
+    /* 1. Espaciado para que la imagen no choque con el bloque azul/gris */
+    .img-mobile-spacing {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        min-height: 300px !important; /* Asegura que la imagen sea visible */
+    }
+
+    /* 2. Alineación de etiquetas del formulario a la izquierda */
+    .form-card, 
+    .form-container-wrap, 
+    .input-group {
+        text-align: left !important;
+    }
+
+    .input-group label {
+        text-align: left !important;
+        display: block !important;
+        width: 100%;
+        padding-left: 2px; /* Alineación visual fina con el borde del input */
+    }
+
+    /* 3. Ajuste de padding en móvil para que el texto no toque los bordes */
+    .content-padding {
+        padding: 40px 20px !important;
+    }
+}
+
+
+/* Texto en mobile placeholder Cuentanos sobre la capacitacion*/
+@media (max-width: 768px) {
+    /* Ocultamos el texto original del placeholder en móvil */
+    #input-mensaje::placeholder {
+        color: transparent;
+    }
+
+    #input-mensaje::placeholder {
+        content: "Describe tus objetivos y cantidad de personas";
+        color: #afafaf; 
+    }
+}
+
+
+/***/
+
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s;
+}
+
+.social-icons a:hover {
+    background: #FF044D;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-cert-f {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FF044D;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+/* Responsive Móvil */
+@media(max-width:600px){
+}
+
+@media (max-width: 991px) {
+    .hero-stats-footer {
+        display: flex !important;
+        flex-direction: row !important; /* Forzamos que sea fila */
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px; /* Espacio entre los dos bloques */
+        padding-top: 25px;
+        width: 100%;
+    }
+
+    .h-stat {
+        flex: 1; /* Hace que ambos ocupen el mismo espacio */
+        display: flex;
+        flex-direction: column; /* Icono arriba, texto abajo */
+        align-items: center;
+        text-align: center;
+        min-width: 140px; /* Evita que se compriman demasiado */
+    }
+
+    /* Ajuste de los números para que no se vean gigantes */
+    #edad {
+        font-size: 24px !important; /* Tamaño sugerido para que quepan en línea */
+        display: block;
+        margin: 5px 0;
+    }
+
+    .h-stat-info span {
+        font-size: 11px !important;
+        line-height: 1.2;
+        display: block;
+    }
+
+    .clase-icon {
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+
+@media (max-width: 991px) {
+    /* Esto oculta el banner morado original en celulares */
+    .banner-purpura {
+        display: none !important;
+    }
+
+    /* Si creaste el banner de abajo con la clase 'mobile-banner-bottom', 
+       asegúrate de que ESE sí se vea: */
+    .mobile-banner-bottom {
+        display: block !important;
+    }
+}
+
+
+/* ==================================== Nueva Seccion: IN HOUSE ==================================== */
+/* ══ SECCIÓN SERVICIOS PDP ══ */
+
+/* ══ SECCIÓN EXPERIENCIA R&C ══ */
+.experiencia-banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.exp-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.exp-image {
+    flex: 1;
+    min-width: 450px;
+    min-height: 400px;
+}
+
+.exp-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.exp-content {
+    flex: 1;
+    background-color: var(--azul-oscuro); /* #00206b */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    min-width: 450px;
+}
+
+.exp-inner-padding {
+    padding: 60px 80px;
+}
+
+.exp-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 47px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.exp-text {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.exp-stats-grid {
+    display: flex;
+    gap: 40px;
+    margin: 35px 0;
+}
+
+.exp-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.exp-icon {
+    font-size: 40px;
+    opacity: 0.9;
+}
+
+.exp-info strong {
+    display: block;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.exp-info span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.btn-exp-inst {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #FF004D; /* El color fucsia/rojo del botón */
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-exp-inst:hover {
+    background-color: #d1003f;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .exp-container {
+        flex-direction: column;
+    }
+    .exp-image, .exp-content {
+        min-width: 100%;
+        min-height: auto;
+    }
+    .exp-inner-padding {
+        padding: 40px 25px;
+    }
+    .exp-title {
+        font-size: 26px;
+    }
+    .exp-stats-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .exp-action{
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.servicios-pdp {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.servicios-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    line-height: 1.2;
+}
+
+.servicios-title span {
+    color: var(--azul-oscuro);
+}
+
+.servicios-sub {
+    font-size: 15px;
+    color: var(--texto-oscuro);
+    max-width: 700px;
+    margin: 20px auto 0;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.servicio-card {
+    background: #F2F2F2; /* Gris claro de la imagen */
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+}
+
+.s-icon-wrap {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-icon-wrap img {
+    width: 100%;
+    height: auto;
+}
+
+.servicio-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    margin-bottom: 15px;
+    min-height: 54px; /* Alineación de títulos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicio-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-oscuro);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .servicios-title {
+        font-size: 24px;
+    }
+}
+
+/* Solicita Capacitación Inhouse*/
+/* ══ SECCIÓN ASESORÍA IN HOUSE ══ */
+.asesoria-inhouse {
+    background-color: var(--azul-oscuro); /* #00206b */
+    padding: 100px 0;
+    color: #fff;
+}
+
+.asesoria-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.asesoria-sub {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Tarjeta del Asesor */
+.asesor-card {
+    display: flex;
+    max-width: 900px;
+    margin: 50px auto 0;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.asesor-img {
+    flex: 1;
+    background-color: #333; /* Fondo oscuro por si la imagen tarda en cargar */
+}
+
+.asesor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bloque Fucsia con Gradiente */
+.asesor-info {
+    flex: 1.2;
+    background: linear-gradient(135deg, #C8102E 0%, #610B5E 100%); /* Gradiente fucsia a morado */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.asesor-header h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.asesor-header span {
+    font-size: 14px;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/* Cajas de contacto con transparencia */
+.contact-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.contact-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-box i {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.c-detail small {
+    display: block;
+    font-size: 11px;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+.c-detail strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Botones de acción */
+.asesor-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-wa-asesor {
+    background-color: #00B600; /* Verde WhatsApp sólido */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.btn-mail-asesor {
+    background-color: #FF004D; /* Rojo fucsia del botón */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.btn-wa-asesor:hover, .btn-mail-asesor:hover {
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.horario-nota {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    .asesor-card {
+        flex-direction: column;
+        margin: 30px 15px 0;
+    }
+    .asesor-img {
+        height: 300px;
+    }
+    .asesor-info {
+        padding: 30px 20px;
+    }
+    .asesoria-title {
+        font-size: 26px;
+        padding: 0 15px;
+    }
+    .asesor-actions {
+        flex-direction: column;
+    }
+
+    .btn-wa-asesor{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+/* ══════════════════════════════════════
+   VARIABLES (usa las que ya tengas)
+   ══════════════════════════════════════ */
+:root {
+    --azul-hero: #0d1b4a;
+    --azul-medio: #1a3078;
+    --rojo: #C8102E;
+    --rojo-dark: #9E0A22;
+    --gris-bg: #f5f6fa;
+    --gris-borde: #dce1ea;
+    --texto-oscuro: #03206A;
+    --texto-medio: #4a5568;
+    --amarillo: #FFB800;
+}
+
+/* ══════════════════════════════════════
+   1. HERO PDP
+   ══════════════════════════════════════ */
+   /*
+.hero-pdp {
+    position: relative;
+    background: linear-gradient(135deg, #071540 0%, #0d1b4a 40%, var(--rojo) 100%);
+    padding: 65px 0 75px;
+    overflow: hidden;
+    color: #fff;
+}
+.hero-pdp::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(200,16,46,.18) 0%, transparent 70%);
+    pointer-events: none;
+}*/
+
+
+/* ══ HERO PDP ══ */
+.hero-pdp {
+    position: relative;
+    /* Nacimiento del color fucsia en 15% 20% (sobre el texto) */
+    background: radial-gradient(circle at 15% 20%, var(--rojo) 0%, #0d1b4a 35%, #071540 100%);
+    padding: 0; 
+    overflow: hidden;
+    color: #fff;
+    /* Sombra interna para profundidad */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+}
+
+/* Brillo Premium en la esquina del texto */
+.hero-pdp::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 0%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Contenedor de Texto */
+.hero-pdp__text-content {
+    position: relative;
+    z-index: 10; /* Asegura que botones sean clickeables sobre el brillo */
+    padding: 80px 10% 80px 15%; 
+}
+
+.hero-pdp__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(26px, 4vw, 42px);
+    line-height: 1.12;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero-pdp__title span { 
+    color: #fece00; /* Color resaltado para el span */
+}
+
+.hero-pdp__sub {
+    font-size: 14px;
+    color: #fece00; /* Color amarillo para subtítulos según tu ajuste */
+    line-height: 1.65;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.hero-pdp__sub strong { 
+    color: #fff; 
+}
+
+/* Botones */
+.hero-pdp__btns {
+    display: flex;
+    gap: 14px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+.btn-pdp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: all .25s ease;
+}
+
+.btn-pdp--rojo { 
+    background: var(--rojo); 
+    color: #fff; 
+}
+
+.btn-pdp--rojo:hover { 
+    background: var(--rojo-dark); 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(200,16,46,.4); 
+}
+
+.btn-pdp--blanco { 
+    background: #fff; 
+    color: #071540; 
+}
+
+.btn-pdp--blanco:hover { 
+    background: #e8ecf0; 
+    transform: translateY(-2px); 
+}
+
+/* Columna de Imagen Full */
+.hero-pdp__img-full {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+}
+
+.hero-pdp__img-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* ══ RESPONSIVE CORREGIDO ══ */
+@media (max-width: 991px) {
+    /* 1. Forzamos que la sección NO tenga un alto fijo y se comporte como bloque */
+    .hero-pdp {
+        height: auto !important;
+        min-height: auto !important;
+        display: block !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* 2. El contenedor de texto */
+    .hero-pdp__text-content {
+        padding: 50px 20px 40px !important;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* 3. LA SOLUCIÓN: Forzar que la columna de la imagen sea visible */
+    .hero-pdp .col-lg-6 {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    .hero-pdp__img-full {
+        width: 100% !important;
+        height: 350px !important; /* Altura obligatoria */
+        display: block !important;
+        position: relative;
+        z-index: 5;
+    }
+
+    .hero-pdp__img-full img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center; /* Centra la foto */
+        display: block !important;
+    }
+
+    /* 4. Ajuste del fondo para que no se estire infinitamente */
+    .hero-pdp, .hero-pdp::after {
+        background: radial-gradient(circle at 50% 20%, var(--rojo) 0%, #0d1b4a 80%, #071540 100%) !important;
+        background-attachment: scroll !important;
+    }
+
+    .hero-pdp__btns{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* ══════════════════════════════════════
+   2. ¿TU INSTITUCIÓN YA TIENE LISTO SU PDP?
+   ══════════════════════════════════════ */
+.sec-alerta {
+    padding: 65px 0;
+    background: #fff;
+    text-align: center;
+}
+.sec-alerta__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(20px, 3vw, 30px);
+    color: var(--texto-oscuro);
+    margin-bottom: 8px;
+}
+.sec-alerta__sub {
+    font-size: 14px;
+    color: var(--texto-medio);
+    max-width: 620px;
+    margin: 0 auto 38px;
+    line-height: 1.65;
+}
+
+/* Las 3 tarjetas de alerta — cada una es una IMAGEN completa */
+.alerta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 800px;
+    margin: 0 auto 34px;
+}
+.alerta-card {
+    background: #fff;
+    border: 2px solid var(--gris-borde);
+    border-radius: 14px;
+    padding: 28px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s;
+}
+.alerta-card:hover {
+    border-color: var(--rojo);
+    box-shadow: 0 6px 24px rgba(3,32,106,.1);
+    transform: translateY(-3px);
+}
+.alerta-card img {
+    max-height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.btn-solicitar-pdp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--rojo);
+    color: #fff;
+    padding: 13px 30px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .25s;
+}
+.btn-solicitar-pdp:hover { background: var(--rojo-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,16,46,.35); }
+
+/* ══════════════════════════════════════
+   3. SÚMATE — 1000 INSTITUCIONES
+   ══════════════════════════════════════ */
+.sec-sumate {
+    padding: 65px 0 50px;
+    background: var(--gris-bg);
+    text-align: center;
+}
+.sec-sumate__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 650;
+    font-size: clamp(20px, 3vw, 40px);
+    color: black;
+    margin-bottom: 38px;
+    line-height: 1.3;
+}
+
+/* 3 stats — cada una es UNA IMAGEN completa */
+.sumate-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 800px;
+    margin: 0 auto 45px;
+}
+.sumate-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sumate-stat img {
+    max-height: 110px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Carrusel de logos */
+.carousel-outer-pdp {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+.carousel-track-pdp {
+    display: flex;
+    gap: 20px;
+    animation: scrollLogosPdp 18s linear infinite;
+}
+@keyframes scrollLogosPdp {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.carousel-card-pdp {
+    flex: 0 0 170px;
+    height: 85px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    transition: box-shadow .2s, transform .2s;
+}
+.carousel-card-pdp:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); transform: translateY(-2px); }
+.carousel-card-pdp img {
+    max-height: 158px;
+    max-width: 230px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Flechas nav carrusel */
+.carousel-nav-pdp {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+.carousel-nav-pdp button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--gris-borde);
+    background: #fff;
+    color: var(--texto-oscuro);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-nav-pdp button:hover { border-color: var(--texto-oscuro); background: var(--texto-oscuro); color: #fff; }
+
+
+/* Contenedor principal de los bloques */
+.sumate-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo de la tarjeta gris */
+.sumate-stat-card {
+    background-color: #E9E9E9; /* Gris claro de la imagen */
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.sumate-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Tamaño de los iconos */
+.stat-icon img {
+    height: 70px;
+    width: auto;
+    margin-bottom: 15px;
+    /* Si tus iconos son azules como en la imagen, no necesitas filter */
+}
+
+/* Estilo del texto */
+.stat-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #03206A; /* Azul oscuro institucional */
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.stat-text strong {
+    font-weight: 800;
+}
+
+/* Responsive para celulares */
+@media (max-width: 991px) {
+    .sumate-stats {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        padding: 0 20px;
+    }
+    
+    .sumate-stat-card {
+        padding: 20px;
+    }
+}
+
+
+/* ══════════════════════════════════════
+   4. ¿POR QUÉ EJECUTAR EL PDP CON R&C?
+   ══════════════════════════════════════ */
+.sec-porque {
+    position: relative;
+    padding: 75px 0 65px;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+.sec-porque__bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sec-porque__bg::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(7,21,64,.92) 0%, rgba(13,27,74,.88) 100%);
+}
+.sec-porque .container { position: relative; z-index: 2; }
+
+.sec-porque__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(20px, 3vw, 30px);
+    margin-bottom: 8px;
+}
+.sec-porque__sub {
+    font-size: 14px;
+    opacity: .7;
+    max-width: 620px;
+    margin: 0 auto 45px;
+    line-height: 1.65;
+}
+
+.porque-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 45px;
+}
+.porque-card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 14px;
+    padding: 30px 22px;
+    text-align: left;
+    backdrop-filter: blur(6px);
+    transition: all .25s;
+}
+.porque-card:hover {
+    background: rgba(255,255,255,.12);
+    border-color: rgba(255,255,255,.25);
+    transform: translateY(-4px);
+}
+.porque-card__icon {
+    margin-bottom: 16px;
+}
+.porque-card__icon img {
+    max-height: 52px;
+    width: auto;
+    object-fit: contain;
+}
+.porque-card__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.porque-card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.porque-card__list li {
+    font-size: 12.5px;
+    opacity: .75;
+    line-height: 1.75;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 4px;
+}
+.porque-card__list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--amarillo);
+    font-weight: 700;
+}
+
+/* CTA final */
+.btn-cta-pdp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--rojo);
+    color: #fff;
+    padding: 15px 34px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 14.5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .25s;
+}
+.btn-cta-pdp:hover { background: var(--rojo-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,16,46,.4); }
+
+.sec-porque__nota {
+    margin-top: 18px;
+    font-size: 12.5px;
+    opacity: .5;
+    font-style: italic;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 991px) {
+    .alerta-grid { grid-template-columns: 1fr; max-width: 320px; }
+    .sumate-stats { grid-template-columns: 1fr; max-width: 280px; }
+    .porque-grid { grid-template-columns: 1fr; }
+    .hero-pdp__img { margin-top: 28px; }
+}
+@media (max-width: 576px) {
+    .hero-pdp { padding: 40px 0 50px; }
+    .carousel-card-pdp { flex: 0 0 140px; height: 72px; }
+}
+
+
+
+/**/
+/* ══ SECCIÓN POR QUÉ PDP ══ */
+.sec-porque-pdp {
+    background-color: #EBF4FF; /* Fondo celeste suave de la imagen */
+    padding: 80px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.porque-pdp__title {
+    color: #03206A;
+    font-weight: 800;
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 10px;
+}
+
+.porque-pdp__subtitle {
+    color: #03206A;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Tarjetas */
+.porque-pdp-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.porque-pdp-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(3, 32, 106, 0.1);
+}
+
+.pdp-card__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+}
+
+.pdp-card__icon img {
+    width: 100%;
+    height: auto;
+}
+
+.pdp-card__title {
+    color: #03206A;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.pdp-card__content p {
+    color: #03206A;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.pdp-card__list {
+    font-weight: 650;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pdp-card__list li {
+    font-size: 13px;
+    color: #03206A;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.pdp-card__list li::before {
+    content: "•";
+    color: #03206A;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    top: -2px;
+}
+
+/* Botón y Texto Inferior */
+.btn-pdp-solicitud {
+    background-color: #FF004D;
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.btn-pdp-solicitud:hover {
+    background-color: #D1003F;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+.pdp-neuro-text {
+    color: #03206A;
+    font-size: 13px;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    .sec-porque-pdp {
+        padding: 50px 0;
+    }
+    .porque-pdp-card {
+        padding: 30px 20px;
+    }
+    .btn-pdp-solicitud {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+
+/* ===================================================================== == =======================  ===================================================================== 
+   SECCIÓN MEMBRESÍAS - ESTILO UNIFICADO CON POPPINS
+   =====================================================================  ========================================================================  =====================================================================  ===================================================================== */
+
+.sec-membresia {
+    position: relative;
+    /* Unificado con el degradado de tu Hero PDP */
+    background: 
+    /* Foco Superior Izquierdo */
+     radial-gradient(circle at 100% 0%, var(--rojo) 0%, transparent 50%),
+    radial-gradient(circle at 20% 0%, var(--rojo) 0%, transparent 50%),
+
+    
+
+    /* Foco Inferior Izquierdo */
+    radial-gradient(circle at 20% 100%, var(--rojo) 0%, transparent 50%),
+    /* Fondo Azul Oscuro (la base que une todo) */
+    #071540;
+
+
+    /*radial-gradient(circle at 20% 100%, var(--rojo) 0%, #0d1b4a 70%, #071540 100%),
+    radial-gradient(circle at 20% 0%, var(--rojo) 0%, #0d1b4a 30%, #071540 0%);*/
+
+
+    padding: 100px 0;
+    color: #fff;
+    font-family: 'Poppins', sans-serif; /* Poppins Global */
+    overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+}
+
+/* Brillo Premium sutil (réplica del Hero) */
+.sec-membresia::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 85% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.membresia-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; 
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.2;
+    /*text-transform: uppercase;*/
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.membresia-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto 35px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.membresia-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 1px;
+}
+
+.m-badge {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.m-badge i {
+    color: var(--amarillo);
+}
+
+/* ══ TARJETAS DE PLAN ══ */
+/* ══ CONTENEDOR DE TARJETAS ══ */
+.plan-card, 
+.plan-card-featured {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    height: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Importante para que la cabecera amarilla no se salga */
+}
+
+/* ══ AJUSTES ESPECÍFICOS PARA LA DESTACADA (PREMIUM) ══ */
+.plan-card-featured {
+    padding: 0 !important; /* Quitamos padding para que la cabecera choque con los bordes */
+    border: 2px solid var(--amarillo);
+}
+
+.plan-card:hover,
+.plan-card-featured:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.plan-card {
+    padding: 45px 30px; /* Padding para las tarjetas normales */
+}
+
+/* Contenedor interno para la tarjeta Premium (recupera el espacio del texto) */
+.plan-content-wrapper {
+    padding: 30px 25px 45px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* ══ CABECERA "MÁS ELEGIDO" (Sólida según imagen) ══ */
+.featured-tag {
+    background-color: var(--amarillo);
+    color: var(--azul);
+    width: 100%;
+    padding: 10px 0;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative; /* Cambiado de absolute a relative */
+    top: 0;
+    left: 0;
+    transform: none; /* Quitamos el centrado manual */
+}
+
+/* ══ TEXTOS ══ */
+.plan-name { 
+    font-weight: 700; 
+    font-size: 38px; 
+    margin-bottom: 5px; 
+}
+
+.plan-tagline { 
+    font-size: 18px; 
+    opacity: 0.8; 
+    margin-bottom: 20px; 
+}
+
+.plan-price { 
+    font-size: 42px; 
+    font-weight: 800; 
+    margin-bottom: 10px; 
+    color: #fff;
+}
+
+.plan-support-gold { 
+    font-size: 16px; 
+    font-weight: 700; 
+    color: var(--amarillo); 
+    margin-bottom: 30px; 
+    letter-spacing: 1px;
+}
+
+.plan-support { 
+    font-size: 16px; 
+    font-weight: 700; 
+    color: white;
+    margin-bottom: 30px; 
+    letter-spacing: 1px;
+}
+
+/* ══ LISTA DE CARACTERÍSTICAS ══ */
+.plan-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 35px;
+    margin-left: 60px;
+    margin-right: 70px;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    margin-bottom: 14px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.4;
+}
+
+.plan-features li i { 
+    color: var(--amarillo); 
+    margin-top: 3px; 
+    font-size: 15px;
+}
+
+/* ══ BOTONES ══ */
+.btn-plan {
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 6px; /* Un poco más rectos según imagen */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    text-transform: none; /* "Quiero este plan" */
+}
+
+/* Botones laterales (Outline) */
+.btn-plan-outline {
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+.btn-plan-outline:hover { 
+    background: #fff; 
+    color: var(--azul); 
+}
+
+/* Botón central (Sólido Dorado/Amarillo) */
+/* (Aquí mantengo tu animación metálica si la deseas, si no, usa el color sólido) */
+.btn-plan-solid {
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% auto;
+    color: #000 !important;
+    font-weight: 800;
+    border: none;
+    box-shadow: 0 4px 15px rgba(179, 135, 40, 0.4);
+    animation: shine-gold 4s linear infinite;
+}
+
+.btn-plan-solid:hover {
+    transform: scale(1.05);
+}
+
+@keyframes shine-gold {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =====================================================================
+   BOTÓN DORADO PREMIUM CON EFECTO DE FLOTACIÓN Y DESTELLO CONSTANTE
+   ===================================================================== */
+
+.btn-plan-solid {
+
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% auto;
+    color: #000 !important;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(179, 135, 40, 0.4);
+    
+    animation: shine-gold 4s linear infinite, float-gold 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.btn-plan-solid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.6) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+
+    animation: sweep-light 2s infinite;
+}
+
+/* --- KEYFRAMES --- */
+
+
+@keyframes shine-gold {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+@keyframes sweep-light {
+    0% { left: -150%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
+}
+
+
+@keyframes float-gold {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px); 
+    }
+}
+
+/* --- INTERACCIÓN HOVER --- */
+
+.btn-plan-solid:hover {
+
+    transform: scale(1.05) translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(179, 135, 40, 0.6);
+
+    animation: shine-gold 4s linear infinite; 
+}
+
+/* ══ PLAN INSTITUCIONAL - CORRECCIÓN DE BOTONES ══ */
+.plan-institucional {
+    margin-top: 60px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inst-title {
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.inst-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    opacity: 0.95;
+    color: #fff;
+}
+
+.inst-container-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 50px 40px;
+    margin-top: 25px;
+}
+
+.inst-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inst-list li {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 400;
+}
+
+.inst-list li i {
+    color: var(--amarillo);
+    font-size: 18px;
+}
+
+/* FILA DE BOTONES HORIZONTAL */
+.inst-btn-row {
+    display: flex;
+    flex-direction: row; /* Aquí se ponen uno al lado del otro */
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.btn-inst {
+    flex: 1; /* Para que tengan el mismo ancho si quieres, o quítalo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+}
+/*
+.btn-inst-yellow {
+    background: var(--amarillo);
+    color: #333;
+}
+
+.btn-inst-green {
+    background: #009929;
+    color: #fff;
+}
+
+.btn-inst:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    color: inherit;
+}*/
+
+/* ══ 1. BOTÓN SOLICITA COTIZACIÓN (DORADO METÁLICO) ══ */
+.btn-inst-yellow {
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) !important;
+    background-size: 200% auto !important;
+    color: #000 !important;
+    font-weight: 800;
+    border: none;
+    box-shadow: 0 4px 15px rgba(179, 135, 40, 0.4);
+    position: relative;
+    overflow: hidden;
+    /* Animación: Oro (4s) y Flotación (3s) */
+    animation: shine-gold 4s linear infinite, float-btn 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ══ 2. BOTÓN HABLAR CON ASESOR (ESMERALDA METÁLICO) ══ */
+.btn-inst-green {
+    background: linear-gradient(135deg, #004d1a, #2ecc71, #008037, #a2f9c1, #004d1a) !important;
+    background-size: 200% auto !important;
+    color: #fff !important;
+    font-weight: 800;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 153, 41, 0.3);
+    position: relative;
+    overflow: hidden;
+    /* Animación: Esmeralda (4s) y Flotación (3s con delay para que no suban al mismo tiempo) */
+    animation: shine-emerald 4s linear infinite, float-btn 3s ease-in-out infinite 0.5s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ══ DESTELLO DE LUZ PARA AMBOS ══ */
+.btn-inst-yellow::before,
+.btn-inst-green::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: skewX(-25deg);
+    animation: sweep-light 2s infinite;
+}
+
+/* ══ INTERACCIÓN HOVER ══ */
+.btn-inst:hover {
+    transform: scale(1.05) translateY(-5px) !important;
+    filter: brightness(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ══ ANIMACIONES (KEYFRAMES) ══ */
+
+/* Movimiento de color Dorado */
+@keyframes shine-gold {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Movimiento de color Esmeralda */
+@keyframes shine-emerald {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* El destello que cruza cada 2s */
+@keyframes sweep-light {
+    0% { left: -150%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* Efecto de Flotación */
+@keyframes float-btn {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .inst-btn-row {
+        flex-direction: column; /* En celular sí se ponen uno arriba del otro */
+        gap: 10px;
+    }
+    .inst-container-box {
+        padding: 30px 20px;
+    }
+}
+
+
+
+/* ══ SECCIÓN FINANCIAMIENTO ══ */
+.sec-financiamiento {
+    background-color: #00206b; /* Azul sólido de la imagen */
+    padding: 80px 0;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.finan-title {
+    font-weight: 600;
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 10px;
+}
+
+.finan-sub {
+    font-weight: 550;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-finan-wsp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #17a012; /* Verde WhatsApp */
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-finan-wsp:hover {
+    background-color: #12800e;
+    transform: scale(1.05);
+    color: #fff;
+}
+
+/* ══ SECCIÓN PREGUNTAS FRECUENTES ══ */
+.sec-faq {
+    background-color: #f2f2f2; /* Gris muy claro de la imagen */
+    padding: 80px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-title {
+    color: #00206b;
+    font-weight: 600;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.faq-sub {
+    color: #00206b;
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: -15px;
+}
+
+/* Acordeón Estilo Minimalista */
+.faq-accordion {
+    max-width: 900px;
+    margin: 40px auto 0;
+    border: 1.5px solid #00206b;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-accordion .accordion-item {
+    border-bottom: 1.5px solid #00206b;
+    background: transparent;
+}
+
+.faq-accordion .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.faq-accordion .accordion-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #00206b;
+    padding: 18px 25px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    background-color: rgba(0, 32, 107, 0.05);
+    color: #00206b;
+}
+
+/* Color del icono de la flecha */
+.faq-accordion .accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(59%) saturate(4529%) hue-rotate(218deg) brightness(91%) contrast(107%);
+}
+
+.faq-accordion .accordion-body {
+    padding: 20px 25px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .faq-accordion .accordion-button {
+        font-size: 13px;
+        padding: 15px;
+    }
+}
+
+
+/*==================================================================*/
+/* Estilos para móviles */
+@media (max-width: 991px) {
+    /* Forzamos el comportamiento de columna flex */
+    .col-lg-7.d-flex.flex-column {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* La lista de beneficios sube al primer lugar */
+    .order-mobile-1 {
+        order: 1 !important;
+        margin-bottom: 30px !important; /* Espacio antes de los botones */
+    }
+
+    /* Los botones bajan al segundo lugar */
+    .order-mobile-2 {
+        order: 2 !important;
+        margin-bottom: 0 !important; /* Pegado al fondo del cuadro */
+    }
+
+    /* Ajuste de los botones para que ocupen todo el ancho en móvil */
+    .inst-btn-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+}
+
+/* Estilos para escritorio (opcional, para asegurar limpieza) */
+@media (min-width: 992px) {
+    .order-mobile-1 {
+        order: 2; /* En PC la lista va abajo */
+    }
+    .order-mobile-2 {
+        order: 1; /* En PC los botones van arriba */
+    }
+}

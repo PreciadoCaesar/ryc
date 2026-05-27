@@ -1,0 +1,2641 @@
+@font-face {
+
+    font-family: montserrat;
+
+    src: url(../tipografia/Montserrat-Medium.ttf);
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* Aplicar a todo el sitio */
+* {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Ajustes específicos para que los títulos resalten */
+h1,
+h2,
+.card-header-white {
+    font-weight: 800 !important;
+    /* Extra Bold para títulos */
+    letter-spacing: 1px;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.small,
+p,
+label {
+    font-weight: 400;
+    /* Regular para textos de lectura */
+}
+
+/* Estilo para los inputs para que se vean más limpios con Poppins */
+.input-custom,
+.input-custom-left {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+/*
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0px;
+
+    font-family: Poppins !important;
+
+    padding-top: 100px;
+
+    transition: all 0s !important;
+
+    background:
+        /* Foco Superior derecho */
+        /*radial-gradient(circle at 100% 0%, var(--rojo) 0%, transparent 50%),*/
+
+        /* Foco Superior izquierdo
+        radial-gradient(circle at 20% 0%, var(--rojo) 0%, transparent 50%),
+
+        
+
+        /* Foco Inferior Izquierdo 
+        radial-gradient(circle at 20% 100%, var(--rojo) 0%, transparent 50%),
+
+        /*
+        radial-gradient(circle at 100% 100%, white 0%, transparent 50%),
+
+        /* Fondo Azul Oscuro (la base que une todo) 
+        #071540;
+
+    background-size: cover;
+
+    background-attachment: fixed;
+
+}
+*/
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif !important;
+    padding-top: 100px;
+    background-color: #071540; /* */
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* CAPA DE FONDO ANIMADA */
+body::before {
+    content: "";
+    position: fixed; 
+    /* Centramos el origen antes de girar */
+    top: 50%;
+    left: 50%;
+    /* Usamos 170vmax para que el 'círculo' sea gigante y no se vean bordes */
+    width: 170vmax; 
+    height: 170vmax;
+    z-index: -1; 
+    
+    background:
+        /* Tus focos originales */
+        radial-gradient(circle at 20% 0%, var(--rojo) 0%, transparent 50%),
+        radial-gradient(circle at 20% 100%, var(--rojo) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, white 0%, transparent 50%),
+        #071540;
+
+    /* Aumentamos un poco la velocidad como pediste (15s) */
+    animation: girarFocos 7s linear infinite;
+    /* El origen siempre al centro */
+    transform-origin: center center;
+}
+
+/* DEFINICIÓN DEL GIRO */
+@keyframes girarFocos {
+    /* Mantenemos el translate para que no se mueva de su sitio al rotar */
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+:root {
+
+    --verde: #09890d;
+
+    --azul: #1e374c;
+
+    --rojo: #9e183a;
+
+    --rosado: #ff003c;
+
+}
+
+/*Seccion nav*/
+
+.verde {
+
+    background: #09890d;
+
+}
+
+.azul {
+
+    background: #001252;
+
+}
+
+.rojo {
+
+    background: #9e183a;
+
+}
+
+
+
+.pointer {
+
+    cursor: pointer;
+
+}
+
+
+
+/*Seccion nav*/
+
+
+/* ══ NAVBAR ══ */
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+}
+
+.navbar .container-fluid {
+    padding: 0 20px;
+}
+
+.navbar-brand img {
+    height: 48px;
+    width: auto;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul) !important;
+    padding: 17px 10px !important;
+    transition: color .2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #FF044D !important;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .10);
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.dropdown-item {
+    font-size: 13px;
+    padding: 7px 13px;
+    border-radius: 6px;
+    color: var(--azul);
+    font-weight: 500;
+}
+
+.dropdown-item:hover {
+    background: var(--gris-claro);
+    color: #FF044D;
+}
+
+.nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.btn-nav {
+    border-radius: 50px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: filter .2s, transform .15s;
+}
+
+.btn-nav:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.btn-nav.verde {
+    background: var(--verde-wsp);
+    color: #fff !important;
+}
+
+.btn-nav.azul {
+    background: var(--azul-btn);
+    color: #fff !important;
+}
+
+.btn-nav.rojo {
+    background: var(--rojo-tienda);
+    color: #fff !important;
+}
+
+
+/*
+.rc-navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.rc-topbar {
+  width: 100% !important;
+  display: block;
+}
+*/
+/* CORRECCIÓN NAVBAR - Solo para desktop */
+@media (min-width: 992px) {
+    .rc-navbar {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1050 !important;
+        background: #fff !important;
+        width: 100% !important;
+    }
+}
+
+/* Compensar el espacio del topbar + navbar en desktop */
+@media (min-width: 992px) {
+    body>.container:first-of-type,
+    div[style*="padding-top: 80px"] {
+        margin-top: 160px !important;
+    }
+}
+
+/* NAVBAR EN UNA SOLA FILA - Solo desktop */
+@media (min-width: 992px) {
+    .rc-navbar .container {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        padding: 0 20px !important;
+    }
+
+    .rc-navbar .navbar-brand {
+        flex-shrink: 0 !important;
+    }
+
+    .rc-navbar .navbar-collapse {
+        display: flex !important;
+        flex: 1 !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .rc-navbar .navbar-nav {
+        flex-direction: row !important;
+        gap: 5px !important;
+        width: auto !important;
+    }
+
+    .rc-navbar .rc-buttons {
+        flex-shrink: 0 !important;
+    }
+
+    .rc-navbar .navbar-collapse {
+        visibility: visible !important;
+    }
+
+    .rc-navbar .navbar-toggler {
+        display: none !important;
+    }
+}
+
+
+
+/*==========================*/
+.rc-topbar img {
+    width: 100%;
+    display: block;
+}
+
+.btn-wsp,
+.btn-aula,
+.btn-tienda {
+    border-radius: 50px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: filter .2s, transform .15s;
+    color: #fff !important;
+}
+
+.btn-wsp:hover,
+.btn-aula:hover,
+.btn-tienda:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.btn-wsp {
+    background: #09890d;
+}
+
+.btn-aula {
+    background: #136EF0;
+}
+
+.btn-tienda {
+    background: #FF044D;
+}
+
+.rc-buttons {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: nowrap;
+}
+
+.navbar .container-fluid {
+    padding: 0 20px;
+}
+
+.container {
+
+    padding-top: 90px;
+
+    width: 100%;
+
+    height: auto;
+
+    display: flex;
+
+
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+
+
+}
+
+.container .botones {
+
+    width: 100%;
+
+    height: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+
+
+}
+
+.container .botones .btn-izq {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: white;
+
+    width: 350px;
+
+    height: 80px;
+
+    border: solid;
+
+    border-width: 0;
+
+    border-radius: 30px 0 0 30px;
+
+    display: flex;
+
+    background: var(--azul);
+
+    align-items: center;
+
+    justify-content: center;
+
+    align-content: center;
+
+    cursor: pointer;
+
+}
+
+
+
+.container .botones .btn-der {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: var(--azul);
+
+    width: 350px;
+
+    height: 80px;
+
+    border: solid;
+
+    border-width: 0;
+
+    border-radius: 0px 30px 30px 0px;
+
+    display: flex;
+
+    background: #e9fafd;
+
+    align-items: center;
+
+    justify-content: center;
+
+    align-content: center;
+
+    cursor: pointer;
+
+}
+
+
+
+.container .pasos {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-bottom: 50px;
+
+}
+
+.container .pasos .title {
+
+    display: flex;
+
+    width: 33%;
+
+    height: auto;
+
+    background: white;
+
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 50%);
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 15px;
+
+}
+
+.container .pasos .title svg {
+
+    fill: var(--azul);
+
+}
+
+.container .pasos .title img {
+
+    margin-top: 10px;
+
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+/*
+.container .center{
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 13%;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-direction: row;
+
+    align-items: flex-start;
+
+}*/
+
+.container .left {
+
+    margin-top: 5px;
+
+    /*width: 40%;*/
+
+    height: max-content;
+
+    z-index: 1;
+
+    margin-bottom: 50px;
+
+}
+
+.container .left .title {
+
+    display: flex;
+
+    width: 100%;
+
+    height: 25%;
+
+    background: white;
+
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 50%);
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    border-radius: 20px;
+
+}
+
+.container .left .title .uno {
+
+    font-size: 25px;
+
+    color: #6b6b6b;
+
+    font-weight: 700;
+
+}
+
+.container .left .title .dos {
+
+    font-size: 25px;
+
+    color: #044bb1;
+
+    font-weight: 900;
+
+}
+
+
+
+.container .left .consulta {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    width: 100%;
+
+    height: auto;
+
+    background: white;
+
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 50%);
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    border-radius: 20px;
+
+}
+
+
+
+.container .left .consulta form {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 50px;
+
+}
+
+.container .left .consulta form .captcha {
+
+    display: flex;
+
+}
+
+.form-check-input {
+
+    width: 25px !important;
+
+    height: 25px !important;
+
+    border: solid !important;
+
+    border-width: 2px !important;
+
+    border-color: var(--azul) !important;
+
+}
+
+label {
+
+    display: inline-block;
+
+    margin: 5px 0 0 5px;
+
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+
+    border-color: #00a0e3 !important;
+
+    border-style: solid !important;
+
+    border-width: 1px !important;
+
+}
+
+
+
+.container .left .consulta .captcha .form-control {
+
+    background: #d5f4fc;
+
+    width: 70%;
+
+    height: 60px;
+
+    border-radius: 40px 0 0 40px;
+
+    border: solid;
+
+    border-width: 2px;
+
+    border-color: #044bb1;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    color: #044bb1;
+
+}
+
+.container .left .consulta .captcha .txt {
+
+    /*background-image: url('../img/recursos/fondocaptcha.webp');*/
+
+    width: 30%;
+
+    height: 60px;
+
+    /*border-radius: 0px 40px 40px 0px;*/
+
+    border: solid;
+
+    border-width: 2px;
+
+    border-color: #044bb1;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    color: #d5f4fc;
+
+    display: flex;
+
+    align-content: center;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+
+
+.container .left .consulta form .botones {
+
+    display: flex;
+
+}
+
+
+
+.container .left .consulta .form-control {
+
+    background: #d5f4fc;
+
+    width: 100%;
+
+    height: 60px;
+
+    border-radius: 40px;
+
+    border: solid;
+
+    border-width: 2px;
+
+    border-color: var(--azul);
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    color: var(--azul);
+
+}
+
+
+
+.container .left .consulta .form-text {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+
+
+.container .left .consulta .form-text {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+
+
+.container .left .consulta .botones {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container .right {
+
+    padding: 5px 0px 0 20px;
+
+    /*width: 60%;*/
+
+    height: max-content;
+
+    overflow-y: none;
+
+    z-index: 0;
+
+    /*display: none;*/
+
+    /*margin-left: -100%;*/
+
+}
+
+.onn {
+
+    display: block !important;
+
+    margin-left: 0% !important;
+
+}
+
+
+
+
+
+#verright {
+
+
+
+    /*display: none;*/
+
+
+
+}
+
+
+
+.container .right .title {
+
+    display: flex;
+
+    width: 100%;
+
+    height: auto;
+
+    background: white;
+
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 50%);
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    border-radius: 20px;
+
+}
+
+
+
+.container .right .title .uno {
+
+    font-size: 25px;
+
+    color: #6b6b6b;
+
+    font-weight: 700;
+
+}
+
+
+
+.container .right .title .dos {
+
+    font-size: 25px;
+
+    color: #044bb1;
+
+    font-weight: 900;
+
+}
+
+
+
+.container .right .visualizador {
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    BACKGROUND: white;
+
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 50%);
+
+    border-radius: 20px;
+
+}
+
+.container .right .visualizador h2 {
+
+    color: #0077cc;
+
+}
+
+
+
+.container .right .visualizador th,
+td {
+
+    border: 1px solid #0077cc;
+
+    padding: 10px;
+
+    text-align: left;
+
+}
+
+.container .right .visualizador th {
+
+    background: #00a0e3;
+
+    color: white;
+
+    text-transform: uppercase;
+
+}
+
+.container .right .visualizador .title {
+
+    font-weight: bold;
+
+    color: #003366;
+
+    background: none;
+
+    box-shadow: none;
+
+}
+
+.container .right .visualizador .dato {
+
+    font-weight: bold;
+
+    color: #0056b3;
+
+}
+
+.container .right .visualizador .institution {
+
+    font-weight: bold;
+
+    color: #003366;
+
+    text-align: left !important;
+
+
+
+}
+
+.container .right .visualizador .italic {
+
+    font-style: italic;
+
+    color: #666;
+
+}
+
+
+
+#drop_zone {
+
+    border: 5px solid #044bb1;
+
+    width: 200px;
+
+    height: 200px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 25px;
+
+    padding: 10px;
+
+    flex-direction: column;
+
+    text-align: center;
+
+}
+
+.flex {
+
+    display: flex;
+
+}
+
+#drop_zone_2 {
+
+    border: 5px solid #044bb1;
+
+    width: 200px;
+
+    height: 200px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 25px;
+
+    padding: 10px;
+
+    flex-direction: column;
+
+    text-align: center;
+
+}
+
+
+
+
+
+/*Seccion seccion-footer*/
+
+#seccion-footer {
+
+    margin-bottom: 0px;
+
+    width: 100%;
+
+    height: auto;
+
+    background-size: cover;
+
+    background: var(--azul);
+
+}
+
+#seccion-footer #centrado {
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    flex-direction: row;
+
+}
+
+#seccion-footer #centrado .izq {
+
+    width: 30%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 25px;
+
+}
+
+#seccion-footer #centrado .izq .texto {
+
+    color: white;
+
+}
+
+#seccion-footer #centrado .izq .sub-titulo {
+
+    color: white;
+
+    font-weight: 900;
+
+    margin: 15px 0;
+
+}
+
+#seccion-footer #centrado .izq .redes {
+
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 10px;
+
+}
+
+#seccion-footer #centrado .izq .redes svg {
+
+    color: white;
+
+}
+
+
+
+#seccion-footer #centrado .center {
+
+    width: 30%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 25px;
+
+}
+
+#seccion-footer #centrado .center .sub-titulo {
+
+    color: white;
+
+    font-weight: 900;
+
+    margin: 15px 0;
+
+}
+
+#seccion-footer #centrado .center .imagen {
+
+    width: 250px;
+
+    height: a;
+
+}
+
+#seccion-footer #centrado .center .fila {
+
+    width: 100%;
+
+    height: auto;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-content: center;
+
+    align-items: center;
+
+}
+
+#seccion-footer #centrado .center .fila .icon {
+
+    width: 40px;
+
+    height: auto;
+
+}
+
+#seccion-footer #centrado .center .fila .txt {
+
+    width: 80%;
+
+    height: max-content;
+
+    align-content: center;
+
+    padding: 3px;
+
+}
+
+
+
+
+
+#seccion-footer #centrado .der {
+
+    width: 30%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 25px;
+
+}
+
+#seccion-footer #centrado .der .sectionbutton {
+
+    margin-top: 15px;
+
+    width: 350px;
+
+    background: white;
+
+    display: flex;
+
+    align-content: center;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    fill: #000;
+
+    color: #000;
+
+    border-radius: 3px;
+
+    padding: 12px 24px;
+
+    cursor: pointer;
+
+}
+
+#seccion-footer #centrado .der .text {
+
+    margin-right: 10px;
+
+    font-weight: 600;
+
+    font-size: 16px;
+
+
+
+}
+
+#seccion-footer #centrado .der .rutas {
+
+    width: 100%;
+
+    margin: 20px 0 0 7px;
+
+}
+
+#seccion-footer #centrado .der .rutas .text {
+
+    font-size: 16px;
+
+    color: white;
+
+    font-weight: 400;
+
+    margin-top: 15px;
+
+}
+
+/*Seccion seccion-footer*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Tablets para arriba - Desktop*/
+
+@media (min-width: 992px) {
+
+    .navbar-expand-lg {
+
+        flex-wrap: nowrap;
+
+        justify-content: flex-start;
+
+        background: white;
+
+    }
+
+    .navbar-expand-lg .navbar-nav {
+
+        display: flex;
+
+        flex-direction: row;
+
+        width: 70%;
+
+        justify-content: space-between;
+
+        margin-right: 0px !important;
+
+        background: white;
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+
+
+
+
+/*CELULARES para arriba*/
+
+@media (max-width: 992px) {
+
+    .container .pasos {
+
+        width: 100%;
+
+        display: flex;
+
+        gap: 20px;
+
+        margin-bottom: 50px;
+
+        flex-direction: column;
+
+    }
+
+    .container .pasos .title {
+
+        display: flex;
+
+        width: 100%;
+
+        height: auto;
+
+        background: white;
+
+        box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 50%);
+
+        justify-content: flex-start;
+
+        align-items: center;
+
+        flex-direction: column;
+
+        padding: 15px;
+
+    }
+
+
+
+
+
+    footer .ftop .izq {
+
+        text-align: left;
+
+        display: flex;
+
+        justify-content: flex-start;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        align-content: center;
+
+    }
+
+    .input-group {
+
+        position: relative;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        align-items: center;
+
+        width: 100%;
+
+        justify-content: center;
+
+        align-content: center;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+
+        border-color: #00a0e3 !important;
+
+        border-style: solid !important;
+
+        border-width: 1px !important;
+
+        font-size: 12px !important;
+
+    }
+
+    .container-fluid {
+
+        --bs-gutter-x: 0px !important;
+
+    }
+
+    .navbar-expand-lg {
+
+        background: white;
+
+    }
+
+    .d-flex {
+
+        display: flex !important;
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        justify-content: space-around;
+
+        align-items: center;
+
+        gap: 10px;
+
+        align-content: center;
+
+    }
+
+    .container,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+
+        --bs-gutter-x: 0px;
+
+    }
+
+    .navbar-brand {
+
+        margin-left: 3%;
+
+    }
+
+    .navbar-toggler {
+
+        margin-right: 3% !important;
+
+    }
+
+
+
+    .container-fluid {
+
+        transition: 0;
+
+    }
+
+    .container-fluid .collapse {
+
+        transition: 0;
+
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .27);
+
+        background: white;
+
+        z-index: 99;
+
+        margin-top: 8px;
+
+    }
+
+    .collapsing {
+
+        transition: none;
+
+    }
+
+    .celular {
+
+        display: block;
+
+        height: max-content;
+
+        object-position: left;
+
+        object-fit: cover;
+
+    }
+
+    .computadora {
+
+        display: none;
+
+    }
+
+    .container {
+
+        padding-top: 0px;
+
+        width: 100%;
+
+        height: auto;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        flex-direction: column;
+
+    }
+
+    .container .left .title .dos {
+
+        font-size: 25px;
+
+        color: #044bb1;
+
+        font-weight: 900;
+
+        text-align: center;
+
+    }
+
+    .container .botones {
+
+        width: 100%;
+
+        height: auto;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 15px 0;
+
+        flex-direction: row;
+
+    }
+
+    #div-app {
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+    .container .left {
+
+        margin-top: 5px;
+
+        width: 100%;
+
+        height: max-content;
+
+        z-index: 1;
+
+        margin-bottom: 30px;
+
+    }
+
+    .container .right {
+
+        padding: 0px 0px 0 0px;
+
+        width: 100%;
+
+        height: 650px;
+
+        overflow-y: scroll;
+
+        z-index: 0;
+
+        display: none;
+
+        margin-left: -100%;
+
+    }
+
+    .container .left .consulta form {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 13px;
+
+    }
+
+
+
+
+
+    /*footer*/
+
+    #seccion-footer {
+
+        margin-bottom: 0px;
+
+        width: 100%;
+
+        height: auto;
+
+        background-size: cover;
+
+        background: #00206b;
+
+    }
+
+    #seccion-footer #centrado {
+
+        height: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+    #seccion-footer #centrado .izq {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+    }
+
+    #seccion-footer #centrado .center {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+    }
+
+    #seccion-footer #centrado .der {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        overflow: hidden;
+
+    }
+
+}
+
+
+/* NUEVO CSS*/
+/* Estilo para que el modal sea cristalino */
+.modal-content {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-backdrop.show {
+    opacity: 0.8;
+    background-color: #101844;
+    z-index: 1040;
+}
+
+/* Ajuste responsivo para el alto del PDF */
+@media (max-width: 768px) {
+    #bodyModalPDF iframe {
+        height: 450px;
+    }
+}
+
+
+
+
+/* Estilos para los bloques dinámicos */
+.result-item-box {
+    background: #e0f2ff !important;
+    border-radius: 12px;
+    border-left: 8px solid #00b0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #101844;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.label-mini {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #0070c0;
+    display: block;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.nombre-acreditado {
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.curso-titulo {
+    font-weight: 700;
+    font-size: 13px;
+    color: #0056b3;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.dni-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: #b31217;
+}
+
+.border-end-custom {
+    border-right: 1px solid rgba(0, 112, 192, 0.2);
+}
+
+.inst-name {
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.horas-badge {
+    font-size: 11px;
+    background: #101844;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .border-end-custom {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* CODE*/
+/* ANULACIONES PARA EL DISEÑO NUEVO */
+
+/* 1. Quitamos las restricciones de ancho antiguas para que Bootstrap mande */
+.container .center,
+.container .left,
+.container .right {
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    flex: none !important;
+    /* Evita que el flex antiguo pelee con Bootstrap */
+}
+
+/* 2. Permitimos que el contenedor use el ancho completo de la fila */
+.container {
+    max-width: 100% !important;
+    display: block !important;
+    /* Cambiamos de flex a block para que las 'row' de Bootstrap funcionen */
+}
+
+/* 3. Ajuste para que el título blanco del formulario no herede fuentes gigantes */
+.container .left .title .dos,
+.container .left .title .uno {
+    font-size: 14px !important;
+}
+
+/* 4. Aseguramos que el fondo del formulario sea el que quieres */
+.container .left .consulta {
+    background: transparent !important;
+    /* Para que se vea el glassmorphism */
+    box-shadow: none !important;
+}
+
+
+/* CUANDO EL DIV NO ES ANGOSOTRO*/
+/* Ajuste para que el contenido no se desborde en divs angostos */
+.result-item-box {
+    padding: 15px !important;
+}
+
+.curso-titulo {
+    font-size: 12px !important;
+    /* Un poco más pequeño para que quepa en el div angosto */
+    word-break: break-word;
+}
+
+
+/* CSS ICONOS*/
+/* Estilo de la Tarjeta Glass */
+.card-glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card-header-white {
+    background: white;
+    color: #001252;
+    padding: 15px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+/* Inputs con bordes blancos y transparentes */
+.input-custom {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1.5px solid white !important;
+    border-radius: 10px !important;
+    color: white !important;
+    height: 55px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.input-custom::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+}
+
+/* Captcha Especial */
+.captcha-container {
+    display: flex;
+    gap: 0;
+}
+
+.input-custom-left {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1.5px solid white !important;
+    border-right: none !important;
+    border-radius: 10px 0 0 10px !important;
+    color: white !important;
+    height: 55px;
+    flex: 1;
+}
+
+.captcha-box {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1.5px solid white;
+    border-radius: 0 10px 10px 0;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* FUENTE POPPINS LIMPIA */
+    font-family: 'Poppins', sans-serif !important;
+    color: white !important;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    /* ANULAR EFECTOS EXTRAÑOS */
+    text-shadow: none !important;
+    -webkit-text-stroke: 0px !important;
+    paint-order: normal;
+    font-variant: normal;
+}
+
+
+
+/* Botones */
+.btn-search {
+    background: #001252 !important;
+    color: white !important;
+    border-radius: 30px !important;
+    flex: 1;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.btn-clear {
+    background: #6c757d !important;
+    color: white !important;
+    border-radius: 30px !important;
+    flex: 1;
+    padding: 12px;
+    font-weight: bold;
+}
+
+/* Placeholder Resultados */
+.placeholder-results {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    height: 300px;
+    /* Alto inicial */
+}
+
+/* Iconos Pasos */
+.step-icon {
+    width: 120px;
+    /* <--- CAMBIA ESTE VALOR para el tamaño que quieras */
+    height: auto;
+    margin-top: 15px;
+    /* Espacio opcional arriba del icono */
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.step-icon:hover {
+    transform: scale(1.1);
+}
+
+.step-icon-2 {
+    width: 100px;
+    /* <--- CAMBIA ESTE VALOR para el tamaño que quieras */
+    height: auto;
+    margin-top: 15px;
+    /* Espacio opcional arriba del icono */
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.step-icon-2:hover {
+    transform: scale(1.1);
+}
+
+/* Iconos Pasos */
+.step-icon-2 {
+    width: 90px;
+    /* <--- CAMBIA ESTE VALOR para el tamaño que quieras */
+    height: auto;
+    margin-top: 15px;
+    /* Espacio opcional arriba del icono */
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.step-icon-2:hover {
+    transform: scale(1.1);
+}
+
+.texto-blanco {
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+#cer {
+    margin-top: -18px;
+}
+
+
+
+
+
+
+
+/* 1. Base de la tabla */
+#todatabla table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    background: transparent;
+}
+
+/* 2. La FILA (Tarjeta): FLEXBOX es obligatorio para que las columnas funcionen */
+#todatabla tr {
+    background: #e0f2ff !important;
+    border-radius: 12px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between;
+    border-left: 8px solid #00b0f0;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. Regla general para todas las CELDAS (TD) */
+#todatabla td {
+    border: none !important;
+    padding: 0 10px !important;
+    color: #1e374c !important;
+    display: flex !important;
+    flex-direction: column !important;
+    /* Mantiene nombre arriba y DNI abajo */
+    align-items: center !important;
+    /* CENTRADO HORIZONTAL */
+    justify-content: center !important;
+    /* CENTRADO VERTICAL */
+    text-align: center !important;
+}
+
+/* 4. Control de anchos de columnas */
+#todatabla td:nth-child(1) {
+    flex: 1;
+    border-right: 1px solid rgba(0, 176, 240, 0.2) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    /* centra horizontalmente */
+    justify-content: center !important;
+    /* centra verticalmente */
+    text-align: center !important;
+    padding: 5px 10px !important;
+}
+
+#todatabla td:nth-child(2) {
+    flex: 1.5;
+}
+
+#todatabla td:nth-child(3) {
+    flex: 0 0 180px;
+    border-left: 1px solid rgba(0, 176, 240, 0.2) !important;
+}
+
+/* 5. Título del nombre */
+#todatabla .nombre {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    color: #001252 !important;
+    text-transform: uppercase;
+    margin-bottom: 2px !important;
+    display: block;
+}
+
+/* 6. Botón Ver Certificado (CORREGIDO) */
+.gdxhoras {
+    background: #001252;
+    color: white !important;
+    padding: 8px 15px !important;
+    border-radius: 6px !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    width: 100% !important;
+    /* Ocupa el ancho total de su columna de 180px */
+    text-align: center !important;
+    /* Texto al centro */
+    margin-top: 5px !important;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+#subtitulo {
+    font-weight: 600;
+}
+
+.div-subtitulo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#sub-2 {
+    margin-top: 70px;
+    justify-content: center;
+}
+
+
+/* MODAL CERTIFICADO ==================================================================*/
+/* Modal más grande y alto */
+#modalCertificado .modal-dialog {
+    max-width: 95vw !important;
+    width: 95vw !important;
+    margin: 10px auto !important;
+    z-index: 1055;
+}
+
+#modalCertificado .modal-content {
+    height: 75vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#modalCertificado .modal-body {
+    flex: 1 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+/* El iframe dentro ocupa todo el body */
+#bodyModalPDF iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 75vh !important;
+    border: none !important;
+    display: block !important;
+}
+
+@media (min-width: 992px) {
+    #modalCertificado .modal-dialog {
+        margin-top: 100px !important;
+    }
+}
+
+
+/* ============== FOOTER ================*/
+/* ══ FOOTER BASE ══ */
+footer {
+    background: #00206b;
+    /* #0A1F5C */
+    color: rgba(255, 255, 255, 0.82);
+    padding: 52px 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer .inner-wrap {
+    max-width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+footer h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: .02em;
+}
+
+footer p,
+footer li {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 7px;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color .2s;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: var(--amarillo);
+}
+
+/* ══ FOOTER BOTTOM ══ */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 18px 0;
+    margin-top: 36px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.48);
+    margin: 0;
+}
+
+/* ══ ICONOS SOCIALES ══ */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+}
+
+.social-icons a:hover {
+    background: #FF044D;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ══ BOTÓN CERTIFICADO ══ */
+.btn-cert-f {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FF044D;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 600px) {
+    footer .inner-wrap {
+        padding: 0 20px;
+    }
+
+    .footer-bottom {
+        margin-top: 24px;
+        padding: 14px 0;
+    }
+}
+
+@media (max-width: 991px) {
+    footer .inner-wrap {
+        max-width: 100%;
+        padding: 0 32px;
+    }
+}
+
+
+
+
+
+
+/* Quitar el margin-top forzado que tenías */
+.container[style*="padding-top"] {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+}
+
+
+/* INPUT DNI*/
+
+#inputDni::placeholder {
+    font-size: 25px;
+    opacity: 1;
+}
+
+#inputDni:-ms-input-placeholder {
+    font-size: 25px;
+}
+
+#inputDni::-ms-input-placeholder {
+    font-size: 25px;
+}
+
+/* INPUT CODIGO CAPCHA*/
+
+#inputDni::placeholder,
+#cpatchaTextBox::placeholder {
+    font-size: 25px;
+    opacity: 1;
+}
+
+#cpatchaTextBox:-ms-input-placeholder {
+    font-size: 25px;
+}
+
+#cpatchaTextBox::-ms-input-placeholder {
+    font-size: 25px;
+}
+
+/* TEXTO SECCION 2 */
+.text-white-2 {
+    font-size: 25px;
+    color: white;
+}
+
+.text-white-3 {
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/*
+@media (max-width: 767px) {
+    .small-text-mobile {
+        font-size: 11px !important;
+        line-height: 1.2;
+    }
+
+    .text-white-2.fw-bold {
+        font-size: 14px !important;
+    }
+
+    .step-icon-2 {
+        max-width: 80px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .how-to-section .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .text-white-3 {
+        padding: 0 10px;
+        font-size: 12px !important;
+        font-size: 14px;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        max-width: 200px;
+        justify-content: center;
+    }
+}*/
+@media (max-width: 767px) {
+    .small-text-mobile {
+        font-size: 11px !important;
+        line-height: 1.2;
+    }
+
+    .text-white-2.fw-bold {
+        font-size: 14px !important;
+        text-align: center; /* Asegura títulos centrados */
+    }
+
+    /* Centrado de los iconos */
+    .step-icon, .step-icon-2 {
+        max-width: 80px;
+        margin: 10px auto 0 !important; /* Centra el icono horizontalmente */
+        display: block !important;
+    }
+
+    .text-white-3 {
+        padding: 0 !important;
+        font-size: 12px !important;
+        margin: 10px auto !important; /* CENTRADO DINÁMICO */
+        text-align: center;
+        max-width: 140px; /* Reducido para que no empuje las columnas */
+        display: block; 
+    }
+    #subtitulo{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+
+/* MOVIL DATOS DE CERTIFICADO*/
+/* --- ESTILOS GENERALES (PARA ESCRITORIO) --- */
+.input-custom, 
+.input-custom-left,
+.captcha-box {
+    font-size: 30px; /* Tamaño grande para desktop */
+    height: 60px;    /* Altura para desktop */
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* --- MEDIA QUERY PARA MÓVIL (MENOS DE 768px) --- */
+@media (max-width: 767px) {
+    /* ACHICAR EL CONTENEDOR GENERAL */
+    .card-glass {
+        max-width: 90%; /* Que no ocupe todo el ancho para que respire */
+        margin: 0 auto;  /* Centrar la tarjeta */
+    }
+
+    /* REDUCIR PADDING DE LA CONSULTA */
+    .consulta.p-4 {
+        padding: 1rem !important;
+    }
+
+    /* ACHICAR FUENTE Y ALTURA DE INPUTS Y CAPTCHA */
+    .input-custom, 
+    .input-custom-left,
+    .captcha-box {
+        font-size: 18px !important; /* ACHICADO DE 30px A 18px */
+        height: 45px !important;    /* ACHICADO DE 60px A 45px */
+    }
+
+    /* ACHICAR EL PLACEHOLDER */
+    .input-custom::placeholder,
+    .input-custom-left::placeholder {
+        font-size: 12px !important;
+    }
+
+    /* AJUSTE ESPECÍFICO DEL CAPTCHA BOX */
+    .captcha-box {
+        width: 90px !important; /* Más angosto en móvil */
+        letter-spacing: 2px !important;
+    }
+
+    /* ACHICAR TÍTULOS Y TEXTOS PEQUEÑOS */
+    .div-subtitulo {
+        font-size: 14px !important;
+    }
+
+    .form-check-label {
+        font-size: 12px !important;
+    }
+
+    .captcha-box {
+        width: 100px !important;         
+        font-size: 16px !important;      
+        letter-spacing: 2px !important; 
+        height: 45px !important; 
+            
+    }
+
+    .rc-topbar {
+        display: none !important;
+    }
+
+
+    body > .container:first-of-type,
+    div[style*="padding-top: 80px"] {
+        margin-top: 70px !important; 
+    }
+
+    /*NAVBAR*/
+    /* Fuerza que el logo y el botón estén en la misma línea */
+    .rc-navbar .container {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    /* Estilo del menú cuando se despliega - solo cuando tiene clase .show */
+    .rc-navbar .navbar-collapse {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        margin-top: 0;
+    }
+
+    /* Alinea los links verticalmente */
+    .rc-navbar .navbar-nav {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .rc-navbar .nav-link {
+        padding: 12px 0 !important;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Ocultar el banner morado si aún no lo habías hecho */
+    .rc-topbar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    /* 1. Barra principal: Logo a la izquierda, Botón a la derecha */
+    .rc-navbar .container, .rc-navbar .container-fluid {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 50px !important;
+        min-height: 50px !important;
+    }
+
+    /* Ocultar botones en móvil */
+    .rc-buttons {
+        display: none !important;
+    }
+}
+
+
+
+/* Estilo por defecto para MÓVILES */
+.custom-margin {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+/* Estilo para ESCRITORIO (Pantallas grandes) */
+@media (min-width: 992px) {
+    .custom-margin {
+        /* En lugar de 500px fijos, usamos max-width para que sea flexible */
+        max-width: 900px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Específico para Tablets (desde 768px hasta 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .card-glass {
+        width: 100%; /* Asegura que ocupe todo el ancho del col-md-10 */
+        padding: 20px; /* Más aire interno */
+    }
+
+    .input-custom {
+        height: 70px; /* Inputs más altos para mejor toque en tablet */
+        font-size: 25px !important;
+    }
+
+    .captcha-container {
+        display: flex;
+        flex-direction: column; /* Apila el captcha si es necesario */
+        align-items: center;
+    }
+}
+
+/* Específico para Tablets (desde 768px hasta 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Si usas la clase 'div-app' para todo el contenedor */
+    #div-app {
+        max-width: 600px; /* Limita el ancho total de toda la sección */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* O si prefieres limitar solo la tarjeta individualmente */
+    .card-glass {
+        max-width: 550px; /* Limita el ancho de la tarjeta */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

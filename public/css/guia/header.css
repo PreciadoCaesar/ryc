@@ -1,0 +1,162 @@
+/* ═════════ HEADER R&C LIMPIO FULL WIDTH ═════════ */
+
+/* ELIMINA ESPACIOS GLOBALES */
+body{
+    margin:0;
+    padding:0;
+}
+
+/* TOP BAR */
+.rc-topbar{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+.rc-topbar img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* NAVBAR FULL WIDTH */
+.rc-navbar{
+    width:100%;
+    background:#0A1F5C;
+    position:sticky;
+    top:0;
+    z-index:999;
+    padding:0;
+    margin:0;
+}
+
+/* IMPORTANTE → elimina margen del container */
+.rc-navbar .container{
+    max-width:100% !important;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+/* Logo */
+.rc-logo{
+    height:45px;
+}
+
+/* Links */
+.rc-navbar .nav-link{
+    color:#FFFFFF !important;
+    font-weight:600;
+    font-size:14px;
+    padding:18px 14px !important;
+    transition:0.3s;
+}
+
+.rc-navbar .nav-link:hover{
+    color:#FFFFFF !important;
+}
+
+/* Toggler */
+.navbar-toggler{
+    border:none;
+}
+
+/* BOTONES */
+.rc-buttons{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.rc-buttons a{
+    display:flex;
+    align-items:center;
+    gap:6px; /* espacio icono-texto */
+    padding:8px 16px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:13px;
+    color:#fff;
+    transition:0.3s;
+}
+
+/* ICONOS PERFECTAMENTE CENTRADOS */
+.rc-buttons svg{
+    width:18px;
+    height:18px;
+    display:block;
+}
+
+/* COLORES ORIGINALES */
+.btn-wsp{ background:#038814; }
+.btn-aula{ background:#136EF0; }
+.btn-tienda{ background:#FF044D; }
+
+.rc-buttons a:hover{
+    opacity:0.9;
+}
+
+/* RESPONSIVE */
+@media(max-width:991px){
+
+    .navbar-collapse{
+        background:#0A1F5C;
+        padding:15px 20px;
+    }
+
+    .rc-buttons{
+        flex-direction:column;
+        margin-top:15px;
+        width:100%;
+    }
+
+    .rc-buttons a{
+        width:100%;
+        justify-content:center;
+    }
+}
+
+.btn-wsp, .btn-aula, .btn-tienda {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Links - más espaciado */
+.rc-navbar .nav-link{
+    color:#FFFFFF !important;
+    font-weight:600;
+    font-size:14px;
+    padding:18px 22px !important;
+    transition:0.3s;
+    white-space: nowrap;
+}
+
+/* Menú ocupa todo el espacio disponible */
+.rc-navbar .navbar-nav{
+    flex-grow: 1;
+    justify-content: space-evenly;
+    margin: 0 30px;
+}
+
+/* BOTONES - tamaño más consistente */
+.rc-buttons{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink: 0;
+}
+
+.rc-buttons a{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:13px;
+    color:#fff;
+    transition:0.3s;
+    white-space: nowrap;
+}

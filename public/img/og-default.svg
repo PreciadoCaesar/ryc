@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A1F5C"/>
+  <rect x="150" y="100" width="900" height="430" rx="30" fill="#1A3A7A"/>
+  <text x="600" y="240" font-family="Poppins, Arial, sans-serif" font-size="80" font-weight="bold" fill="#FFB800" text-anchor="middle">R&amp;C Consulting</text>
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="36" fill="#fff" text-anchor="middle">Capacitación en Gestión Pública</text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="22" fill="#FF044D" text-anchor="middle">Cursos · Diplomados · In House</text>
+</svg>

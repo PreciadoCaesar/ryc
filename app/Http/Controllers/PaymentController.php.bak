@@ -1,0 +1,273 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Mail\PurchaseConfirmation;
+use App\Models\Purchase;
+use App\Services\IzipayService;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+
+class PaymentController extends Controller
+{
+    public function __construct(
+        protected IzipayService $izipay
+    ) {}
+
+    public function index()
+    {
+        $purchaseIds = session('payment.purchase_ids');
+
+        if (!$purchaseIds || empty($purchaseIds)) {
+            return redirect('/carrito')->with('info', 'No hay compras pendientes de pago.');
+        }
+
+        $purchases = Purchase::whereIn('id', $purchaseIds)->with('course')->get();
+
+        if ($purchases->isEmpty()) {
+            return redirect('/carrito')->with('info', 'No se encontraron las compras.');
+        }
+
+        $totalCents = (int) round($purchases->sum(fn($p) => $p->amount ?? 0) * 100);
+        $first = $purchases->first();
+
+        try {
+            $orderId = 'ORD-' . now()->format('Ymd') . '-' . strtoupper(Str::random(6));
+
+            Purchase::whereIn('id', $purchaseIds)->update(['izipay_order_id' => $orderId]);
+
+            $formToken = $this->izipay->generateFormToken([
+                'amount' => $totalCents,
+                'orderId' => $orderId,
+                'email' => $first->contact_email,
+                'customerId' => (string) ($first->user_id ?? ''),
+                'firstName' => explode(' ', $first->contact_name, 2)[0] ?? '',
+                'lastName' => explode(' ', $first->contact_name, 2)[1] ?? '',
+                'phone' => $first->contact_phone,
+                'identityType' => 'DNI',
+                'identityCode' => '',
+            ]);
+
+            $publicKey = $this->izipay->getPublicKey();
+        } catch (\Throwable $e) {
+            Log::error('Izipay formToken error: ' . $e->getMessage());
+            return redirect('/carrito')->with('info', 'Error al conectar con la pasarela de pagos. Intenta nuevamente.');
+        }
+
+        $total = $purchases->sum(fn($p) => $p->amount ?? 0);
+        $contact = [
+            'name' => $first->contact_name,
+            'email' => $first->contact_email,
+            'phone' => $first->contact_phone,
+        ];
+
+        return view('cart.payment', compact(
+            'purchases', 'total', 'contact', 'formToken', 'publicKey', 'orderId'
+        ));
+    }
+
+    public function success(Request $request)
+    {
+        Log::info('success() called', [
+            'method' => $request->method(),
+            'url' => $request->fullUrl(),
+            'has_kr_answer' => $request->has('kr-answer'),
+            'input_keys' => array_keys($request->all()),
+        ]);
+
+        if ($request->isMethod('post') && !$request->has('kr-answer')) {
+            Log::warning('Success POST sin kr-answer', ['input' => $request->all()]);
+            return redirect('/carrito')->with('info', 'Error inesperado. Intenta nuevamente.');
+        }
+
+        if ($request->isMethod('post') && $request->has('kr-answer')) {
+            if (!$this->izipay->verifyHash()) {
+                Log::warning('Izipay hash verification failed', $request->all());
+                return redirect('/carrito')->with('info', 'Error de validación en la respuesta de pago.');
+            }
+
+            $krAnswer = json_decode($request->input('kr-answer'), true);
+
+            Log::info('kr-answer completo', ['kr-answer' => $krAnswer]);
+
+            $orderId = $krAnswer['orderDetails']['orderId'] ?? '';
+            $transactionId = $krAnswer['transactions'][0]['uuid'] ?? '';
+            $paymentMethod = $krAnswer['paymentMethodDetails']['paymentMethod'] ?? '';
+            $transStatus = $krAnswer['transactions'][0]['status'] ?? '';
+            $orderStatus = $krAnswer['orderStatus'] ?? '';
+
+            $purchases = Purchase::where('izipay_order_id', $orderId)->get();
+
+            if ($purchases->isEmpty()) {
+                Log::warning('Success: No purchases for orderId: ' . $orderId);
+                return redirect('/carrito')->with('info', 'Pedido no encontrado.');
+            }
+
+            $purchaseIds = $purchases->pluck('id')->toArray();
+
+            $newStatus = match ($orderStatus) {
+                'PAID' => 'activo',
+                'UNPAID', 'ABANDONED', 'EXPIRED' => 'rechazado',
+                'RUNNING' => 'pendiente',
+                default => 'pendiente',
+            };
+
+            $isSuccess = $newStatus === 'activo';
+
+            Log::info('Izipay success', [
+                'transaction_id' => $transactionId,
+                'orderId' => $orderId,
+                'orderStatus' => $orderStatus,
+                'transStatus' => $transStatus,
+                'newStatus' => $newStatus,
+            ]);
+
+            foreach ($purchases as $purchase) {
+                $purchase->update([
+                    'transaction_id' => $transactionId,
+                    'payment_method' => $paymentMethod,
+                    'payment_status' => $transStatus,
+                    'status' => $newStatus,
+                    'completed_at' => $isSuccess ? now() : $purchase->completed_at,
+                ]);
+            }
+
+            if (!$isSuccess) {
+                session()->forget('payment.purchase_ids');
+                Log::info('Pago rechazado', ['orderId' => $orderId, 'orderStatus' => $orderStatus, 'transStatus' => $transStatus]);
+                return redirect('/carrito')->with('info', 'El pago no pudo ser procesado. Intenta nuevamente.');
+            }
+
+            $first = $purchases->first();
+            $items = $purchases->map(fn($p) => [
+                'title' => $p->course->title ?? 'Curso',
+                'amount' => $p->amount ?? 0,
+            ]);
+            $total = $purchases->sum(fn($p) => $p->amount ?? 0);
+
+            try {
+                Mail::to($first->contact_email)->send(
+                    new PurchaseConfirmation(
+                        contactName: $first->contact_name,
+                        contactEmail: $first->contact_email,
+                        items: $items,
+                        total: $total,
+                    )
+                );
+            } catch (\Throwable $e) {
+                Log::error('Purchase confirmation email error: ' . $e->getMessage());
+            }
+
+            session(['payment.purchase_ids' => $purchaseIds]);
+
+            return redirect()->route('checkout.success');
+        }
+
+        $purchaseIds = session('payment.purchase_ids');
+        session()->forget('payment.purchase_ids');
+
+        $purchases = $purchaseIds ? Purchase::whereIn('id', $purchaseIds)->get() : collect();
+
+        $hasRealPayment = $purchases->contains(fn($p) => !empty($p->transaction_id));
+
+        if (!$hasRealPayment) {
+            Log::warning('GET success sin pago real', ['purchase_ids' => $purchaseIds]);
+            return redirect('/carrito')->with('info', 'El pago no se completó. Intenta nuevamente.');
+        }
+
+        $total = $purchases->sum(fn($p) => $p->amount ?? 0);
+        $courseNames = $purchases->map(fn($p) => $p->course->title ?? '')->implode(', ');
+        $contact = $purchases->first();
+
+        $message = "Hola, soy {$contact?->contact_name}. Acabo de pagar S/ " . number_format($total, 0) . " por: {$courseNames}. Mi correo es {$contact?->contact_email}.";
+        $whatsappUrl = 'https://api.whatsapp.com/send?phone=' . config('izipay.whatsapp_phone') . '&text=' . urlencode($message);
+
+        $items = $purchases->map(fn($p) => [
+            'title' => $p->course->title ?? 'Curso',
+            'amount' => $p->amount ?? 0,
+        ]);
+
+        return view('cart.confirmacion', [
+            'wsp' => $whatsappUrl,
+            'success' => true,
+            'total' => $total,
+            'items' => $items,
+            'contact_name' => $contact?->contact_name,
+            'contact_email' => $contact?->contact_email,
+        ]);
+    }
+
+    public function ipn(Request $request)
+    {
+        $data = $request->all();
+        Log::info('Izipay IPN', $data);
+
+        $krAnswer = $data['kr-answer'] ?? null;
+        if (!$krAnswer) {
+            return response()->json(['error' => 'Invalid IPN'], 400);
+        }
+
+        $answer = is_string($krAnswer) ? json_decode($krAnswer, true) : $krAnswer;
+        $orderId = $answer['orderDetails']['orderId'] ?? '';
+        $transactionId = $answer['transactions'][0]['uuid'] ?? '';
+        $paymentMethod = $answer['paymentMethodDetails']['paymentMethod'] ?? '';
+        $transStatus = $answer['transactions'][0]['status'] ?? '';
+
+        $purchases = Purchase::where('izipay_order_id', $orderId)->get();
+
+        if ($purchases->isEmpty()) {
+            Log::warning('IPN: No purchases for orderId: ' . $orderId);
+            return response()->json(['error' => 'Order not found'], 404);
+        }
+
+        $newStatus = match ($transStatus) {
+            'PAID', 'SUCCESS', 'AUTHORISED' => 'activo',
+            'CANCELLED', 'REFUSED', 'ERROR' => 'pendiente',
+            default => 'pendiente',
+        };
+
+        foreach ($purchases as $purchase) {
+            $purchase->update([
+                'transaction_id' => $transactionId,
+                'payment_method' => $paymentMethod,
+                'payment_status' => $transStatus,
+                'status' => $newStatus,
+                'completed_at' => $newStatus === 'activo' ? now() : $purchase->completed_at,
+            ]);
+        }
+
+        return response()->json(['status' => 'ok']);
+    }
+
+    public function cancel(Request $request)
+    {
+        $purchaseIds = session('payment.purchase_ids');
+        session()->forget('payment.purchase_ids');
+
+        $isPaymentError = $request->isMethod('post') && $request->has('kr-answer');
+
+        if ($isPaymentError) {
+            $krAnswer = json_decode($request->input('kr-answer'), true);
+            Log::info('Pago rechazado por 3DS2', [
+                'orderId' => $krAnswer['orderDetails']['orderId'] ?? '',
+                'transStatus' => $krAnswer['transactions'][0]['status'] ?? '',
+                'message' => $krAnswer['errorMessage'] ?? $krAnswer['errorCode'] ?? '',
+                'kr-answer' => $krAnswer,
+            ]);
+        }
+
+        if ($purchaseIds) {
+            Purchase::whereIn('id', $purchaseIds)->update([
+                'status' => $isPaymentError ? 'rechazado' : 'cancelado',
+            ]);
+        }
+
+        $message = $isPaymentError
+            ? 'El pago fue rechazado. Intenta con otra tarjeta o medio de pago.'
+            : 'Pago cancelado. Puedes intentar nuevamente cuando quieras.';
+
+        return redirect('/carrito')->with('info', $message);
+    }
+}

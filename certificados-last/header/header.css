@@ -1,0 +1,370 @@
+/* ═════════ HEADER R&C - VERSIÓN LIMPIA ═════════ */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* TOP BAR - Relative en desktop */
+.rc-topbar {
+    width: 100%;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1060 !important;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    height: auto;
+}
+
+.rc-topbar img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* NAVBAR - Desktop - Debajo del topbar */
+.rc-navbar {
+    width: 100% !important;
+    background: #ffffff !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1050 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Container del navbar */
+.rc-navbar .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    padding: 10px 25px !important;
+    height: auto;
+    min-height: 50px;
+}
+
+/* Logo */
+.rc-logo {
+    height: 48px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+/* Desktop: Navbar siempre visible */
+@media (min-width: 992px) {
+    .rc-navbar .navbar-collapse {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex: 1 !important;
+    }
+
+    /* Mostrar botones de desktop */
+    .rc-buttons.desktop-only {
+        display: flex !important;
+    }
+
+    /* Ocultar botones de móvil en desktop */
+    .mobile-nav-buttons {
+        display: none !important;
+    }
+
+    .rc-navbar .navbar-toggler {
+        display: none !important;
+    }
+
+    .rc-navbar .navbar-nav {
+        flex-direction: row !important;
+        align-items: center;
+        gap: 5px;
+        justify-content: space-around !important;
+        width: 100% !important;
+    }
+
+    .rc-navbar .nav-link {
+        color: #1e374c !important;
+        font-weight: 600;
+        font-size: 13px;
+        padding: 18px 14px !important;
+        white-space: nowrap;
+    }
+
+    .rc-navbar .nav-link:hover {
+        color: #9e183a !important;
+    }
+
+    /* Dropdown desktop */
+    .rc-navbar .dropdown-menu {
+        border: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .rc-navbar .dropdown-item {
+        font-size: 13px;
+        padding: 8px 14px;
+        border-radius: 5px;
+    }
+
+    .rc-navbar .dropdown-item:hover {
+        background: #f0f0f0;
+        color: #9e183a;
+    }
+}
+
+/* BOTONES - Solo Desktop */
+.rc-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.rc-buttons a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff !important;
+    white-space: nowrap;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.rc-buttons a:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-wsp    { background: #038814; }
+.btn-aula   { background: #136EF0; }
+.btn-tienda { background: #FF044D; }
+
+/* ═════════ ESTILOS PARA MÓVIL (max-width: 991px) ═════════ */
+@media (max-width: 991px) {
+    /* Evitar scroll horizontal */
+    html, body {
+        overflow-x: hidden !important;
+    }
+
+    /* Body sin padding extra */
+    body {
+        padding-top: 0 !important;
+    }
+
+    /* Topbar oculto en móvil */
+    .rc-topbar {
+        display: none !important;
+    }
+
+    /* Navbar relativo - se desplaza con el contenido */
+    .rc-navbar {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1050 !important;
+        background: #fff !important;
+        height: 50px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 1px solid #eee !important;
+    }
+
+    /* Logo en móvil */
+    .rc-navbar .rc-logo {
+        height: 40px !important;
+        width: auto !important;
+    }
+
+    /* Ocultar botones en móvil */
+    .rc-buttons {
+        display: none !important;
+    }
+
+    /* Contenedor del navbar */
+    .rc-navbar .container {
+        padding: 0 15px !important;
+        height: 50px !important;
+        min-height: 50px !important;
+        align-items: center !important;
+    }
+
+    /* Menú colapsable - OCULTO por defecto */
+    .rc-navbar .navbar-collapse {
+        display: none !important;
+    }
+
+    /* Menú colapsable - MOSTRADO cuando tiene clase .show */
+    .rc-navbar .navbar-collapse.show {
+        display: block !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: #fff !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+        max-height: calc(100vh - 100px) !important;
+        overflow-y: auto !important;
+        border-top: 1px solid #eee;
+    }
+
+    /* Links del menú - alineados a la derecha */
+    .rc-navbar .navbar-nav {
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 10px 0 !important;
+        margin: 0 !important;
+        align-items: flex-end !important;
+    }
+
+    .rc-navbar .nav-item {
+        width: 100% !important;
+        border-bottom: 1px solid #eee !important;
+        text-align: right !important;
+    }
+
+    .rc-navbar .nav-link {
+        padding: 15px 20px !important;
+        font-size: 16px !important;
+        width: 100% !important;
+        color: #1e374c !important;
+        font-weight: 600 !important;
+        text-align: right !important;
+        justify-content: flex-end !important;
+        display: flex !important;
+    }
+
+    /* Botones en la parte inferior del menú móvil - en una sola línea */
+    .mobile-nav-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        padding: 15px 20px !important;
+        gap: 10px !important;
+        margin-top: auto !important;
+        border-top: 1px solid #eee !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /* WhatsApp - solo icono en círculo */
+    .mobile-nav-buttons .btn-wsp-icon {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 45px !important;
+        height: 45px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        background: #038814 !important;
+        text-decoration: none !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Aula Virtual - icono + texto */
+    .mobile-nav-buttons .btn-aula-text {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 10px 15px !important;
+        border-radius: 50px !important;
+        background: #136EF0 !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        color: #fff !important;
+        white-space: nowrap !important;
+    }
+
+    /* Tienda Virtual - icono + texto */
+    .mobile-nav-buttons .btn-tienda-text {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 10px 15px !important;
+        border-radius: 50px !important;
+        background: #FF044D !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        color: #fff !important;
+        white-space: nowrap !important;
+    }
+
+    /* Ocultar botones de desktop en móvil */
+    .rc-buttons.desktop-only {
+        display: none !important;
+    }
+
+    /* Dropdown submenús */
+    .rc-navbar .dropdown {
+        position: relative !important;
+    }
+
+    .rc-navbar .dropdown-toggle::after {
+        display: inline-block !important;
+        margin-left: 10px !important;
+        vertical-align: 0.15em !important;
+        content: "" !important;
+        border-top: 0.3em solid !important;
+        border-right: 0.3em solid transparent !important;
+        border-left: 0.3em solid transparent !important;
+    }
+
+    .rc-navbar .dropdown-menu {
+        position: static !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: #f5f5f5 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .rc-navbar .dropdown-item {
+        padding: 12px 20px 12px 35px !important;
+        font-size: 15px !important;
+        color: #1e374c !important;
+        text-align: right !important;
+        border-bottom: 1px solid #eee !important;
+    }
+
+    .rc-navbar .dropdown-item:hover {
+        background: #e9ecef !important;
+        color: #9e183a !important;
+    }
+
+    /* Botón hamburguesa */
+    .navbar-toggler {
+        display: block !important;
+        border: none !important;
+        background: none !important;
+        padding: 10px !important;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(30, 55, 76, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
