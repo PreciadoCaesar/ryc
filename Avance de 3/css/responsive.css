@@ -1,0 +1,75 @@
+/* Media query para pantallas medianas */
+@media (max-width: 768px) {
+    .slidem span {
+        font-size: 18px;
+    }
+    .slidem h2 {
+        font-size: 30px;
+    }
+    .slidem p {
+        font-size: 14px;
+    }
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    .curso .hero .row {
+        padding-top: 0 !important;
+    }
+    .curso .titulo {
+        display: flex;
+        align-items: end;
+    }
+    .curso .titulo .contenido {
+        text-align: center;
+        position: initial;
+        transform: initial;
+        padding: 20px 35px;
+        z-index: 1;
+    }
+    .curso .titulo .contenido h1 span {
+        font-size: 16px;
+        margin: 0 auto;
+    }
+    .curso .titulo .contenido h1 {
+        font-size: 35px;
+    }
+    .curso .titulo .contenido h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .curso .titulo .contenido p {
+        max-width: inherit;
+    }
+
+    .curso .formulario {
+        text-align: center;
+    }
+
+    .curso section.white h2 {
+        font-size: 30px;
+    }
+
+    .curso .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .curso .inversion .box {
+        padding: 23px;
+    }
+    .curso .inversion .precio {
+        margin-bottom: 20px;
+    }
+    .curso .inversion .precio span {
+        font-size: 35px;
+    }
+
+    .curso .hero .titulo .rcbadge {
+        position: initial;
+        width: 150px;
+        margin-bottom: 15px;
+    }
+    .titulo-2{
+        text-align: center;
+    }
+}

@@ -1,408 +1,294 @@
 @extends('layouts.app-main')
 
-@section('title', 'Gestión de Profesores | R&C Consulting')
+@section('title', 'Gestor de Profesores | R&C Consulting')
 
 @section('styles')
+<link href="{{ asset('css/curso/admin.css') }}" rel="stylesheet">
 <style>
 :root {
-    --vercel-black: #171717;
-    --vercel-white: #ffffff;
-    --shadow-border: 0px 0px 0px 1px rgba(0,0,0,0.08), 0px 2px 2px rgba(0,0,0,0.04);
+  --azul: #03206A;
+  --rojo: #DE004B;
+  --gris: #f3f4f6;
+  --gris-medio: #9ca3af;
+  --texto: #1f2937;
+  --texto-medio: #6b7280;
+  --borde: #e5e7eb;
+  --sombra: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
 }
-
-body { background: #fafafa; }
-
-.profesores-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
+body { background: #fafafa; font-family: 'Poppins', sans-serif; }
+.profesores-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
 .header-profesores {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    background: var(--vercel-white);
-    border-radius: 12px;
-    box-shadow: var(--shadow-border);
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 2rem; padding: 2rem; background: #fff;
+  border-radius: 12px; box-shadow: var(--sombra);
 }
-
-.header-profesores h1 {
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    font-size: 1.75rem;
-    margin: 0;
+.header-profesores h1 { font-weight: 800; font-size: 1.75rem; margin: 0; color: var(--azul); }
+.header-profesores p { font-size: 13px; color: var(--texto-medio); margin: 4px 0 0; }
+.btn-primary { background: var(--azul); border: none; border-radius: 8px; padding: 10px 20px; font-weight: 700; font-size: 14px; color: #fff; cursor: pointer; transition: background 0.15s; font-family: 'Poppins', sans-serif; }
+.btn-primary:hover { background: #041f52; }
+.btn-secondary { background: #6b7280; border: none; border-radius: 8px; padding: 10px 20px; font-weight: 600; font-size: 13px; color: #fff; cursor: pointer; transition: background 0.15s; font-family: 'Poppins', sans-serif; }
+.btn-secondary:hover { background: #4b5563; }
+.alert { padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 13px; font-weight: 600; }
+.alert-success { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+.prof-no-photo {
+  width: 120px; height: 120px; border-radius: 12px; background: #e5e7eb;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gris-medio); font-size: 40px; border: 1px solid var(--borde);
 }
-
-.table-container {
-    background: var(--vercel-white);
-    border-radius: 12px;
-    box-shadow: var(--shadow-border);
-    padding: 1.5rem;
-    overflow-x: auto;
-}
-
-.table th {
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #64748b;
-    border-bottom: 2px solid #e2e8f0;
-}
-
-.avatar-prof {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #f1f5f9;
-}
-
-.avatar-placeholder {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #e2e8f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #94a3b8;
-    font-size: 1rem;
-}
-
-.form-label {
-    font-weight: 600;
-    font-size: 0.875rem;
-    color: #374151;
-}
-
-.form-control, .form-select {
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    padding: 0.6rem 0.75rem;
-}
-
-.form-control:focus, .form-select:focus {
-    border-color: #0a72ef;
-    box-shadow: 0 0 0 3px rgba(10,114,239,0.1);
-}
-
-.modal-content {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-}
-
-.modal-header {
-    border-bottom: 1px solid #e2e8f0;
-    padding: 1.5rem;
-}
-
-.modal-body {
-    padding: 1.5rem;
-}
-
-.modal-footer {
-    border-top: 1px solid #e2e8f0;
-    padding: 1rem 1.5rem;
-}
-
-.btn-primary {
-    background: #0a72ef;
-    border: none;
-    border-radius: 8px;
-    padding: 0.5rem 1.25rem;
-    font-weight: 600;
-}
-
-.btn-primary:hover { background: #0056b3; }
-
-.alert {
-    border-radius: 10px;
-    border: none;
-}
-
-.modal {
-    align-items: flex-start !important;
-    padding-top: 20vh;
-}
-
-.modal-dialog {
-    margin-top: 0 !important;
-}
+.prof-card-img-wrap { width: 120px; height: 120px; border-radius: 12px; }
 </style>
 @endsection
 
 @section('content')
 <div class="profesores-container">
-    <div class="header-profesores">
-        <div>
-            <h1>Panel de Profesores</h1>
-            <p class="text-muted mt-1 mb-0">Gestiona los profesores y sus CVs</p>
+  <div class="header-profesores">
+    <div>
+      <h1>👨‍🏫 Gestor de Profesores</h1>
+      <p>Administra los profesores disponibles globalmente.</p>
+    </div>
+    <button class="btn-primary" onclick="ProfesorManager.abrirModal()">
+      + Nuevo Profesor
+    </button>
+  </div>
+
+  @if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+  @endif
+
+  <div class="prof-cards-grid" id="profesoresGrid">
+    @forelse($professors as $prof)
+      <div class="prof-card" data-id="{{ $prof->id }}">
+        @if($prof->photo)
+          <div class="prof-card-img-wrap">
+            <img src="{{ filter_var($prof->photo, FILTER_VALIDATE_URL) ? $prof->photo : asset('storage/' . $prof->photo) }}" alt="{{ $prof->name }}">
+          </div>
+        @else
+          <div class="prof-no-photo">📷</div>
+        @endif
+        <div class="prof-card-info">
+          <h4>{{ $prof->name }}</h4>
+          @if($prof->secciones)
+            @php
+              $total = collect($prof->secciones)->sum(fn($s) => count($s['elementos'] ?? []));
+            @endphp
+            <small style="color:var(--texto-medio);font-size:11px;">{{ count($prof->secciones) }} secciones · {{ $total }} elementos</small>
+          @endif
+          @php $courseCount = $prof->courses()->count(); @endphp
+          @if($courseCount > 0)
+            <small style="color:var(--azul);font-size:11px;display:block;margin-top:2px;">{{ $courseCount }} curso(s) asignado(s)</small>
+          @endif
         </div>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
-            <i class="bi bi-plus-lg me-1"></i> Nuevo Profesor
-        </button>
-    </div>
-
-    @if(session('success'))
-        <div class="alert alert-success mb-4">{{ session('success') }}</div>
-    @endif
-
-    <div class="table-container">
-        <table class="table table-hover mb-0">
-            <thead>
-                <tr>
-                    <th>Foto</th>
-                    <th>Nombre</th>
-                    <th>Formación</th>
-                    <th>Experiencia</th>
-                    <th>Cursos</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse($professors as $prof)
-                    <tr>
-                        <td>
-                            @if($prof->photo)
-                                <img src="{{ Storage::url($prof->photo) }}" alt="{{ $prof->name }}" class="avatar-prof">
-                            @else
-                                <div class="avatar-placeholder">
-                                    <i class="bi bi-person"></i>
-                                </div>
-                            @endif
-                        </td>
-                        <td><strong>{{ $prof->name }}</strong></td>
-                        <td>
-                            @if($prof->formacion)
-                                @foreach(array_slice($prof->formacion, 0, 1) as $f)
-                                    <small class="d-block">{{ $f['titulo'] ?? '' }}</small>
-                                @endforeach
-                                @if(count($prof->formacion) > 1)
-                                    <small class="text-muted">+{{ count($prof->formacion) - 1 }} más</small>
-                                @endif
-                            @else
-                                <span class="text-muted">—</span>
-                            @endif
-                        </td>
-                        <td>
-                            @if($prof->experiencia)
-                                @foreach(array_slice($prof->experiencia, 0, 1) as $e)
-                                    <small class="d-block">{{ $e['rol'] ?? '' }} en {{ $e['empresa'] ?? '' }}</small>
-                                @endforeach
-                                @if(count($prof->experiencia) > 1)
-                                    <small class="text-muted">+{{ count($prof->experiencia) - 1 }} más</small>
-                                @endif
-                            @else
-                                <span class="text-muted">—</span>
-                            @endif
-                        </td>
-                        <td>
-                            @php $courseCount = $prof->courses()->count(); @endphp
-                            @if($courseCount > 0)
-                                <span class="badge bg-info">{{ $courseCount }}</span>
-                            @else
-                                <span class="text-muted">0</span>
-                            @endif
-                        </td>
-                        <td>
-                            <div class="d-flex gap-1">
-                                <button class="btn btn-sm btn-outline-primary"
-                                    data-bs-toggle="modal" data-bs-target="#editModal"
-                                    data-id="{{ $prof->id }}"
-                                    data-name="{{ $prof->name }}"
-                                    data-photo="{{ $prof->photo ? Storage::url($prof->photo) : '' }}"
-                                    data-formacion='{{ json_encode($prof->formacion) }}'
-                                    data-experiencia='{{ json_encode($prof->experiencia) }}'>
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <form action="{{ route('admin.profesores.destroy', $prof->id) }}" method="POST"
-                                    onsubmit="return confirm('¿Eliminar este profesor?')">
-                                    @csrf @method('DELETE')
-                                    <button class="btn btn-sm btn-outline-danger">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="6" class="text-center py-4 text-muted">
-                            No hay profesores registrados
-                        </td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
-    </div>
+        <div class="prof-card-actions">
+          <button class="btn-edit" onclick="ProfesorManager.abrirModal({{ $prof->id }})">Editar</button>
+          <form action="{{ route('admin.profesores.destroy', $prof->id) }}" method="POST" onsubmit="return confirm('¿Eliminar este profesor?')" style="display:inline">
+            @csrf @method('DELETE')
+            <button class="btn-delete">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    @empty
+      <div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--texto-medio);">
+        <div style="font-size:48px;margin-bottom:16px;">👨‍🏫</div>
+        <h3 style="font-weight:600;margin-bottom:8px;">No hay profesores registrados</h3>
+        <p style="font-size:13px;">Crea tu primer profesor para empezar.</p>
+      </div>
+    @endforelse
+  </div>
 </div>
 
-{{-- Create Modal --}}
-<div class="modal fade" id="createModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <form action="{{ route('admin.profesores.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">Nuevo Profesor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Nombre completo</label>
-                        <input type="text" name="name" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Foto</label>
-                        <input type="file" name="photo" class="form-control" accept=".webp">
-                        <small class="text-muted">Opcional. Solo WebP, máx 2MB</small>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Formación</label>
-                        <div class="border rounded p-3 bg-light">
-                            <div class="row g-2 mb-2 formacion-item">
-                                <div class="col-5"><input type="text" name="formacion[0][titulo]" class="form-control" placeholder="Título"></div>
-                                <div class="col-4"><input type="text" name="formacion[0][institucion]" class="form-control" placeholder="Institución"></div>
-                                <div class="col-3"><input type="text" name="formacion[0][anio]" class="form-control" placeholder="Año"></div>
-                            </div>
-                            <div class="row g-2 mb-2 formacion-item">
-                                <div class="col-5"><input type="text" name="formacion[1][titulo]" class="form-control" placeholder="Título"></div>
-                                <div class="col-4"><input type="text" name="formacion[1][institucion]" class="form-control" placeholder="Institución"></div>
-                                <div class="col-3"><input type="text" name="formacion[1][anio]" class="form-control" placeholder="Año"></div>
-                            </div>
-                            <div class="row g-2 formacion-item">
-                                <div class="col-5"><input type="text" name="formacion[2][titulo]" class="form-control" placeholder="Título"></div>
-                                <div class="col-4"><input type="text" name="formacion[2][institucion]" class="form-control" placeholder="Institución"></div>
-                                <div class="col-3"><input type="text" name="formacion[2][anio]" class="form-control" placeholder="Año"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Experiencia</label>
-                        <div class="border rounded p-3 bg-light">
-                            <div class="row g-2 mb-2 exp-item">
-                                <div class="col-4"><input type="text" name="experiencia[0][rol]" class="form-control" placeholder="Rol"></div>
-                                <div class="col-4"><input type="text" name="experiencia[0][empresa]" class="form-control" placeholder="Empresa"></div>
-                                <div class="col-4"><input type="text" name="experiencia[0][periodo]" class="form-control" placeholder="Periodo"></div>
-                            </div>
-                            <div class="row g-2 mb-2 exp-item">
-                                <div class="col-4"><input type="text" name="experiencia[1][rol]" class="form-control" placeholder="Rol"></div>
-                                <div class="col-4"><input type="text" name="experiencia[1][empresa]" class="form-control" placeholder="Empresa"></div>
-                                <div class="col-4"><input type="text" name="experiencia[1][periodo]" class="form-control" placeholder="Periodo"></div>
-                            </div>
-                            <div class="row g-2 exp-item">
-                                <div class="col-4"><input type="text" name="experiencia[2][rol]" class="form-control" placeholder="Rol"></div>
-                                <div class="col-4"><input type="text" name="experiencia[2][empresa]" class="form-control" placeholder="Empresa"></div>
-                                <div class="col-4"><input type="text" name="experiencia[2][periodo]" class="form-control" placeholder="Periodo"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Crear Profesor</button>
-                </div>
-            </form>
+{{-- Modal Profesor Global (Add/Edit) --}}
+<div class="modal fade" id="modalProfesorGlobal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <form id="profesorForm" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="_method" id="prof_method" value="POST">
+        <input type="hidden" name="secciones" id="seccionesInput" value="">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalProfesorGlobalTitle">Agregar Profesor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
+        <div class="modal-body">
+          <div class="prof-form-group">
+            <label>Grado y nombre completo</label>
+            <input type="text" name="name" id="prof-name" placeholder="DR. MARLON PRIETO HORMAZA" required>
+          </div>
+          <div class="prof-form-group">
+            <label>Primer nombre (ID modal)</label>
+            <input type="text" name="primer_nombre" id="prof-primerNombre" placeholder="Marlon">
+            <small style="color:var(--texto-medio);font-size:11px;">Se usa para identificar al profesor en landing. Si se deja vacío, se extrae automáticamente.</small>
+          </div>
+          <div class="prof-form-group">
+            <label>Foto del profesor</label>
+            <div class="prof-img-upload-row">
+              <div class="prof-img-preview-wrap">
+                <img id="prof-img-preview" class="prof-img-preview" src="{{ asset('img/default-avatar.png') }}" alt="Preview">
+              </div>
+              <div class="prof-img-inputs">
+                <input type="file" id="prof-img-file" name="photo" accept="image/*" onchange="ProfesorManager.previewFile(this)">
+                <small style="color:var(--texto-medio);font-size:11px;">Máx 2MB. Si no subes archivo, ingresa una URL:</small>
+                <input type="text" id="prof-img-url" name="photo_url" placeholder="https://... o ./img/profesor/profesor-01.jpg" oninput="ProfesorManager.previewUrl(this.value)">
+              </div>
+            </div>
+          </div>
+          <div class="prof-form-group">
+            <label>Secciones del profesor</label>
+            <div id="prof-secciones-container"></div>
+            <button type="button" class="btn-add" onclick="ProfesorManager.addSeccion()" style="margin-top:8px;">+ Crear Sección</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn-primary" onclick="ProfesorManager.guardar()">Guardar</button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
 
-{{-- Edit Modal --}}
-<div class="modal fade" id="editModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <form action="" method="POST" id="editForm" enctype="multipart/form-data">
-                @csrf @method('PUT')
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">Editar Profesor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Nombre completo</label>
-                        <input type="text" name="name" id="edit_name" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Foto</label>
-                        <div id="edit_photo_preview" class="mb-2"></div>
-                        <input type="file" name="photo" class="form-control" accept=".webp">
-                        <small class="text-muted">Solo WebP, máx 2MB. Dejar vacío para mantener la actual.</small>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Formación</label>
-                        <div id="edit_formacion_container" class="border rounded p-3 bg-light"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Experiencia</label>
-                        <div id="edit_experiencia_container" class="border rounded p-3 bg-light"></div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                </div>
-            </form>
-        </div>
+{{-- Templates --}}
+<template id="prof-seccion-template">
+  <div class="prof-seccion-card">
+    <div class="prof-seccion-header">
+      <input type="text" class="prof-seccion-titulo" placeholder="Título de la sección (ej: Formación Profesional)">
+      <button type="button" class="btn-delete-sm" onclick="ProfesorManager.removeSeccion(this)">✕</button>
     </div>
-</div>
+    <div class="prof-seccion-elementos"></div>
+    <button type="button" class="btn-add-sm" onclick="ProfesorManager.addElemento(this)" style="margin-top:6px;">+ Elemento</button>
+  </div>
+</template>
 
+<template id="prof-elemento-template">
+  <div class="prof-elemento-row">
+    <input type="text" class="prof-elemento-input" placeholder="Texto del elemento">
+    <button type="button" class="btn-remove-xs" onclick="ProfesorManager.removeElemento(this)">✕</button>
+  </div>
+</template>
+@endsection
+
+@section('scripts')
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const editModal = document.getElementById('editModal');
-    editModal.addEventListener('show.bs.modal', function (event) {
-        const btn = event.relatedTarget;
-        const id = btn.dataset.id;
-        const name = btn.dataset.name;
-        const photo = btn.dataset.photo;
+var ProfesorManager = {
+  editId: null,
+  professors: @json($professors),
 
-        document.getElementById('edit_name').value = name;
+  abrirModal: function(id) {
+    this.editId = id || null;
+    var form = document.getElementById('profesorForm');
+    var container = document.getElementById('prof-secciones-container');
+    container.innerHTML = '';
 
-        const preview = document.getElementById('edit_photo_preview');
-        if (photo) {
-            preview.innerHTML = `<img src="${photo}" class="avatar-prof" style="width:80px;height:80px;border-radius:8px;">`;
-        } else {
-            preview.innerHTML = '';
-        }
+    if (id) {
+      var prof = this.professors.find(function(p) { return p.id == id; });
+      if (!prof) return;
+      document.getElementById('modalProfesorGlobalTitle').textContent = 'Editar Profesor';
+      document.getElementById('prof_method').value = 'PUT';
+      form.action = '{{ route("admin.profesores.update", "__ID__") }}'.replace('__ID__', id);
+      document.getElementById('prof-name').value = prof.name;
+      document.getElementById('prof-primerNombre').value = prof.primer_nombre || '';
 
-        let formacion = [];
-        try { formacion = JSON.parse(btn.dataset.formacion || '[]'); } catch(e) {}
-        let experiencia = [];
-        try { experiencia = JSON.parse(btn.dataset.experiencia || '[]'); } catch(e) {}
+      var preview = document.getElementById('prof-img-preview');
+      if (prof.photo) {
+        var src = prof.photo.match(/^https?:\/\//) ? prof.photo : '{{ asset("storage") }}/' + prof.photo;
+        preview.src = src;
+      } else {
+        preview.src = '{{ asset("img/default-avatar.png") }}';
+      }
 
-        renderEditFormacion(formacion);
-        renderEditExperiencia(experiencia);
+      if (prof.secciones && Array.isArray(prof.secciones)) {
+        prof.secciones.forEach(function(sec) {
+          var secCard = this._crearSeccionCard(sec.titulo || '');
+          var elemContainer = secCard.querySelector('.prof-seccion-elementos');
+          (sec.elementos || []).forEach(function(elem) {
+            var row = this._crearElementoRow(elem);
+            elemContainer.appendChild(row);
+          }.bind(this));
+          container.appendChild(secCard);
+        }.bind(this));
+      }
+    } else {
+      document.getElementById('modalProfesorGlobalTitle').textContent = 'Agregar Profesor';
+      document.getElementById('prof_method').value = 'POST';
+      form.action = '{{ route("admin.profesores.store") }}';
+      document.getElementById('prof-name').value = '';
+      document.getElementById('prof-primerNombre').value = '';
+      document.getElementById('prof-img-preview').src = '{{ asset("img/default-avatar.png") }}';
+      document.getElementById('prof-img-file').value = '';
+      document.getElementById('prof-img-url').value = '';
+    }
 
-        document.getElementById('editForm').action = '{{ route("admin.profesores.update", "__ID__") }}'.replace('__ID__', id);
+    var modal = new bootstrap.Modal(document.getElementById('modalProfesorGlobal'));
+    modal.show();
+  },
+
+  _crearSeccionCard: function(titulo) {
+    var tpl = document.getElementById('prof-seccion-template');
+    var clone = tpl.content.cloneNode(true);
+    var card = clone.querySelector('.prof-seccion-card');
+    if (titulo) card.querySelector('.prof-seccion-titulo').value = titulo;
+    return card;
+  },
+
+  _crearElementoRow: function(texto) {
+    var tpl = document.getElementById('prof-elemento-template');
+    var clone = tpl.content.cloneNode(true);
+    var row = clone.querySelector('.prof-elemento-row');
+    if (texto) row.querySelector('.prof-elemento-input').value = texto;
+    return row;
+  },
+
+  addSeccion: function() {
+    var container = document.getElementById('prof-secciones-container');
+    container.appendChild(this._crearSeccionCard(''));
+  },
+
+  removeSeccion: function(btn) {
+    btn.closest('.prof-seccion-card').remove();
+  },
+
+  addElemento: function(btn) {
+    var container = btn.closest('.prof-seccion-card').querySelector('.prof-seccion-elementos');
+    container.appendChild(this._crearElementoRow(''));
+  },
+
+  removeElemento: function(btn) {
+    btn.closest('.prof-elemento-row').remove();
+  },
+
+  previewFile: function(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('prof-img-preview').src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+      document.getElementById('prof-img-url').value = '';
+    }
+  },
+
+  previewUrl: function(url) {
+    if (url) {
+      document.getElementById('prof-img-preview').src = url;
+      document.getElementById('prof-img-file').value = '';
+    }
+  },
+
+  guardar: function() {
+    var container = document.getElementById('prof-secciones-container');
+    var secciones = [];
+    container.querySelectorAll('.prof-seccion-card').forEach(function(card) {
+      var titulo = card.querySelector('.prof-seccion-titulo').value.trim();
+      if (!titulo) return;
+      var elementos = [];
+      card.querySelectorAll('.prof-elemento-input').forEach(function(inp) {
+        var val = inp.value.trim();
+        if (val) elementos.push(val);
+      });
+      secciones.push({ titulo: titulo, elementos: elementos });
     });
-});
-
-function renderEditFormacion(data) {
-    const container = document.getElementById('edit_formacion_container');
-    const items = data.length > 0 ? data : [{}, {}, {}];
-    container.innerHTML = items.map((item, i) => `
-        <div class="row g-2 mb-2">
-            <div class="col-5"><input type="text" name="formacion[${i}][titulo]" class="form-control" placeholder="Título" value="${item.titulo || ''}"></div>
-            <div class="col-4"><input type="text" name="formacion[${i}][institucion]" class="form-control" placeholder="Institución" value="${item.institucion || ''}"></div>
-            <div class="col-3"><input type="text" name="formacion[${i}][anio]" class="form-control" placeholder="Año" value="${item.anio || ''}"></div>
-        </div>
-    `).join('');
-}
-
-function renderEditExperiencia(data) {
-    const container = document.getElementById('edit_experiencia_container');
-    const items = data.length > 0 ? data : [{}, {}, {}];
-    container.innerHTML = items.map((item, i) => `
-        <div class="row g-2 mb-2">
-            <div class="col-4"><input type="text" name="experiencia[${i}][rol]" class="form-control" placeholder="Rol" value="${item.rol || ''}"></div>
-            <div class="col-4"><input type="text" name="experiencia[${i}][empresa]" class="form-control" placeholder="Empresa" value="${item.empresa || ''}"></div>
-            <div class="col-4"><input type="text" name="experiencia[${i}][periodo]" class="form-control" placeholder="Periodo" value="${item.periodo || ''}"></div>
-        </div>
-    `).join('');
-}
+    document.getElementById('seccionesInput').value = JSON.stringify(secciones);
+    document.getElementById('profesorForm').submit();
+  }
+};
 </script>
 @endsection

@@ -9,7 +9,7 @@ class Course extends Model
 {
     protected $fillable = [
         'title', 'subtitle', 'slug', 'type', 'mode', 'phrase', 'description',
-        'image_promotion', 'link_brochure', 'link_niubiz', 'specialization_name',
+        'image_promotion', 'image_cover', 'link_brochure', 'link_niubiz', 'specialization_name',
         'start_date', 'sessions', 'hours',
         'asesora_id', 'asesor_inhouse_id',
         'inhouse_web', 'inhouse_mobile',
@@ -17,7 +17,7 @@ class Course extends Model
         'precio_flash_fecha', 'precio_flash', 'precio_regular',
         'precio_pronto_fecha', 'precio_pronto',
         'featured', 'status',
-        'fecha_limite_oferta', 'fecha_inicio_iso',
+        'fecha_limite_oferta', 'fecha_inicio_iso', 'fecha_fin',
         'tipo_certificado', 'temario_titulo', 'temario_hierarchical',
         'url_video_vimeo', 'og_image_url', 'descripcion_inhouse',
     ];

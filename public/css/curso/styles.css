@@ -77,6 +77,11 @@ body {
     /*transition: opacity 0.3s ease;*/
 }
 
+/* Footer siempre al inicio */
+footer {
+    margin-top: auto;
+}
+
 /* Div contenido - toma el espacio disponible */
 .main-container .content-info {
     flex: 1;
@@ -84,6 +89,11 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
+}
+
+/* Footer siempre al inicio */
+footer {
+    margin-top: auto;
 }
 
 /* Mobile */
@@ -283,6 +293,10 @@ body {
         transform: none !important;
     }
     
+    footer {
+        width: 100vw !important;
+        margin-left: 0 !important;
+    }
 }
 
 /* Fondos solo en desktop (≥1200px) - mantener expandido */
@@ -713,7 +727,7 @@ body {
 .panel-registro-box input[type="email"],
 .panel-registro-box input[type="tel"] {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     border-radius: 8px;
     border: 1.5px solid var(--gris-medio);
     padding: 10px 14px;
@@ -829,7 +843,7 @@ body {
     font-size: 13px;
     font-weight: 700;
     color: var(--azul);
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .temario-lecturas ul {
@@ -1101,7 +1115,7 @@ body {
     font-size: 11.5px;
     font-weight: 600;
     color: var(--azul);
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     line-height: 1.5;
 }
 
@@ -1294,7 +1308,7 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .stat-pill {
@@ -1527,7 +1541,7 @@ body {
     font-weight: 600;
     color: var(--azul);
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     letter-spacing: -.01em;
 }
 
@@ -1849,7 +1863,7 @@ body {
     font-size: 13px;
     font-weight: 700;
     color: var(--azul);
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     line-height: 1.4;
 }
 
@@ -2533,7 +2547,7 @@ body {
 .rc-note ul li {
     position: relative;
     padding-left: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 /* Crear el punto azul personalizado */
@@ -2586,7 +2600,7 @@ body {
 
 /* Mejora de visibilidad de las cuentas bancarias */
 .rc-account {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 /* Sección de Inversión/Pago - Centrado */
@@ -2902,7 +2916,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .asesora-subtitle {
@@ -3036,8 +3050,8 @@ body {
 .inversion-left {
     flex: 1.1;
     padding: 40px 30px;
-    background: #eaeaea;
-    /* Fondo blanco para contraste */
+    background-color: #03206A;
+    color: white;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -3081,7 +3095,91 @@ body {
     padding: 40px 25px;
     text-align: center;
     background-color: #eaeaea;
-    /* Mismo fondo solicitado para el panel */
+}
+
+/* Sección Invierte y proyéctate */
+#pagoa .inversion-right {
+    background-color: #03206A;
+}
+#pagoa .inv-label {
+    color: #FFFFFFB3;
+}
+#pagoa .inv-price {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+#inv-label-flash {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .6);
+    margin-bottom: 8px;
+}
+
+#pagoa .inversion-left {
+    background-color: #03206A;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+#pagoa .inversion-left h3 {
+    color: #fff;
+}
+#pagoa .inversion-left ul li {
+    color: #FFFFFFB3;
+}
+#pagoa .inversion-left ul li strong {
+    color: #fff;
+}
+#pagoa .inv-igv {
+    color: #fff;
+}
+.inv-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .6);
+    margin-bottom: 8px;
+}
+.inv-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #03206A;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+.inv-price span {
+    font-size: 40px;
+}
+.rc-hide {
+    display: none !important;
+}
+
+#btn-acceder-ahora {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background-color: #FF044D;
+    border: 2px solid #FF044D;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 14px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+#btn-acceder-ahora:hover {
+    background-color: #c0003d;
+    border-color: #c0003d;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 0, 78, 0.4);
 }
 
 .inv-title {
@@ -3385,7 +3483,113 @@ body {
     }
 }
 
+/* ══ FOOTER ══ */
+footer {
+    background: var(--azul);
+    color: rgba(255, 255, 255, .82);
+}
 
+footer .inner-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+footer h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: .02em;
+}
+
+footer p,
+footer li {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 7px;
+}
+
+footer a {
+    color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+    transition: color .2s;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: var(--amarillo);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    padding: 18px 0;
+    margin-top: 36px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, .48);
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, .7);
+    transition: background .2s, color .2s, transform .2s;
+    font-size: 16px;
+}
+
+.social-icons a:hover {
+    background: #FF044D;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-cert-f {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FF044D;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: background .2s, transform .2s;
+}
+
+.btn-cert-f:hover {
+    background: #d4043f;
+    color: #fff;
+    transform: translateY(-1px);
+}
 
 /* ══ WA FLOTANTE ══ */
 .wa-float {
@@ -3755,12 +3959,16 @@ body {
     font-weight: 900;
     color: var(--azul);
     line-height: 1;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .panel-price-main span {
     font-size: 16px;
     font-weight: 600;
+}
+#panel-precio-oferta {
+    font-size: 35px;
+    font-weight: 900;
 }
 
 .btn-panel-pagar {
@@ -3781,7 +3989,7 @@ body {
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
     transition: background .2s, transform .15s;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .btn-panel-pagar:hover {
@@ -4154,6 +4362,16 @@ body {
         max-width: 90px !important;
     }
 
+    footer .inner-wrap {
+        max-width: 100%;
+        padding: 0 32px;
+    }
+
+    footer {
+        width: 100vw !important;
+        margin-left: 0 !important;
+    }
+
     /* Padding inferior del body para la barra sticky */
     body {
         padding-bottom: 70px;
@@ -4222,7 +4440,44 @@ body {
         font-size: 34px;
     }
 
+    footer {
+        padding: 36px 0 0;
+    }
 
+    footer .inner-wrap {
+        padding: 0 20px;
+    }
+
+    footer h3 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+        font-size: 13px;
+    }
+
+    .social-icons a {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .btn-cert-f {
+        font-size: 12px;
+        padding: 7px 14px;
+    }
+
+    .footer-bottom {
+        margin-top: 24px;
+        padding: 14px 0;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
 
     /* WA float optimizado para pantallas muy pequeñas */
     .wa-float {
@@ -4323,7 +4578,12 @@ body {
     color: white;
 }
 
-
+.payment-title {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
 
 .payment-list {
     margin-bottom: 20px;
@@ -4388,7 +4648,7 @@ body {
 }
 
 .qr-label {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .qr-label img {
@@ -4960,8 +5220,8 @@ body {
             padding: 20px 15px;
         }
         .inv-title { font-size: 15px; }
-        .inv-regular-price { font-size: 14px; margin-bottom: 40px; }
-        .inv-discount-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 40px; }
+        .inv-regular-price { font-size: 14px; margin-bottom: 10px; }
+        .inv-discount-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 10px; }
         .inv-price-main { font-size: 36px; margin-bottom: 15px; }
         .inv-price-main span { font-size: 18px; }
         .btn-acceder-card { font-size: 14px; min-width: 200px; padding: 12px 20px; }
@@ -5716,7 +5976,7 @@ body {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
 
         .cg-step-item {
@@ -5815,7 +6075,7 @@ body {
             font-size: 13px;
             color: #444;
             line-height: 1.5;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
         }
 
         .cg-wsp-btn {

@@ -1,5 +1,43 @@
 <?php
-include '../cursos.php';
+/**
+ * Diplomas Virtuales - Carga desde base de datos Laravel
+ */
+require __DIR__.'/../vendor/autoload.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
+$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+use App\Models\Course;
+
+// Cargar diplomados online (grabados) desde la base de datos
+$cursosDB = Course::where('type', 'diplomado')
+    ->where('mode', 'grabado')
+    ->where(function ($q) {
+        $q->where('status', 'activo')->orWhereNull('status');
+    })
+    ->orderBy('title')
+    ->get();
+
+// Construir array con la misma estructura que espera el template
+$diplomadosOnline = [];
+foreach ($cursosDB as $c) {
+    $imgSrc = $c->image_promotion;
+    if ($imgSrc && !filter_var($imgSrc, FILTER_VALIDATE_URL)) {
+        $imgSrc = '../' . ltrim($imgSrc, '/');
+    } elseif (!$imgSrc) {
+        $imgSrc = '../img/curso/default.svg';
+    }
+
+    $diplomadosOnline[] = [
+        'title'        => $c->title,
+        'image'        => $imgSrc,
+        'hours'        => $c->hours ?? 90,
+        'link'         => 'https://rc-consulting.org/curso/' . $c->slug,
+        'area'         => $c->specialization_name ?? 'Gestion',
+        'sesiones'     => $c->sessions ?? 12,
+        'keywords'     => $c->seo_keywords ?? '',
+        'muestratitulo'=> false,
+    ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -258,75 +296,7 @@ include '../cursos.php';
 </head>
 <body>
 
-<!-- BANNER PÚRPURA -->
-<div class="banner-purpura">
-    <div class="contenido-banner-purpura">
-        <div class="banner-item">
-            <div class="banner-icon"><img src="Recurso 85@4x.webp" alt="PDP"></div>
-            <div class="banner-text"><b>Cumple con el PDP 2026</b><span>Alinea tu capacitación In-House</span></div>
-        </div>
-        <div class="banner-item">
-            <div class="banner-icon"><img src="Recurso 86@4x.webp" alt="Directiva"></div>
-            <div class="banner-text"><b class="highlight-yellow">CURSOS IN HOUSE</b><span>Nueva Directiva 00214-2025-SERVIR-PE</span></div>
-        </div>
-        <div class="banner-action">
-            <a href="https://wa.me/51948163352?text=Hola%20Arnaldo,%20vengo%20de%20la%20web.%20Me%20interesa%20solicitar%20una%20Propuesta%20In%20House%20para%20mi%20instituci%C3%B3n%20alineada%20al%20PDP%202026.%20%C2%BFPodr%C3%ADas%20ayudarme?" class="btn-cotizar" target="_blank"><i class="fas fa-handshake"></i> ¡Cotizalo aqui!</a>
-        </div>
-    </div>
-</div>
-
-<!-- NAVBAR COMPLETA -->
-<nav class="navbar navbar-expand-lg rc-navbar">
-    <div class="container-fluid px-4">
-        <a class="navbar-brand" href="https://rc-consulting.org">
-            <img src="./img/logo-rc-consulting-sin-fondo.webp" class="rc-logo" alt="R&C Consulting" width="180" height="50" fetchpriority="high">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="https://rc-consulting.org">Inicio</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nosotros</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://rc-consulting.org/nosotros/">Sobre Nosotros</a></li>
-                        <li><a class="dropdown-item" href="https://rc-consulting.org/experiencia/">Experiencia y Alianzas</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programas</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://rc-consulting.org/cursos-virtuales/">Cursos</a></li>
-                        <li><a class="dropdown-item" href="https://rc-consulting.org/diplomas-virtuales/">Diplomados</a></li>
-                        <li><a class="dropdown-item" href="https://www.rc-consulting.edu.pe/">Aula Virtual</a></li>
-                        <li><a class="dropdown-item" href="https://rc-consulting.org/suscripciones/">Membresía Premium</a></li>
-                        <li><a class="dropdown-item" href="https://rc-consulting.org/preguntas-frecuentes/">Preguntas Frecuentes</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="https://rc-consulting.org/cursos-inhouse/" target="_blank">In House</a></li>
-            </ul>
-            <div class="rc-buttons">
-                <!-- WhatsApp con mensaje personalizado e icono SVG -->
-                <a href="https://api.whatsapp.com/send?phone=51950883155&text=Buen%20d%C3%ADa,%20he%20visitado%20la%20web%20de%20*R%26C%20Consulting*" target="_blank" class="btn-wsp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg> 
-                    950 883 155
-                </a>
-                <!-- Aula Virtual con icono SVG -->
-                <a href="https://www.rc-consulting.edu.pe/" target="_blank" class="btn-aula">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/><path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/></svg> 
-                    Aula Virtual
-                </a>
-                <!-- Tienda Virtual con icono SVG -->
-                <a href="https://escueladegobierno.edu.pe/tienda/" target="_blank" class="btn-tienda">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/></svg> 
-                    Tienda Virtual
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
-
+ 
 <!-- TÍTULO + BUSCADOR -->
 <div class="seccion-titulo">
     <h2>DIPLOMADOS DE ESPECIALIZACIÓN ONLINE</h2>
@@ -344,12 +314,12 @@ include '../cursos.php';
 <span class="titulo-filtro-mobile">Filtrar diplomados:</span>
 <div class="filtro-tabs" id="filtroTabs">
     <button class="filtro-tab active" data-filter="todo">Todos</button>
-    <button class="filtro-tab" data-filter="SistemasMEF">Sistemas MEF</button>
+    <button class="filtro-tab" data-filter="SiafSiga">SIGA/SIAF</button>
     <button class="filtro-tab" data-filter="Contrataciones">Contrataciones</button>
     <button class="filtro-tab" data-filter="Presupuesto">Presupuesto</button>
-    <button class="filtro-tab" data-filter="Gestion">Gestión pública</button>
-    <button class="filtro-tab" data-filter="Ofimatica">Ofimática</button>
-    <button class="filtro-tab" data-filter="SeguridadSST">Seguridad y SST</button>
+    <button class="filtro-tab" data-filter="Gestion">Gestión Pública</button>
+    <button class="filtro-tab" data-filter="Planeamiento">Planeamiento</button>
+    <button class="filtro-tab" data-filter="Rrhh">R.R.H.H./Control</button>
 </div>
 
 <!-- GRID DE DIPLOMADOS -->
@@ -358,7 +328,7 @@ include '../cursos.php';
     <div class="curso-card" data-category="todo <?php echo $curso['area'] ?? 'Gestion'; ?>">
         
         <div class="curso-card__img">
-            <img src="../img/curso/<?php echo $curso['image']; ?>" alt="<?php echo $curso['title']; ?>" loading="lazy">
+            <img src="<?php echo $curso['image']; ?>" alt="<?php echo $curso['title']; ?>" loading="lazy">
             
             <?php if (isset($curso['muestratitulo']) && $curso['muestratitulo'] === true): ?>
                 <div class="curso-card__overlay-title">
@@ -405,70 +375,6 @@ include '../cursos.php';
     <?php } ?>
 </div>
 
-<!-- FOOTER (Index 1) -->
-<footer class="main-footer">
-    <div class="footer-container-full">
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="footer-logo-box">
-                    <img src="./img/added/logofooter.webp" alt="R&C Consulting" class="footer-logo">
-                </div>
-                <h3>Contáctanos:</h3>
-                <div class="contact-info">
-                    <p>Av. Petit Thouars 2166.<br/>Lince, Lima - Perú</p>
-                    <p>Lunes a Viernes de 8:30 a 6:00 pm</p>
-                    <p><a href="mailto:informes@rc-consulting.org" class="email-link">informes@rc-consulting.org</a></p>
-                    <p>012661067 anexo: 100, 101, 104</p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <h3>Enlaces</h3>
-                <ul class="footer-links">
-                    <li><a href="https://rc-consulting.org/cursos-virtuales/">Cursos</a></li>
-                    <li><a href="https://rc-consulting.org/diplomas-virtuales/">Diplomados</a></li>
-                    <li><a href="https://rc-consulting.org/cursos-inhouse/">Inhouse</a></li>
-                    <li><a href="https://rc-consulting.org/consultoria-asistencia-tecnica/">Consultorías</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h3>Información</h3>
-                <ul class="footer-links mb-4">
-                    <li><a href="https://rc-consulting.org/politicas-de-proteccion-de-datos/">Políticas de privacidad</a></li>
-                    <li><a href="https://escueladegobierno.edu.pe/terminos-y-condiciones/">Términos y condiciones</a></li>
-                    <li><a href="#">Contáctanos</a></li>
-                </ul>
-                <h4 class="payment-title">Métodos de pago</h4>
-                <img src="./img/added/payment.webp" alt="Métodos de pago" class="payment-img">
-            </div>
-
-            <div class="col-md-3">
-                <h3>Certificados</h3>
-                <a href="https://rc-consulting.org/app-certificados/version1/" class="btn-cert-f" target="_blank">
-                    <i class="fas fa-search"></i> Consulta tu certificado
-                </a>
-                
-                <div class="reclamaciones-box">
-                    <img src="./img/added/lreclamaciones.svg" alt="Libro de reclamaciones">
-                    <a href="https://rc-consulting.org/libro-de-reclamaciones/">Libro de reclamaciones</a>
-                </div>
-
-                <div class="social-icons">
-                    <a href="https://pe.linkedin.com/company/ryc-consulting" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/rycconsulting_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@CursosGestionPublica" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.facebook.com/rcconsultingperu/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@ryc_consulting" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>R&C Consulting 2026 — Todos los derechos reservados</p>
-        </div>
-    </div>
-</footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

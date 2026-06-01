@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | R&C Consulting</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="header/header.css" rel="stylesheet"> 
+    <!-- <link href="./styles.css" rel="stylesheet"> -->
+    <style>
+:root {
+    --rojo:#C8102E; --rojo-dark:#9E0A22;
+    --azul:#0A1F5C; --azul-medio:#1A3A7A;
+    --verde-wsp:#25D366; --verde-wsp-dark:#1DA851;
+    --azul-btn:#1565C0; --rojo-tienda:#E53935;
+    --gris-claro:#F5F7FA; --gris-medio:#E8ECF0;
+    --texto-oscuro:#1A1A2E; --texto-medio:#4A5568;
+    --amarillo:#FFB800;
+}
+
+body{font-family:'Poppins',sans-serif;color:#03206A;background:#fff;overflow-x:hidden;}
+
+/* NAVBAR */
+
+
+
+/* ══ HERO GARANTIA ══ */
+.hero-garantia{
+    background:linear-gradient(135deg,#071540 0%,#03206A 50%,var(--azul-medio) 100%);
+    position:relative;overflow:hidden;padding:60px 0 70px;
+}
+.hero-garantia::before{content:'';position:absolute;top:-80px;right:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(200,16,46,.14) 0%,transparent 70%);pointer-events:none;}
+.hero-garantia .container{position:relative;z-index:2;}
+.hero-label{color:rgba(255,255,255,.7);font-size:13px;font-weight:500;margin-bottom:6px;}
+.hero-title{font-family:'Poppins',sans-serif;color:#fff;font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.15;margin-bottom:16px;text-transform:uppercase;}
+.hero-desc{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.65;max-width:440px;margin-bottom:24px;}
+.hero-stats{display:flex;gap:20px;flex-wrap:wrap;}
+.hero-stat{display:flex;align-items:center;gap:10px;}
+
+/* ══ ICONOS del hero — tamaño controlado ══ */
+.hero-stat-icon{
+    width:auto;
+    height:auto;
+    max-width:200px;  /* ajusta este valor según tu imagen */
+    flex-shrink:0;
+}
+.hero-stat-icon img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.hero-photo-box{background:#fff;border-radius:14px;width:100%;aspect-ratio:4/3;box-shadow:0 16px 40px rgba(0,0,0,.25);overflow:hidden;}
+.hero-photo-box img{width:100%;height:100%;object-fit:cover;}
+
+/* ══ ENTIDADES ══ */
+.section-entidades{background:var(--gris-claro);padding:50px 0 45px;text-align:center;}
+.section-entidades h2{font-family:'Poppins',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:#03206A;margin-bottom:8px;}
+.section-entidades .subtitle{font-size:14px;color:var(--texto-medio);max-width:650px;margin:0 auto 30px;line-height:1.6;}
+ .carousel-outer{
+    position:relative;
+    overflow:hidden;
+    padding:0; /* ya no hay flechas, no necesitas padding */
+}
+.carousel-track{
+    display:flex;
+    gap:20px;
+    animation:scrollLogos 15s linear infinite;
+}
+@keyframes scrollLogos{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-190%);}
+}
+
+.carousel-card{
+    flex:0 0 170px;
+    height:85px;
+    background:transparent;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /* SIN border, SIN padding, SIN background blanco */
+    padding:0;
+    border:none;
+    box-shadow:none;
+}
+.carousel-card img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border:2px solid #03206A;
+    border-radius:10px;
+}
+ 
+.carousel-card{
+    flex:0 0 170px;
+    height:85px;
+    background:#fff;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+    
+     
+    transition:box-shadow .2s,transform .2s;
+}
+.carousel-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px);}
+/* ══ Logos dentro del carrusel ══ */
+.carousel-card img{
+    max-height:158px;
+    max-width:230px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+}
+.carousel-card .logo-ph{font-size:12px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.4px;}
+ 
+/* ══ ESTRUCTURA — imagen completa sin recorte ══ */
+.section-estructura{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+.estructura-bg{
+    width:100%;
+    line-height:0; /* elimina espacio extra debajo de img */
+}
+.estructura-bg img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain; /* muestra toda la imagen sin recortar */
+}
+/* Imagen para celular: oculta por defecto */
+.estructura-bg .img-mobile{display:none;}
+.estructura-bg .img-desktop{display:block;}
+
+@media(max-width:767px){
+    .estructura-bg .img-desktop{display:none;}
+    .estructura-bg .img-mobile{display:block;}
+}
+
+
+/* ══════════════════════════════════════════
+   SECCIÓN — EQUIPO ACADÉMICO
+   ══════════════════════════════════════════ */
+.section-equipo{
+    background:#E4F0FE;
+    padding:50px 0 60px;
+}
+.equipo-title{
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(24px,3.5vw,36px);
+    font-weight:800;
+    color:#03206A;
+    text-align:center;
+    margin-bottom:8px;
+}
+.equipo-desc{
+    font-size:13.5px;
+    color:var(--texto-medio);
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 20px;
+    line-height:1.65;
+}
+.equipo-requisitos{
+  
+    border-radius:14px;
+    padding:24px 28px;
+    margin-bottom:24px;
+    
+}
+.equipo-requisitos ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+    columns:2;
+    column-gap:30px;
+}
+.equipo-requisitos li{
+    font-size:12.5px;
+    color:var(--texto-medio);
+    line-height:1.7;
+    margin-bottom:8px;
+    padding-left:16px;
+    position:relative;
+    break-inside:avoid;
+}
+.equipo-requisitos li::before{
+    content:'•';
+    position:absolute;
+    left:0;
+    color:#03206A;
+    font-weight:700;
+}
+@media(max-width:576px){
+    .equipo-requisitos ul{columns:1;}
+}
+.btn-postular{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--rojo);
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    padding:11px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    transition:background .2s,transform .15s;
+    margin-bottom:6px;
+}
+.btn-postular:hover{background:var(--rojo-dark);color:#fff;transform:translateY(-1px);}
+.equipo-email{font-size:12px;color:var(--texto-medio);}
+.equipo-email a{color:#03206A;font-weight:600;text-decoration:none;}
+
+/* Grid de profesores */
+.prof-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:32px 28px;
+    margin-top:30px;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+@media(max-width:991px){.prof-grid{grid-template-columns:repeat(3,1fr);max-width:650px;}}
+@media(max-width:767px){.prof-grid{grid-template-columns:repeat(2,1fr);gap:20px 16px;max-width:400px;}}
+
+.prof-card{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    transition:transform .2s,box-shadow .2s;
+    display:flex;
+    flex-direction:column;
+    max-width:190px;
+    margin:0 auto;
+    width:100%;
+}
+.prof-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.14);}
+.prof-card__img-wrap{
+    width:100%;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    background:var(--gris-medio);
+}
+.prof-card__img-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+}
+.prof-card__body{
+    padding:10px 8px 12px;
+    text-align:center;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+.prof-card__name{
+    font-family:'Poppins',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    color:#000000;
+   
+    padding:5px 8px;
+    border-radius:5px;
+    line-height:1.3;
+    width:100%;
+}
+.btn-ver-perfil{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    background:#03206A;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    font-size:10px;
+    font-weight:700;
+    padding:5px 14px;
+    border-radius:5px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    transition:background .2s,transform .15s;
+}
+.btn-ver-perfil:hover{background:var(--azul-medio);color:#fff;transform:translateY(-1px);}
+
+/* Ocultar filas extra (2 filas = 8 en desktop) */
+.prof-grid.collapsed .prof-card:nth-child(n+9){display:none;}
+@media(max-width:991px){.prof-grid.collapsed .prof-card:nth-child(n+7){display:none;}}
+@media(max-width:767px){.prof-grid.collapsed .prof-card:nth-child(n+5){display:none;}}
+
+.btn-ver-todo{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#03206A;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    padding:12px 32px;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+    margin-top:28px;
+    transition:background .2s,transform .15s;
+}
+.btn-ver-todo:hover{background:var(--azul-medio);transform:translateY(-1px);}
+.btn-ver-todo i{transition:transform .3s;}
+.btn-ver-todo.expanded i{transform:rotate(180deg);}
+
+/* Loading skeleton */
+.prof-card.skeleton .prof-card__img-wrap{
+    background:linear-gradient(90deg,#e0e8f0 25%,#edf2f7 50%,#e0e8f0 75%);
+    background-size:200% 100%;
+    animation:shimmer 1.5s infinite;
+}
+.prof-card.skeleton .prof-card__name{background:#e0e8f0;color:transparent;height:32px;}
+@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+
+
+/* RESPONSIVE */
+@media(max-width:991px){
+    .nav-btns{display:none;}
+    .hero-garantia{padding:40px 0 50px;}
+    .hero-photo-box{margin-top:24px;}
+    .hero-stat-icon{max-width:160px;}
+}
+@media(max-width:576px){
+    .carousel-outer{padding:0 36px;}
+    .carousel-card{flex:0 0 140px;height:72px;}
+    .hero-stat-icon{max-width:140px;}
+}
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="rc-header">
+    <div class="rc-topbar">
+        <a href="https://rc-consulting.org/cursos-inhouse/" target="_blank">
+            <img src="header/banner-inhouse.png" alt="Cursos In House">
+        </a>
+    </div>
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg rc-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="img/logo-rc-consulting-sin-fondo.webp" class="rc-logo" alt="R&C Consulting">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto w-100 justify-content-evenly">
+                <li class="nav-item"><a class="nav-link" href="https://rc-consulting.org">Inicio</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/nosotros">Sobre Nosotros</a></li>
+                        <li><a class="dropdown-item" href="/experiencia">Experiencia y Alianzas</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Programas</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://rc-consulting.org/cursos-virtuales/">Cursos</a></li>
+                        <li><a class="dropdown-item" href="https://rc-consulting.org/diplomas-virtuales/">Diplomas</a></li>
+                        <li><a class="dropdown-item" href="https://www.rc-consulting.edu.pe/">Aula Virtual</a></li>
+                        <li><a class="dropdown-item" href="https://rc-consulting.org/suscripcion/">Membresía Premium</a></li>
+                        <li><a class="dropdown-item" href="https://rc-consulting.org/preguntas-frecuentes/">Preguntas Frecuentes</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="https://rc-consulting.org/cursos-inhouse/">In House</a></li>
+            </ul>
+            <div class="rc-buttons">
+                <a href="https://api.whatsapp.com/send?phone=51956991632" target="_blank" class="btn-wsp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                    956 991 632
+                </a>
+                <a href="https://rc-consulting.edu.pe/" target="_blank" class="btn-aula">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-add-fill" viewBox="0 0 16 16"><path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/><path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/></svg>
+                    Aula Virtual
+                </a>
+                <a href="https://escueladegobierno.edu.pe/tienda/" target="_blank" class="btn-tienda">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/></svg>
+                    Tienda Virtual
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+</div>
+
+
+<!-- SECCIÓN 1 — GARANTÍA INSTITUCIONAL -->
+<section class="hero-garantia">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <p class="hero-label">Con garantía institucional</p>
+                <h1 class="hero-title">Respaldo Humano y<br>Experiencia Academica</h1>
+                <p class="hero-desc">Un equipo interno comprometido y docentes especialistas que convierten la normativa en resultados aplicables para tu entidad.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-icon">
+                            <img src="img/4x/1.5x/Recurso 52@1.5x.webp" alt="+15 Colaboradores">
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-icon">
+                            <img src="img/4x/1.5x/Recurso 53@1.5x.webp" alt="+30 Expositores">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Espacio para foto -->
+                <div class="hero-photo-box"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SECCIÓN 2 — ENTIDADES CARRUSEL -->
+<section class="section-entidades">
+    <div class="container">
+        <h2>Entidades que ya nos eligieron</h2>
+        <p class="subtitle">Instituciones del Estado con las que R&C CONSULTING ha trabajado y más de 1000 instituciones públicas y privadas.</p>
+        <div class="carousel-outer">
+             
+            <div class="carousel-track" id="carouselTrack">
+
+                <!--
+                ╔═══════════════════════════════════════════════════╗
+                ║  CÓMO INSERTAR LOGOS EN EL CARRUSEL:             ║
+                ║                                                   ║
+                ║  Reemplaza el <span> por un <img>:               ║
+                ║                                                   ║
+                ║  ANTES:                                           ║
+                ║  <div class="carousel-card">                     ║
+                ║      <span class="logo-ph">OECE</span>          ║
+                ║  </div>                                           ║
+                ║                                                   ║
+                ║  DESPUÉS:                                         ║
+                ║  <div class="carousel-card">                     ║
+                ║      <img src="img/logos/oece.webp" alt="OECE">  ║
+                ║  </div>                                           ║
+                ║                                                   ║
+                ║  El CSS ya tiene:                                 ║
+                ║  max-height:48px; max-width:130px;               ║
+                ║  object-fit:contain;                              ║
+                ║  Así que el logo se ajusta solo.                  ║
+                ╚═══════════════════════════════════════════════════╝
+                -->
+
+                 <img class="carousel-card" src="img/Logo de entidades/Recurso 54@4x.webp" alt="OECE"> 
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 55@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 56@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 57@4x.webp" alt="OECE"></div>
+                <div class="carousel-card" width="100%" ><img src="img/Logo de entidades/Recurso 58@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 59@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 60@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 61@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 62@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 63@4x.webp" alt="OECE"></div>
+
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 54@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 55@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 56@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 57@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 58@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 59@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 60@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 61@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 62@4x.webp" alt="OECE"></div>
+                <div class="carousel-card"><img src="img/Logo de entidades/Recurso 63@4x.webp" alt="OECE"></div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+ 
+<!-- SECCIÓN 3 — ESTRUCTURA ORGANIZACIONAL (imagen completa sin recorte) -->
+<section class="section-estructura">
+    <div class="estructura-bg">
+        <!-- Desktop: imagen principal con fancybox -->
+        <a href="img/Organigrama Web.webp" data-fancybox="organigrama" data-caption="Organigrama R&C" class="img-desktop-link">
+            <img class="img-desktop" src="img/4x/1.5x/Recurso 54gaaa.webp" alt="Equipo institucional R&C">
+            <div class="overlay-ver">
+                <span>🔍 Ver Organigrama</span>
+            </div>
+        </a>
+        
+        <!-- Móvil: imagen diferente para celular -->
+        <a href="img/Organigrama Responsive.webp" data-fancybox="organigrama-mobile" data-caption="Organigrama R&C" class="img-mobile-link">
+            <img class="img-mobile" src="img/4x/1.5x/Recurso 55xw.webp" alt="Equipo institucional R&C">
+            <div class="overlay-ver">
+                <span>🔍 Ver Organigrama</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- AGREGAR ANTES DE CERRAR EL BODY -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+<style>
+/* ===== ESTRUCTURA ORGANIZACIONAL ===== */
+.estructura-bg {
+    position: relative;
+}
+
+.img-desktop-link,
+.img-mobile-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-desktop-link {
+    display: block;
+}
+
+.img-mobile-link {
+    display: none;
+}
+
+.estructura-bg img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.overlay-ver {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 40px 20px 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-ver span {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img-desktop-link:hover .overlay-ver,
+.img-mobile-link:hover .overlay-ver {
+    opacity: 1;
+}
+
+.img-desktop-link:hover img,
+.img-mobile-link:hover img {
+    transform: scale(1.02);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .img-desktop-link {
+        display: none;
+    }
+    
+    .img-mobile-link {
+        display: block;
+    }
+    
+    .overlay-ver {
+        opacity: 1;
+        padding: 30px 15px 15px;
+    }
+    
+    .overlay-ver span {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+</style>
+
+<script>
+Fancybox.bind("[data-fancybox]", {
+    // Zoom con mouse
+    Images: {
+        zoom: true,
+        Panzoom: {
+            maxScale: 0.5,
+            panMode: "mousemove",
+            mouseMoveFactor: 1.1,
+            mouseMoveFriction: 0.2
+        }
+    },
+    
+    // Animaciones
+    showClass: "fancybox-fadeIn",
+    hideClass: "fancybox-fadeOut",
+    
+        // Toolbar - botones siempre visibles
+    Toolbar: {
+        display: {
+            left: [],
+            middle: [],
+            right: ["zoomIn", "zoomOut", "close"]
+        }
+    },
+    
+       // Cerrar al hacer clic afuera
+    closeButton: "top",
+    dragToClose: true,
+    
+    // Desactivar idle para que no se oculten los controles
+    idle: false
+});
+</script>
+
+
+<!-- ═══════════════════════════════════════════
+     SECCIÓN 4 — NUESTRO EQUIPO ACADÉMICO
+     ═══════════════════════════════════════════ -->
+<section class="section-equipo">
+    <div class="container">
+        <h2 class="equipo-title">Nuestro equipo académico</h2>
+        <p class="equipo-desc">Seleccionamos docentes con sólida formación académica y experiencia comprobada en el sector público, bajo criterios de idoneidad y ética profesional.</p>
+
+        <div class="equipo-requisitos">
+            <ul>
+                <li>+10 años de experiencia en el sector público.</li>
+                <li>Maestría en su especialidad.</li>
+                <li>Funcionario/servidor público activo o consultor internacional en su campo.</li>
+                <li>Docencia en postgrado (mín. 5 años) en instituciones de reconocido prestigio.</li>
+                <li>Experiencia mínima de 5 años en el ente rector del sistema administrativo a enseñar.</li>
+                <li>Conducta ética intachable (sin denuncias por corrupción u otros delitos aplicables).</li>
+            </ul>
+        </div>
+
+        <div class="text-center" style="margin-bottom:10px;">
+            <a href="/cdn-cgi/l/email-protection#482c272b2d263c2d3b083a2b652b27263b3d243c21262f662b2725" class="btn-postular">Postula como expositor</a>
+            <p class="equipo-email">Envía tu CV a <a href="/cdn-cgi/l/email-protection#b0d4dfd3d5dec4d5c3f0c2d39dd3dfdec3c5dcc4d9ded79ed3dfdd"><span class="__cf_email__" data-cfemail="f5919a96909b819086b58796d8969a9b868099819c9b92db969a98">[email&#160;protected]</span></a></p>
+        </div>
+
+        <!-- Grid de profesores (cargado por JS desde API) -->
+        <div class="prof-grid collapsed" id="profGrid"></div>
+
+        <!-- Botón ver todo -->
+        <div class="text-center" id="verTodoWrap" style="display:none;">
+            <button class="btn-ver-todo" id="btnVerTodo" onclick="toggleProfesores()">
+                Ver todos los docentes <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="inner-wrap">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <img src="./img/added/logofooter.webp" alt="R&C Consulting" style="height:48px;margin-bottom:20px;display:block;">
+                <h3>Contáctanos:</h3>
+                <p>Av. Petit Thouars 2166.<br>Lince, Lima - Perú</p>
+                <p>Lunes a Viernes de 8:30 a 6:00 pm</p>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ce5e2eae3ccfeefa1efe3e2fff9e0f8e5e2eba2e3feeb">[email&#160;protected]</a></p>
+                <p>012661067 anexo: 100, 101, 104</p>
+            </div>
+            <div class="col-md-3">
+                <h3>Enlaces</h3>
+                <ul><li><a href="https://rc-consulting.org/cursos-virtuales/">Cursos</a></li><li><a href="https://rc-consulting.org/diplomas-virtuales/">Diplomados</a></li><li><a href="https://rc-consulting.org/cursos-inhouse/">Inhouse</a></li><li><a href="https://rc-consulting.org/consultoria-asistencia-tecnica/">Consultorías</a></li></ul>
+            </div>
+            <div class="col-md-3">
+                <h3>Información</h3>
+                <ul class="mb-3"><li><a href="https://rc-consulting.org/politicas-de-proteccion-de-datos/">Políticas de privacidad</a></li><li><a href="https://escueladegobierno.edu.pe/terminos-y-condiciones/">Términos y condiciones</a></li><li><a href="#">Contáctanos</a></li></ul>
+                <p style="font-size:11px;margin-bottom:5px;">Métodos de pago</p>
+                <img src="./img/added/payment.webp" alt="Métodos de pago" style="max-height:28px;">
+            </div>
+            <div class="col-md-3">
+                <h3>Certificados</h3>
+                <a href="https://rc-consulting.org/app-certificados/version1/" class="btn-cert-f" target="_blank"><i class="fas fa-search"></i> Consulta tu certificado</a>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><img src="./img/added/lreclamaciones.svg" alt="Libro de reclamaciones" style="height:32px;"><a href="https://rc-consulting.org/libro-de-reclamaciones/" style="font-size:14px;">Libro de reclamaciones</a></div>
+                <div class="social-icons">
+                    <a href="https://pe.linkedin.com/company/ryc-consulting" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/rycconsulting_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@CursosGestionPublica" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/rcconsultingperu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@ryc_consulting" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>R&C Consulting 2026 — Todos los derechos reservados</p></div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+ 
+
+
+// ══════════════════════════════════════════
+//  PROFESORES — Cargar desde API
+// ══════════════════════════════════════════
+const profGrid    = document.getElementById('profGrid');
+const btnVerTodo  = document.getElementById('btnVerTodo');
+const verTodoWrap = document.getElementById('verTodoWrap');
+
+function showSkeletons(n) {
+    let html = '';
+    for (let i = 0; i < n; i++) {
+        html += '<div class="prof-card skeleton"><div class="prof-card__img-wrap"></div><div class="prof-card__body"><div class="prof-card__name">Cargando...</div></div></div>';
+    }
+    profGrid.innerHTML = html;
+}
+
+function renderProfesores(profesores) {
+    let html = '';
+    profesores.forEach(function(p) {
+        var url = p.linkedin || '#';
+        var tgt = p.linkedin ? ' target="_blank"' : '';
+        html += '<div class="prof-card">' +
+            '<div class="prof-card__img-wrap">' +
+                '<img src="' + p.foto + '" alt="' + p.nombre + '" loading="lazy" onerror="this.src=\'img/profesores/placeholder.webp\'">' +
+            '</div>' +
+            '<div class="prof-card__body">' +
+                '<div class="prof-card__name">' + p.nombre + '</div>' +
+                '<a href="' + url + '"' + tgt + ' class="btn-ver-perfil"><i class="fab fa-linkedin-in"></i> Ver perfil</a>' +
+            '</div>' +
+        '</div>';
+    });
+    profGrid.innerHTML = html;
+
+    // Mostrar botón solo si hay más de 8
+    if (profesores.length > 8) {
+        verTodoWrap.style.display = 'block';
+    }
+}
+
+function toggleProfesores() {
+    var isCollapsed = profGrid.classList.contains('collapsed');
+    profGrid.classList.toggle('collapsed');
+    btnVerTodo.classList.toggle('expanded');
+    if (isCollapsed) {
+        btnVerTodo.innerHTML = 'Ocultar docentes <i class="fas fa-chevron-up"></i>';
+    } else {
+        btnVerTodo.innerHTML = 'Ver todos los docentes <i class="fas fa-chevron-down"></i>';
+    }
+}
+
+async function cargarProfesores() {
+    showSkeletons(8);
+    try {
+        // ══ CAMBIA ESTA URL POR TU ENDPOINT REAL ══
+        var resp = await fetch('/api/profesores.php');
+        var json = await resp.json();
+        if (json.ok && json.data.length > 0) {
+            renderProfesores(json.data);
+        } else {
+            cargarDatosRespaldo();
+        }
+    } catch (err) {
+        console.warn('API no disponible, usando datos de respaldo:', err);
+        cargarDatosRespaldo();
+    }
+}
+
+function cargarDatosRespaldo() {
+    var datos = [
+        { nombre: 'Ing. Howard Hans Flores Cortez',        foto: 'profesores/Ing. Howard Hans Flores Cortez.jpg',        linkedin: null },
+        { nombre: 'CPC. Amelia Quispe Mendiburo',          foto: 'profesores/CPC. AMELIA QUISPE MENDIBURO.jpg',          linkedin: null },
+        { nombre: 'Mag. Angel Reto Quintanilla',           foto: 'profesores/Mag. Angel Reto Quintanilla.jpg',           linkedin: null },
+        { nombre: 'Lic. Antonio De Loayza Conterno',       foto: 'profesores/Lic. ANTONIO DE LOAYZA CONTERNO.jpg',       linkedin: null },
+        { nombre: 'Mag. Elard Zalazar La Rosa',            foto: 'profesores/Mag. ELARD ZALAZAR LA ROSA.jpg',            linkedin: null },
+        { nombre: 'Abog. Tammy Lorena Quintanilla Zapata', foto: 'profesores/ABOG. TAMMY LORENA QUINTANILLA ZAPATA.jpg', linkedin: null },
+        { nombre: 'Dr. Guido Palomino Hernández',          foto: 'profesores/DR. GUIDO PALOMINO HERNÁNDEZ.jpg',          linkedin: null },
+        { nombre: 'Mg. Jesús Ruitón Cabanillas',           foto: 'profesores/Mg. JESÚS RUITÓN CABANILLAS.jpg',           linkedin: null },
+        { nombre: 'Mag. Aaron Ruiz',                       foto: 'profesores/Mag. Aaron Ruiz.jpg',                       linkedin: null },
+        { nombre: 'Mg. Vlado Castañeda',                   foto: 'profesores/Mg. Vlado Castañeda.jpg',                   linkedin: null },
+        { nombre: 'Econ. José Guillén Rueda',              foto: 'profesores/Econ. JOSE GUILLEN RUEDA.jpg',              linkedin: null },
+        { nombre: 'Dr. Pablo Vílchez',                     foto: 'profesores/DR. PABLO VILCHEZ.jpg',                     linkedin: null },
+        { nombre: 'Lic. César Oseda Samaniego',            foto: 'profesores/Lic. Cesar Oseda Samaniego.jpg',            linkedin: null },
+        { nombre: 'Ing. Michelle Alvarez Roberto',         foto: 'profesores/ING. MICHELLE ALVAREZ ROBERTO.jpg',         linkedin: null },
+        { nombre: 'Abg. Marco Montoya Lazarte',            foto: 'profesores/ABG. MARCO MONTOYA LAZARTE.jpg',            linkedin: null },
+        { nombre: 'Dr. Juan Araníbar Romero',              foto: 'profesores/Dr. Juan Araníbar Romero.jpg',              linkedin: null },
+        { nombre: 'Mag. Edith Huancaqui Rodriguez',        foto: 'profesores/Mag. Edith Huancaqui Rodriguez.jpg',        linkedin: null },
+        { nombre: 'Mag. Evelyn Meres Morales',             foto: 'profesores/Mag. Evelyn Meres Morales.jpg',             linkedin: null },
+        { nombre: 'Mag. Ramiro Culqui Ramírez',            foto: 'profesores/Mag. Ramiro Culqui Ramirez.jpg',            linkedin: null },
+        { nombre: 'Mag. Misael Rivera Carhuapuma',         foto: 'profesores/Mag. MISAEL RIVERA CARHUAPUMA.jpg',         linkedin: null },
+        { nombre: 'Ing. Víctor Manuel Morales Palacios',   foto: 'profesores/ING. VICTOR MANUEL MORALES PALACIOS.jpg',   linkedin: null },
+        { nombre: 'Mag. Miguel Salas Macchiavello',        foto: 'profesores/MAG. Miguel Salas Macchiavello.jpg',        linkedin: null },
+        { nombre: 'Dr. Marlon Prieto Hormaza',             foto: 'profesores/DR. MARLON PRIETO HORMAZA.jpg',             linkedin: null },
+        { nombre: 'Mag. Edgar Maguiña Roca',               foto: 'profesores/Mag. Edgar Maguiña Roca.jpg',               linkedin: null },
+        { nombre: 'Ing. Ronald Vásquez Guerra',            foto: 'profesores/ING. RONALD VASQUEZ GUERRA.jpg',            linkedin: null },
+        { nombre: 'Mag. Rosario Zavaleta Meza',            foto: 'profesores/MAG. ROSARIO ZAVALETA MEZA.jpg',            linkedin: null },
+    ];
+    renderProfesores(datos);
+}
+
+cargarProfesores();
+</script>
+</body>
+</html>

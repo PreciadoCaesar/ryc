@@ -5,8 +5,22 @@
 
     RewriteEngine On
 
+    # ===== SEGURIDAD: Bloquear acceso a archivos y directorios sensibles =====
+    RewriteRule ^\.env - [F,L]
+    RewriteRule ^\.git - [F,L]
+    RewriteRule ^storage/(.*)$ - [F,L]
+    RewriteRule ^vendor/(.*)$ - [F,L]
+    RewriteRule ^node_modules/(.*)$ - [F,L]
+    RewriteRule ^bootstrap/cache/(.*)$ - [F,L]
+    RewriteRule ^storage/logs/(.*)$ - [F,L]
+    RewriteRule ^database/(.*)\.(sqlite|db|sql)$ - [F,L]
+    RewriteRule ^composer\.(json|lock)$ - [F,L]
+    RewriteRule ^package(-lock)?\.json$ - [F,L]
+    RewriteRule ^phpunit\.xml$ - [F,L]
+    RewriteRule ^readme\.md$ - [F,L]
+
     # Servir archivos estáticos desde public/
-    RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot|ico|pdf)$ [NC]
+    RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot|ico|pdf|html)$ [NC]
     RewriteRule ^(.*)$ public/$1 [L]
 
     # Handle Authorization Header
@@ -27,9 +41,23 @@
     RewriteRule ^nosotros/(.*)$ index.php [L]
     RewriteRule ^experiencia$ index.php [L]
     RewriteRule ^experiencia/(.*)$ index.php [L]
+    RewriteRule ^cursos-virtuales$ index.php [L]
+    RewriteRule ^cursos-virtuales/(.*)$ index.php [L]
+    RewriteRule ^diplomas-virtuales$ index.php [L]
+    RewriteRule ^diplomas-virtuales/(.*)$ index.php [L]
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# ===== SEGURIDAD: Headers de seguridad =====
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "frame-ancestors 'self'"
+</IfModule>
+
+# NOTA: ServerSignature y ServerTokens solo pueden configurarse en httpd.conf

@@ -86,7 +86,51 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="header/header.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
+
+    <style>
+        /* ══ ESTILOS ESPECÍFICOS PARA SECCIÓN ONLINE (GRABADO) ══ */
+        #pagoa .inversion-main {
+            background: #03206A !important;
+        }
+        #pagoa #inv-label-flash {
+            color: #FFFFFFB3 !important;
+        }
+        #pagoa .inversion-right {
+            background-color: #03206A !important;
+        }
+        #pagoa .inv-label {
+            color: #FFFFFFB3 !important;
+        }
+        #pagoa .inv-price {
+            color: #fff !important;
+            font-size: 42px !important;
+            font-weight: 700 !important;
+        }
+        #pagoa .inv-igv {
+            color: #fff !important;
+        }
+        #pagoa .inversion-left {
+            background-color: #03206A !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+        #pagoa .inversion-left h3 {
+            color: #fff !important;
+        }
+        #pagoa .inversion-left ul li {
+            color: #FFFFFFB3 !important;
+        }
+        #pagoa .inversion-left ul li strong {
+            color: #fff !important;
+        }
+        #pagoa .section-title {
+            color: var(--azul) !important;
+        }
+        #pagoa .btn-wsp-inversion {
+            max-width: 750px !important;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -198,7 +242,7 @@
 
 <body>
 
-    
+
 
     <!-- CONTENEDOR PRINCIPAL -->
     <div class="main-container">
@@ -211,7 +255,7 @@
 
             <div class="panel-video-thumb" id="videoContainer"
                 style="position: relative; width: auto; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin: 14px; cursor: pointer;">
-                <img src=" --la misma imagen que la imagen de portada--" data-bind="imgPortadaVideo" alt="Video Thumbnail"
+                <img src="./img/curso-siaf-web-2026-junio.jpeg" data-bind="imgPortadaVideo" alt="Video Thumbnail"
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.2);">
                     <div style="background: rgba(255,255,255,0.2); border: 2px solid #fff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
@@ -248,7 +292,7 @@
                     Oferta hasta el <span data-bind="fechaLimiteOferta" style="margin-left:4px;">15 de junio</span>
                 </div>
                 <div class="panel-price-main">
-                    <span>S/. </span><span data-bind="precioOferta">197.00</span>
+                    <span>S/. </span><span id="panel-precio-oferta" data-bind="precioOferta">197.00</span>
                     <div class="panel-price-regular">
                         Precio regular:<br>
                         <span class="precio-tachado">s/. <span data-bind="precioRegular">257.00</span></span>
@@ -294,6 +338,10 @@
                     <div class="hero-contenido">
                         <div class="inner-wrap">
                             <div class="hero-body">
+                                <span class="badge-curso" data-bind="tipoPrograma"></span>
+                                <h1 data-bind="tituloCursoLargo"></h1>
+                                <p class="hero-sub" data-bind="heroSubtitulo"></p>
+                                <p class="hero-desc" data-bind="heroDescripcion"></p>
                                 <div class="hero-stats">
                                     <span class="stat-pill"><span class="stars">★★★★★</span>&nbsp; 4.8 de calificación</span>
                                     <span class="stat-pill">👥 +350 alumnos capacitados en este curso</span>
@@ -311,27 +359,27 @@
                                 <div class="qicon"><img src="img/SVG/Recurso 49.svg" width="24" height="24" alt=""></div>
                                 <div>
                                     <div class="qtitle">Inicio</div>
-                                    <div class="qtitle" data-bind="fechaInicio"> </div>
+                                    <div class="qtitle" data-bind="fechaInicio">23 de Junio</div>
                                 </div>
                             </div>
                             <div class="qitem">
                                 <div class="qicon"><img src="img/SVG/Recurso 50.svg" width="24" height="24" alt=""></div>
                                 <div>
                                     <div class="qtitle">Duración</div>
-                                    <div class="qtitle"><span data-bind="numeroSesiones"></span> sesiones</div>
+                                    <div class="qtitle"><span data-bind="numeroSesiones">6</span> sesiones</div>
                                 </div>
                             </div>
                             <div class="qitem">
                                 <div class="qicon"><img src="img/SVG/Recurso 51.svg" width="24" height="24" alt=""></div>
                                 <div>
                                     <div class="qtitle">Clases</div>
-                                    <div class="qtitle"></div>
+                                    <div class="qtitle">en vivo</div>
                                 </div>
                             </div>
                             <div class="qitem">
                                 <div class="qicon"><img src="img/SVG/Recurso 52.svg" width="24" height="24" alt=""></div>
                                 <div>
-                                    <div class="qtitle"><span data-bind="horasCertificacion"></span> Horas</div>
+                                    <div class="qtitle"><span data-bind="horasCertificacion">90</span> Horas</div>
                                     <div class="qtitle">Certificadas</div>
                                 </div>
                             </div>
@@ -342,7 +390,7 @@
                 <!-- IMAGEN PROMOCIÓN -->
                 <div class="promo-wrap">
                     <div class="inner-wrap">
-                        <img src="" width="100%" alt="Bono de regalo" style="border-radius: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.6); display: block;">
+                        <img id="promo-img" data-bind="imgPromocional" src="" width="100%" alt="Bono de regalo" style="border-radius: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.6); display: block;">
                     </div>
                 </div>
 
@@ -464,6 +512,39 @@
                     </div>
                 </section>
 
+                <!-- INVERSIÓN -->
+                <section class="sec bg-white" id="pagoa" style="display:none;">
+                    <div class="inner-wrap">
+                        <h2 class="section-title">Invierte y proyéctate</h2>
+                        <p style="font-size:13.5px;color:var(--texto-medio);text-align:center;margin-bottom:28px;">Curso 100% grabado | Acceso inmediato 24/7</p>
+                        <div class="inversion-wrap">
+                            <div class="inversion-main">
+                                <div class="inversion-left">
+                                    <h3>Tu inscripción incluye:</h3>
+                                    <ul>
+                                        <li>Acceso inmediato 24/7 al curso grabado.</li>
+                                        <li><strong>Certificación válida</strong> para convocatorias públicas (lista para tu CV)</li>
+                                        <li><strong><span data-bind="numeroSesiones">4</span> sesiones grabadas</strong> para aprender y resolver dudas al momento.</li>
+                                        <li><strong>Plataforma exclusiva</strong> para estudiar fácil, repasar y aplicar.</li>
+                                    </ul>
+                                </div>
+                                <div class="inversion-right">
+                                    <div id="inv-label-flash" class="inv-label">¡Oferta Flash!</div>
+                                    <div class="inv-price"><span>S/.</span> <span data-bind="precioOferta">257.00</span></div>
+                                    <a id="btn-acceder-ahora" onclick="event.preventDefault();window.open(RCEngine.state.urlCarritoPago,'PagoNiubiz','width=500,height=650,scrollbars=yes,resizable=yes,left='+(screen.width/2-250)+',top='+(screen.height/2-375));" style="cursor:pointer;">
+                                        <i class="fas fa-credit-card"></i> Acceder ahora
+                                    </a>
+                                    <div class="inv-label">Consulte con su asesora</div>
+                                    <div class="inv-igv">Todos los precios incluyen IGV</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-wsp-inversion wa-asesora-consulta" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp" style="font-size:20px;"></i> Activa tu acceso por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- FORMAS DE PAGO -->
                 <section class="rc-pay py-5" id="pago">
                     <div class="inner-wrap">
@@ -546,7 +627,7 @@
                                             </div>
                                             <div class="rc-price__amount" style="color: #FF044D;">S/ <span data-bind="precioOferta">197.00</span></div>
                                         </div>
-                                        <div class="rc-price rc-price--normal mb-3">
+                                        <div id="pronto-pago-section" class="rc-price rc-price--normal mb-3">
                                             <div class="d-flex align-items-center gap-2">
                                                 <span class="rc-coin">S/</span>
                                                 <div><div class="rc-price__name">Pronto Pago:</div><div class="rc-price__sub">Preventa disponible</div></div>
@@ -700,6 +781,7 @@
         </div>
     </div>
 
+   
 
     <!-- BARRA ROJA FIJA INFERIOR MÓVIL -->
     <div class="mobile-sticky-red">
@@ -819,12 +901,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <h4>Formación Profesional</h4>
-                        <ul class="prof-formacion"></ul>
-                        <h4>Experiencia Profesional</h4>
-                        <ul class="prof-experiencia"></ul>
-                        <h4>Experiencia de docente - autor de libros</h4>
-                        <ul class="prof-docencia"></ul>
+                        <div class="prof-secciones-container"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -966,7 +1043,8 @@
 
     <script>
     // ========== CONFIGURACIÓN ==========
-    const APPS_SCRIPT_URL_LEAD = "https://script.google.com/macros/s/AKfycbxncWtl2du2-DRDmP52p5y8gKJG2DmcBRRe3OIqKHsqGb_qvBBY5uL_-HvIAGm3WxEJoQ/exec";
+    const APPS_SCRIPT_URL_LEAD_VIRTUAL = "https://script.google.com/macros/s/AKfycbxncWtl2du2-DRDmP52p5y8gKJG2DmcBRRe3OIqKHsqGb_qvBBY5uL_-HvIAGm3WxEJoQ/exec";
+    const APPS_SCRIPT_URL_LEAD_ONLINE = "https://script.google.com/macros/s/AKfycbxZuTNc-QK333gH5E-qfhKfsQBziVLOhpeq4P6SRVJHO1mcwYxrbqICOrIHnGssWw5_/exec";
     const APPS_SCRIPT_URL_INHOUSE = "https://script.google.com/macros/s/AKfycbzOir6cJzWXuc-nX7B23qZ9N4eGN-eyTy1a17Bh2tteFhhLLoiCASGk9zYLkoOQBVzTQA/exec";
 
     // ========== ENVÍO A APPS SCRIPT ==========
@@ -995,15 +1073,22 @@
         e.preventDefault();
         const form = e.target;
         const s = (window.RCEngine && RCEngine.state) || {};
+        const esOnline = s.tipoProgramaOnline === 'si';
         const payload = {
             origen: 'Formulario Web',
             nombreCompleto: form.querySelector('input[name="nombre"]')?.value || '',
             correo: form.querySelector('input[name="correo"]')?.value || '',
-            celular: form.querySelector('input[name="celular"]')?.value || '',
-            nombreHojaDestino: s.hojaDestinoSheets || '',
-            cursoNombre: s.nombreCursoSheets || ''
+            celular: form.querySelector('input[name="celular"]')?.value || ''
         };
-        sendToApps(payload, APPS_SCRIPT_URL_LEAD).then(ok => { if (ok) form.reset(); });
+        if (esOnline) {
+            payload.curso = s.nombreCursoSheets || '';
+            payload.urlWha = window.location.href;
+        } else {
+            payload.nombreHojaDestino = s.hojaDestinoSheets || '';
+            payload.cursoNombre = s.nombreCursoSheets || '';
+        }
+        const url = esOnline ? APPS_SCRIPT_URL_LEAD_ONLINE : APPS_SCRIPT_URL_LEAD_VIRTUAL;
+        sendToApps(payload, url).then(ok => { if (ok) form.reset(); });
         return false;
     }
 
@@ -1022,6 +1107,9 @@
             inhouseForm.addEventListener('submit', function (ev) {
                 ev.preventDefault();
                 var s = (window.RCEngine && RCEngine.state) || {};
+                var tp = s.tipoPrograma || '';
+                var tipoLabel = tp.indexOf('Curso') === 0 ? 'Curso' : tp.indexOf('Diplomado') === 0 ? 'Diplomado' : '';
+                if (s.tipoProgramaOnline === 'si') tipoLabel += ' Online';
                 var payload = {
                     origen: 'FORMULARIO WEB',
                     nombres: inhouseForm.querySelector('input[name="nombres"]')?.value || '',
@@ -1030,7 +1118,7 @@
                     institucion: inhouseForm.querySelector('input[name="institucion"]')?.value || '',
                     cantidadAlumnos: inhouseForm.querySelector('select[name="cantidadAlumnos"]')?.value || '',
                     nivelCurso: inhouseForm.querySelector('select[name="nivelCurso"]')?.value || '',
-                    requerimiento: s.tituloCursoLargo || '',
+                    requerimiento: (tipoLabel ? tipoLabel + ' ' : '') + (s.tituloCursoLargo || ''),
                     urlWha: window.location.href
                 };
                 sendToApps(payload, APPS_SCRIPT_URL_INHOUSE).then(ok => {
@@ -1092,6 +1180,17 @@
     <a id="wsp" class="icon-arrow-up scroll irwsp" href="https://rc-consulting.org/cursos-virtuales/" target="_blank">
         <img hidden src="./img/recursos/cyber-boton.webp" alt="boton para descargar brochure">
     </a>
+
+    <!-- Niubiz popup function -->
+    <script>
+    function abrirPagoNiubiz() {
+        var url = (window.RCEngine && RCEngine.state) ? RCEngine.state.urlCarritoPago : '#';
+        var w = 500, h = 650;
+        var left = (screen.width - w) / 2;
+        var top = (screen.height - h) / 2;
+        window.open(url, 'PagoNiubiz', 'width=' + w + ',height=' + h + ',top=' + top + ',left=' + left + ',resizable=yes,scrollbars=yes');
+    }
+    </script>
 
     <!-- Crisp Chat -->
     <script type="text/javascript">
@@ -1157,7 +1256,22 @@
     window.addEventListener('resize', hidePanelAmarillo);
     </script>
 
-
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var banner = document.querySelector('.banner-purpura');
+        var videoContainer = document.getElementById('videoContainer');
+        if (!banner || !videoContainer || window.innerWidth < 992) return;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                videoContainer.style.display = entry.isIntersecting ? '' : 'none';
+            });
+        }, { threshold: 0 });
+        observer.observe(banner);
+        window.addEventListener('resize', function () {
+            if (window.innerWidth < 992) videoContainer.style.display = '';
+        });
+    });
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+Failed to load resource: the server responded with a status of 404 (Not Found)
+cyber-boton.webp:1  Failed to load resource: the server responded with a status of 404 (Not Found)
+icon-users.png:1  Failed to load resource: the server responded with a status of 404 (Not Found)
+(index):1 Refused to execute script from 'http://127.0.0.1:5503/js/funcionamiento.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+added.js:6 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+    at HTMLDocument.<anonymous> (added.js:6:16)
+jquery-3.2.1.min.js:2 jQuery.Deferred exception: $(...).slick is not a function TypeError: $(...).slick is not a function
+    at HTMLDocument.<anonymous> (http://127.0.0.1:5503/:1612:40)
+    at j (http://127.0.0.1:5503/js/jquery-3.2.1.min.js:2:29999)
+    at k (http://127.0.0.1:5503/js/jquery-3.2.1.min.js:2:30313) undefined
+r.Deferred.exceptionHook @ jquery-3.2.1.min.js:2
+jquery-3.2.1.min.js:2 jQuery.Deferred exception: $(...).slick is not a function TypeError: $(...).slick is not a function
+    at HTMLDocument.<anonymous> (http://127.0.0.1:5503/:1639:40)
+    at j (http://127.0.0.1:5503/js/jquery-3.2.1.min.js:2:29999)
+    at k (http://127.0.0.1:5503/js/jquery-3.2.1.min.js:2:30313) undefined
+r.Deferred.exceptionHook @ jquery-3.2.1.min.js:2
+jquery-3.2.1.min.js:2 Uncaught TypeError: $(...).slick is not a function
+    at HTMLDocument.<anonymous> ((index):1612:40)
+    at j (jquery-3.2.1.min.js:2:29999)
+    at k (jquery-3.2.1.min.js:2:30313)
+jquery-3.2.1.min.js:2 Uncaught TypeError: $(...).slick is not a function
+    at HTMLDocument.<anonymous> ((index):1639:40)
+    at j (jquery-3.2.1.min.js:2:29999)
+    at k (jquery-3.2.1.min.js:2:30313)

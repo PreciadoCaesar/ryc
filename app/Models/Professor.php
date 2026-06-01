@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Professor extends Model
 {
-    protected $fillable = ['name', 'photo', 'formacion', 'experiencia'];
-    protected $casts = ['formacion' => 'array', 'experiencia' => 'array'];
+    protected $fillable = ['name', 'primer_nombre', 'photo', 'secciones', 'bio'];
+    protected $casts = ['secciones' => 'array'];
 
     public function courses()
     {

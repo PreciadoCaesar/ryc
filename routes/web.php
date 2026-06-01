@@ -19,7 +19,7 @@ use App\Models\Course;
 // Google OAuth Routes
 Route::prefix('auth')->group(function () {
     Route::get('/google', [GoogleController::class, 'redirect'])->name('auth.google');
-    Route::get('/google/callback', [GoogleController::class, 'callback'])->name('auth.google.callback');
+    Route::get('/google/callback', [GoogleController::class, 'callback'])->middleware('throttle:10,1')->name('auth.google.callback');
     Route::get('/logout', [GoogleController::class, 'logout'])->name('auth.logout');
 });
 
@@ -29,23 +29,30 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::prefix('api')->group(function () {
+    // Endpoints públicos
     Route::get('/courses', [CourseController::class, 'index']);
     Route::get('/courses/featured', [CourseController::class, 'featured']);
     Route::get('/courses/{slug}', [CourseController::class, 'show']);
     Route::get('/courses/{slug}/page', [CourseController::class, 'page']);
+    Route::post('/leads', [ApiLeadController::class, 'store']); // Público para formularios de landing
 
-    Route::middleware(['auth'])->prefix('admin')->group(function () {
-        Route::get('/courses', [AdminCourseController::class, 'index']);
-        Route::post('/courses', [AdminCourseController::class, 'store']);
-        Route::put('/courses/{id}', [AdminCourseController::class, 'update']);
-        Route::delete('/courses/{id}', [AdminCourseController::class, 'destroy']);
-        Route::post('/courses/{id}/page', [AdminCourseController::class, 'savePage']);
+    // Endpoints protegidos (requieren login + dominio @rc-consulting.org)
+    Route::middleware(['auth', 'admin.access'])->group(function () {
+        Route::get('/leads', [ApiLeadController::class, 'index']);
+        Route::put('/leads/{id}', [ApiLeadController::class, 'update']);
+        Route::delete('/leads/{id}', [ApiLeadController::class, 'destroy']);
+
+        Route::post('/upload-imagen', [App\Http\Controllers\Api\ImageController::class, 'upload']);
+        Route::get('/listar-imagenes', [App\Http\Controllers\Api\ImageController::class, 'listar']);
+
+        Route::prefix('admin')->group(function () {
+            Route::get('/courses', [AdminCourseController::class, 'index']);
+            Route::post('/courses', [AdminCourseController::class, 'store']);
+            Route::put('/courses/{id}', [AdminCourseController::class, 'update']);
+            Route::delete('/courses/{id}', [AdminCourseController::class, 'destroy']);
+            Route::post('/courses/{id}/page', [AdminCourseController::class, 'savePage']);
+        });
     });
-
-    Route::get('/leads', [ApiLeadController::class, 'index']);
-    Route::post('/leads', [ApiLeadController::class, 'store']);
-    Route::put('/leads/{id}', [ApiLeadController::class, 'update']);
-    Route::delete('/leads/{id}', [ApiLeadController::class, 'destroy']);
 });
 
 Route::get('/', function () {
@@ -148,7 +155,7 @@ Route::get('/curso/{slug}', [App\Http\Controllers\CursoController::class, 'mostr
 Route::post('/cursos', [App\Http\Controllers\CursoController::class, 'store'])->name('cursos.store');
 
 // Dashboard Admin (protegido con auth)
-Route::middleware(['auth'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'admin.access'])->prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
         $user = auth()->user();
         $advisor = $user->advisor;

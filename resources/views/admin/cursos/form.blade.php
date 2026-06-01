@@ -26,7 +26,7 @@
             'url_video_vimeo' => 'https://player.vimeo.com/video/1053551456',
             'temario_hierarchical' => [],
             'objetivos' => collect(), 'participantes' => collect(), 'profesores' => collect(), 'temario' => collect(),
-            'asesora_id' => '', 'asesor_inhouse_id' => '',
+            'asesora_id' => '',
             'image_promotion' => '', 'inhouse_web' => '', 'inhouse_mobile' => '',
             'specialization_name' => '', 'phrase' => '', 'description' => '',
             'link_niubiz' => '', 'seo_title' => '',
@@ -39,6 +39,9 @@
     $participantesData = old('participantes', $isEditing && $course->participantes && $course->participantes->count() > 0 ? $course->participantes->toArray() : []);
     $hierarchicalData = old('temario_hierarchical', $isEditing ? ($curso->temario_hierarchical ?? []) : []);
     $selectedProfesores = old('profesor_ids', $isEditing && $course->profesores && $course->profesores->count() > 0 ? $course->profesores->pluck('id')->toArray() : []);
+    $profesoresJson = $profesores->map(function($p) {
+        return ['id' => $p->id, 'name' => $p->name, 'primer_nombre' => $p->primer_nombre, 'photo' => $p->photo ?? ''];
+    });
 @endphp
 
 <div class="admin-curso-container">
@@ -152,21 +155,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Modalidad</label>
-                            <select id="modalidadSelect" data-field="modalidad" onchange="syncModeSelect()">
-                                <option value="Online" {{ $isEditing && $course->mode === 'grabado' ? 'selected' : '' }}>Online</option>
-                                <option value="En Vivo" {{ $isEditing && $course->mode === 'en_vivo' ? 'selected' : '' }}>En Vivo</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
                             <label>Slug URL</label>
                             <input type="text" name="slug" id="slugUrl" data-field="slugUrl"
                                    value="{{ old('slug', $isEditing ? $course->slug : '') }}"
                                    placeholder="curso-siaf-web-2026">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" id="fechaInicioGroup" style="{{ (!$isEditing || $course->mode !== 'en_vivo') ? 'display:none;' : '' }}">
                             <label>Fecha de inicio</label>
                             <input type="date" name="start_date" id="fechaInicio" data-field="fechaInicio"
                                    value="{{ old('start_date', $isEditing ? $course->start_date : '') }}"
@@ -174,11 +168,10 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group">
-                            <label>Fecha ISO</label>
-                            <input type="date" name="fecha_inicio_iso" id="fechaInicioISO" data-field="fechaInicioISO"
-                                   value="{{ old('fecha_inicio_iso', $isEditing ? $course->fecha_inicio_iso : '') }}"
-                                   placeholder="2026-06-23">
+                        <div class="form-group" id="fechaFinGroup" style="{{ $isEditing && $course->mode !== 'en_vivo' ? 'display:none;' : '' }}">
+                            <label>Fecha de fin</label>
+                            <input type="date" name="fecha_fin" id="fechaFin"
+                                   value="{{ old('fecha_fin', $isEditing ? $course->fecha_fin : '') }}">
                         </div>
                         <div class="form-group">
                             <label>Fecha límite oferta</label>
@@ -207,6 +200,60 @@
                             <input type="text" name="seo_keywords" id="keywords" data-field="keywords"
                                    value="{{ old('seo_keywords', $isEditing ? $course->seo_keywords : '') }}"
                                    placeholder="SIAF WEB, gestión pública, presupuesto">
+                        </div>
+                    </div>
+
+                    <!-- ===== ETIQUETAS (solo para modo grabado) ===== -->
+                    <div class="form-row full" id="etiquetasGrabadoRow" style="{{ (!$isEditing || $course->mode !== 'grabado') ? 'display:none;' : '' }}">
+                        <div class="form-group">
+                            <label>🏷️ Etiquetas / Categorías (para filtros) — puedes seleccionar varias</label>
+                            @php
+                                $tags = [
+                                    'SiafSiga' => 'SIGA/SIAF',
+                                    'Contrataciones' => 'Contrataciones',
+                                    'Presupuesto' => 'Presupuesto',
+                                    'Gestion' => 'Gestión Pública',
+                                    'Planeamiento' => 'Planeamiento',
+                                    'Rrhh' => 'R.R.H.H./Control',
+                                ];
+                                $selectedTags = old('specialization_name', $curso->specialization_name ?? '');
+                                $selectedArray = is_array($selectedTags) ? $selectedTags : array_filter(explode(',', $selectedTags));
+                            @endphp
+                            <div style="display:flex;flex-wrap:wrap;gap:10px;padding:8px 0;">
+                                @foreach($tags as $val => $label)
+                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:#1f2937;">
+                                    <input type="checkbox" name="specialization_name[]" value="{{ $val }}"
+                                        {{ in_array($val, $selectedArray) ? 'checked' : '' }}
+                                        style="width:18px;height:18px;cursor:pointer;">
+                                    {{ $label }}
+                                </label>
+                                @endforeach
+                            </div>
+                            <small style="color:#6b7280;font-size:11px;">Define las categorías para filtrar en la página de cursos/diplomados online</small>
+                        </div>
+                    </div>
+
+                    <div class="mm-field">
+                        <label class="mm-label">Imagen Promocional</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="promoPreviewWrap2">
+                                <img id="promoPreview2" class="mm-preview-img"
+                                     src="{{ $isEditing && $course->image_promotion ? asset($course->image_promotion) : '' }}"
+                                     style="{{ $isEditing && $course->image_promotion ? '' : 'display:none' }}">
+                                <span class="mm-placeholder" id="promoPlaceholder2"
+                                      style="{{ $isEditing && $course->image_promotion ? 'display:none' : '' }}">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="image_promotion_text" id="imgPromocional"
+                                       class="mm-text-input"
+                                       value="{{ old('image_promotion_text', $isEditing ? ($course->image_promotion ?? '') : '') }}"
+                                       placeholder="./upload/imagenes-promocionales/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagenes-promocionales','imgPromocional','promoPreview2')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagenes-promocionales','imgPromocional','promoPreview2')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgPromocional','promoPreview2','promoPlaceholder2')">✕ Limpiar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -314,55 +361,102 @@
                     <span class="arrow">▼</span>
                 </div>
                 <div class="admin-section-body">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Imagen portada video</label>
-                            <input type="text" name="image_promotion_text" id="imgPortadaVideo" data-field="imgPortadaVideo"
-                                   value="{{ old('image_promotion_text', $isEditing ? ($course->image_promotion ?? '') : '') }}"
-                                   placeholder="./img/portada.jpg" class="mb-1">
-                            <input type="file" name="image_promotion" accept="image/*" onchange="previewFile(this, 'promoPreview')">
-                            @if($isEditing && $course->image_promotion)
-                                <img id="promoPreview" src="{{ asset($course->image_promotion) }}" class="preview-img-sm">
-                            @else
-                                <img id="promoPreview" class="preview-img-sm" style="display:none">
-                            @endif
+                    <!-- IMÁGENES PRIMERO -->
+                    <div class="mm-field">
+                        <label class="mm-label">📇 Imagen Portada (Cards)</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="promoPreviewWrap">
+                                <img id="promoPreview" class="mm-preview-img"
+                                     src="{{ $isEditing && $course->image_cover ? asset($course->image_cover) : '' }}"
+                                     style="{{ $isEditing && $course->image_cover ? '' : 'display:none' }}">
+                                <span class="mm-placeholder" id="promoPlaceholder"
+                                      style="{{ $isEditing && $course->image_cover ? 'display:none' : '' }}">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="image_cover_text" id="imgPortadaVideo" data-field="imgPortadaVideo"
+                                       class="mm-text-input"
+                                       value="{{ old('image_cover_text', $isEditing ? ($course->image_cover ?? '') : '') }}"
+                                       placeholder="./upload/imagen-portada/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagen-portada','imgPortadaVideo','promoPreview')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagen-portada','imgPortadaVideo','promoPreview')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgPortadaVideo','promoPreview','promoPlaceholder')">✕ Limpiar</button>
+                                </div>
+                                <div style="margin-top:6px;font-size:12px;color:#6b7280;">
+                                    <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                                        <input type="file" name="image_cover" accept="image/*" style="width:auto;" onchange="document.getElementById('imgPortadaVideo').value=this.files[0]?.name||''">
+                                        O subir archivo directamente
+                                    </label>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="mm-field">
+                        <label class="mm-label">Imagen InHouse Desktop</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="inhouseWebPreviewWrap">
+                                <img id="inhouseWebPreview" class="mm-preview-img"
+                                     src="{{ $isEditing && $course->inhouse_web ? asset($course->inhouse_web) : '' }}"
+                                     style="{{ $isEditing && $course->inhouse_web ? '' : 'display:none' }}">
+                                <span class="mm-placeholder" id="inhouseWebPlaceholder"
+                                      style="{{ $isEditing && $course->inhouse_web ? 'display:none' : '' }}">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="inhouse_web_text" id="imgInhouseDesktop" data-field="imgInhouseDesktop"
+                                       class="mm-text-input"
+                                       value="{{ old('inhouse_web_text', $isEditing ? ($course->inhouse_web ?? '') : '') }}"
+                                       placeholder="./upload/imagen-inhouse-desktop/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagen-inhouse-desktop','imgInhouseDesktop','inhouseWebPreview')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagen-inhouse-desktop','imgInhouseDesktop','inhouseWebPreview')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgInhouseDesktop','inhouseWebPreview','inhouseWebPlaceholder')">✕ Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mm-field">
+                        <label class="mm-label">Imagen InHouse Mobile</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="inhouseMobilePreviewWrap">
+                                <img id="inhouseMobilePreview" class="mm-preview-img"
+                                     src="{{ $isEditing && $course->inhouse_mobile ? asset($course->inhouse_mobile) : '' }}"
+                                     style="{{ $isEditing && $course->inhouse_mobile ? '' : 'display:none' }}">
+                                <span class="mm-placeholder" id="inhouseMobilePlaceholder"
+                                      style="{{ $isEditing && $course->inhouse_mobile ? 'display:none' : '' }}">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="inhouse_mobile_text" id="imgInhouseMobile" data-field="imgInhouseMobile"
+                                       class="mm-text-input"
+                                       value="{{ old('inhouse_mobile_text', $isEditing ? ($course->inhouse_mobile ?? '') : '') }}"
+                                       placeholder="./upload/imagen-inhouse-mobile/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagen-inhouse-mobile','imgInhouseMobile','inhouseMobilePreview')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagen-inhouse-mobile','imgInhouseMobile','inhouseMobilePreview')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgInhouseMobile','inhouseMobilePreview','inhouseMobilePlaceholder')">✕ Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXTOS DESPUÉS -->
+                    <div class="form-row">
                         <div class="form-group">
                             <label>URL Video Vimeo</label>
                             <input type="url" name="url_video_vimeo" id="urlVideoVimeo" data-field="urlVideoVimeo"
                                    value="{{ old('url_video_vimeo', $isEditing ? $course->url_video_vimeo : '') }}"
                                    placeholder="https://player.vimeo.com/video/...">
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-group">
                             <label>OG Image URL</label>
                             <input type="url" name="og_image_url" id="ogImageURL" data-field="ogImageURL"
                                    value="{{ old('og_image_url', $isEditing ? $course->og_image_url : '') }}"
                                    placeholder="https://...og-image.jpg">
                         </div>
-                        <div class="form-group">
-                            <label>Imagen InHouse Desktop</label>
-                            <input type="file" name="inhouse_web" id="imgInhouseDesktop" data-field="imgInhouseDesktop"
-                                   accept="image/*" onchange="previewFile(this, 'inhouseWebPreview')">
-                            @if($isEditing && $course->inhouse_web)
-                                <img id="inhouseWebPreview" src="{{ asset($course->inhouse_web) }}" class="preview-img-sm">
-                            @else
-                                <img id="inhouseWebPreview" class="preview-img-sm" style="display:none">
-                            @endif
-                        </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Imagen InHouse Mobile</label>
-                            <input type="file" name="inhouse_mobile" id="imgInhouseMobile" data-field="imgInhouseMobile"
-                                   accept="image/*" onchange="previewFile(this, 'inhouseMobilePreview')">
-                            @if($isEditing && $course->inhouse_mobile)
-                                <img id="inhouseMobilePreview" src="{{ asset($course->inhouse_mobile) }}" class="preview-img-sm">
-                            @else
-                                <img id="inhouseMobilePreview" class="preview-img-sm" style="display:none">
-                            @endif
-                        </div>
+
+                    <div class="form-row full">
                         <div class="form-group">
                             <label>Descripción InHouse</label>
                             <input type="text" name="descripcion_inhouse" id="descripcionInhouse" data-field="descripcionInhouse"
@@ -408,42 +502,7 @@
                 </div>
             </div>
 
-            <!-- ==================== 6. ASESOR INHOUSE ==================== -->
-            <div class="admin-section">
-                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
-                    <span>👨‍💼 Asesor InHouse</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="admin-section-body">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Seleccionar asesor InHouse</label>
-                            <select name="asesor_inhouse_id" id="asesorInhouseId">
-                                <option value="">-- Seleccionar asesor InHouse --</option>
-                                @foreach($asesoresInhouse as $inhouse)
-                                    <option value="{{ $inhouse->id }}" {{ old('asesor_inhouse_id', $curso->asesor_inhouse_id ?? '') == $inhouse->id ? 'selected' : '' }}>
-                                        {{ $inhouse->name }} {{ $inhouse->whatsapp ? '- ' . $inhouse->whatsapp : '' }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            <small style="color:#6b7280;font-size:11px;">Nombre, teléfono y foto se toman del perfil del asesor</small>
-                        </div>
-                    </div>
-                    @if($isEditing && $course->asesorInhouse)
-                    <div style="display:flex;align-items:center;gap:12px;margin-top:8px;padding:8px 12px;background:#f3f4f6;border-radius:8px;">
-                        @if($course->asesorInhouse->photo)
-                            <img src="{{ asset($course->asesorInhouse->photo) }}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
-                        @endif
-                        <div>
-                            <strong>{{ $course->asesorInhouse->name }}</strong><br>
-                            <span style="font-size:12px;color:#6b7280;">{{ $course->asesorInhouse->whatsapp ?? '' }}</span>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-            </div>
-
-            <!-- ==================== 7. OBJETIVOS ==================== -->
+            <!-- ==================== 6. OBJETIVOS ==================== -->
             <div class="admin-section">
                 <div class="admin-section-header" onclick="Admin.toggleSection(this)">
                     <span>🎯 Objetivos de Aprendizaje</span>
@@ -571,19 +630,9 @@
                     <span class="arrow">▼</span>
                 </div>
                 <div class="admin-section-body">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Seleccionar profesores</label>
-                            <select name="profesor_ids[]" multiple style="min-height:150px;width:100%;">
-                                @foreach($profesores as $profesor)
-                                    <option value="{{ $profesor->id }}" {{ in_array($profesor->id, $selectedProfesores) ? 'selected' : '' }}>
-                                        {{ $profesor->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            <small style="color:#6b7280;font-size:11px;">Mantén presionada Ctrl (Windows) o Cmd (Mac) para seleccionar múltiples</small>
-                        </div>
-                    </div>
+                    <div id="profesoresPlantillaGrid" class="prof-cards-grid"></div>
+                    <div id="profesoresHiddenInputs"></div>
+                    <button type="button" class="btn-add" onclick="Admin.abrirSelectorProfesores()">+ Seleccionar Profesores</button>
                 </div>
             </div>
 
@@ -593,6 +642,82 @@
 
 <!-- Toast -->
 <div id="toast" class="toast"></div>
+
+<!-- Modal Subir Imagen -->
+<div id="modalSubirImagen" class="modal-overlay" style="display:none;" onclick="if(event.target===this)Admin.cerrarModal('modalSubirImagen')">
+    <div class="modal-content modal-upload">
+        <div class="modal-header">
+            <h3>📤 Subir Imagen</h3>
+            <button type="button" class="modal-close" onclick="Admin.cerrarModal('modalSubirImagen')">✕</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="subirInputId">
+            <input type="hidden" id="subirPreviewId">
+
+            <div class="upload-dropzone" id="uploadDropzone">
+                <div class="upload-dropzone-icon">📁</div>
+                <p class="upload-dropzone-text">Arrastra una imagen aquí o <span class="upload-dropzone-link">selecciona un archivo</span></p>
+                <p class="upload-dropzone-hint">JPG, PNG, WebP · Máx 3MB</p>
+                <input type="file" id="subirFileInput" accept="image/*" onchange="Admin.previewSubirFile(this)">
+            </div>
+
+            <input type="hidden" id="subirDestinoHidden">
+
+            <div class="upload-destino-row">
+                <label class="upload-destino-label">Nombre (opcional)</label>
+                <input type="text" id="subirNombre" class="upload-destino-select" placeholder="Nombre personalizado (sin extensión)">
+            </div>
+
+            <div id="subirPreviewWrap" class="upload-preview-wrap">
+                <img id="subirPreviewImg" src="">
+                <button type="button" class="upload-preview-close" onclick="Admin.limpiarSubirPreview()">✕</button>
+            </div>
+
+            <button type="button" class="upload-submit-btn" onclick="Admin.ejecutarSubir()">Subir imagen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Seleccionar Imagen -->
+<div id="modalSeleccionarImagen" class="modal-overlay" style="display:none;" onclick="if(event.target===this)Admin.cerrarModal('modalSeleccionarImagen')">
+    <div class="modal-content modal-gallery">
+        <div class="modal-header">
+            <h3>🖼️ Galería de Imágenes</h3>
+            <button type="button" class="modal-close" onclick="Admin.cerrarModal('modalSeleccionarImagen')">✕</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="selInputId">
+            <input type="hidden" id="selPreviewId">
+
+            <div class="gallery-filter">
+                <input type="hidden" id="selDestinoHidden">
+                <label class="gallery-filter-label">Buscar:</label>
+                <input type="text" id="selBuscarInput" class="gallery-filter-select" placeholder="Buscar imágenes por nombre..." oninput="Admin.filtrarGaleria()">
+            </div>
+
+            <div id="selGallery" class="gallery-grid">
+                <p class="gallery-empty">Selecciona una carpeta para cargar las imágenes</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Seleccionar Profesores -->
+<div id="modalSeleccionarProfesores" class="modal-overlay" style="display:none;" onclick="if(event.target===this)Admin.cerrarModal('modalSeleccionarProfesores')">
+    <div class="modal-content modal-content-lg">
+        <div class="modal-header">
+            <h3>Seleccionar Profesores</h3>
+            <button type="button" class="modal-close" onclick="Admin.cerrarModal('modalSeleccionarProfesores')">✕</button>
+        </div>
+        <div class="modal-body">
+            <input type="text" id="profSelectorBuscar" class="prof-search-input" placeholder="Buscar profesor por nombre..." oninput="Admin.filtrarProfesores()">
+            <div id="profesoresSelectorGrid"></div>
+            <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;">
+                <button type="button" class="btn btn-primary" onclick="Admin.confirmarSeleccionProfesores()">Confirmar Selección</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
 /* ─── INLINE CSS (misma apariencia que admin.css) ─── */
@@ -640,6 +765,22 @@
 }
 .btn-save-header { background: #10b981; color: #fff; }
 .btn-save-header:hover { background: #059669; }
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.btn-primary { background: var(--azul); color: #fff; }
+.btn-primary:hover { background: #041f52; }
 .btn-preview { background: #3b82f6; color: #fff; }
 .btn-preview:hover { background: #2563eb; }
 .btn-back { background: rgba(255,255,255,0.15); color: #fff; border:1px solid rgba(255,255,255,0.3) !important; }
@@ -799,6 +940,157 @@
 .h-elem-bullet { width:5px; height:5px; border-radius:50%; background:var(--texto-medio); flex-shrink:0; display:inline-block; }
 .h-elemento-row .h-input { font-size:12px; }
 
+/* ===== MULTIMEDIA SECTION ===== */
+.mm-field {
+  background: var(--gris); border: 1px solid var(--borde); border-radius: 10px;
+  padding: 16px; margin-bottom: 12px; transition: border-color 0.15s;
+}
+.mm-field:hover { border-color: var(--azul); }
+.mm-label {
+  display: block; font-size: 12px; font-weight: 700; color: var(--azul);
+  text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 10px;
+}
+.mm-row { display: flex; gap: 16px; align-items: flex-start; }
+.mm-preview {
+  width: 160px; height: 90px; border-radius: 8px; overflow: hidden;
+  border: 2px solid var(--borde); background: #e5e7eb; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.15s;
+}
+.mm-preview:hover { border-color: var(--azul); }
+.mm-preview-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mm-placeholder { font-size: 32px; opacity: 0.4; }
+.mm-inputs { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.mm-text-input {
+  width: 100%; padding: 9px 12px; border: 1.5px solid var(--borde);
+  border-radius: 8px; font-size: 13px; font-family: 'Poppins', sans-serif;
+  background: #fff; transition: border-color 0.15s;
+}
+.mm-text-input:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 3px rgba(3,32,106,0.08); }
+.mm-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.mm-btn {
+  padding: 7px 16px; border: none; border-radius: 6px; font-size: 12px;
+  font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif;
+  transition: all 0.15s; display: inline-flex; align-items: center; gap: 4px;
+}
+.mm-btn-upload { background: var(--azul); color: #fff; }
+.mm-btn-upload:hover { background: #041f4a; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(3,32,106,0.25); }
+.mm-btn-view { background: #6b7280; color: #fff; }
+.mm-btn-view:hover { background: #4b5563; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(107,114,128,0.25); }
+.mm-btn-clear { background: #f3f4f6; color: #6b7280; border: 1px solid var(--borde); }
+.mm-btn-clear:hover { background: #fee2e2; color: #dc2626; border-color: #fecaca; }
+
+@media (max-width: 600px) {
+  .mm-row { flex-direction: column; }
+  .mm-preview { width: 100%; height: 140px; }
+}
+
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5); z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-content {
+  background: #fff; border-radius: 16px; width: 100%; max-width: 520px;
+  max-height: 90vh; overflow-y: auto; box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+  animation: modalIn 0.2s ease-out;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-upload { max-width: 600px; }
+.modal-gallery { max-width: 800px; }
+.modal-content-lg { max-width: 720px; }
+.modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; border-bottom: 1px solid var(--borde);
+}
+.modal-header h3 { font-size: 16px; font-weight: 700; color: var(--azul); margin:0; }
+.modal-close {
+  width: 32px; height: 32px; border-radius: 50%; border: none;
+  background: var(--gris); color: var(--texto-medio); font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.modal-close:hover { background: #ef4444; color: #fff; transform: rotate(90deg); }
+.modal-body { padding: 20px 24px; }
+
+/* Upload modal */
+.upload-dropzone {
+  border: 2px dashed var(--borde); border-radius: 12px; padding: 32px 20px;
+  text-align: center; cursor: pointer; transition: all 0.2s;
+  background: #fafafa; position: relative; margin-bottom: 16px;
+}
+.upload-dropzone:hover { border-color: var(--azul); background: #f0f3ff; }
+.upload-dropzone input[type="file"] {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0; cursor: pointer;
+}
+.upload-dropzone-icon { font-size: 40px; margin-bottom: 8px; }
+.upload-dropzone-text { font-size: 14px; color: var(--texto); font-weight: 500; margin: 0 0 4px; }
+.upload-dropzone-link { color: var(--azul); font-weight: 600; text-decoration: underline; }
+.upload-dropzone-hint { font-size: 12px; color: var(--texto-medio); margin: 0; }
+.upload-dropzone.has-file { border-color: #10b981; background: #f0fdf4; }
+
+.upload-destino-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.upload-destino-label { font-size: 13px; font-weight: 600; color: var(--texto); white-space: nowrap; }
+.upload-destino-select {
+  flex: 1; padding: 9px 12px; border: 1.5px solid var(--borde); border-radius: 8px;
+  font-size: 13px; font-family: 'Poppins', sans-serif; background: #fff;
+}
+.upload-destino-select:focus { outline: none; border-color: var(--azul); }
+
+.upload-preview-wrap {
+  position: relative; margin-bottom: 16px; border-radius: 10px;
+  overflow: hidden; border: 2px solid #10b981; display: none;
+}
+.upload-preview-wrap img { width: 100%; max-height: 280px; object-fit: contain; display: block; background: #f3f4f6; }
+.upload-preview-close {
+  position: absolute; top: 8px; right: 8px; width: 28px; height: 28px;
+  border-radius: 50%; border: none; background: rgba(0,0,0,0.5); color: #fff;
+  font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.upload-preview-close:hover { background: rgba(239,68,68,0.8); }
+
+.upload-submit-btn {
+  width: 100%; padding: 12px; border: none; border-radius: 10px;
+  background: var(--azul); color: #fff; font-size: 14px; font-weight: 600;
+  font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.15s;
+}
+.upload-submit-btn:hover { background: #041f4a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(3,32,106,0.3); }
+.upload-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Gallery modal */
+.gallery-filter {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.gallery-filter-label { font-size: 13px; font-weight: 600; color: var(--texto); white-space: nowrap; }
+.gallery-filter-select {
+  flex: 1; max-width: 320px; padding: 9px 12px; border: 1.5px solid var(--borde);
+  border-radius: 8px; font-size: 13px; font-family: 'Poppins', sans-serif; background: #fff;
+}
+.gallery-filter-select:focus { outline: none; border-color: var(--azul); }
+
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  max-height: 420px; overflow-y: auto; padding: 4px;
+}
+.gallery-grid .img-card {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 10px; border: 2px solid var(--borde); border-radius: 10px;
+  cursor: pointer; transition: all 0.15s; background: #fff;
+}
+.gallery-grid .img-card:hover { border-color: var(--azul); box-shadow: 0 0 0 3px rgba(3,32,106,0.1); transform: translateY(-2px); }
+.gallery-grid .img-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; }
+.gallery-grid .img-card span { font-size: 11px; color: var(--texto-medio); text-align: center; word-break: break-all; max-width: 100%; }
+.gallery-empty { color: var(--texto-medio); font-size: 13px; grid-column: 1 / -1; text-align: center; padding: 40px 0; }
+
 @media (max-width: 768px) {
   .form-row { grid-template-columns: 1fr; }
   .form-row.triple { grid-template-columns: 1fr; }
@@ -811,6 +1103,85 @@
   .h-input { min-width: 80px; }
   .modulo-level { margin-left: 8px; }
   .sesion-level { margin-left: 16px; }
+}
+}
+#profesoresSelectorGrid { display: flex; flex-direction: column; gap: 6px; }
+.prof-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.prof-checkbox-item:hover { background: #f9fafb; }
+.prof-checkbox-item input[type=checkbox] { width: 18px; height: 18px; margin: 0; cursor: pointer; }
+.prof-checkbox-item span { font-size: 14px; color: var(--texto); }
+.prof-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.prof-search-input:focus { border-color: var(--azul); }
+
+/* ─── Profesor cards (preview en formulario) ─── */
+.prof-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.prof-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 12px 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.prof-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.prof-card-img-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #e5e7eb;
+  border: 1px solid var(--borde);
+}
+.prof-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.prof-card-info { flex: 1; min-width: 0; }
+.prof-card-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto);
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+.prof-card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+  width: 100%;
 }
 </style>
 
@@ -1793,6 +2164,315 @@ var Admin = {
   _escAttr: function(str) {
     return String(str).replace(/&/g, '&amp;').replace(/\"/g, '&quot;')
       .replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  },
+
+  // ─── IMAGE MODAL FUNCTIONS ───
+  subirImagen: function(destino, inputId, previewId) {
+    document.getElementById('subirDestinoHidden').value = destino;
+    document.getElementById('subirInputId').value = inputId;
+    document.getElementById('subirPreviewId').value = previewId;
+    document.getElementById('subirFileInput').value = '';
+    document.getElementById('subirNombre').value = '';
+    document.getElementById('subirPreviewWrap').style.display = 'none';
+    document.getElementById('modalSubirImagen').style.display = 'flex';
+  },
+
+  previewSubirFile: function(input) {
+    var wrap = document.getElementById('subirPreviewWrap');
+    var img = document.getElementById('subirPreviewImg');
+    var dz = document.getElementById('uploadDropzone');
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) { img.src = e.target.result; wrap.style.display = 'block'; };
+      reader.readAsDataURL(input.files[0]);
+      if (dz) dz.classList.add('has-file');
+    } else {
+      if (dz) dz.classList.remove('has-file');
+    }
+  },
+
+  limpiarSubirPreview: function() {
+    var input = document.getElementById('subirFileInput');
+    var wrap = document.getElementById('subirPreviewWrap');
+    var dz = document.getElementById('uploadDropzone');
+    if (input) input.value = '';
+    if (wrap) wrap.style.display = 'none';
+    if (dz) dz.classList.remove('has-file');
+  },
+
+
+  limpiarImagen: function(inputId, previewId, placeholderId) {
+    var inputEl = document.getElementById(inputId);
+    var previewEl = document.getElementById(previewId);
+    var placeholderEl = document.getElementById(placeholderId);
+    if (inputEl) {
+      inputEl.value = '';
+      
+    }
+    if (previewEl) { previewEl.src = ''; previewEl.style.display = 'none'; }
+    if (placeholderEl) placeholderEl.style.display = '';
+  },
+
+  ejecutarSubir: function() {
+    var fileInput = document.getElementById('subirFileInput');
+    if (!fileInput.files || !fileInput.files[0]) {
+      this.showToast('Selecciona un archivo', 'error'); return;
+    }
+    var file = fileInput.files[0];
+    if (file.size > 3 * 1024 * 1024) {
+      this.showToast('El archivo supera los 3MB', 'error'); return;
+    }
+    var destino = document.getElementById('subirDestinoHidden').value;
+    var inputId = document.getElementById('subirInputId').value;
+    var previewId = document.getElementById('subirPreviewId').value;
+    var nombreInput = document.getElementById('subirNombre').value.trim();
+    var nombre = nombreInput || file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 80);
+
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('destino', destino);
+    formData.append('nombre', nombre);
+
+    var self = this;
+    var uploadUrl = '{{ url("api/upload-imagen") }}';
+    fetch(uploadUrl, {
+      method: 'POST',
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]')?.value || '',
+        'Accept': 'application/json'
+      },
+      body: formData
+    })
+    .then(function(r) {
+      if (!r.ok) {
+        return r.json().then(function(err) {
+          throw new Error(err.error || err.message || 'Error del servidor');
+        }).catch(function(e) {
+          if (e instanceof Error) throw e;
+          throw new Error('Error ' + r.status);
+        });
+      }
+      return r.json();
+    })
+    .then(function(data) {
+      if (data.url) {
+        var inputEl = document.getElementById(inputId);
+        var previewEl = document.getElementById(previewId);
+        if (inputEl) {
+          inputEl.value = data.url;
+
+        }
+        if (previewEl) {
+          previewEl.src = window.assetBase + data.url; previewEl.style.display = 'block';
+          var wrap = previewEl.closest('.mm-preview');
+          if (wrap) { var ph = wrap.querySelector('.mm-placeholder'); if (ph) ph.style.display = 'none'; }
+        }
+        self.cerrarModal('modalSubirImagen');
+        self.showToast('Imagen subida correctamente', 'success');
+      } else {
+        self.showToast('Error al subir imagen', 'error');
+      }
+    })
+    .catch(function(err) {
+      self.showToast(err && err.message ? err.message : 'Error de conexión', 'error');
+    });
+  },
+
+  seleccionarImagen: function(destino, inputId, previewId) {
+    document.getElementById('selDestinoHidden').value = destino;
+    document.getElementById('selInputId').value = inputId;
+    document.getElementById('selPreviewId').value = previewId;
+    document.getElementById('selBuscarInput').value = '';
+    document.getElementById('selGallery').innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">Cargando imágenes...</p>';
+    document.getElementById('modalSeleccionarImagen').style.display = 'flex';
+    this.cargarGaleria();
+  },
+
+  _cachedGalleryImages: [],
+
+  cargarGaleria: function() {
+    var destino = document.getElementById('selDestinoHidden').value;
+    var gallery = document.getElementById('selGallery');
+    var self = this;
+    gallery.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">Cargando imágenes...</p>';
+    var listUrl = '{{ url("api/listar-imagenes") }}';
+
+    fetch(listUrl + '?carpeta=' + encodeURIComponent(destino))
+      .then(function(r) {
+        if (!r.ok) throw new Error('Error al obtener imágenes');
+        return r.json();
+      })
+      .then(function(images) {
+        self._cachedGalleryImages = images || [];
+        self._renderGaleria();
+      })
+      .catch(function() {
+        gallery.innerHTML = '<p style="color:#ef4444;font-size:13px;">Error al cargar imágenes. Verifica la conexión.</p>';
+      });
+  },
+
+  _renderGaleria: function() {
+    var gallery = document.getElementById('selGallery');
+    var self = this;
+    var images = this._cachedGalleryImages;
+    var filtro = (document.getElementById('selBuscarInput').value || '').toLowerCase();
+
+    if (!images || images.length === 0) {
+      gallery.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">No hay imágenes en esta carpeta</p>';
+      return;
+    }
+
+    var filtered = filtro
+      ? images.filter(function(img) { return img.name.toLowerCase().indexOf(filtro) !== -1; })
+      : images;
+
+    if (filtered.length === 0) {
+      gallery.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">Ninguna imagen coincide con la búsqueda</p>';
+      return;
+    }
+
+    gallery.innerHTML = '';
+    filtered.forEach(function(img) {
+      var card = document.createElement('div');
+      card.className = 'img-card';
+      card.innerHTML = '<img src="' + window.assetBase + img.url + '" alt="' + self._escAttr(img.name) + '"><span>' + self._escAttr(img.name) + '</span>';
+      card.onclick = function() {
+        var inputId = document.getElementById('selInputId').value;
+        var previewId = document.getElementById('selPreviewId').value;
+        var inputEl = document.getElementById(inputId);
+        var previewEl = document.getElementById(previewId);
+        if (inputEl) {
+          inputEl.value = img.url;
+
+        }
+        if (previewEl) {
+          previewEl.src = window.assetBase + img.url; previewEl.style.display = 'block';
+          var wrap = previewEl.closest('.mm-preview');
+          if (wrap) { var ph = wrap.querySelector('.mm-placeholder'); if (ph) ph.style.display = 'none'; }
+        }
+        self.cerrarModal('modalSeleccionarImagen');
+        self.showToast('Imagen seleccionada', 'success');
+      };
+      gallery.appendChild(card);
+    });
+  },
+
+  filtrarGaleria: function() {
+    this._renderGaleria();
+  },
+
+  cerrarModal: function(id) {
+    document.getElementById(id).style.display = 'none';
+  },
+
+  // ─── PROFESOR SELECTOR FUNCTIONS ───
+  _profesoresData: [],
+  _selectedProfesoresIds: [],
+
+  initProfesores: function() {
+    this._profesoresData = window.profesoresData || [];
+    this._selectedProfesoresIds = window.selectedProfesoresIds || [];
+    this.renderProfesoresPlantilla();
+  },
+
+  renderProfesoresPlantilla: function() {
+    var grid = document.getElementById('profesoresPlantillaGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    var self = this;
+    var selected = this._selectedProfesoresIds;
+    if (selected.length === 0) {
+      grid.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;grid-column:1/-1;">Ningún profesor seleccionado</p>';
+    } else {
+      selected.forEach(function(id) {
+        var prof = self._findProfesor(id);
+        if (!prof) return;
+        var card = document.createElement('div');
+        card.className = 'prof-card';
+        var photoUrl = prof.photo ? (prof.photo.match(/^https?:\/\//) ? prof.photo : window.assetBase + 'storage/' + prof.photo) : '';
+        card.innerHTML = '<div class="prof-card-img-wrap">'
+          + (photoUrl ? '<img src="' + photoUrl + '">' : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--texto-medio);font-size:24px;">👤</div>')
+          + '</div><div class="prof-card-info"><h4>' + self._escAttr(prof.name) + '</h4></div>'
+          + '<div class="prof-card-actions"><button type="button" class="btn-delete-sm" onclick="Admin.quitarProfesor(' + id + ')" style="padding:4px 8px;font-size:11px;">✕ Quitar</button></div>';
+        grid.appendChild(card);
+      });
+    }
+    this._syncProfesoresHiddenInputs();
+  },
+
+  _findProfesor: function(id) {
+    for (var i = 0; i < this._profesoresData.length; i++) {
+      if (this._profesoresData[i].id === id) return this._profesoresData[i];
+    }
+    return null;
+  },
+
+  _syncProfesoresHiddenInputs: function() {
+    var container = document.getElementById('profesoresHiddenInputs');
+    if (!container) return;
+    container.innerHTML = '';
+    this._selectedProfesoresIds.forEach(function(id) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'profesor_ids[]';
+      input.value = id;
+      container.appendChild(input);
+    });
+  },
+
+  abrirSelectorProfesores: function() {
+    var input = document.getElementById('profSelectorBuscar');
+    if (input) input.value = '';
+    document.getElementById('modalSeleccionarProfesores').style.display = 'flex';
+    this._renderProfesoresChecklist();
+  },
+
+  _renderProfesoresChecklist: function() {
+    var grid = document.getElementById('profesoresSelectorGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    var self = this;
+    var selected = this._selectedProfesoresIds;
+    var filter = (document.getElementById('profSelectorBuscar') || {}).value || '';
+    var term = filter.toLowerCase().trim();
+
+    if (this._profesoresData.length === 0) {
+      grid.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">No hay profesores disponibles. Créalos en <a href="/admin/profesores" target="_blank">Gestión de Profesores</a>.</p>';
+    } else {
+      this._profesoresData.forEach(function(prof) {
+        var fullName = (prof.name || '').toLowerCase();
+        if (term && fullName.indexOf(term) === -1) return;
+        var isSelected = selected.indexOf(prof.id) !== -1;
+        var label = document.createElement('label');
+        label.className = 'prof-checkbox-item';
+        var name = self._escAttr(prof.name);
+        label.innerHTML = '<input type="checkbox" value="' + prof.id + '"' + (isSelected ? ' checked' : '') + '>'
+          + '<span>' + name + '</span>';
+        grid.appendChild(label);
+      });
+    }
+  },
+
+  filtrarProfesores: function() {
+    this._renderProfesoresChecklist();
+  },
+
+  confirmarSeleccionProfesores: function() {
+    var checks = document.querySelectorAll('#profesoresSelectorGrid input[type=checkbox]:checked');
+    var ids = [];
+    checks.forEach(function(cb) { ids.push(parseInt(cb.value)); });
+    this._selectedProfesoresIds = ids;
+    this.cerrarModal('modalSeleccionarProfesores');
+    this.renderProfesoresPlantilla();
+    this.showToast('Profesores actualizados', 'success');
+  },
+
+  quitarProfesor: function(id) {
+    var idx = this._selectedProfesoresIds.indexOf(id);
+    if (idx !== -1) {
+      this._selectedProfesoresIds.splice(idx, 1);
+      this.renderProfesoresPlantilla();
+    }
   }
 };
 
@@ -1814,22 +2494,26 @@ function selectMode(mode) {
   document.getElementById('modeInput').value = mode;
   document.querySelectorAll('.mode-tab').forEach(function(t) { t.classList.remove('active'); });
   var tab = document.querySelector('.mode-tab[data-mode="' + mode + '"]');
-  if (tab) tab.classList.add('active');
-  var modalidad = document.getElementById('modalidadSelect');
-  if (modalidad) {
-    modalidad.value = mode === 'grabado' ? 'Online' : 'En Vivo';
+  if (tab) tab.classList.add("active");
+  var fechaFinGroup = document.getElementById("fechaFinGroup");
+  if (fechaFinGroup) {
+    fechaFinGroup.style.display = mode === "en_vivo" ? "" : "none";
+  }
+  var fechaInicioGroup = document.getElementById("fechaInicioGroup");
+  if (fechaInicioGroup) {
+    fechaInicioGroup.style.display = mode === "en_vivo" ? "" : "none";
+  }
+  var etiquetasRow = document.getElementById("etiquetasGrabadoRow");
+  if (etiquetasRow) {
+    etiquetasRow.style.display = mode === "grabado" ? "" : "none";
   }
 }
-
 function syncTypeSelect() {
   var val = document.getElementById('tipoPrograma')?.value || 'Curso';
   selectType(val.toLowerCase());
 }
 
-function syncModeSelect() {
-  var val = document.getElementById('modalidadSelect')?.value || 'Online';
-  selectMode(val === 'Online' ? 'grabado' : 'en_vivo');
-}
+
 
 // ─── FILE PREVIEW ───
 function previewFile(input, imgId) {
@@ -1846,6 +2530,11 @@ function previewFile(input, imgId) {
 }
 
 // ─── INIT ───
+// ─── PROFESOR DATA FROM PHP ───
+window.profesoresData = @json($profesoresJson);
+window.selectedProfesoresIds = @json($selectedProfesores);
+window.assetBase = '{{ asset('') }}';
+
 document.addEventListener('DOMContentLoaded', function() {
   // Cargar app-core.js si no está
   if (typeof RCEngine === 'undefined') {
@@ -1856,6 +2545,18 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     Admin.init();
   }
+
+  Admin.initProfesores();
+
+  // Sync inicial: siempre reflejar portada en OG URL
+  var _syncOg = function() {
+    var portada = document.getElementById('imgPortadaVideo');
+    var og = document.getElementById('ogImageURL');
+    if (portada && og && portada.value) {
+      og.value = portada.value.match(/^https?:\/\//) ? portada.value : window.assetBase + portada.value;
+    }
+  };
+  _syncOg();
 
   // Sincronizar jerarquía al hacer submit
   document.getElementById('cursoForm')?.addEventListener('submit', function() {

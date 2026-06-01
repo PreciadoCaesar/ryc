@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Gestor de Plantillas | R&C Consulting</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/admin.css" rel="stylesheet">
 </head>
 <body>
 
-    <header class="admin-header">
-        <h1>
-            ⚙️ Gestor de Plantillas
-            <small>R&C Consulting</small>
-        </h1>
-        <div class="admin-header-actions">
-            <button class="btn-save" onclick="Admin.saveCurrent()">💾 Guardar</button>
-            <a class="btn-preview" href="#" id="previewLink" target="_blank">👁️ Vista previa</a>
-        </div>
-    </header>
+<header class="admin-header">
+    <h1>⚙️ Gestor de Plantillas <small>R&C Consulting</small></h1>
+    <div class="admin-tabs">
+        <button class="tab-btn active" data-tab="tab-plantilla" onclick="Admin.switchTab('tab-plantilla')">📝 Generar Plantilla</button>
+        <button class="tab-btn" data-tab="tab-profesores" onclick="Admin.switchTab('tab-profesores')">👨‍🏫 Gestor de Profesores</button>
+    </div>
+    <div class="admin-header-actions">
+        <button class="btn-save" onclick="Admin.saveCurrent()">💾 Guardar</button>
+        <a class="btn-preview" href="#" id="previewLink" target="_blank">👁️ Vista previa</a>
+    </div>
+</header>
 
-    <div class="admin-container">
+<div class="admin-container">
+
+    <div id="tab-plantilla" class="tab-content active">
 
         <!-- ==================== TEMPLATE BAR ==================== -->
         <div class="admin-section">
@@ -41,40 +45,46 @@
                 <span class="arrow">▼</span>
             </div>
             <div class="admin-section-body">
-                <div class="form-row">
+                <div class="form-row full">
                     <div class="form-group">
-                        <label>Título largo</label>
+                        <label>Modalidad del programa</label>
+                        <select id="tipoProgramaOnline" data-field="tipoProgramaOnline">
+                            <option value="no">Programa Virtual (Clases en vivo)</option>
+                            <option value="si">Programa Online (Grabado - Acceso inmediato)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Título del Programa</label>
                         <input type="text" id="tituloCursoLargo" data-field="tituloCursoLargo" placeholder="Ej: Curso SIAF WEB 2026: Práctica...">
                     </div>
+                </div>
+                <div class="form-row full">
                     <div class="form-group">
-                        <label>Título corto</label>
-                        <input type="text" id="tituloCursoCorto" data-field="tituloCursoCorto" placeholder="Ej: Curso SIAF WEB 2026">
+                        <label>Subtítulo del Programa</label>
+                        <textarea id="heroSubtitulo" data-field="heroSubtitulo" placeholder="Subtítulo que aparece debajo del título principal" style="min-height:50px;"></textarea>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Descripción del Programa</label>
+                        <textarea id="heroDescripcion" data-field="heroDescripcion" placeholder="Descripción del curso en la sección hero" style="min-height:80px;"></textarea>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Tipo de programa</label>
                         <select id="tipoPrograma" data-field="tipoPrograma">
-                            <option value="Curso">Curso</option>
-                            <option value="Diplomado">Diplomado</option>
+                            <option value="" disabled selected>-- Selecciona un programa --</option>
+                            <option value="Curso de Especialización Virtual">Curso de Especialización Virtual</option>
+                            <option value="Diplomado de Especialización Virtual">Diplomado de Especialización Virtual</option>
+                            <option value="Curso de Especialización Online">Curso de Especialización Online</option>
+                            <option value="Diplomado de Especialización Online">Diplomado de Especialización Online</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Modalidad</label>
-                        <select id="modalidad" data-field="modalidad">
-                            <option value="Online">Online</option>
-                            <option value="Presencial">Presencial</option>
-                            <option value="Virtual">Virtual</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Slug URL</label>
-                        <input type="text" id="slugUrl" data-field="slugUrl" placeholder="curso-siaf-web-2026">
-                    </div>
-                    <div class="form-group">
-                        <label>Fecha de inicio (texto)</label>
+                        <label>Fecha de inicio (Ejm: 01 de Junio)</label>
                         <input type="text" id="fechaInicio" data-field="fechaInicio" placeholder="Ej: 08 de Junio de 2026">
                     </div>
                 </div>
@@ -84,8 +94,14 @@
                         <input type="text" id="fechaInicioISO" data-field="fechaInicioISO" placeholder="2026-06-08">
                     </div>
                     <div class="form-group">
-                        <label>Fecha límite oferta</label>
+                        <label>Fecha límite oferta Flash (Ejm: 01 de Junio)</label>
                         <input type="text" id="fechaLimiteOferta" data-field="fechaLimiteOferta" placeholder="28 de mayo">
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Keywords</label>
+                        <input type="text" id="keywords" data-field="keywords" placeholder="SIAF WEB, gestión pública, presupuesto">
                     </div>
                 </div>
                 <div class="form-row full">
@@ -96,8 +112,25 @@
                 </div>
                 <div class="form-row full">
                     <div class="form-group">
-                        <label>Keywords</label>
-                        <input type="text" id="keywords" data-field="keywords" placeholder="SIAF WEB, gestión pública, presupuesto">
+                        <label>Slug URL</label>
+                        <input type="text" id="slugUrl" data-field="slugUrl" placeholder="curso-siaf-web-2026-practica...">
+                        <small style="color:#6b7280;font-size:11px;">dominio.com/<strong>ruta-slug</strong></small>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Imagen Promocional</label>
+                        <div class="promo-img-upload-row">
+                            <div class="promo-img-preview-wrap">
+                                <img id="promo-img-preview" class="promo-img-preview" src="./img/promocion.jpg" alt="Preview">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:6px;">
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalImagenPromocional()" style="font-size:13px;padding:8px 14px;">⬆️ Subir Imagen Promocional</button>
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalSeleccionarImagen()" style="font-size:13px;padding:8px 14px;">📁 Ver imágenes subidas</button>
+                                <small style="color:#6b7280;font-size:11px;">Máx 2.5MB — jpg, png, gif, webp</small>
+                            </div>
+                        </div>
+                        <input type="text" id="imgPromocional" data-field="imgPromocional" placeholder="imagenes-promocionales/mi-imagen.jpg" style="margin-top:6px;">
                     </div>
                 </div>
             </div>
@@ -130,6 +163,21 @@
                         <input type="text" id="ahorro" readonly value="60">
                     </div>
                 </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Link de Pago (Tarjeta)</label>
+                        <input type="url" id="urlCarritoPago" data-field="urlCarritoPago" placeholder="https://pago.niubiz.com.pe/...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Pronto Pago</label>
+                        <select id="prontoPagoActivo" data-field="prontoPagoActivo">
+                            <option value="no">Desactivado</option>
+                            <option value="si">Activado</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -153,7 +201,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Tipo de certificado</label>
-                        <input type="text" id="tipoCertificado" data-field="tipoCertificado" placeholder="Curso Especializado / Diploma Especializado">
+                        <select id="tipoCertificado" data-field="tipoCertificado">
+                            <option value="" disabled selected>-- Selecciona tipo --</option>
+                            <option value="Curso Especializado">Curso Especializado</option>
+                            <option value="Diploma Especializado">Diploma Especializado</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>URL Brochure PDF</label>
@@ -187,32 +239,65 @@
             <div class="admin-section-body">
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Imagen portada video</label>
-                        <input type="text" id="imgPortadaVideo" data-field="imgPortadaVideo" placeholder="./img/portada.jpg">
-                    </div>
-                    <div class="form-group">
                         <label>URL Video Vimeo</label>
                         <input type="url" id="urlVideoVimeo" data-field="urlVideoVimeo" placeholder="https://player.vimeo.com/video/...">
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group">
                         <label>OG Image URL</label>
                         <input type="url" id="ogImageURL" data-field="ogImageURL" placeholder="https://...og-image.jpg">
                     </div>
-                    <div class="form-group">
-                        <label>Imagen InHouse Desktop</label>
-                        <input type="text" id="imgInhouseDesktop" data-field="imgInhouseDesktop" placeholder="./img/inhouse-01.webp">
-                    </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Imagen InHouse Mobile</label>
-                        <input type="text" id="imgInhouseMobile" data-field="imgInhouseMobile" placeholder="./img/inhouse-02.webp">
-                    </div>
+                <div class="form-row full">
                     <div class="form-group">
                         <label>Descripción InHouse</label>
                         <input type="text" id="descripcionInhouse" data-field="descripcionInhouse" placeholder="Texto promocional corto...">
+                    </div>
+                </div>
+                <hr style="border:none;border-top:1px solid var(--borde);margin:16px 0;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Imagen portada video</label>
+                        <div class="promo-img-upload-row">
+                            <div class="promo-img-preview-wrap" style="width:160px;height:90px;">
+                                <img id="preview-imgPortadaVideo" class="promo-img-preview" src="./img/promocion.jpg" alt="Preview">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:6px;">
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalImagen('imgPortadaVideo','imagen-portada')" style="font-size:13px;padding:8px 14px;">⬆️ Subir</button>
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalSeleccionar('imgPortadaVideo','imagen-portada')" style="font-size:13px;padding:8px 14px;">📁 Ver imágenes</button>
+                                <small style="color:#6b7280;font-size:11px;">Máx 2.5MB — jpg, png, gif, webp</small>
+                            </div>
+                        </div>
+                        <input type="text" id="imgPortadaVideo" data-field="imgPortadaVideo" placeholder="imagen-portada/mi-imagen.jpg" style="margin-top:6px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen InHouse Desktop</label>
+                        <div class="promo-img-upload-row">
+                            <div class="promo-img-preview-wrap" style="width:160px;height:90px;">
+                                <img id="preview-imgInhouseDesktop" class="promo-img-preview" src="./img/promocion.jpg" alt="Preview">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:6px;">
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalImagen('imgInhouseDesktop','imagen-inhouse-desktop')" style="font-size:13px;padding:8px 14px;">⬆️ Subir</button>
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalSeleccionar('imgInhouseDesktop','imagen-inhouse-desktop')" style="font-size:13px;padding:8px 14px;">📁 Ver imágenes</button>
+                                <small style="color:#6b7280;font-size:11px;">Máx 2.5MB — jpg, png, gif, webp</small>
+                            </div>
+                        </div>
+                        <input type="text" id="imgInhouseDesktop" data-field="imgInhouseDesktop" placeholder="imagen-inhouse-desktop/mi-imagen.jpg" style="margin-top:6px;">
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Imagen InHouse Mobile</label>
+                        <div class="promo-img-upload-row">
+                            <div class="promo-img-preview-wrap" style="width:120px;height:160px;">
+                                <img id="preview-imgInhouseMobile" class="promo-img-preview" src="./img/promocion.jpg" alt="Preview">
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:6px;">
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalImagen('imgInhouseMobile','imagen-inhouse-mobile')" style="font-size:13px;padding:8px 14px;">⬆️ Subir</button>
+                                <button type="button" class="btn-add" onclick="Admin.mostrarModalSeleccionar('imgInhouseMobile','imagen-inhouse-mobile')" style="font-size:13px;padding:8px 14px;">📁 Ver imágenes</button>
+                                <small style="color:#6b7280;font-size:11px;">Máx 2.5MB — jpg, png, gif, webp</small>
+                            </div>
+                        </div>
+                        <input type="text" id="imgInhouseMobile" data-field="imgInhouseMobile" placeholder="imagen-inhouse-mobile/mi-imagen.jpg" style="margin-top:6px;">
                     </div>
                 </div>
             </div>
@@ -231,7 +316,7 @@
                         <input type="text" id="asesoraNombre" data-field="asesoraNombre" placeholder="Romina">
                     </div>
                     <div class="form-group">
-                        <label>Teléfono asesora</label>
+                        <label>Teléfono asesora (Ejm: 51XXXXXXXXX)</label>
                         <input type="text" id="asesoraTelefono" data-field="asesoraTelefono" placeholder="51999551532">
                     </div>
                     <div class="form-group">
@@ -255,7 +340,7 @@
                         <input type="text" id="asesorInhouseNombre" data-field="asesorInhouseNombre" placeholder="Arnaldo">
                     </div>
                     <div class="form-group">
-                        <label>Teléfono asesor InHouse</label>
+                        <label>Teléfono asesor InHouse (Ejm: 51XXXXXXXXX)</label>
                         <input type="text" id="asesorInhouseTelefono" data-field="asesorInhouseTelefono" placeholder="51948163352">
                     </div>
                 </div>
@@ -263,7 +348,7 @@
         </div>
 
         <!-- ==================== 7. INTEGRACIONES ==================== -->
-        <div class="admin-section">
+        <div class="admin-section" id="integraciones-section">
             <div class="admin-section-header" onclick="Admin.toggleSection(this)">
                 <span>🔗 Integraciones</span>
                 <span class="arrow">▼</span>
@@ -284,16 +369,6 @@
                             <option value="SIGA MEF MAYO">
                             <option value="DIPLOMADO CONTRATACIONES MAYO">
                         </datalist>
-                    </div>
-                    <div class="form-group">
-                        <label>Nombre curso (Sheets)</label>
-                        <input type="text" id="nombreCursoSheets" data-field="nombreCursoSheets" placeholder="Curso Online SIAF WEB 2026">
-                    </div>
-                </div>
-                <div class="form-row full">
-                    <div class="form-group">
-                        <label>URL Carrito Pago</label>
-                        <input type="url" id="urlCarritoPago" data-field="urlCarritoPago" placeholder="https://pago.niubiz.com.pe/...">
                     </div>
                 </div>
             </div>
@@ -373,59 +448,176 @@
             </div>
         </div>
 
-        <!-- ==================== 11. PROFESORES ==================== -->
+        <!-- ==================== PROFESORES (en plantilla) ==================== -->
         <div class="admin-section">
             <div class="admin-section-header" onclick="Admin.toggleSection(this)">
                 <span>👨‍🏫 Profesores</span>
                 <span class="arrow">▼</span>
             </div>
             <div class="admin-section-body">
-                <div class="dynamic-list" id="profesoresList"></div>
-                <button class="btn-add" onclick="Admin.addItem('profesores', {gradoNombre:'', primerNombre:'', img:'', formacionLI:'', experienciaLI:'', docenciaLI:''})">+ Añadir profesor</button>
-                <template id="profesoresItem">
-                    <div class="dynamic-item" data-index="">
-                        <button class="btn-remove" onclick="Admin.removeItem('profesores', this)">✕</button>
-                        <div class="form-row triple">
-                            <div class="form-group">
-                                <label>Grado y nombre completo</label>
-                                <input type="text" class="field-gradoNombre" placeholder="DR. MARLON PRIETO HORMAZA">
-                            </div>
-                            <div class="form-group">
-                                <label>Primer nombre (ID modal)</label>
-                                <input type="text" class="field-primerNombre" placeholder="Marlon">
-                            </div>
-                            <div class="form-group">
-                                <label>URL foto</label>
-                                <input type="text" class="field-img" placeholder="./img/profesor/profesor-01.jpg">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Formación (LI html)</label>
-                                <textarea class="field-formacionLI" placeholder="<li>Doctor en...</li><li>Master en...</li>" style="min-height:60px;"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Experiencia (LI html)</label>
-                                <textarea class="field-experienciaLI" placeholder="<li>Especialista en...</li>" style="min-height:60px;"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-row full">
-                            <div class="form-group">
-                                <label>Docencia / Publicaciones (LI html)</label>
-                                <textarea class="field-docenciaLI" placeholder="<li>Autor de...</li>" style="min-height:60px;"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </template>
+                <p style="font-size:12px;color:#6b7280;margin-bottom:12px;">Selecciona los profesores desde el gestor global.</p>
+                <div id="plantilla-profesores-list" class="prof-cards-grid"></div>
+                <button class="btn-add" onclick="Admin.profesoresPlantilla.abrirSelector()">+ Agregar Profesor</button>
             </div>
         </div>
 
+    </div><!-- /tab-plantilla -->
+
+    <!-- ==================== TAB: GESTOR DE PROFESORES ==================== -->
+    <div id="tab-profesores" class="tab-content">
+        <div class="admin-section">
+            <div class="admin-section-header" style="cursor:default;">
+                <span>👨‍🏫 Gestor de Profesores</span>
+            </div>
+            <div class="admin-section-body">
+                <p style="font-size:12px;color:#6b7280;margin-bottom:12px;">Administra los profesores disponibles globalmente. Luego podrás seleccionarlos desde cada plantilla.</p>
+                <div id="global-profesores-list" class="prof-cards-grid"></div>
+                <button class="btn-add" onclick="Admin.profesoresGlobal.mostrarFormulario()">+ Agregar Profesor</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Toast -->
-    <div id="toast" class="toast"></div>
+</div><!-- /admin-container -->
 
-    <script src="./js/app-core.js"></script>
-    <script src="./js/admin.js"></script>
+<template id="prof-seccion-template">
+    <div class="prof-seccion-card">
+        <div class="prof-seccion-header">
+            <input type="text" class="prof-seccion-titulo" placeholder="Título de la sección (ej: Formación Profesional)" style="flex:1;padding:6px 10px;border:1.5px solid var(--borde);border-radius:6px;font-size:13px;font-family:'Poppins',sans-serif;">
+            <button type="button" class="btn-delete-sm" onclick="Admin.profesoresGlobal.removeSeccion(this)">✕</button>
+        </div>
+        <div class="prof-seccion-elementos"></div>
+        <button type="button" class="btn-add-sm" onclick="Admin.profesoresGlobal.addElemento(this)" style="margin-top:6px;">+ Elemento</button>
+    </div>
+</template>
+
+<template id="prof-elemento-template">
+    <div class="prof-elemento-row">
+        <input type="text" class="prof-elemento-input" placeholder="Texto del elemento">
+        <button type="button" class="btn-remove-xs" onclick="Admin.profesoresGlobal.removeElemento(this)">✕</button>
+    </div>
+</template>
+
+<!-- Modal: Profesor Global (Add/Edit) -->
+<div class="modal fade" id="modalProfesorGlobal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalProfesorGlobalTitle">Agregar Profesor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="prof-form-group">
+                    <label>Grado y nombre completo</label>
+                    <input type="text" id="prof-global-gradoNombre" placeholder="DR. MARLON PRIETO HORMAZA">
+                </div>
+                <div class="prof-form-group">
+                    <label>Primer nombre (ID modal)</label>
+                    <input type="text" id="prof-global-primerNombre" placeholder="Marlon">
+                </div>
+                <div class="prof-form-group">
+                    <label>Foto del profesor</label>
+                    <div class="prof-img-upload-row">
+                        <div class="prof-img-preview-wrap">
+                            <img id="prof-img-preview" class="prof-img-preview" src="./img/profesor/default.jpg" alt="Preview">
+                        </div>
+                        <div class="prof-img-inputs">
+                            <input type="file" id="prof-img-file" accept="image/*">
+                            <small style="color:#6b7280;font-size:11px;">Máx 2MB. Si no subes archivo, ingresa una URL:</small>
+                            <input type="text" id="prof-global-img" placeholder="./img/profesor/profesor-01.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="prof-form-group">
+                    <label>Secciones del profesor</label>
+                    <div id="prof-secciones-container"></div>
+                    <button type="button" class="btn-add" onclick="Admin.profesoresGlobal.addSeccion()" style="margin-top:8px;">+ Crear Sección</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="Admin.profesoresGlobal.guardarFormulario()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Seleccionar Profesores (para plantilla) -->
+<div class="modal fade" id="modalSeleccionarProfesores" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Seleccionar Profesores</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="selectorProfesoresBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="Admin.profesoresPlantilla.confirmarSeleccion()">Agregar Seleccionados</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Seleccionar imagen subida -->
+<div class="modal fade" id="modalSeleccionarImagen" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Seleccionar imagen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="prof-form-group">
+                    <label>Buscar imagen</label>
+                    <input type="text" id="sel-img-search" placeholder="Escribe para filtrar..." oninput="Admin.filtrarImagenes(this.value)">
+                </div>
+                <div id="sel-img-grid" class="img-grid"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="Admin.seleccionarImagen()">Seleccionar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Subir imagen (genérico) -->
+<div class="modal fade" id="modalSubirImagen" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Subir Imagen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="prof-form-group">
+                    <label>Seleccionar imagen</label>
+                    <input type="file" id="modal-upload-file" accept="image/*" onchange="Admin.previewImagen(this)">
+                </div>
+                <div class="prof-form-group">
+                    <div class="promo-modal-preview-wrap">
+                        <img id="modal-upload-preview" class="promo-img-preview" src="./img/promocion.jpg" alt="Preview">
+                    </div>
+                </div>
+                <div class="prof-form-group">
+                    <label>Nombre personalizado (sin extensión)</label>
+                    <input type="text" id="modal-upload-nombre" placeholder="nombre-de-imagen">
+                    <small style="color:#6b7280;font-size:11px;">La extensión se mantiene automáticamente.</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="Admin.subirImagen()">Subir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/app-core.js"></script>
+<script src="./js/admin.js"></script>
 </body>
 </html>

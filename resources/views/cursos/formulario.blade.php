@@ -284,14 +284,14 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Imagen portada video</label>
-                            <input type="text" name="image_promotion_text" id="imgPortadaVideo" data-field="imgPortadaVideo"
-                                   value="{{ old('image_promotion_text', $isEditing ? ($course->image_promotion ?? '') : '') }}"
-                                   placeholder="./img/portada.jpg" class="mb-1">
-                            <input type="file" name="image_promotion" accept="image/*" onchange="previewFile(this, 'promoPreview')">
-                            @if($isEditing && $course->image_promotion)
-                                <img id="promoPreview" src="{{ asset($course->image_promotion) }}" class="preview-img-sm">
+                            <input type="text" name="image_cover_text" id="imgPortadaVideo" data-field="imgPortadaVideo"
+                                   value="{{ old('image_cover_text', $isEditing ? ($course->image_cover ?? '') : '') }}"
+                                   placeholder="./upload/imagen-portada/foto.jpg" class="mb-1">
+                            <input type="file" name="image_cover" accept="image/*" onchange="previewFile(this, 'promoPreviewCover')">
+                            @if($isEditing && $course->image_cover)
+                                <img id="promoPreviewCover" src="{{ asset($course->image_cover) }}" class="preview-img-sm">
                             @else
-                                <img id="promoPreview" class="preview-img-sm" style="display:none">
+                                <img id="promoPreviewCover" class="preview-img-sm" style="display:none">
                             @endif
                         </div>
                         <div class="form-group">

@@ -5,12 +5,15 @@
   var LAST_TEMPLATE_KEY = 'rc-last-template';
 
   var defaultState = {
+    tipoProgramaOnline: 'no',
     tituloCursoLargo: 'Curso SIAF WEB 2026: Práctica en Administrativo, Presupuesto, Contable y Tesorería',
     tituloCursoCorto: 'Curso SIAF WEB 2026',
-    tipoPrograma: 'Curso',
+    tipoPrograma: 'Curso de Especialización Online',
     modalidad: 'Online',
     slugUrl: 'curso-siaf-web-2026-practica-administrativo-presupuesto-contable-tesoreria',
     descripcionSEO: 'Capacitación 100% práctica en el Sistema Integrado de Administración Financiera SIAF-SP WEB versión 25.02.00.',
+    heroSubtitulo: '"Gestión de Tesorería Gubernamental: domina la CUT y el SIAF-SP, asegura pagos sin observaciones y controla el cierre con trazabilidad total"',
+    heroDescripcion: 'Este curso te prepara para gestionar la Tesorería Gubernamental con criterio técnico, asegurando pagos oportunos, trazables y sin observaciones. Dominarás el rol estratégico de Tesorería dentro de la Administración Financiera del Sector Público, la correcta gestión de la Cuenta Única del Tesoro (CUT), la centralización de recursos y la programación del presupuesto de caja para garantizar continuidad operativa.',
     keywords: 'SIAF WEB, gestión pública, presupuesto público, SIAF-SP, MEF, capacitación',
     fechaInicio: '23 de Junio',
     fechaInicioISO: '2026-06-23',
@@ -36,7 +39,9 @@
     asesorInhouseTelefono: '51948163352',
     hojaDestinoSheets: 'CURSO: SIAF WEB - JUNIO',
     nombreCursoSheets: 'Curso Online SIAF WEB 2026',
+    imgPromocional: '',
     urlCarritoPago: '#',
+    prontoPagoActivo: 'si',
     profesoresDC: 'Dr. Marlon Prieto Hormaza, Mag. Evelyn Meres Morales',
     objetivos: [
       { titulo: 'Excelencia en la Formación de Funcionarios:', descripcion: 'Brindar una capacitación de alto nivel que fortalezca las competencias técnicas del personal del sector público.' },
@@ -77,7 +82,12 @@
   };
 
   function getWAPrograma(s) {
-    return s.tipoPrograma + ' ' + s.modalidad + ' \'' + s.tituloCursoLargo + '\'';
+    var t = s.tituloCursoLargo;
+    if (t.indexOf('Curso ') === 0) {
+      t = t.substring(6);
+    }
+    var esOnline = s.tipoProgramaOnline === 'si';
+    return 'Curso' + (esOnline ? ' Online' : '') + ' ' + t;
   }
 
   var waPatterns = [
@@ -109,6 +119,9 @@
       }
       this.state = loaded ? deepClone(loaded) : deepClone(defaultState);
       this.render();
+      var self = this;
+      setTimeout(function () { self.toggleOnlineMode(); }, 100);
+      setTimeout(function () { self.toggleOnlineMode(); }, 500);
     },
 
     getDefaultState: function () {
@@ -139,10 +152,18 @@
           el.textContent = value + ' | R&C Consulting';
         } else if (el.tagName === 'A' && el.classList.contains('btn-brochure')) {
           el.href = value;
+        } else if (value && value.indexOf('<') !== -1) {
+          el.innerHTML = value;
         } else {
           el.textContent = value;
         }
       });
+
+      // Direct render for promo image
+      var promoImg = document.getElementById('promo-img');
+      if (promoImg && s.imgPromocional) {
+        promoImg.src = s.imgPromocional;
+      }
 
       // Render dynamic lists
       this.renderObjetivos();
@@ -171,6 +192,15 @@
           window.open(s.urlCarritoPago, 'PagoNiubiz', 'width=' + w + ',height=' + h + ',top=' + top + ',left=' + left + ',resizable=yes,scrollbars=yes');
         };
       });
+
+      // Toggle sections for Online vs Virtual
+      this.toggleOnlineMode();
+
+      // Toggle Pronto Pago section
+      var ppSection = document.getElementById('pronto-pago-section');
+      if (ppSection) {
+        ppSection.style.display = s.prontoPagoActivo === 'si' ? '' : 'none';
+      }
 
       // Hide/show panel amarillo on mobile
       this.renderMobileUI();
@@ -482,12 +512,42 @@
         if (modal) modal.id = 'modal' + item.primerNombre;
         var title = clone.querySelector('.modal-title');
         if (title) title.textContent = item.gradoNombre;
-        var formacion = clone.querySelector('.prof-formacion');
-        if (formacion) formacion.innerHTML = item.formacionLI || '';
-        var experiencia = clone.querySelector('.prof-experiencia');
-        if (experiencia) experiencia.innerHTML = item.experienciaLI || '';
-        var docencia = clone.querySelector('.prof-docencia');
-        if (docencia) docencia.innerHTML = item.docenciaLI || '';
+        var seccionesContainer = clone.querySelector('.prof-secciones-container');
+        if (seccionesContainer) {
+          if (item.secciones && item.secciones.length) {
+            item.secciones.forEach(function (sec) {
+              var secDiv = document.createElement('div');
+              secDiv.className = 'prof-seccion-render';
+              var h = document.createElement('h4');
+              h.textContent = sec.titulo || '';
+              secDiv.appendChild(h);
+              if (sec.elementos && sec.elementos.length) {
+                var ul = document.createElement('ul');
+                sec.elementos.forEach(function (elem) {
+                  var li = document.createElement('li');
+                  li.textContent = elem;
+                  ul.appendChild(li);
+                });
+                secDiv.appendChild(ul);
+              }
+              seccionesContainer.appendChild(secDiv);
+            });
+          } else {
+            var compatData = [
+              { titulo: 'Formación Profesional', html: item.formacionLI },
+              { titulo: 'Experiencia Profesional', html: item.experienciaLI },
+              { titulo: 'Experiencia de docente - autor de libros', html: item.docenciaLI }
+            ];
+            compatData.forEach(function (sec) {
+              if (sec.html) {
+                var secDiv = document.createElement('div');
+                secDiv.className = 'prof-seccion-render';
+                secDiv.innerHTML = '<h4>' + RCEngine.escHtml(sec.titulo) + '</h4><ul>' + sec.html + '</ul>';
+                seccionesContainer.appendChild(secDiv);
+              }
+            });
+          }
+        }
         container.appendChild(clone);
       });
     },
@@ -545,6 +605,50 @@
       });
     },
 
+    toggleOnlineMode: function () {
+      try {
+        var s = this.state;
+        var isOnline = s.tipoProgramaOnline === 'si';
+
+        var sections = [
+          { el: document.getElementById('pago'), name: 'pago' },
+          { el: document.getElementById('testimonio-seccion'), name: 'testimonio-seccion' },
+          { el: document.getElementById('pago-inversion'), name: 'pago-inversion' },
+          { el: document.querySelector('.sec-asesora'), name: 'sec-asesora' },
+          { el: document.getElementById('pagoa'), name: 'pagoa' }
+        ];
+
+        sections.forEach(function (item) {
+          if (!item.el) {
+            console.warn('toggleOnlineMode: elemento no encontrado -', item.name);
+            return;
+          }
+          if (item.name === 'pagoa') {
+            if (isOnline) {
+              item.el.style.removeProperty('display');
+            } else {
+              item.el.style.display = 'none';
+            }
+          } else {
+            if (isOnline) {
+              item.el.style.setProperty('display', 'none', 'important');
+            } else {
+              item.el.style.removeProperty('display');
+            }
+          }
+        });
+
+        var panelText = document.querySelector('.panel-registro-text');
+        if (panelText) {
+          panelText.textContent = isOnline
+            ? '¿Tienes dudas sobre el programa? Déjanos tus datos y un asesor te explicará todo a detalle y resolver cualquier consulta técnica'
+            : 'Registra tus datos y un asesor especializado te contactará para ayudarte';
+        }
+      } catch (e) {
+        console.error('toggleOnlineMode error:', e);
+      }
+    },
+
     updateState: function (newState) {
       this.state = deepClone(newState);
       this.render();
@@ -593,7 +697,15 @@
     getWAPrograma: getWAPrograma,
     waPatterns: waPatterns,
     generateWAUrl: generateWAUrl,
-    defaultState: defaultState
+    defaultState: defaultState,
+    escHtml: function (str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
   };
 
   window.RCEngine = RCEngine;

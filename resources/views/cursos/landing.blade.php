@@ -590,9 +590,9 @@
                         <div class="col-md-6"><div class="dif-card"><div class="dif-icon" style="margin-top:10px;"><img src="{{ asset('img/SVG/1x/Recurso 52.webp') }}" alt=""></div><div><p>Innovación y calidad educativa garantizada.</p></div></div></div>
                     </div>
                 </div>
-            </section>
-
-            <section class="rc-pay py-5" id="pago">
+            </section>{{-- INVERSIÓN Y FORMAS DE PAGO --}}
+@if($curso->mode !== 'grabado')
+<section class="rc-pay py-5" id="pago">
                 <div class="inner-wrap">
                     <div class="text-center mb-4"><h2 class="rc-title mb-2">Inversión y formas de pago</h2></div>
                     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;width:100%;">
@@ -687,7 +687,53 @@
                     </div>
                 </div>
             </section>
+            @endif
 
+            {{-- INVERSIÓN — MODO GRABADO (Online / Acceso inmediato) --}}
+            @if($curso->mode === 'grabado')
+            <section class="sec bg-white" id="pagoa">
+                <div class="inner-wrap">
+                    <h2 class="section-title">Invierte y proyéctate</h2>
+                    <p style="font-size:13.5px;color:var(--texto-medio);text-align:center;margin-bottom:28px;">Curso 100% grabado | Acceso inmediato 24/7</p>
+                    <div class="inversion-wrap">
+                        <div class="inversion-main" style="background:#03206A;">
+                            <div class="inversion-left" style="background-color:#03206A;border-right:1px solid rgba(255,255,255,0.2);">
+                                <h3 style="color:#fff;">Tu inscripción incluye:</h3>
+                                <ul>
+                                    <li style="color:#FFFFFFB3;">Acceso inmediato 24/7 al curso grabado.</li>
+                                    <li style="color:#FFFFFFB3;">Certificación válida para convocatorias públicas (lista para tu CV).</li>
+                                    <li style="color:#FFFFFFB3;"><strong style="color:#fff;">{{ $curso->sessions ?? 6 }} sesiones grabadas</strong> para aprender y resolver dudas al momento.</li>
+                                    <li style="color:#FFFFFFB3;"><strong style="color:#fff;">Plataforma exclusiva</strong> para estudiar fácil, repasar y aplicar.</li>
+                                </ul>
+                            </div>
+                            <div class="inversion-right" style="background-color:#03206A;">
+                                <div id="inv-label-flash" class="inv-label" style="color:#FFFFFFB3;">¡Oferta Flash!</div>
+                                <div class="inv-price" style="color:#fff;font-size:42px;font-weight:700;">S/. {{ $curso->precio_flash ?? '0' }}</div>
+                                <form action="{{ route('carrito.buy', $curso->slug) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn-acceder-card" style="border:none;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:12px;background:var(--rojo);color:#fff;font-weight:700;cursor:pointer;">
+                                        <i class="fas fa-credit-card"></i> Acceder ahora
+                                    </button>
+                                </form>
+                                <br>
+                                <div class="inv-label" style="color:#FFFFFFB3;">Consulte con su asesora</div>
+                                <div class="inv-igv" style="color:#fff;">Todos los precios incluyen IGV</div>
+                            </div>
+                        </div>
+                        @if($curso->advisor)
+                        <div style="width:100%;max-width:750px;margin:30px auto 0;display:flex;justify-content:center;">
+                            <a href="https://wa.me/{{ $curso->advisor->whatsapp }}?text=Hola%20{{ urlencode($curso->advisor->name) }}%2C%20deseo%20reservar%20mi%20vacante%20para%20el%20{{ urlencode($curso->title) }}.%20Podr%C3%ADas%20ayudarme%2C%20por%20favor." class="btn-wsp-inversion" style="justify-content:center;" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i> <span>Activa tu acceso por WhatsApp</span>
+                            </a>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </section>
+            @endif
+
+            {{-- ASESORA WHATSAPP --}}
+            @if($curso->mode !== 'grabado')
             @if($curso->advisor)
             <section class="sec-asesora">
                 <div class="asesora-fondo"></div>
@@ -702,6 +748,7 @@
                 </div>
             </section>
             @endif
+            @endif
 
             <section class="sec" id="testimonio-seccion">
                 <div class="testimonios-fondo"></div>
@@ -715,6 +762,7 @@
                 </div>
             </section>
 
+            @if($curso->mode !== 'grabado')
             <section class="sec" style="background-color:white;">
                 <div class="inner-wrap">
                     <h2 class="section-title">¡Asegura tu vacante hoy!</h2>
@@ -756,6 +804,7 @@
                     </div>
                 </div>
             </section>
+            @endif
 
             @if($curso->inhouse_web || $curso->inhouse_mobile)
             <div class="inhouse-section">

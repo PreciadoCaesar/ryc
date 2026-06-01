@@ -19,19 +19,25 @@ class ProfessorController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'photo' => 'nullable|image|mimes:webp|max:2048',
-            'formacion' => 'nullable|array',
-            'formacion.*.titulo' => 'nullable|string',
-            'formacion.*.institucion' => 'nullable|string',
-            'formacion.*.anio' => 'nullable|string',
-            'experiencia' => 'nullable|array',
-            'experiencia.*.rol' => 'nullable|string',
-            'experiencia.*.empresa' => 'nullable|string',
-            'experiencia.*.periodo' => 'nullable|string',
+            'primer_nombre' => 'nullable|string|max:255',
+            'photo' => 'nullable|image|mimes:jpeg,png,webp|max:2048',
+            'photo_url' => 'nullable|string|max:500',
+            'secciones' => 'nullable|json',
         ]);
+
+        $validated['primer_nombre'] = $request->primer_nombre ?: $this->extractPrimerNombre($request->name);
 
         if ($request->hasFile('photo')) {
             $validated['photo'] = $request->file('photo')->store('profesores', 'public');
+        } elseif ($request->filled('photo_url')) {
+            $validated['photo'] = $request->photo_url;
+        }
+
+        if ($request->filled('secciones')) {
+            $decoded = json_decode($request->secciones, true);
+            $validated['secciones'] = is_array($decoded) ? $decoded : [];
+        } else {
+            $validated['secciones'] = [];
         }
 
         Professor::create($validated);
@@ -45,22 +51,31 @@ class ProfessorController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'photo' => 'nullable|image|mimes:webp|max:2048',
-            'formacion' => 'nullable|array',
-            'formacion.*.titulo' => 'nullable|string',
-            'formacion.*.institucion' => 'nullable|string',
-            'formacion.*.anio' => 'nullable|string',
-            'experiencia' => 'nullable|array',
-            'experiencia.*.rol' => 'nullable|string',
-            'experiencia.*.empresa' => 'nullable|string',
-            'experiencia.*.periodo' => 'nullable|string',
+            'primer_nombre' => 'nullable|string|max:255',
+            'photo' => 'nullable|image|mimes:jpeg,png,webp|max:2048',
+            'photo_url' => 'nullable|string|max:500',
+            'secciones' => 'nullable|json',
         ]);
 
+        $validated['primer_nombre'] = $request->primer_nombre ?: $this->extractPrimerNombre($request->name);
+
         if ($request->hasFile('photo')) {
-            if ($professor->photo && Storage::disk('public')->exists($professor->photo)) {
+            if ($professor->photo && !filter_var($professor->photo, FILTER_VALIDATE_URL) && Storage::disk('public')->exists($professor->photo)) {
                 Storage::disk('public')->delete($professor->photo);
             }
             $validated['photo'] = $request->file('photo')->store('profesores', 'public');
+        } elseif ($request->filled('photo_url')) {
+            if ($professor->photo && !filter_var($professor->photo, FILTER_VALIDATE_URL) && Storage::disk('public')->exists($professor->photo)) {
+                Storage::disk('public')->delete($professor->photo);
+            }
+            $validated['photo'] = $request->photo_url;
+        }
+
+        if ($request->filled('secciones')) {
+            $decoded = json_decode($request->secciones, true);
+            $validated['secciones'] = is_array($decoded) ? $decoded : [];
+        } else {
+            $validated['secciones'] = [];
         }
 
         $professor->update($validated);
@@ -72,12 +87,29 @@ class ProfessorController extends Controller
     {
         $professor = Professor::findOrFail($id);
 
-        if ($professor->photo && Storage::disk('public')->exists($professor->photo)) {
+        if ($professor->photo && !filter_var($professor->photo, FILTER_VALIDATE_URL) && Storage::disk('public')->exists($professor->photo)) {
             Storage::disk('public')->delete($professor->photo);
         }
 
         $professor->delete();
 
         return redirect()->route('admin.profesores.index')->with('success', 'Profesor eliminado correctamente');
+    }
+
+    private function extractPrimerNombre(string $name): string
+    {
+        $names = explode(' ', trim($name));
+        $skip = ['DR.', 'DR', 'MG.', 'MG', 'MAG.', 'MAG', 'LIC.', 'LIC', 'ING.', 'ING',
+                 'BACH.', 'BACH', 'ABOG.', 'ABOG', 'CPA', 'CPC', 'CPCC.', 'CPCC',
+                 'MTRO.', 'MTRO', 'PROF.', 'PROF', 'DOC.', 'DOC', 'M.Sc.', 'MSC',
+                 'PH.D.', 'PHD', 'DRA.', 'DRA', 'MGA', 'MBA', 'MGP', 'MGR', 'MGT',
+                 'BLGA.', 'BLGA', 'BLGO.', 'BLGO', 'CIRUJANO', 'CIRUJANA'];
+        foreach ($names as $n) {
+            $clean = strtoupper(trim($n));
+            if (!in_array($clean, $skip) && !preg_match('/^[A-Z]\.?$/', $clean) && strlen($clean) > 1) {
+                return $n;
+            }
+        }
+        return $names[0] ?? '';
     }
 }

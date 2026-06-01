@@ -50,9 +50,8 @@ class CursoController extends Controller
     public function create()
     {
         $asesoras = Advisor::asesoras()->get();
-        $asesoresInhouse = Advisor::inhouse()->get();
         $profesores = Professor::all();
-        return view('admin.cursos.form', compact('asesoras', 'asesoresInhouse', 'profesores'));
+        return view('admin.cursos.form', compact('asesoras', 'profesores'));
     }
 
     public function store(Request $request)
@@ -70,7 +69,8 @@ class CursoController extends Controller
             'hours' => 'nullable|integer',
             'link_brochure' => 'nullable|string',
             'link_niubiz' => 'nullable|string',
-            'specialization_name' => 'nullable|string',
+            'specialization_name' => 'nullable|array',
+            'specialization_name.*' => 'nullable|string',
             'image_promotion' => 'nullable',
             'inhouse_web' => 'nullable',
             'inhouse_mobile' => 'nullable',
@@ -87,11 +87,11 @@ class CursoController extends Controller
             'participantes' => 'nullable|array',
             'sesiones' => 'nullable|array',
             'asesora_id' => 'nullable|exists:advisors,id',
-            'asesor_inhouse_id' => 'nullable|exists:advisors,id',
             'profesor_ids' => 'nullable|array',
             'profesor_ids.*' => 'exists:professors,id',
             'fecha_limite_oferta' => 'nullable|string',
             'fecha_inicio_iso' => 'nullable|string',
+            'fecha_fin' => 'nullable|string',
             'tipo_certificado' => 'nullable|string',
             'temario_titulo' => 'nullable|string',
             'temario_hierarchical' => 'nullable|string',
@@ -101,6 +101,11 @@ class CursoController extends Controller
         ]);
 
         $data['slug'] = $request->slug ?: \Illuminate\Support\Str::slug($request->title);
+
+        // Convertir specialization_name array a string separado por comas
+        if (isset($data['specialization_name'])) {
+            $data['specialization_name'] = implode(',', $data['specialization_name']);
+        }
         
         // Handle duplicate slug
         $existingSlug = Course::where('slug', $data['slug'])->where('id', '!=', $request->route('curso'))->first();
@@ -117,25 +122,48 @@ class CursoController extends Controller
         }
 
         // Manejar subida de imágenes
+        $slug = $data['slug'];
+        $imgDir = 'curso/' . $slug . '/img';
+        $imgPath = public_path($imgDir);
+        $descPath = public_path('curso/' . $slug . '/descargables');
+        if (!is_dir($imgPath)) mkdir($imgPath, 0755, true);
+        if (!is_dir($descPath)) mkdir($descPath, 0755, true);
+
+        // Prioridad: archivo subido directamente > texto con ruta > mantener existente
         if ($request->hasFile('image_promotion')) {
             $file = $request->file('image_promotion');
             $filename = time() . '_promocion.' . $file->getClientOriginalExtension();
-            $file->move(public_path('img/promocion'), $filename);
-            $data['image_promotion'] = 'img/promocion/' . $filename;
+            $file->move($imgPath, $filename);
+            $data['image_promotion'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('image_promotion_text')) {
+            $data['image_promotion'] = $request->image_promotion_text;
+        }
+
+        if ($request->hasFile('image_cover')) {
+            $file = $request->file('image_cover');
+            $filename = time() . '_cover.' . $file->getClientOriginalExtension();
+            $file->move($imgPath, $filename);
+            $data['image_cover'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('image_cover_text')) {
+            $data['image_cover'] = $request->image_cover_text;
         }
 
         if ($request->hasFile('inhouse_web')) {
             $file = $request->file('inhouse_web');
             $filename = time() . '_inhouse_web.' . $file->getClientOriginalExtension();
-            $file->move(public_path('img/inhouse'), $filename);
-            $data['inhouse_web'] = 'img/inhouse/' . $filename;
+            $file->move($imgPath, $filename);
+            $data['inhouse_web'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('inhouse_web_text')) {
+            $data['inhouse_web'] = $request->inhouse_web_text;
         }
 
         if ($request->hasFile('inhouse_mobile')) {
             $file = $request->file('inhouse_mobile');
             $filename = time() . '_inhouse_movil.' . $file->getClientOriginalExtension();
-            $file->move(public_path('img/inhouse'), $filename);
-            $data['inhouse_mobile'] = 'img/inhouse/' . $filename;
+            $file->move($imgPath, $filename);
+            $data['inhouse_mobile'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('inhouse_mobile_text')) {
+            $data['inhouse_mobile'] = $request->inhouse_mobile_text;
         }
 
         $curso = Course::create($data);
@@ -203,10 +231,9 @@ class CursoController extends Controller
     {
         $curso = Course::with(['objetivos', 'participantes', 'temario', 'profesores', 'page'])->findOrFail($id);
         $asesoras = Advisor::asesoras()->get();
-        $asesoresInhouse = Advisor::inhouse()->get();
         $profesores = Professor::all();
         
-        return view('admin.cursos.form', compact('curso', 'asesoras', 'asesoresInhouse', 'profesores'));
+        return view('admin.cursos.form', compact('curso', 'asesoras', 'profesores'));
     }
 
     public function update(Request $request, $id)
@@ -226,7 +253,8 @@ class CursoController extends Controller
             'hours' => 'nullable|integer',
             'link_brochure' => 'nullable|string',
             'link_niubiz' => 'nullable|string',
-            'specialization_name' => 'nullable|string',
+            'specialization_name' => 'nullable|array',
+            'specialization_name.*' => 'nullable|string',
             'image_promotion' => 'nullable',
             'inhouse_web' => 'nullable',
             'inhouse_mobile' => 'nullable',
@@ -243,11 +271,11 @@ class CursoController extends Controller
             'participantes' => 'nullable|array',
             'sesiones' => 'nullable|array',
             'asesora_id' => 'nullable|exists:advisors,id',
-            'asesor_inhouse_id' => 'nullable|exists:advisors,id',
             'profesor_ids' => 'nullable|array',
             'profesor_ids.*' => 'exists:professors,id',
             'fecha_limite_oferta' => 'nullable|string',
             'fecha_inicio_iso' => 'nullable|string',
+            'fecha_fin' => 'nullable|string',
             'tipo_certificado' => 'nullable|string',
             'temario_titulo' => 'nullable|string',
             'temario_hierarchical' => 'nullable|string',
@@ -255,6 +283,11 @@ class CursoController extends Controller
             'og_image_url' => 'nullable|string',
             'descripcion_inhouse' => 'nullable|string',
         ]);
+
+        // Convertir specialization_name array a string separado por comas
+        if (isset($data['specialization_name'])) {
+            $data['specialization_name'] = implode(',', $data['specialization_name']);
+        }
 
         // Temario hierarchical as JSON
         if ($request->filled('temario_hierarchical')) {
@@ -265,25 +298,47 @@ class CursoController extends Controller
         }
 
         // Manejar subida de imágenes
+        $slug = $data['slug'] ?? $curso->slug;
+        $imgDir = 'curso/' . $slug . '/img';
+        $imgPath = public_path($imgDir);
+        $descPath = public_path('curso/' . $slug . '/descargables');
+        if (!is_dir($imgPath)) mkdir($imgPath, 0755, true);
+        if (!is_dir($descPath)) mkdir($descPath, 0755, true);
+
         if ($request->hasFile('image_promotion')) {
             $file = $request->file('image_promotion');
             $filename = time() . '_promocion.' . $file->getClientOriginalExtension();
-            $file->move(public_path('img/promocion'), $filename);
-            $data['image_promotion'] = 'img/promocion/' . $filename;
+            $file->move($imgPath, $filename);
+            $data['image_promotion'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('image_promotion_text')) {
+            $data['image_promotion'] = $request->image_promotion_text;
+        }
+
+        if ($request->hasFile('image_cover')) {
+            $file = $request->file('image_cover');
+            $filename = time() . '_cover.' . $file->getClientOriginalExtension();
+            $file->move($imgPath, $filename);
+            $data['image_cover'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('image_cover_text')) {
+            $data['image_cover'] = $request->image_cover_text;
         }
 
         if ($request->hasFile('inhouse_web')) {
             $file = $request->file('inhouse_web');
             $filename = time() . '_inhouse_web.' . $file->getClientOriginalExtension();
-            $file->move(public_path('img/inhouse'), $filename);
-            $data['inhouse_web'] = 'img/inhouse/' . $filename;
+            $file->move($imgPath, $filename);
+            $data['inhouse_web'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('inhouse_web_text')) {
+            $data['inhouse_web'] = $request->inhouse_web_text;
         }
 
         if ($request->hasFile('inhouse_mobile')) {
             $file = $request->file('inhouse_mobile');
             $filename = time() . '_inhouse_movil.' . $file->getClientOriginalExtension();
-            $file->move(public_path('img/inhouse'), $filename);
-            $data['inhouse_mobile'] = 'img/inhouse/' . $filename;
+            $file->move($imgPath, $filename);
+            $data['inhouse_mobile'] = $imgDir . '/' . $filename;
+        } elseif ($request->filled('inhouse_mobile_text')) {
+            $data['inhouse_mobile'] = $request->inhouse_mobile_text;
         }
 
         $curso->update($data);

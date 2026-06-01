@@ -65,7 +65,7 @@
 	@foreach($cursosEnVivo ?? [] as $curso)
 	<div class="curso-card" data-category="CursosEnvivo proximos-inicios todo" data-fecha="{{ $curso->start_date ?? '' }}">
 		<div class="curso-card__img">
-			<img src="{{ asset($curso->image_promotion ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
+			<img src="{{ asset($curso->image_cover ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
 			<span class="sticker-inicia-hoy">INICIA HOY</span>
 			<span class="sticker-progreso">EN PROGRESO</span>
 		</div>
@@ -94,7 +94,7 @@
 	@foreach($diplomadosEnVivo ?? [] as $curso)
 	<div class="curso-card" data-category="DiplomadosEnvivo proximos-inicios todo" data-fecha="{{ $curso->start_date ?? '' }}">
 		<div class="curso-card__img">
-			<img src="{{ asset($curso->image_promotion ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
+			<img src="{{ asset($curso->image_cover ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
 			<span class="sticker-inicia-hoy">INICIA HOY</span>
 			<span class="sticker-progreso">EN PROGRESO</span>
 		</div>
@@ -123,7 +123,7 @@
 	@foreach($cursosOnline ?? [] as $curso)
 	<div class="curso-card" data-category="CursosOnline todo">
 		<div class="curso-card__img">
-			<img src="{{ asset($curso->image_promotion ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
+			<img src="{{ asset($curso->image_cover ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
 			@if($curso['featured'] ?? false)
 			<span class="badge-proximo">Destacado</span>
 			@endif
@@ -150,7 +150,7 @@
 	@foreach($diplomadosOnline ?? [] as $curso)
 	<div class="curso-card" data-category="DiplomadosOnline todo">
 		<div class="curso-card__img">
-			<img src="{{ asset($curso->image_promotion ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
+			<img src="{{ asset($curso->image_cover ?? 'img/curso/default.svg') }}" alt="{{ $curso->title ?? '' }}">
 			@if($curso['featured'] ?? false)
 			<span class="badge-proximo">Destacado</span>
 			@endif

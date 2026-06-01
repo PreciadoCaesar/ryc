@@ -12,13 +12,47 @@
       this.refreshTemplateList();
       this.bindFormToState();
       this.renderDynamicLists();
+      this.profesoresGlobal.cargar();
+      this.profesoresPlantilla.renderizar();
       this.calcAhorro();
       this.updatePreviewLink();
+      this.toggleIntegracionesSection();
+      this.filterTipoProgramaOptions();
+      this.toggleProntoPagoInput();
 
       document.addEventListener('input', function () {
         self.syncStateFromForm();
         self.calcAhorro();
         self.updatePreviewLink();
+      });
+
+      document.getElementById('tipoProgramaOnline').addEventListener('change', function () {
+        self.syncStateFromForm();
+        self.calcAhorro();
+        self.updatePreviewLink();
+        self.toggleIntegracionesSection();
+        self.filterTipoProgramaOptions();
+        self.autoFillNombreCurso();
+      });
+
+      document.getElementById('tipoPrograma').addEventListener('change', function () {
+        self.syncStateFromForm();
+        self.autoFillNombreCurso();
+        self.updatePreviewLink();
+      });
+
+      document.getElementById('prontoPagoActivo').addEventListener('change', function () {
+        self.syncStateFromForm();
+        self.toggleProntoPagoInput();
+      });
+
+      document.getElementById('previewLink').addEventListener('click', function (e) {
+        self.syncStateFromForm();
+        self.calcAhorro();
+        var name = document.getElementById('templateNameInput')?.value.trim();
+        if (name) {
+          RCEngine.saveTemplate(name, self.currentState);
+        }
       });
     },
 
@@ -37,6 +71,13 @@
           el.value = self.currentState[field];
         }
       });
+      var previewFields = ['imgPromocional', 'imgPortadaVideo', 'imgInhouseDesktop', 'imgInhouseMobile'];
+      previewFields.forEach(function (field) {
+        var el = document.getElementById('preview-' + field);
+        if (el && self.currentState[field]) {
+          el.src = self.currentState[field];
+        }
+      });
     },
 
     syncStateFromForm: function () {
@@ -47,8 +88,8 @@
       });
       this.syncDynamicList('objetivos', ['titulo', 'descripcion']);
       this.syncDynamicList('participantes', ['titulo', 'descripcion']);
-      this.syncDynamicList('profesores', ['gradoNombre', 'primerNombre', 'img', 'formacionLI', 'experienciaLI', 'docenciaLI']);
       this.syncTemarioHierarchy();
+      this.autoFillNombreCurso();
     },
 
     syncDynamicList: function (key, fields) {
@@ -78,7 +119,6 @@
     renderDynamicLists: function () {
       this.renderList('objetivos', this.currentState.objetivos || []);
       this.renderList('participantes', this.currentState.participantes || []);
-      this.renderList('profesores', this.currentState.profesores || []);
       this.renderTemarioHierarchy();
     },
 
@@ -989,8 +1029,13 @@
         this.currentState = JSON.parse(JSON.stringify(saved));
         this.bindFormToState();
         this.renderDynamicLists();
+        this.profesoresPlantilla.renderizar();
         this.calcAhorro();
         this.updatePreviewLink();
+        this.toggleIntegracionesSection();
+        this.filterTipoProgramaOptions();
+        this.toggleProntoPagoInput();
+        this.autoFillNombreCurso();
         document.getElementById('templateNameInput').value = name;
         this.showToast('Plantilla "' + name + '" cargada', 'success');
       }
@@ -1023,8 +1068,11 @@
       this.currentState = RCEngine.getDefaultState();
       this.bindFormToState();
       this.renderDynamicLists();
+      this.profesoresPlantilla.renderizar();
       this.calcAhorro();
       this.updatePreviewLink();
+      this.filterTipoProgramaOptions();
+      this.toggleProntoPagoInput();
       this.showToast('Plantilla "' + name + '" eliminada', 'success');
     },
 
@@ -1032,13 +1080,12 @@
       this.syncStateFromForm();
       this.calcAhorro();
       var name = document.getElementById('templateNameInput')?.value.trim();
+      if (name) {
+        RCEngine.saveTemplate(name, this.currentState);
+      }
       var link = document.getElementById('previewLink');
       if (!link) return;
-      if (name) {
-        link.href = './index.html?template=' + encodeURIComponent(name);
-      } else {
-        link.href = './index.html';
-      }
+      link.href = name ? './index.html?template=' + encodeURIComponent(name) : './index.html';
     },
 
     showToast: function (msg, type) {
@@ -1049,6 +1096,545 @@
       setTimeout(function () {
         toast.classList.remove('show');
       }, 2500);
+    },
+
+    toggleIntegracionesSection: function () {
+      var section = document.getElementById('integraciones-section');
+      if (!section) return;
+      section.style.display = this.currentState.tipoProgramaOnline === 'si' ? 'none' : '';
+    },
+
+    filterTipoProgramaOptions: function () {
+      var isOnline = this.currentState.tipoProgramaOnline === 'si';
+      var sel = document.getElementById('tipoPrograma');
+      if (!sel) return;
+      for (var i = 0; i < sel.options.length; i++) {
+        var opt = sel.options[i];
+        var hasOnline = opt.value.indexOf('Online') !== -1;
+        opt.disabled = isOnline ? hasOnline === false : hasOnline === true;
+      }
+      if (sel.selectedOptions[0] && sel.selectedOptions[0].disabled) {
+        sel.value = '';
+        this.currentState.tipoPrograma = '';
+      }
+    },
+
+    autoFillNombreCurso: function () {
+      var tp = this.currentState.tipoPrograma || '';
+      var title = this.currentState.tituloCursoLargo || '';
+
+      var base = tp.indexOf('Curso') === 0 ? 'Curso' : tp.indexOf('Diplomado') === 0 ? 'Diploma' : '';
+      if (!base) return;
+
+      var cleanTitle = title;
+      if (cleanTitle.indexOf('Curso ') === 0) cleanTitle = cleanTitle.substring(6);
+      else if (cleanTitle.indexOf('Diplomado ') === 0) cleanTitle = cleanTitle.substring(10);
+
+      this.currentState.nombreCursoSheets = base + ' ' + cleanTitle;
+    },
+
+    toggleProntoPagoInput: function () {
+      var input = document.getElementById('precioProntoPago');
+      if (!input) return;
+      input.disabled = this.currentState.prontoPagoActivo !== 'si';
+    },
+
+    // ─── SUBIR IMAGEN (GENÉRICO) ───
+
+    _uploadTarget: null,
+
+    mostrarModalImagen: function (fieldId, destino) {
+      Admin._uploadTarget = { fieldId: fieldId, destino: destino };
+      document.getElementById('modal-upload-file').value = '';
+      document.getElementById('modal-upload-nombre').value = '';
+      document.getElementById('modal-upload-preview').src = './img/promocion.jpg';
+      delete document.getElementById('modal-upload-preview').dataset.objectUrl;
+      delete document.getElementById('modal-upload-preview').dataset.hasFile;
+      var modal = new bootstrap.Modal(document.getElementById('modalSubirImagen'));
+      modal.show();
+    },
+
+    previewImagen: function (input) {
+      var file = input.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        Admin.showToast('El archivo debe ser una imagen', 'error');
+        input.value = '';
+        return;
+      }
+      if (file.size > 2.5 * 1024 * 1024) {
+        Admin.showToast('La imagen no debe superar los 2.5MB', 'error');
+        input.value = '';
+        return;
+      }
+      var preview = document.getElementById('modal-upload-preview');
+      if (preview.dataset.objectUrl) {
+        URL.revokeObjectURL(preview.dataset.objectUrl);
+      }
+      var url = URL.createObjectURL(file);
+      preview.src = url;
+      preview.dataset.objectUrl = url;
+      preview.dataset.hasFile = '1';
+      var nameWithoutExt = file.name.replace(/\.[^.]+$/, '');
+      document.getElementById('modal-upload-nombre').value = nameWithoutExt;
+    },
+
+    subirImagen: async function () {
+      var target = Admin._uploadTarget;
+      if (!target) {
+        Admin.showToast('Error: no hay destino configurado', 'error');
+        return;
+      }
+      var fileInput = document.getElementById('modal-upload-file');
+      if (!fileInput.files[0]) {
+        Admin.showToast('Selecciona una imagen primero', 'error');
+        return;
+      }
+      var nombre = document.getElementById('modal-upload-nombre').value.trim();
+      if (!nombre) {
+        Admin.showToast('Ingresa un nombre personalizado para la imagen', 'error');
+        return;
+      }
+      var formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      formData.append('nombre', nombre);
+      formData.append('destino', target.destino);
+      try {
+        var resp = await fetch('upload.php', { method: 'POST', body: formData });
+        var result = await resp.json();
+        if (result.url) {
+          document.getElementById(target.fieldId).value = result.url;
+          var previewEl = document.getElementById('preview-' + target.fieldId);
+          if (previewEl) previewEl.src = result.url;
+          Admin.syncStateFromForm();
+          bootstrap.Modal.getInstance(document.getElementById('modalSubirImagen')).hide();
+          Admin.showToast('Imagen subida correctamente', 'success');
+        } else {
+          Admin.showToast('Error: ' + (result.error || 'desconocido'), 'error');
+        }
+      } catch (e) {
+        Admin.showToast('Error al subir imagen: ' + e.message, 'error');
+      }
+    },
+
+    // ─── SELECCIONAR IMAGEN SUBIDA (GENÉRICO) ───
+
+    _selectTarget: null,
+    _selImgData: [],
+
+    mostrarModalSeleccionar: function (fieldId, carpeta) {
+      Admin._selectTarget = { fieldId: fieldId, carpeta: carpeta };
+      var grid = document.getElementById('sel-img-grid');
+      grid.innerHTML = '<p style="color:#6b7280;">Cargando...</p>';
+      document.getElementById('sel-img-search').value = '';
+      delete grid.dataset.selected;
+      (async function () {
+        try {
+          var resp = await fetch('listar-imagenes.php?carpeta=' + encodeURIComponent(carpeta));
+          var data = await resp.json();
+          Admin._selImgData = data;
+          Admin._renderImgGrid(data);
+        } catch (e) {
+          grid.innerHTML = '<p style="color:#ef4444;">Error al cargar imágenes</p>';
+          return;
+        }
+        var modal = new bootstrap.Modal(document.getElementById('modalSeleccionarImagen'));
+        modal.show();
+      })();
+    },
+
+    _renderImgGrid: function (images) {
+      var grid = document.getElementById('sel-img-grid');
+      if (!images.length) {
+        grid.innerHTML = '<p style="color:#6b7280;">No hay imágenes subidas</p>';
+        return;
+      }
+      grid.innerHTML = '';
+      images.forEach(function (img) {
+        var card = document.createElement('div');
+        card.className = 'img-card';
+        card.dataset.url = img.url;
+        card.innerHTML = '<img src="' + img.url + '" alt="' + img.name + '"><span>' + img.name + '</span>';
+        card.onclick = function () {
+          grid.querySelectorAll('.img-card').forEach(function (c) { c.classList.remove('selected'); });
+          card.classList.add('selected');
+          grid.dataset.selected = img.url;
+        };
+        grid.appendChild(card);
+      });
+    },
+
+    filtrarImagenes: function (query) {
+      if (!Admin._selImgData) return;
+      var q = query.toLowerCase().trim();
+      var filtered = Admin._selImgData.filter(function (img) {
+        return img.name.toLowerCase().includes(q);
+      });
+      Admin._renderImgGrid(filtered);
+    },
+
+    seleccionarImagen: function () {
+      var target = Admin._selectTarget;
+      if (!target) {
+        Admin.showToast('Error: no hay destino configurado', 'error');
+        return;
+      }
+      var url = document.getElementById('sel-img-grid').dataset.selected;
+      if (!url) {
+        Admin.showToast('Selecciona una imagen primero', 'error');
+        return;
+      }
+      document.getElementById(target.fieldId).value = url;
+      var previewEl = document.getElementById('preview-' + target.fieldId);
+      if (previewEl) previewEl.src = url;
+      Admin.syncStateFromForm();
+      bootstrap.Modal.getInstance(document.getElementById('modalSeleccionarImagen')).hide();
+      Admin.showToast('Imagen seleccionada', 'success');
+    },
+
+    // ─── WRAPPERS RETROCOMPATIBILIDAD ───
+
+    mostrarModalImagenPromocional: function () {
+      Admin.mostrarModalImagen('imgPromocional', 'imagenes-promocionales');
+    },
+
+    subirImagenPromocional: function () {
+      Admin.subirImagen();
+    },
+
+    mostrarModalSeleccionarImagen: function () {
+      Admin.mostrarModalSeleccionar('imgPromocional', 'imagenes-promocionales');
+    },
+
+    previewImagenPromocional: function (input) {
+      Admin.previewImagen(input);
+    },
+
+    switchTab: function (tabId) {
+      document.querySelectorAll('.tab-content').forEach(function (el) {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(function (el) {
+        el.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      document.querySelector('.tab-btn[data-tab="' + tabId + '"]').classList.add('active');
+      if (tabId === 'tab-profesores') {
+        this.profesoresGlobal.renderizar();
+      }
+    },
+
+    profesoresGlobal: {
+      _data: [],
+      _editIdx: -1,
+
+      cargar: function () {
+        try {
+          var raw = localStorage.getItem('rc-profesores');
+          this._data = raw ? JSON.parse(raw) : [];
+        } catch (e) {
+          this._data = [];
+        }
+        var changed = false;
+        this._data.forEach(function (p, i) {
+          if (!p._id) { p._id = 'p_' + Date.now() + '_' + i; changed = true; }
+        });
+        if (changed) this.guardar();
+      },
+
+      guardar: function () {
+        localStorage.setItem('rc-profesores', JSON.stringify(this._data));
+      },
+
+      listar: function () {
+        return this._data;
+      },
+
+      renderizar: function () {
+        var container = document.getElementById('global-profesores-list');
+        if (!container) return;
+        container.innerHTML = '';
+        var self = this;
+        if (this._data.length === 0) {
+          container.innerHTML = '<p style="color:#6b7280;font-size:13px;grid-column:1/-1;">No hay profesores registrados. Agrega uno usando el botón de arriba.</p>';
+          return;
+        }
+        this._data.forEach(function (prof, idx) {
+          var card = document.createElement('div');
+          card.className = 'prof-card';
+          card.innerHTML =
+            '<div class="prof-card-img-wrap">' +
+              '<img src="' + Admin.escAttr(prof.img || './img/profesor/default.jpg') + '" alt="' + Admin.escAttr(prof.gradoNombre) + '">' +
+            '</div>' +
+            '<div class="prof-card-info">' +
+              '<h4>' + Admin.escAttr(prof.gradoNombre) + '</h4>' +
+            '</div>' +
+            '<div class="prof-card-actions">' +
+              '<button class="btn-edit" onclick="Admin.profesoresGlobal.mostrarFormulario(' + idx + ')">✎ Editar</button>' +
+              '<button class="btn-delete-sm" onclick="Admin.profesoresGlobal.eliminar(' + idx + ')">✕ Eliminar</button>' +
+            '</div>';
+          container.appendChild(card);
+        });
+      },
+
+      mostrarFormulario: function (idx) {
+        this._editIdx = idx >= 0 ? idx : -1;
+        var data = idx >= 0 ? this._data[idx] : {gradoNombre:'', primerNombre:'', img:'', secciones:[]};
+        document.getElementById('prof-global-gradoNombre').value = data.gradoNombre || '';
+        document.getElementById('prof-global-primerNombre').value = data.primerNombre || '';
+        document.getElementById('prof-global-img').value = data.img || '';
+        var preview = document.getElementById('prof-img-preview');
+        preview.src = data.img || './img/profesor/default.jpg';
+        if (preview.dataset.objectUrl) {
+          URL.revokeObjectURL(preview.dataset.objectUrl);
+          delete preview.dataset.objectUrl;
+        }
+        delete preview.dataset.hasFile;
+        var container = document.getElementById('prof-secciones-container');
+        container.innerHTML = '';
+        var secciones = data.secciones || [];
+        if (!secciones.length && (data.formacionLI || data.experienciaLI || data.docenciaLI)) {
+          if (data.formacionLI) secciones.push({ titulo: 'Formación Profesional', elementos: this._parseLIs(data.formacionLI) });
+          if (data.experienciaLI) secciones.push({ titulo: 'Experiencia Profesional', elementos: this._parseLIs(data.experienciaLI) });
+          if (data.docenciaLI) secciones.push({ titulo: 'Experiencia de docente - autor de libros', elementos: this._parseLIs(data.docenciaLI) });
+        }
+        var self = this;
+        secciones.forEach(function (sec) { self._renderSeccion(sec); });
+        var fileInput = document.getElementById('prof-img-file');
+        fileInput.value = '';
+        fileInput.onchange = function () { self.handleFileInput(this, preview); };
+        document.getElementById('modalProfesorGlobalTitle').textContent = idx >= 0 ? 'Editar Profesor' : 'Agregar Profesor';
+        var modal = new bootstrap.Modal(document.getElementById('modalProfesorGlobal'));
+        modal.show();
+      },
+
+      guardarFormulario: async function () {
+        var data = {
+          gradoNombre: document.getElementById('prof-global-gradoNombre').value.trim(),
+          primerNombre: document.getElementById('prof-global-primerNombre').value.trim(),
+          img: '',
+          secciones: []
+        };
+        if (!data.gradoNombre || !data.primerNombre) {
+          Admin.showToast('Completa al menos el nombre completo y primer nombre', 'error');
+          return;
+        }
+        var fileInput = document.getElementById('prof-img-file');
+        if (fileInput.files[0]) {
+          var formData = new FormData();
+          formData.append('file', fileInput.files[0]);
+          formData.append('gradoNombre', data.gradoNombre);
+          try {
+            var resp = await fetch('upload.php', { method: 'POST', body: formData });
+            var result = await resp.json();
+            if (result.url) {
+              data.img = result.url;
+            } else {
+              Admin.showToast('Error al subir imagen: ' + (result.error || 'desconocido'), 'error');
+              return;
+            }
+          } catch (e) {
+            var httpStatus = resp ? resp.status : 'sin respuesta';
+            Admin.showToast('Error al subir imagen: ' + e.message + ' (HTTP ' + httpStatus + ')', 'error');
+            Admin.showToast('Verifica que upload.php existe y la carpeta profesores/ tiene permisos de escritura.', 'error');
+            return;
+          }
+        } else {
+          data.img = document.getElementById('prof-global-img').value.trim() || '';
+        }
+        var container = document.getElementById('prof-secciones-container');
+        container.querySelectorAll('.prof-seccion-card').forEach(function (card) {
+          var titulo = card.querySelector('.prof-seccion-titulo').value.trim();
+          var elementos = [];
+          card.querySelectorAll('.prof-elemento-input').forEach(function (input) {
+            var val = input.value.trim();
+            if (val) elementos.push(val);
+          });
+          if (titulo) data.secciones.push({ titulo: titulo, elementos: elementos });
+        });
+        if (this._editIdx >= 0) {
+          data._id = this._data[this._editIdx]._id;
+          this._data[this._editIdx] = data;
+        } else {
+          data._id = 'p_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6);
+          this._data.push(data);
+        }
+        this.guardar();
+        this.renderizar();
+        // Sync with plantilla if the same professor is selected
+        if (Admin.currentState && Admin.currentState.profesores) {
+          var synced = false;
+          Admin.currentState.profesores.forEach(function (pp, i) {
+            if (pp._id && pp._id === data._id) {
+              Admin.currentState.profesores[i] = JSON.parse(JSON.stringify(data));
+              synced = true;
+            }
+          });
+          if (synced) Admin.profesoresPlantilla.renderizar();
+        }
+        bootstrap.Modal.getInstance(document.getElementById('modalProfesorGlobal')).hide();
+        Admin.showToast('Profesor ' + (this._editIdx >= 0 ? 'actualizado' : 'agregado') + ' correctamente', 'success');
+      },
+
+      addSeccion: function () {
+        var container = document.getElementById('prof-secciones-container');
+        var tpl = document.getElementById('prof-seccion-template');
+        if (!container || !tpl) return;
+        var clone = tpl.content.cloneNode(true);
+        container.appendChild(clone);
+      },
+
+      removeSeccion: function (btn) {
+        var card = btn.closest('.prof-seccion-card');
+        if (card && confirm('¿Eliminar esta sección?')) {
+          card.remove();
+        }
+      },
+
+      addElemento: function (btn) {
+        var card = btn.closest('.prof-seccion-card');
+        if (!card) return;
+        var container = card.querySelector('.prof-seccion-elementos');
+        var tpl = document.getElementById('prof-elemento-template');
+        if (!container || !tpl) return;
+        var clone = tpl.content.cloneNode(true);
+        container.appendChild(clone);
+      },
+
+      removeElemento: function (btn) {
+        var row = btn.closest('.prof-elemento-row');
+        if (row) row.remove();
+      },
+
+      handleFileInput: function (input, previewEl) {
+        var file = input.files[0];
+        if (!file) return;
+        if (!file.type.startsWith('image/')) {
+          Admin.showToast('El archivo debe ser una imagen', 'error');
+          input.value = '';
+          return;
+        }
+        if (file.size > 2 * 1024 * 1024) {
+          Admin.showToast('La imagen no debe superar los 2MB', 'error');
+          input.value = '';
+          return;
+        }
+        if (previewEl.dataset.objectUrl) {
+          URL.revokeObjectURL(previewEl.dataset.objectUrl);
+        }
+        var url = URL.createObjectURL(file);
+        previewEl.src = url;
+        previewEl.dataset.objectUrl = url;
+        previewEl.dataset.hasFile = '1';
+      },
+
+      _renderSeccion: function (sec) {
+        var container = document.getElementById('prof-secciones-container');
+        var tpl = document.getElementById('prof-seccion-template');
+        if (!container || !tpl) return;
+        var clone = tpl.content.cloneNode(true);
+        var card = clone.querySelector('.prof-seccion-card');
+        card.querySelector('.prof-seccion-titulo').value = sec.titulo || '';
+        var elemContainer = card.querySelector('.prof-seccion-elementos');
+        var self = this;
+        (sec.elementos || []).forEach(function (elem) {
+          var etpl = document.getElementById('prof-elemento-template');
+          if (!etpl) return;
+          var eclone = etpl.content.cloneNode(true);
+          eclone.querySelector('.prof-elemento-input').value = elem;
+          elemContainer.appendChild(eclone);
+        });
+        container.appendChild(clone);
+      },
+
+      _parseLIs: function (htmlStr) {
+        var elementos = [];
+        var regex = /<li>(.*?)<\/li>/g;
+        var match;
+        while ((match = regex.exec(htmlStr)) !== null) {
+          elementos.push(match[1]);
+        }
+        return elementos;
+      },
+
+      eliminar: function (idx) {
+        if (!confirm('¿Eliminar este profesor?')) return;
+        this._data.splice(idx, 1);
+        this.guardar();
+        this.renderizar();
+        Admin.showToast('Profesor eliminado', 'success');
+      }
+    },
+
+    profesoresPlantilla: {
+      renderizar: function () {
+        var container = document.getElementById('plantilla-profesores-list');
+        if (!container) return;
+        container.innerHTML = '';
+        var profesores = Admin.currentState.profesores || [];
+        if (profesores.length === 0) {
+          container.innerHTML = '<p style="color:#6b7280;font-size:13px;grid-column:1/-1;">No hay profesores seleccionados para esta plantilla.</p>';
+          return;
+        }
+        profesores.forEach(function (prof, idx) {
+          var card = document.createElement('div');
+          card.className = 'prof-card';
+          card.innerHTML =
+            '<div class="prof-card-img-wrap">' +
+              '<img src="' + Admin.escAttr(prof.img || './img/profesor/default.jpg') + '" alt="' + Admin.escAttr(prof.gradoNombre) + '">' +
+            '</div>' +
+            '<div class="prof-card-info">' +
+              '<h4>' + Admin.escAttr(prof.gradoNombre) + '</h4>' +
+            '</div>' +
+            '<div class="prof-card-actions">' +
+              '<button class="btn-delete-sm" onclick="Admin.profesoresPlantilla.quitar(' + idx + ')">✕ Quitar</button>' +
+            '</div>';
+          container.appendChild(card);
+        });
+      },
+
+      abrirSelector: function () {
+        var globales = Admin.profesoresGlobal.listar();
+        if (globales.length === 0) {
+          Admin.showToast('No hay profesores en el gestor global. Agrega profesores primero.', 'error');
+          return;
+        }
+        var existing = Admin.currentState.profesores || [];
+        var body = document.getElementById('selectorProfesoresBody');
+        body.innerHTML = '';
+        globales.forEach(function (prof, idx) {
+          var alreadyIn = existing.some(function (p) { return p.primerNombre === prof.primerNombre && p.gradoNombre === prof.gradoNombre; });
+          var label = document.createElement('label');
+          label.className = 'selector-prof-item';
+          label.innerHTML =
+            '<input type="checkbox" class="selector-prof-check" value="' + idx + '" ' + (alreadyIn ? 'checked' : '') + '>' +
+            '<span>' + Admin.escAttr(prof.gradoNombre) + '</span>';
+          body.appendChild(label);
+        });
+        var modal = new bootstrap.Modal(document.getElementById('modalSeleccionarProfesores'));
+        modal.show();
+      },
+
+      confirmarSeleccion: function () {
+        var checks = document.querySelectorAll('#selectorProfesoresBody .selector-prof-check:checked');
+        var selected = [];
+        checks.forEach(function (chk) {
+          var idx = parseInt(chk.value);
+          var prof = Admin.profesoresGlobal.listar()[idx];
+          if (prof) selected.push(JSON.parse(JSON.stringify(prof)));
+        });
+        Admin.currentState.profesores = selected;
+        this.renderizar();
+        bootstrap.Modal.getInstance(document.getElementById('modalSeleccionarProfesores')).hide();
+        Admin.showToast('Profesores actualizados en la plantilla', 'success');
+      },
+
+      quitar: function (idx) {
+        var profesores = Admin.currentState.profesores || [];
+        profesores.splice(idx, 1);
+        Admin.currentState.profesores = profesores;
+        this.renderizar();
+      }
     },
 
     escAttr: function (str) {

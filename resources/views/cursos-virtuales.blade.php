@@ -98,7 +98,7 @@
     @foreach($cursos as $curso)
     <div class="curso-card" data-category="todo {{ $curso->specialization_name ?? 'Gestion' }}">
         <div class="curso-card__img">
-            <img src="{{ asset($curso->image_promotion ?? 'img/curso/default.svg') }}" alt="{{ $curso->title }}" loading="lazy">
+            <img src="{{ asset($curso->image_cover ?? 'img/curso/default.svg') }}" alt="{{ $curso->title }}" loading="lazy">
             <div class="curso-card__overlay-title">{{ $curso->title }}</div>
         </div>
         <div class="curso-card__body">

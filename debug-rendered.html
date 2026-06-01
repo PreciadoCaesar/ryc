@@ -1,0 +1,3047 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="ghbwfzB4gTzDWfSgt9QcMyvc3eXYhkLMIFe6NnCH">
+    <title>R&amp;C Consulting</title>
+    <meta name="description" content="Cursos y Diplomados de Gestión Pública en Perú | SIAF, SIGA, SEACE, Presupuesto Público | R&amp;C Consulting">
+    <meta name="keywords" content="cursos SIAF, SIGA, SEACE, gestión pública, diplomados virtuales, Perú">
+    <link rel="canonical" href="http://:">
+    <meta property="og:title" content="R&amp;C Consulting">
+    <meta property="og:description" content="Cursos y Diplomados de Gestión Pública en Perú">
+    <meta property="og:url" content="http://:">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://:/img/og-default.jpg">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="R&amp;C Consulting">
+    <meta name="twitter:description" content="Cursos y Diplomados de Gestión Pública en Perú">
+    <meta name="twitter:image" content="http://:/img/og-default.jpg">
+    
+    <!-- CSS externo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS del proyecto -->
+    <link rel="stylesheet" href="http://:/css/rc-main.css">
+    <link rel="stylesheet" href="http://:/css/header-footer.css">
+    <link rel="stylesheet" href="http://:/css/suscripciones/styles.css">
+    
+        </head>
+<body>
+
+<!-- HEADER -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header R&C Consulting</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* ═════════ RESET Y BASE ═════════ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ═════════ BANNER PÚRPURA ═════════ */
+        .banner-purpura {
+            background: linear-gradient(135deg, #5044c2 0%, #3d2db5 100%);
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .inner-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contenido-banner-purpura {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .banner-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .banner-icon img {
+            width: 35px;
+            height: 35px;
+            filter: brightness(0) invert(1);
+        }
+
+        .banner-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner-text b {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .banner-text b.highlight-yellow {
+            color: #FFD700;
+        }
+
+        .banner-text span {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .banner-action .btn-cotizar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ebdc10;
+            color: #5044c2 !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .banner-action .btn-cotizar:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* ═════════ NAVBAR ═════════ */
+        .rc-navbar {
+            width: 100%;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            padding: 10px 0;
+            margin: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .rc-navbar .container {
+            max-width: 100% !important;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* Logo */
+        .rc-logo {
+            height: 45px;
+        }
+
+        /* Links */
+        .rc-navbar .nav-link {
+            color: #000000 !important;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 18px 22px !important;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .rc-navbar .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Dropdown */
+        .rc-navbar .dropdown-menu {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 10px 0;
+            margin-top: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .rc-navbar .dropdown-item {
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .rc-navbar .dropdown-item:hover {
+            background: #f5f5f5;
+            color: #000000;
+        }
+
+        /* Menú ocupa todo el espacio disponible */
+        .rc-navbar .navbar-nav {
+            flex-grow: 1;
+            justify-content: space-evenly;
+            margin: 0 30px;
+        }
+
+        /* Toggler */
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            filter: none;
+        }
+
+        /* ═════════ BOTONES ═════════ */
+        .rc-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .rc-buttons a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            color: #ffffff;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .rc-buttons svg {
+            width: 18px;
+            height: 18px;
+            display: block;
+        }
+
+        /* Colores de botones */
+        .btn-wsp {
+            background: #038814;
+        }
+
+        .btn-aula {
+            background: #136EF0;
+        }
+
+        .btn-tienda {
+            background: #FF044D;
+        }
+
+        /* Botón Login Google */
+        .btn-login {
+            background: #4285F4;
+        }
+
+        .btn-login:hover {
+            background: #3367D6;
+        }
+
+        /* Botón Cuenta (Usuario logueado) */
+        .btn-account {
+            background: #6c757d;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+        }
+
+        .btn-account:hover {
+            background: #5a6268;
+        }
+
+        .account-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .account-name {
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Botón Logout */
+        .btn-logout {
+            background: #dc3545;
+            padding: 8px 12px;
+        }
+
+        .btn-logout:hover {
+            background: #c82333;
+        }
+
+        .rc-buttons a:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* ═════════ RESPONSIVE ═════════ */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #ffffff;
+                padding: 15px 20px;
+                border-radius: 0 0 15px 15px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .rc-buttons {
+                flex-direction: column;
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .rc-buttons a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .rc-navbar .navbar-nav {
+                margin: 0;
+            }
+
+            .rc-navbar .nav-link {
+                padding: 12px 15px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contenido-banner-purpura {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner-item {
+                justify-content: center;
+            }
+
+            .banner-text {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═════════ BANNER PÚRPURA ═════════ -->
+    <div class="banner-purpura">
+        <div class="inner-wrap">
+            <div class="contenido-banner-purpura">
+                <div class="banner-item">
+                    <div class="banner-icon">
+                        <img src="http://:/img/icons/casa.svg" alt="PDP">
+                    </div>
+                    <div class="banner-text">
+                        <b>Cumple con el PDP 2026</b>
+                        <span>Alinea tu capacitación In-House</span>
+                    </div>
+                </div>
+
+                <div class="banner-item">
+                    <div class="banner-icon">
+                        <img src="http://:/img/icons/merito.svg" alt="Directiva">
+                    </div>
+                    <div class="banner-text">
+                        <b class="highlight-yellow">CURSOS IN HOUSE</b>
+                        <span>Nueva Directiva 00214-2025-SERVIR-PE</span>
+                    </div>
+                </div>
+
+                <div class="banner-action">
+                    <a href="https://api.whatsapp.com/send?phone=51950883155&text=Solicito%20Información%20sobre%20las%20capacitaciones"
+                        class="btn-cotizar" target="_blank">
+                        <i class="fas fa-handshake"></i> ¡Cotízalo aquí!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═════════ NAVEGACIÓN PRINCIPAL ═════════ -->
+    <nav class="navbar navbar-expand-lg rc-navbar">
+        <div class="container">
+
+            <!-- LOGO -->
+            <a class="navbar-brand" href="/ryc/">
+                <img src="http://:/img/logo-rc-consulting-sin-fondo.webp" class="rc-logo" alt="R&C Consulting">
+            </a>
+
+            <!-- BOTÓN MOBILE -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- MENÚ -->
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav mx-auto w-100 justify-content-evenly">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ryc/">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Nosotros</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/ryc/nosotros">Sobre Nosotros</a></li>
+                            <li><a class="dropdown-item" href="/ryc/experiencia">Experiencia y Alianzas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Programas</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/ryc/cursos-virtuales/">Cursos</a></li>
+                            <li><a class="dropdown-item" href="/ryc/diplomas-virtuales/">Diplomados</a></li>
+                            <li><a class="dropdown-item" href="https://www.rc-consulting.edu.pe/">Aula Virtual</a></li>
+                            <li><a class="dropdown-item" href="/ryc/suscripciones/">Membresía Premium</a></li>
+                            <li><a class="dropdown-item" href="/ryc/preguntas-frecuentes/">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ryc/cursos-inhouse">In House</a>
+                    </li>
+                </ul>
+
+                <!-- BOTONES DERECHA -->
+                <div class="rc-buttons">
+                                            <!-- Botón Login con Google -->
+                        <a href="http://:/auth/google#" class="btn-login">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M15.545 6.033a9.3 9.3 0 0 0-2.454-4.787 9.3 9.3 0 0 0-4.787-2.454A9.3 9.3 0 0 0 .1 6.033a9.3 9.3 0 0 0 2.454 4.788 9.3 9.3 0 0 0 4.787 2.454 9.3 9.3 0 0 0 4.788-2.454 9.3 9.3 0 0 0 2.454-4.788zM8 12.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/>
+                                <path d="M8 4.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
+                            </svg>
+                            Iniciar Sesión
+                        </a>
+                                        <a href="https://api.whatsapp.com/send?phone=51950883155" target="_blank" class="btn-wsp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                        </svg>
+                        950 883 155
+                    </a>
+                    <a href="https://www.rc-consulting.edu.pe/" target="_blank" class="btn-aula">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-house-add-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0" />
+                            <path
+                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+                            <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z" />
+                        </svg>
+                        Aula Virtual
+                    </a>
+                    <a href="/ryc/carrito" class="btn-tienda">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
+                        </svg>
+                        Carrito de compras
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+<!-- TOAST CARRITO -->
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+    
+<div class="admin-curso-container">
+    <!-- HEADER -->
+    <header class="admin-header">
+        <h1>
+            ✏️ Editar
+            <small id="headerTypeLabel">Curso</small>
+        </h1>
+        <div class="admin-header-actions">
+            <button type="submit" form="cursoForm" class="btn-save-header">💾 Guardar</button>
+                            <a class="btn-preview" href="http://:/curso/curso-ejemplo-contrataciones-publicas-2026#" target="_blank">👁️ Vista previa</a>
+                        <a href="http://:/admin/cursos#" class="btn-back">← Volver</a>
+        </div>
+    </header>
+
+    <div class="admin-container">
+
+        <form id="cursoForm" method="POST" action="http://:/admin/cursos/13#" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="ghbwfzB4gTzDWfSgt9QcMyvc3eXYhkLMIFe6NnCH" autocomplete="off">             <input type="hidden" name="_method" value="PUT"> 
+            <!-- ==================== ERRORES ==================== -->
+            
+            <!-- ==================== TEMPLATE BAR ==================== -->
+            <div class="admin-section">
+                <div class="template-bar">
+                    <label>Plantilla:</label>
+                    <select id="templateSelect" onchange="Admin.loadSelected()">
+                        <option value="">-- Nueva plantilla --</option>
+                    </select>
+                    <input type="text" id="templateNameInput" class="template-name-input"
+                           placeholder="Nombre de plantilla"
+                           value="GESTION PUBLICA">
+                    <button type="button" class="btn-delete-sm" onclick="Admin.deleteCurrent()">🗑️ Eliminar</button>
+
+                    <div class="template-divider"></div>
+
+                    <div class="template-type-group">
+                        <label>Tipo:</label>
+                        <div class="type-tabs">
+                            <button type="button" class="type-tab active"
+                                    data-type="curso" onclick="selectType('curso')">Curso</button>
+                            <button type="button" class="type-tab "
+                                    data-type="diplomado" onclick="selectType('diplomado')">Diplomado</button>
+                        </div>
+                        <input type="hidden" name="type" id="typeInput" value="curso">
+                    </div>
+
+                    <div class="template-type-group">
+                        <label>Modalidad:</label>
+                        <div class="mode-tabs">
+                            <button type="button" class="mode-tab active"
+                                    data-mode="en_vivo" onclick="selectMode('en_vivo')">En Vivo</button>
+                            <button type="button" class="mode-tab "
+                                    data-mode="grabado" onclick="selectMode('grabado')">Grabado</button>
+                        </div>
+                        <input type="hidden" name="mode" id="modeInput" value="en_vivo">
+                    </div>
+                    <div class="template-type-group">
+                        <label>Estado:</label>
+                        <select name="status" id="statusCurso">
+                            <option value="activo" selected>Activo</option>
+                            <option value="inactivo" >Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 1. INFORMACIÓN DEL CURSO ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>💼 Información del Curso</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Título largo</label>
+                            <input type="text" name="title" id="tituloCursoLargo" data-field="tituloCursoLargo"
+                                   value="GESTION PUBLICA"
+                                   placeholder="Ej: Curso SIAF WEB 2026: Práctica..."
+                                   oninput="Admin.autoSlug(this.value)" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Título corto</label>
+                            <input type="text" name="subtitle" id="tituloCursoCorto" data-field="tituloCursoCorto"
+                                   value=""
+                                   placeholder="Ej: Curso SIAF WEB 2026">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tipo de programa</label>
+                            <select id="tipoPrograma" data-field="tipoPrograma" onchange="syncTypeSelect()">
+                                <option value="Curso" selected>Curso</option>
+                                <option value="Diplomado" >Diplomado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Slug URL</label>
+                            <input type="text" name="slug" id="slugUrl" data-field="slugUrl"
+                                   value="curso-ejemplo-contrataciones-publicas-2026"
+                                   placeholder="curso-siaf-web-2026">
+                        </div>
+                        <div class="form-group" id="fechaInicioGroup" style="">
+                            <label>Fecha de inicio</label>
+                            <input type="date" name="start_date" id="fechaInicio" data-field="fechaInicio"
+                                   value=""
+                                   placeholder="2026-06-23">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" id="fechaFinGroup" style="">
+                            <label>Fecha de fin</label>
+                            <input type="date" name="fecha_fin" id="fechaFin"
+                                   value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha límite oferta</label>
+                            <input type="date" name="fecha_limite_oferta" id="fechaLimiteOferta" data-field="fechaLimiteOferta"
+                                   value=""
+                                   placeholder="2026-05-28">
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Descripción del curso</label>
+                            <textarea name="description" id="descripcionCurso" data-field="descripcionCurso"
+                                      placeholder="Descripción breve del curso que aparece debajo de las estadísticas en la landing" style="min-height:80px;">curso 2026 el nuevo curso que necesitas con todo lo ultimo en tecnologia ia vibecoding yu sdobre todo ia</textarea>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Descripción SEO</label>
+                            <textarea name="seo_description" id="descripcionSEO" data-field="descripcionSEO"
+                                      placeholder="Meta description (155 caracteres)"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Keywords</label>
+                            <input type="text" name="seo_keywords" id="keywords" data-field="keywords"
+                                   value=""
+                                   placeholder="SIAF WEB, gestión pública, presupuesto">
+                        </div>
+                    </div>
+
+                    <!-- ===== ETIQUETAS (solo para modo grabado) ===== -->
+                    <div class="form-row full" id="etiquetasGrabadoRow" style="display:none;">
+                        <div class="form-group">
+                            <label>🏷️ Etiquetas / Categorías (para filtros) — puedes seleccionar varias</label>
+                                                        <div style="display:flex;flex-wrap:wrap;gap:10px;padding:8px 0;">
+                                                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:#1f2937;">
+                                    <input type="checkbox" name="specialization_name[]" value="SiafSiga"
+                                        
+                                        style="width:18px;height:18px;cursor:pointer;">
+                                    SIGA/SIAF
+                                </label>
+                                                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:#1f2937;">
+                                    <input type="checkbox" name="specialization_name[]" value="Contrataciones"
+                                        
+                                        style="width:18px;height:18px;cursor:pointer;">
+                                    Contrataciones
+                                </label>
+                                                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:#1f2937;">
+                                    <input type="checkbox" name="specialization_name[]" value="Presupuesto"
+                                        
+                                        style="width:18px;height:18px;cursor:pointer;">
+                                    Presupuesto
+                                </label>
+                                                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:#1f2937;">
+                                    <input type="checkbox" name="specialization_name[]" value="Gestion"
+                                        
+                                        style="width:18px;height:18px;cursor:pointer;">
+                                    Gestión Pública
+                                </label>
+                                                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:#1f2937;">
+                                    <input type="checkbox" name="specialization_name[]" value="Planeamiento"
+                                        
+                                        style="width:18px;height:18px;cursor:pointer;">
+                                    Planeamiento
+                                </label>
+                                                                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:#1f2937;">
+                                    <input type="checkbox" name="specialization_name[]" value="Rrhh"
+                                        
+                                        style="width:18px;height:18px;cursor:pointer;">
+                                    R.R.H.H./Control
+                                </label>
+                                                            </div>
+                            <small style="color:#6b7280;font-size:11px;">Define las categorías para filtrar en la página de cursos/diplomados online</small>
+                        </div>
+                    </div>
+
+                    <div class="mm-field">
+                        <label class="mm-label">Imagen Promocional</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="promoPreviewWrap2">
+                                <img id="promoPreview2" class="mm-preview-img"
+                                     src="http://:/img/promocion/1779904801_promocion.jpg"
+                                     style="">
+                                <span class="mm-placeholder" id="promoPlaceholder2"
+                                      style="display:none">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="image_promotion_text" id="imgPromocional"
+                                       class="mm-text-input"
+                                       value="img/promocion/1779904801_promocion.jpg"
+                                       placeholder="./upload/imagenes-promocionales/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagenes-promocionales','imgPromocional','promoPreview2')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagenes-promocionales','imgPromocional','promoPreview2')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgPromocional','promoPreview2','promoPlaceholder2')">✕ Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 2. PRECIOS ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>💰 Precios</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <div class="form-row triple">
+                        <div class="form-group">
+                            <label>Precio Oferta (S/)</label>
+                            <input type="number" step="0.01" name="precio_flash" id="precioOferta" data-field="precioOferta"
+                                   value=""
+                                   oninput="Admin.calcAhorro()" placeholder="197.00">
+                        </div>
+                        <div class="form-group">
+                            <label>Pronto Pago (S/)</label>
+                            <input type="number" step="0.01" name="precio_pronto" id="precioProntoPago" data-field="precioProntoPago"
+                                   value=""
+                                   placeholder="237.00">
+                        </div>
+                        <div class="form-group">
+                            <label>Precio Regular (S/)</label>
+                            <input type="number" step="0.01" name="precio_regular" id="precioRegular" data-field="precioRegular"
+                                   value="250"
+                                   oninput="Admin.calcAhorro()" placeholder="257.00">
+                        </div>
+                    </div>
+                    <div class="form-row triple">
+                        <div class="form-group">
+                            <label>Ahorro (auto)</label>
+                            <input type="text" id="ahorro" readonly
+                                   value="60">
+                        </div>
+                        <div class="form-group">
+                            <label>Válido oferta hasta</label>
+                            <input type="date" name="precio_flash_fecha" id="precioFlashFecha" data-field="precioFlashFecha"
+                                   value=""
+                                   placeholder="2026-06-30">
+                        </div>
+                        <div class="form-group">
+                            <label>Válido pronto pago hasta</label>
+                            <input type="date" name="precio_pronto_fecha" id="precioProntoFecha" data-field="precioProntoFecha"
+                                   value=""
+                                   placeholder="2026-06-30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 3. SESIONES Y CONTENIDO ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>📚 Sesiones y Contenido</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Número de sesiones</label>
+                            <input type="number" name="sessions" id="numeroSesiones" data-field="numeroSesiones"
+                                   value="12"
+                                   placeholder="6">
+                        </div>
+                        <div class="form-group">
+                            <label>Horas de certificación</label>
+                            <input type="number" name="hours" id="horasCertificacion" data-field="horasCertificacion"
+                                   value="90"
+                                   placeholder="90">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tipo de certificado</label>
+                            <input type="text" name="tipo_certificado" id="tipoCertificado" data-field="tipoCertificado"
+                                   value=""
+                                   placeholder="Curso Especializado / Diploma Especializado">
+                        </div>
+                        <div class="form-group">
+                            <label>URL Brochure PDF</label>
+                            <input type="url" name="link_brochure" id="urlBrochurePDF" data-field="urlBrochurePDF"
+                                   value=""
+                                   placeholder="https://drive.google.com/...">
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Título del temario</label>
+                            <input type="text" name="temario_titulo" id="temarioTitulo" data-field="temarioTitulo"
+                                   value=""
+                                   placeholder="SIAF RP Y WEB 2026 + INTELIGENCIA ARTIFICIAL">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 4. MULTIMEDIA ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>📷 Multimedia</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <!-- IMÁGENES PRIMERO -->
+                    <div class="mm-field">
+                        <label class="mm-label">📇 Imagen Portada (Cards)</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="promoPreviewWrap">
+                                <img id="promoPreview" class="mm-preview-img"
+                                     src=""
+                                     style="display:none">
+                                <span class="mm-placeholder" id="promoPlaceholder"
+                                      style="">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="image_cover_text" id="imgPortadaVideo" data-field="imgPortadaVideo"
+                                       class="mm-text-input"
+                                       value=""
+                                       placeholder="./upload/imagen-portada/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagen-portada','imgPortadaVideo','promoPreview')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagen-portada','imgPortadaVideo','promoPreview')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgPortadaVideo','promoPreview','promoPlaceholder')">✕ Limpiar</button>
+                                </div>
+                                <div style="margin-top:6px;font-size:12px;color:#6b7280;">
+                                    <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                                        <input type="file" name="image_cover" accept="image/*" style="width:auto;" onchange="document.getElementById('imgPortadaVideo').value=this.files[0]?.name||''">
+                                        O subir archivo directamente
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mm-field">
+                        <label class="mm-label">Imagen InHouse Desktop</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="inhouseWebPreviewWrap">
+                                <img id="inhouseWebPreview" class="mm-preview-img"
+                                     src=""
+                                     style="display:none">
+                                <span class="mm-placeholder" id="inhouseWebPlaceholder"
+                                      style="">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="inhouse_web_text" id="imgInhouseDesktop" data-field="imgInhouseDesktop"
+                                       class="mm-text-input"
+                                       value=""
+                                       placeholder="./upload/imagen-inhouse-desktop/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagen-inhouse-desktop','imgInhouseDesktop','inhouseWebPreview')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagen-inhouse-desktop','imgInhouseDesktop','inhouseWebPreview')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgInhouseDesktop','inhouseWebPreview','inhouseWebPlaceholder')">✕ Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mm-field">
+                        <label class="mm-label">Imagen InHouse Mobile</label>
+                        <div class="mm-row">
+                            <div class="mm-preview" id="inhouseMobilePreviewWrap">
+                                <img id="inhouseMobilePreview" class="mm-preview-img"
+                                     src=""
+                                     style="display:none">
+                                <span class="mm-placeholder" id="inhouseMobilePlaceholder"
+                                      style="">📷</span>
+                            </div>
+                            <div class="mm-inputs">
+                                <input type="text" name="inhouse_mobile_text" id="imgInhouseMobile" data-field="imgInhouseMobile"
+                                       class="mm-text-input"
+                                       value=""
+                                       placeholder="./upload/imagen-inhouse-mobile/foto.jpg">
+                                <div class="mm-actions">
+                                    <button type="button" class="mm-btn mm-btn-upload" onclick="Admin.subirImagen('imagen-inhouse-mobile','imgInhouseMobile','inhouseMobilePreview')">📤 Subir</button>
+                                    <button type="button" class="mm-btn mm-btn-view" onclick="Admin.seleccionarImagen('imagen-inhouse-mobile','imgInhouseMobile','inhouseMobilePreview')">🖼️ Galería</button>
+                                    <button type="button" class="mm-btn mm-btn-clear" onclick="Admin.limpiarImagen('imgInhouseMobile','inhouseMobilePreview','inhouseMobilePlaceholder')">✕ Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXTOS DESPUÉS -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>URL Video Vimeo</label>
+                            <input type="url" name="url_video_vimeo" id="urlVideoVimeo" data-field="urlVideoVimeo"
+                                   value=""
+                                   placeholder="https://player.vimeo.com/video/...">
+                        </div>
+                        <div class="form-group">
+                            <label>OG Image URL</label>
+                            <input type="url" name="og_image_url" id="ogImageURL" data-field="ogImageURL"
+                                   value=""
+                                   placeholder="https://...og-image.jpg">
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label>Descripción InHouse</label>
+                            <input type="text" name="descripcion_inhouse" id="descripcionInhouse" data-field="descripcionInhouse"
+                                   value=""
+                                   placeholder="Texto promocional corto...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 5. ASESORA ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>👩 Asesora</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Seleccionar asesora</label>
+                            <select name="asesora_id" id="asesoraId">
+                                <option value="">-- Seleccionar asesora --</option>
+                                                                    <option value="11" >
+                                        POOL - 999999999
+                                    </option>
+                                                                    <option value="12" selected>
+                                        César Jesus Dose Preciado Calderon - +51954617658
+                                    </option>
+                                                                    <option value="13" >
+                                        Marco Zárate - 999999999
+                                    </option>
+                                                            </select>
+                            <small style="color:#6b7280;font-size:11px;">Nombre, teléfono y foto se toman del perfil de la asesora</small>
+                        </div>
+                    </div>
+                                        <div style="display:flex;align-items:center;gap:12px;margin-top:8px;padding:8px 12px;background:#f3f4f6;border-radius:8px;">
+                                                    <img src="http://:/img/advisors/1779916863_perfil_12.jpg" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+                                                <div>
+                            <strong>César Jesus Dose Preciado Calderon</strong><br>
+                            <span style="font-size:12px;color:#6b7280;">+51954617658</span>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+
+            <!-- ==================== 6. OBJETIVOS ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>🎯 Objetivos de Aprendizaje</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <div class="dynamic-list" id="objetivosList">
+                                                <div class="dynamic-item" data-index="0">
+                            <button type="button" class="btn-remove" onclick="Admin.removeItem('objetivos', this)">✕</button>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Título</label>
+                                    <input type="text" name="objetivos[0][titulo]" class="field-titulo"
+                                           placeholder="Ej: Excelencia en la Formación de Funcionarios:">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <input type="text" name="objetivos[0][descripcion]" class="field-descripcion"
+                                           placeholder="Texto del objetivo">
+                                </div>
+                            </div>
+                        </div>
+                                            </div>
+                    <button type="button" class="btn-add" onclick="Admin.addItem('objetivos', {titulo:'', descripcion:''})">+ Añadir objetivo</button>
+                </div>
+            </div>
+
+            <!-- ==================== 8. PARTICIPANTES ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>👥 ¿Quiénes deben participar?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <div class="dynamic-list" id="participantesList">
+                                                <div class="dynamic-item" data-index="0">
+                            <button type="button" class="btn-remove" onclick="Admin.removeItem('participantes', this)">✕</button>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Título</label>
+                                    <input type="text" name="participantes[0][titulo]" class="field-titulo"
+                                           placeholder="Ej: Servidores Públicos y Planeamiento:">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <input type="text" name="participantes[0][descripcion]" class="field-descripcion"
+                                           placeholder="Texto del perfil">
+                                </div>
+                            </div>
+                        </div>
+                                            </div>
+                    <button type="button" class="btn-add" onclick="Admin.addItem('participantes', {titulo:'', descripcion:''})">+ Añadir participante</button>
+                </div>
+            </div>
+
+            <!-- ==================== 9. TEMARIO JERÁRQUICO ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>📖 Temario Jerárquico (Cursos ➔ Módulos ➔ Sesiones)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <p style="font-size:12px;color:#6b7280;margin-bottom:12px;">
+                        Estructura: <strong>Curso</strong> → <strong>Módulo</strong> → <strong>Sesión</strong>.
+                        Dentro de cada sesión agrega <strong>Subtítulo</strong>, <strong>Texto</strong> o <strong>Lista</strong>.
+                    </p>
+                    <input type="hidden" name="temario_hierarchical" id="temarioHierarchicalInput" value="">
+                    <div class="dynamic-list" id="temarioHierarchy"></div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+                        <button type="button" class="btn-add" onclick="Admin.addCurso()">+ Añadir Curso</button>
+                        <button type="button" class="btn-add" onclick="Admin.addModuloGlobal()">+ Añadir Módulo</button>
+                        <button type="button" class="btn-add" onclick="Admin.addSesionGlobal()">+ Añadir Sesión</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 10. PROFESORES ==================== -->
+            <div class="admin-section">
+                <div class="admin-section-header" onclick="Admin.toggleSection(this)">
+                    <span>👨‍🏫 Profesores</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="admin-section-body">
+                    <div id="profesoresPlantillaGrid" class="prof-cards-grid"></div>
+                    <div id="profesoresHiddenInputs"></div>
+                    <button type="button" class="btn-add" onclick="Admin.abrirSelectorProfesores()">+ Seleccionar Profesores</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<!-- Modal Subir Imagen -->
+<div id="modalSubirImagen" class="modal-overlay" style="display:none;" onclick="if(event.target===this)Admin.cerrarModal('modalSubirImagen')">
+    <div class="modal-content modal-upload">
+        <div class="modal-header">
+            <h3>📤 Subir Imagen</h3>
+            <button type="button" class="modal-close" onclick="Admin.cerrarModal('modalSubirImagen')">✕</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="subirInputId">
+            <input type="hidden" id="subirPreviewId">
+
+            <div class="upload-dropzone" id="uploadDropzone">
+                <div class="upload-dropzone-icon">📁</div>
+                <p class="upload-dropzone-text">Arrastra una imagen aquí o <span class="upload-dropzone-link">selecciona un archivo</span></p>
+                <p class="upload-dropzone-hint">JPG, PNG, WebP · Máx 3MB</p>
+                <input type="file" id="subirFileInput" accept="image/*" onchange="Admin.previewSubirFile(this)">
+            </div>
+
+            <input type="hidden" id="subirDestinoHidden">
+
+            <div class="upload-destino-row">
+                <label class="upload-destino-label">Nombre (opcional)</label>
+                <input type="text" id="subirNombre" class="upload-destino-select" placeholder="Nombre personalizado (sin extensión)">
+            </div>
+
+            <div id="subirPreviewWrap" class="upload-preview-wrap">
+                <img id="subirPreviewImg" src="">
+                <button type="button" class="upload-preview-close" onclick="Admin.limpiarSubirPreview()">✕</button>
+            </div>
+
+            <button type="button" class="upload-submit-btn" onclick="Admin.ejecutarSubir()">Subir imagen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Seleccionar Imagen -->
+<div id="modalSeleccionarImagen" class="modal-overlay" style="display:none;" onclick="if(event.target===this)Admin.cerrarModal('modalSeleccionarImagen')">
+    <div class="modal-content modal-gallery">
+        <div class="modal-header">
+            <h3>🖼️ Galería de Imágenes</h3>
+            <button type="button" class="modal-close" onclick="Admin.cerrarModal('modalSeleccionarImagen')">✕</button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="selInputId">
+            <input type="hidden" id="selPreviewId">
+
+            <div class="gallery-filter">
+                <input type="hidden" id="selDestinoHidden">
+                <label class="gallery-filter-label">Buscar:</label>
+                <input type="text" id="selBuscarInput" class="gallery-filter-select" placeholder="Buscar imágenes por nombre..." oninput="Admin.filtrarGaleria()">
+            </div>
+
+            <div id="selGallery" class="gallery-grid">
+                <p class="gallery-empty">Selecciona una carpeta para cargar las imágenes</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Seleccionar Profesores -->
+<div id="modalSeleccionarProfesores" class="modal-overlay" style="display:none;" onclick="if(event.target===this)Admin.cerrarModal('modalSeleccionarProfesores')">
+    <div class="modal-content modal-content-lg">
+        <div class="modal-header">
+            <h3>Seleccionar Profesores</h3>
+            <button type="button" class="modal-close" onclick="Admin.cerrarModal('modalSeleccionarProfesores')">✕</button>
+        </div>
+        <div class="modal-body">
+            <input type="text" id="profSelectorBuscar" class="prof-search-input" placeholder="Buscar profesor por nombre..." oninput="Admin.filtrarProfesores()">
+            <div id="profesoresSelectorGrid"></div>
+            <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;">
+                <button type="button" class="btn btn-primary" onclick="Admin.confirmarSeleccionProfesores()">Confirmar Selección</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ─── INLINE CSS (misma apariencia que admin.css) ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --azul: #03206A;
+  --rojo: #DE004B;
+  --gris: #f3f4f6;
+  --gris-medio: #9ca3af;
+  --texto: #1f2937;
+  --texto-medio: #6b7280;
+  --borde: #e5e7eb;
+  --sombra: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.admin-curso-container {
+  font-family: 'Poppins', sans-serif;
+  background: var(--gris);
+  color: var(--texto);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.admin-header {
+  background: var(--azul);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.admin-header h1 { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 10px; margin:0; }
+.admin-header h1 small { font-weight: 400; font-size: 13px; opacity: 0.7; }
+.admin-header-actions { display: flex; gap: 10px; align-items: center; }
+.admin-header-actions button,
+.admin-header-actions a {
+  padding: 8px 16px; border-radius: 8px; border: none; font-size: 13px;
+  font-weight: 600; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;
+}
+.btn-save-header { background: #10b981; color: #fff; }
+.btn-save-header:hover { background: #059669; }
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.btn-primary { background: var(--azul); color: #fff; }
+.btn-primary:hover { background: #041f52; }
+.btn-preview { background: #3b82f6; color: #fff; }
+.btn-preview:hover { background: #2563eb; }
+.btn-back { background: rgba(255,255,255,0.15); color: #fff; border:1px solid rgba(255,255,255,0.3) !important; }
+.btn-back:hover { background: rgba(255,255,255,0.25); }
+
+.admin-container { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+
+.admin-section {
+  background: #fff; border-radius: 12px; margin-bottom: 16px;
+  box-shadow: var(--sombra); overflow: hidden;
+}
+.admin-section-header {
+  padding: 14px 20px; font-size: 14px; font-weight: 700; color: var(--azul);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; border-bottom: 1px solid var(--borde); transition: background 0.15s;
+}
+.admin-section-header:hover { background: #f9fafb; }
+.admin-section-header .arrow { transition: transform 0.2s; font-size: 12px; }
+.admin-section-header.collapsed .arrow { transform: rotate(-90deg); }
+.admin-section-body { padding: 16px 20px; }
+.admin-section-body.hidden { display: none; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-row.full { grid-template-columns: 1fr; }
+.form-row.triple { grid-template-columns: 1fr 1fr 1fr; }
+
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label {
+  font-size: 12px; font-weight: 600; color: var(--texto-medio);
+  text-transform: uppercase; letter-spacing: 0.3px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  padding: 8px 12px; border: 1.5px solid var(--borde); border-radius: 8px;
+  font-size: 13px; font-family: 'Poppins', sans-serif; transition: border-color 0.15s; background: #fff;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--azul); box-shadow: 0 0 0 3px rgba(3,32,106,0.08);
+}
+.form-group input[readonly] { background: var(--gris); color: var(--texto-medio); cursor: not-allowed; }
+.form-group textarea { min-height: 60px; resize: vertical; }
+
+.dynamic-list { display: flex; flex-direction: column; gap: 12px; }
+.dynamic-item {
+  background: var(--gris); border-radius: 8px; padding: 12px; position: relative; border: 1px solid var(--borde);
+}
+.dynamic-item .btn-remove {
+  position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; border-radius: 50%;
+  border: none; background: #ef4444; color: #fff; font-size: 14px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: background 0.15s;
+}
+.dynamic-item .btn-remove:hover { background: #dc2626; }
+
+.btn-add {
+  padding: 8px 16px; border: 2px dashed var(--borde); border-radius: 8px;
+  background: transparent; color: var(--texto-medio); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px;
+}
+.btn-add:hover { border-color: var(--azul); color: var(--azul); background: rgba(3,32,106,0.04); }
+
+.preview-img-sm { max-width: 150px; max-height: 100px; border-radius: 6px; margin-top: 6px; border:1px solid var(--borde); }
+
+/* Template bar */
+.template-bar {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding: 12px 20px; background: #f9fafb;
+}
+.template-bar select {
+  padding: 8px 12px; border: 1.5px solid var(--borde); border-radius: 8px;
+  font-size: 13px; font-family: 'Poppins', sans-serif; min-width: 200px;
+}
+.template-bar select:focus { outline: none; border-color: var(--azul); }
+.template-bar label { font-size: 12px; font-weight: 600; color: var(--texto-medio); white-space:nowrap; }
+.template-name-input {
+  padding: 8px 12px; border: 1.5px solid var(--borde); border-radius: 8px;
+  font-size: 13px; font-family: 'Poppins', sans-serif; min-width: 180px;
+}
+.template-name-input:focus { outline: none; border-color: var(--azul); }
+.btn-delete-sm { background: #ef4444; color: #fff; border: none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:13px; }
+.btn-delete-sm:hover { background: #dc2626; }
+.template-divider { width:1px; height:30px; background:var(--borde); }
+.template-type-group { display:flex; align-items:center; gap:8px; }
+.type-tabs, .mode-tabs { display:flex; gap:4px; }
+.type-tab, .mode-tab {
+  padding:6px 14px; border:1.5px solid var(--borde); border-radius:6px;
+  background:#fff; cursor:pointer; font-size:12px; font-weight:600; color:var(--texto-medio);
+  transition:all 0.15s;
+}
+.type-tab.active, .mode-tab.active { background:var(--azul); color:#fff; border-color:var(--azul); }
+.type-tab:hover:not(.active), .mode-tab:hover:not(.active) { border-color:var(--azul); color:var(--azul); }
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 24px; right: 24px; padding: 12px 20px; border-radius: 8px;
+  color: #fff; font-size: 13px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 999;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast.success { background: #10b981; }
+.toast.error { background: #ef4444; }
+
+/* === HIERARCHICAL TEMARIO === */
+.h-level { margin-bottom:10px; border-radius:8px; border:1px solid var(--borde); overflow:hidden; }
+.curso-level { background:#eef2ff; border-left:4px solid #1a252f; }
+.standalone-modulo-level { background:#fef9e7; border-left:4px solid #f59e0b; }
+.standalone-sesion-level { background:#f0fdf4; border-left:4px solid #10b981; }
+.modulo-level { background:#f8fafc; border-left:4px solid #2c3e50; margin:8px 0 8px 16px; }
+.sesion-level { background:#fff; border-left:4px solid #3b82f6; margin:6px 0 6px 32px; }
+
+.h-header { display:flex; align-items:center; gap:8px; padding:8px 10px; flex-wrap:wrap; cursor:pointer; user-select:none; }
+.h-arrow { font-size:10px; transition:transform .2s; flex-shrink:0; color:var(--texto-medio); }
+.h-header.collapsed .h-arrow { transform:rotate(-90deg); }
+.h-body.hidden { display:none; }
+.h-badge { font-size:10px; font-weight:700; padding:2px 8px; border-radius:4px; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; flex-shrink:0; }
+.curso-badge { background:#1a252f; color:#fff; }
+.modulo-badge { background:#2c3e50; color:#fff; }
+.sesion-badge { background:#3b82f6; color:#fff; }
+.subtitulo-badge { background:#8b5cf6; color:#fff; }
+.lista-badge { background:#10b981; color:#fff; }
+.texto-badge { background:#6b7280; color:#fff; }
+
+.h-input { flex:1; min-width:120px; padding:6px 10px; border:1.5px solid var(--borde); border-radius:6px; font-size:13px; font-family:'Poppins',sans-serif; background:#fff; }
+.h-input:focus { outline:none; border-color:var(--azul); box-shadow:0 0 0 2px rgba(3,32,106,0.08); }
+.h-textarea { width:100%; padding:6px 10px; border:1.5px solid var(--borde); border-radius:6px; font-size:13px; font-family:'Poppins',sans-serif; resize:vertical; background:#fff; }
+.h-textarea:focus { outline:none; border-color:var(--azul); box-shadow:0 0 0 2px rgba(3,32,106,0.08); }
+.h-lecturas { padding:4px 10px 8px 10px; }
+.h-lecturas label { font-size:11px; font-weight:600; color:var(--texto-medio); text-transform:uppercase; letter-spacing:0.3px; display:block; margin-bottom:3px; }
+.h-children { padding:4px 10px 8px 10px; }
+.h-contenido-items { padding:4px 10px 8px 10px; }
+.h-contenido-item { display:flex; flex-direction:column; gap:2px; margin-bottom:4px; padding:3px 0; }
+.h-contenido-header { display:flex; align-items:center; gap:6px; }
+.h-contenido-item .h-input { font-size:12px; }
+.h-add-bar { display:flex; gap:6px; margin-top:6px; flex-wrap:wrap; }
+.btn-remove-sm, .btn-remove-xs { border-radius:50%; border:none; background:#ef4444; color:#fff; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; transition:background 0.15s; }
+.btn-remove-sm { width:24px; height:24px; font-size:12px; }
+.btn-remove-xs { width:20px; height:20px; font-size:10px; }
+.btn-remove-sm:hover, .btn-remove-xs:hover { background:#dc2626; }
+.btn-add-sm {
+  padding:6px 14px; border:2px dashed var(--borde); border-radius:6px; background:transparent;
+  color:var(--texto-medio); font-size:12px; font-weight:600; cursor:pointer; transition:all 0.15s; margin:4px 0;
+}
+.btn-add-sm:hover { border-color:var(--azul); color:var(--azul); background:rgba(3,32,106,0.04); }
+.btn-move-sm, .btn-move-xs {
+  border-radius:4px; border:1px solid var(--borde); background:#fff; color:var(--texto-medio);
+  font-size:11px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; padding:0; line-height:1; transition:all 0.15s;
+}
+.btn-move-sm { width:22px; height:22px; }
+.btn-move-xs { width:20px; height:20px; font-size:10px; }
+.btn-move-sm:hover:not(:disabled), .btn-move-xs:hover:not(:disabled) { background:var(--gris); color:var(--azul); border-color:var(--azul); }
+.btn-move-sm:disabled, .btn-move-xs:disabled { opacity:0.3; cursor:not-allowed; }
+.btn-add-xs {
+  padding:4px 10px; border:1.5px dashed var(--borde); border-radius:4px; background:transparent;
+  color:var(--texto-medio); font-size:11px; font-weight:600; cursor:pointer; transition:all 0.15s;
+}
+.btn-add-xs:hover { border-color:var(--azul); color:var(--azul); background:rgba(3,32,106,0.04); }
+.h-elementos-wrap { margin-left:28px; padding:2px 0; display:flex; flex-direction:column; gap:2px; }
+.h-elemento-row { display:flex; align-items:center; gap:6px; }
+.h-elem-bullet { width:5px; height:5px; border-radius:50%; background:var(--texto-medio); flex-shrink:0; display:inline-block; }
+.h-elemento-row .h-input { font-size:12px; }
+
+/* ===== MULTIMEDIA SECTION ===== */
+.mm-field {
+  background: var(--gris); border: 1px solid var(--borde); border-radius: 10px;
+  padding: 16px; margin-bottom: 12px; transition: border-color 0.15s;
+}
+.mm-field:hover { border-color: var(--azul); }
+.mm-label {
+  display: block; font-size: 12px; font-weight: 700; color: var(--azul);
+  text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 10px;
+}
+.mm-row { display: flex; gap: 16px; align-items: flex-start; }
+.mm-preview {
+  width: 160px; height: 90px; border-radius: 8px; overflow: hidden;
+  border: 2px solid var(--borde); background: #e5e7eb; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.15s;
+}
+.mm-preview:hover { border-color: var(--azul); }
+.mm-preview-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mm-placeholder { font-size: 32px; opacity: 0.4; }
+.mm-inputs { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.mm-text-input {
+  width: 100%; padding: 9px 12px; border: 1.5px solid var(--borde);
+  border-radius: 8px; font-size: 13px; font-family: 'Poppins', sans-serif;
+  background: #fff; transition: border-color 0.15s;
+}
+.mm-text-input:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 3px rgba(3,32,106,0.08); }
+.mm-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.mm-btn {
+  padding: 7px 16px; border: none; border-radius: 6px; font-size: 12px;
+  font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif;
+  transition: all 0.15s; display: inline-flex; align-items: center; gap: 4px;
+}
+.mm-btn-upload { background: var(--azul); color: #fff; }
+.mm-btn-upload:hover { background: #041f4a; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(3,32,106,0.25); }
+.mm-btn-view { background: #6b7280; color: #fff; }
+.mm-btn-view:hover { background: #4b5563; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(107,114,128,0.25); }
+.mm-btn-clear { background: #f3f4f6; color: #6b7280; border: 1px solid var(--borde); }
+.mm-btn-clear:hover { background: #fee2e2; color: #dc2626; border-color: #fecaca; }
+
+@media (max-width: 600px) {
+  .mm-row { flex-direction: column; }
+  .mm-preview { width: 100%; height: 140px; }
+}
+
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5); z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-content {
+  background: #fff; border-radius: 16px; width: 100%; max-width: 520px;
+  max-height: 90vh; overflow-y: auto; box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+  animation: modalIn 0.2s ease-out;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-upload { max-width: 600px; }
+.modal-gallery { max-width: 800px; }
+.modal-content-lg { max-width: 720px; }
+.modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; border-bottom: 1px solid var(--borde);
+}
+.modal-header h3 { font-size: 16px; font-weight: 700; color: var(--azul); margin:0; }
+.modal-close {
+  width: 32px; height: 32px; border-radius: 50%; border: none;
+  background: var(--gris); color: var(--texto-medio); font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.modal-close:hover { background: #ef4444; color: #fff; transform: rotate(90deg); }
+.modal-body { padding: 20px 24px; }
+
+/* Upload modal */
+.upload-dropzone {
+  border: 2px dashed var(--borde); border-radius: 12px; padding: 32px 20px;
+  text-align: center; cursor: pointer; transition: all 0.2s;
+  background: #fafafa; position: relative; margin-bottom: 16px;
+}
+.upload-dropzone:hover { border-color: var(--azul); background: #f0f3ff; }
+.upload-dropzone input[type="file"] {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0; cursor: pointer;
+}
+.upload-dropzone-icon { font-size: 40px; margin-bottom: 8px; }
+.upload-dropzone-text { font-size: 14px; color: var(--texto); font-weight: 500; margin: 0 0 4px; }
+.upload-dropzone-link { color: var(--azul); font-weight: 600; text-decoration: underline; }
+.upload-dropzone-hint { font-size: 12px; color: var(--texto-medio); margin: 0; }
+.upload-dropzone.has-file { border-color: #10b981; background: #f0fdf4; }
+
+.upload-destino-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.upload-destino-label { font-size: 13px; font-weight: 600; color: var(--texto); white-space: nowrap; }
+.upload-destino-select {
+  flex: 1; padding: 9px 12px; border: 1.5px solid var(--borde); border-radius: 8px;
+  font-size: 13px; font-family: 'Poppins', sans-serif; background: #fff;
+}
+.upload-destino-select:focus { outline: none; border-color: var(--azul); }
+
+.upload-preview-wrap {
+  position: relative; margin-bottom: 16px; border-radius: 10px;
+  overflow: hidden; border: 2px solid #10b981; display: none;
+}
+.upload-preview-wrap img { width: 100%; max-height: 280px; object-fit: contain; display: block; background: #f3f4f6; }
+.upload-preview-close {
+  position: absolute; top: 8px; right: 8px; width: 28px; height: 28px;
+  border-radius: 50%; border: none; background: rgba(0,0,0,0.5); color: #fff;
+  font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.upload-preview-close:hover { background: rgba(239,68,68,0.8); }
+
+.upload-submit-btn {
+  width: 100%; padding: 12px; border: none; border-radius: 10px;
+  background: var(--azul); color: #fff; font-size: 14px; font-weight: 600;
+  font-family: 'Poppins', sans-serif; cursor: pointer; transition: all 0.15s;
+}
+.upload-submit-btn:hover { background: #041f4a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(3,32,106,0.3); }
+.upload-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Gallery modal */
+.gallery-filter {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.gallery-filter-label { font-size: 13px; font-weight: 600; color: var(--texto); white-space: nowrap; }
+.gallery-filter-select {
+  flex: 1; max-width: 320px; padding: 9px 12px; border: 1.5px solid var(--borde);
+  border-radius: 8px; font-size: 13px; font-family: 'Poppins', sans-serif; background: #fff;
+}
+.gallery-filter-select:focus { outline: none; border-color: var(--azul); }
+
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  max-height: 420px; overflow-y: auto; padding: 4px;
+}
+.gallery-grid .img-card {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 10px; border: 2px solid var(--borde); border-radius: 10px;
+  cursor: pointer; transition: all 0.15s; background: #fff;
+}
+.gallery-grid .img-card:hover { border-color: var(--azul); box-shadow: 0 0 0 3px rgba(3,32,106,0.1); transform: translateY(-2px); }
+.gallery-grid .img-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; }
+.gallery-grid .img-card span { font-size: 11px; color: var(--texto-medio); text-align: center; word-break: break-all; max-width: 100%; }
+.gallery-empty { color: var(--texto-medio); font-size: 13px; grid-column: 1 / -1; text-align: center; padding: 40px 0; }
+
+@media (max-width: 768px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-row.triple { grid-template-columns: 1fr; }
+  .admin-header { flex-direction: column; gap: 12px; }
+  .admin-header-actions { width: 100%; justify-content: center; flex-wrap: wrap; }
+  .template-bar { flex-direction: column; align-items: stretch; }
+  .template-bar select, .template-name-input { min-width: auto; }
+  .template-type-group { flex-direction: column; align-items: flex-start; }
+  .h-header { flex-wrap: wrap; }
+  .h-input { min-width: 80px; }
+  .modulo-level { margin-left: 8px; }
+  .sesion-level { margin-left: 16px; }
+}
+}
+#profesoresSelectorGrid { display: flex; flex-direction: column; gap: 6px; }
+.prof-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.prof-checkbox-item:hover { background: #f9fafb; }
+.prof-checkbox-item input[type=checkbox] { width: 18px; height: 18px; margin: 0; cursor: pointer; }
+.prof-checkbox-item span { font-size: 14px; color: var(--texto); }
+.prof-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.prof-search-input:focus { border-color: var(--azul); }
+
+/* ─── Profesor cards (preview en formulario) ─── */
+.prof-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.prof-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 12px 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.prof-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.prof-card-img-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #e5e7eb;
+  border: 1px solid var(--borde);
+}
+.prof-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.prof-card-info { flex: 1; min-width: 0; }
+.prof-card-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto);
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+.prof-card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+  width: 100%;
+}
+</style>
+
+<script>
+// ======================================================================
+// ADMIN.JS PORTED TO LARAVEL FORM (alineado con cesar-plantilla/admin.js)
+// ======================================================================
+
+var Admin = {
+  currentState: {},
+
+  init: function() {
+    var self = this;
+    var last = RCEngine ? RCEngine.loadLastTemplate() : null;
+    this.currentState = last ? JSON.parse(JSON.stringify(last)) : {};
+
+    this._loadHierarchicalData();
+
+    if (RCEngine) this.refreshTemplateList();
+    this.bindFormToState();
+    this.renderTemarioHierarchy();
+    this.calcAhorro();
+
+    document.addEventListener('input', function() {
+      self.calcAhorro();
+    });
+  },
+
+  toggleSection: function(header) {
+    var body = header.nextElementSibling;
+    if (!body) return;
+    header.classList.toggle('collapsed');
+    body.classList.toggle('hidden');
+  },
+
+  bindFormToState: function() {
+    var self = this;
+    document.querySelectorAll('[data-field]').forEach(function(el) {
+      var field = el.dataset.field;
+      if (self.currentState[field] !== undefined && !el.value) {
+        el.value = self.currentState[field];
+      }
+    });
+  },
+
+  calcAhorro: function() {
+    var reg = parseFloat(document.getElementById('precioRegular')?.value) || 0;
+    var ofe = parseFloat(document.getElementById('precioOferta')?.value) || 0;
+    var ahorro = Math.max(0, Math.round(reg - ofe));
+    var el = document.getElementById('ahorro');
+    if (el) el.value = String(ahorro);
+  },
+
+  autoSlug: function(value) {
+    var slugInput = document.getElementById('slugUrl');
+    if (!slugInput || slugInput.value) return;
+    slugInput.value = value.toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  },
+
+  // ─── DYNAMIC LISTS (objetivos, participantes, profesores) ───
+  addItem: function(key, defaults) {
+    var container = document.getElementById(key + 'List');
+    if (!container) return;
+    var items = container.querySelectorAll('.dynamic-item');
+    var idx = items.length;
+    var div = document.createElement('div');
+    div.className = 'dynamic-item';
+
+    var html = '<button type="button" class="btn-remove" onclick="Admin.removeItem(\'' + key + '\', this)">✕</button>';
+
+    if (key === 'objetivos') {
+      html += '<div class="form-row">'
+        + '<div class="form-group"><label>Título</label>'
+        + '<input type="text" name="objetivos[' + idx + '][titulo]" class="field-titulo" placeholder="Ej: Excelencia en la Formación de Funcionarios:"></div>'
+        + '<div class="form-group"><label>Descripción</label>'
+        + '<input type="text" name="objetivos[' + idx + '][descripcion]" class="field-descripcion" placeholder="Texto del objetivo"></div>'
+        + '</div>';
+    } else if (key === 'participantes') {
+      html += '<div class="form-row">'
+        + '<div class="form-group"><label>Título</label>'
+        + '<input type="text" name="participantes[' + idx + '][titulo]" class="field-titulo" placeholder="Ej: Servidores Públicos y Planeamiento:"></div>'
+        + '<div class="form-group"><label>Descripción</label>'
+        + '<input type="text" name="participantes[' + idx + '][descripcion]" class="field-descripcion" placeholder="Texto del perfil"></div>'
+        + '</div>';
+    }
+
+    div.innerHTML = html;
+    container.appendChild(div);
+  },
+
+  removeItem: function(key, btn) {
+    var item = btn.closest('.dynamic-item');
+    if (!item) return;
+    item.remove();
+  },
+
+  // ─── TEMPLATE MANAGEMENT ───
+  refreshTemplateList: function() {
+    if (!RCEngine) return;
+    var sel = document.getElementById('templateSelect');
+    if (!sel) return;
+    var names = RCEngine.listTemplates();
+    sel.innerHTML = '<option value="">-- Nueva plantilla --</option>';
+    names.forEach(function(name) {
+      var opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+    var last = localStorage.getItem('rc-last-template') || '';
+    if (last && names.indexOf(last) !== -1) {
+      sel.value = last;
+      document.getElementById('templateNameInput').value = last;
+    }
+  },
+
+  loadSelected: function() {
+    if (!RCEngine) return;
+    var sel = document.getElementById('templateSelect');
+    if (!sel || !sel.value) return;
+    var saved = RCEngine.loadTemplate(sel.value);
+    if (saved) {
+      this.currentState = JSON.parse(JSON.stringify(saved));
+      this.bindFormToState();
+      this.calcAhorro();
+      document.getElementById('templateNameInput').value = sel.value;
+      this.showToast('Plantilla "' + sel.value + '" cargada', 'success');
+    }
+  },
+
+  saveCurrent: function() {
+    if (!RCEngine) return;
+    var name = document.getElementById('templateNameInput')?.value.trim();
+    if (!name) {
+      this.showToast('Ingresa un nombre para la plantilla', 'error');
+      return;
+    }
+    var state = {};
+    document.querySelectorAll('[data-field]').forEach(function(el) {
+      state[el.dataset.field] = el.value;
+    });
+    RCEngine.saveTemplate(name, state);
+    this.refreshTemplateList();
+    document.getElementById('templateSelect').value = name;
+    this.showToast('Plantilla "' + name + '" guardada localmente', 'success');
+  },
+
+  deleteCurrent: function() {
+    if (!RCEngine) return;
+    var sel = document.getElementById('templateSelect');
+    if (!sel || !sel.value) {
+      this.showToast('Selecciona una plantilla para eliminar', 'error');
+      return;
+    }
+    if (!confirm('¿Eliminar la plantilla "' + sel.value + '"?')) return;
+    RCEngine.deleteTemplate(sel.value);
+    this.refreshTemplateList();
+    this.showToast('Plantilla eliminada', 'success');
+  },
+
+  showToast: function(msg, type) {
+    var toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.className = 'toast ' + type + ' show';
+    setTimeout(function() { toast.classList.remove('show'); }, 2500);
+  },
+
+  // ─── HELPER FOR HIERARCHICAL DATA ───
+  _getHierarchicalData: function() {
+    try {
+      var input = document.getElementById('temarioHierarchicalInput');
+      if (input && input.value) {
+        return JSON.parse(input.value);
+      }
+    } catch(e) {}
+    return [{"tipo":"modulo","titulo":"M\u00d3DULO 1: NUEVO M\u00d3DULO","sesiones":[]},{"tipo":"modulo","titulo":"M\u00d3DULO 2: NUEVO M\u00d3DULO","sesiones":[]},{"tipo":"modulo","titulo":"M\u00d3DULO 3: NUEVO M\u00d3DULO","sesiones":[]}];
+  },
+
+  // ─── LOAD HIERARCHICAL DATA FROM PHP ───
+  _loadHierarchicalData: function() {
+    var data = this._getHierarchicalData();
+    if (!data || !Array.isArray(data) || data.length === 0) return;
+    this.currentState.cursos = [];
+    this.currentState.modulos = [];
+    this.currentState.sesiones = [];
+    data.forEach(function(item) {
+      if (item.tipo === 'curso') {
+        this.currentState.cursos.push(item);
+      } else if (item.tipo === 'modulo') {
+        this.currentState.modulos.push(item);
+      } else if (item.tipo === 'sesion') {
+        this.currentState.sesiones.push(item);
+      }
+    }, this);
+  },
+
+  // ─── MOVE ARRAY ITEM HELPER ───
+  _moveArrayItem: function(arr, idx, dir) {
+    var target = idx + dir;
+    if (target < 0 || target >= arr.length) return;
+    var tmp = arr[idx];
+    arr[idx] = arr[target];
+    arr[target] = tmp;
+  },
+
+  // ─── GET/SET SESIONES BY PATH (como admin.js) ───
+  _getSesionesByPath: function(ci, mi) {
+    if (ci === -2) {
+      return this.currentState.sesiones || null;
+    }
+    if (ci === -1) {
+      var modulos = this.currentState.modulos || [];
+      return modulos[mi] ? modulos[mi].sesiones || [] : null;
+    }
+    if (mi >= 0) {
+      var cursos = this.currentState.cursos || [];
+      if (!cursos[ci]) return null;
+      var modulos = cursos[ci].modulos || [];
+      return modulos[mi] ? modulos[mi].sesiones || [] : null;
+    }
+    var cursos = this.currentState.cursos || [];
+    return cursos[ci] ? cursos[ci].sesiones || [] : null;
+  },
+
+  _setSesionesByPath: function(ci, mi, sesiones) {
+    if (ci === -2) {
+      this.currentState.sesiones = sesiones;
+    } else if (ci === -1) {
+      var modulos = this.currentState.modulos || [];
+      if (modulos[mi]) modulos[mi].sesiones = sesiones;
+      this.currentState.modulos = modulos;
+    } else if (mi >= 0) {
+      var cursos = this.currentState.cursos || [];
+      if (cursos[ci] && cursos[ci].modulos[mi]) cursos[ci].modulos[mi].sesiones = sesiones;
+    } else {
+      var cursos = this.currentState.cursos || [];
+      if (cursos[ci]) cursos[ci].sesiones = sesiones;
+    }
+  },
+
+  // ─── TEMARIO JERÁRQUICO (como cesar-plantilla/admin.js) ───
+  renderTemarioHierarchy: function() {
+    var container = document.getElementById('temarioHierarchy');
+    if (!container) return;
+    container.innerHTML = '';
+
+    var cursos = this.currentState.cursos || [];
+    var modulos = this.currentState.modulos || [];
+    var sesiones = this.currentState.sesiones || [];
+    var self = this;
+
+    cursos.forEach(function(curso, ci) {
+      container.appendChild(self._createCursoElement(curso, ci));
+    });
+    modulos.forEach(function(mod, mi) {
+      container.appendChild(self._createStandaloneModuloElement(mod, mi));
+    });
+    sesiones.forEach(function(ses, si) {
+      container.appendChild(self._createStandaloneSesionElement(ses, si));
+    });
+  },
+
+  _createCursoElement: function(curso, ci) {
+    var self = this;
+    var div = document.createElement('div');
+    div.className = 'h-level curso-level';
+    div.dataset.ci = ci;
+
+    var totalCursos = (this.currentState.cursos || []).length;
+
+    var header = document.createElement('div');
+    header.className = 'h-header curso-header';
+    header.innerHTML = '<span class="h-badge curso-badge">CURSO</span>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveCurso(' + ci + ',-1)"' + (ci === 0 ? ' disabled' : '') + ' title="Subir">▲</button>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveCurso(' + ci + ',1)"' + (ci === totalCursos - 1 ? ' disabled' : '') + ' title="Bajar">▼</button>'
+      + '<span class="h-arrow">▼</span>'
+      + '<input class="h-input curso-titulo" value="' + this._escAttr(curso.titulo || '') + '" placeholder="Título del curso">'
+      + '<button type="button" class="btn-remove-sm" onclick="Admin.removeCurso(' + ci + ')" title="Eliminar curso">✕</button>';
+    header.onclick = function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'TEXTAREA') return;
+      var body = this.nextElementSibling;
+      if (!body) return;
+      this.classList.toggle('collapsed');
+      body.classList.toggle('hidden');
+    };
+    div.appendChild(header);
+
+    var body = document.createElement('div');
+    body.className = 'h-body';
+
+    // Lecturas
+    var lectDiv = document.createElement('div');
+    lectDiv.className = 'h-lecturas';
+    lectDiv.innerHTML = '<label>Lecturas Previas (HTML)</label>'
+      + '<textarea class="h-textarea curso-lecturas" placeholder="<p><strong>Lecturas Previas Obligatorias:</strong></p>..." style="min-height:50px;">'
+      + this._escAttr(curso.lecturasPrevias || '') + '</textarea>';
+    body.appendChild(lectDiv);
+
+    // Módulos hijos
+    var modulos = curso.modulos || [];
+    var modWrap = document.createElement('div');
+    modWrap.className = 'h-children modulos-wrap';
+    modulos.forEach(function(mod, mi) {
+      modWrap.appendChild(self._createModuloElement(mod, ci, mi));
+    });
+    var addModBtn = document.createElement('button');
+    addModBtn.type = 'button';
+    addModBtn.className = 'btn-add-sm';
+    addModBtn.textContent = '+ Añadir Módulo';
+    addModBtn.onclick = function() { Admin._addModuloToCurso(ci); };
+    modWrap.appendChild(addModBtn);
+    body.appendChild(modWrap);
+
+    // Sesiones directas del curso (sin módulo)
+    var sesWrap = document.createElement('div');
+    sesWrap.className = 'h-children sesiones-wrap';
+    if (modulos.length === 0) {
+      var sesDirectas = curso.sesiones || [];
+      sesDirectas.forEach(function(ses, si) {
+        sesWrap.appendChild(self._createSesionElement(ses, ci, -1, si));
+      });
+      var addSesBtn = document.createElement('button');
+      addSesBtn.type = 'button';
+      addSesBtn.className = 'btn-add-sm';
+      addSesBtn.textContent = '+ Añadir Sesión (directa)';
+      addSesBtn.onclick = function() { Admin._addSesionToCurso(ci); };
+      sesWrap.appendChild(addSesBtn);
+    }
+    body.appendChild(sesWrap);
+    div.appendChild(body);
+    return div;
+  },
+
+  _createModuloElement: function(mod, ci, mi) {
+    var self = this;
+    var div = document.createElement('div');
+    div.className = 'h-level modulo-level';
+    div.dataset.ci = ci;
+    div.dataset.mi = mi;
+
+    var totalMods = ((this.currentState.cursos || [])[ci]?.modulos || []).length;
+
+    var header = document.createElement('div');
+    header.className = 'h-header modulo-header';
+    header.innerHTML = '<span class="h-badge modulo-badge">MÓDULO</span>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveModulo(' + ci + ',' + mi + ',-1)"' + (mi === 0 ? ' disabled' : '') + ' title="Subir">▲</button>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveModulo(' + ci + ',' + mi + ',1)"' + (mi === totalMods - 1 ? ' disabled' : '') + ' title="Bajar">▼</button>'
+      + '<span class="h-arrow">▼</span>'
+      + '<input class="h-input modulo-titulo" value="' + this._escAttr(mod.titulo || '') + '" placeholder="Título del módulo">'
+      + '<button type="button" class="btn-remove-sm" onclick="Admin.removeModulo(' + ci + ',' + mi + ')" title="Eliminar módulo">✕</button>';
+    header.onclick = function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'TEXTAREA') return;
+      var body = this.nextElementSibling;
+      if (!body) return;
+      this.classList.toggle('collapsed');
+      body.classList.toggle('hidden');
+    };
+    div.appendChild(header);
+
+    var body = document.createElement('div');
+    body.className = 'h-body';
+
+    var sesiones = mod.sesiones || [];
+    var sesWrap = document.createElement('div');
+    sesWrap.className = 'h-children sesiones-wrap';
+    sesiones.forEach(function(ses, si) {
+      sesWrap.appendChild(self._createSesionElement(ses, ci, mi, si));
+    });
+    var addSesBtn = document.createElement('button');
+    addSesBtn.type = 'button';
+    addSesBtn.className = 'btn-add-sm';
+    addSesBtn.textContent = '+ Añadir Sesión';
+    addSesBtn.onclick = function() { Admin._addSesionToModulo(ci, mi); };
+    sesWrap.appendChild(addSesBtn);
+    body.appendChild(sesWrap);
+    div.appendChild(body);
+    return div;
+  },
+
+  _createSesionElement: function(ses, ci, mi, si) {
+    var self = this;
+    var div = document.createElement('div');
+    div.className = 'h-level sesion-level';
+
+    var removeFn;
+    if (ci === -2) {
+      removeFn = 'Admin.removeSesionStandaloneItem(' + si + ')';
+    } else if (ci === -1) {
+      removeFn = 'Admin.removeSesionStandalone(' + mi + ',' + si + ')';
+    } else if (mi >= 0) {
+      removeFn = 'Admin.removeSesion(' + ci + ',' + mi + ',' + si + ')';
+    } else {
+      removeFn = 'Admin.removeSesionDirect(' + ci + ',' + si + ')';
+    }
+
+    var totalSes = (this._getSesionesByPath(ci, mi) || []).length;
+
+    var header = document.createElement('div');
+    header.className = 'h-header sesion-header';
+    header.innerHTML = '<span class="h-badge sesion-badge">SESIÓN</span>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveSesion(' + ci + ',' + mi + ',' + si + ',-1)"' + (si === 0 ? ' disabled' : '') + ' title="Subir">▲</button>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveSesion(' + ci + ',' + mi + ',' + si + ',1)"' + (si === totalSes - 1 ? ' disabled' : '') + ' title="Bajar">▼</button>'
+      + '<span class="h-arrow">▼</span>'
+      + '<input class="h-input sesion-titulo" value="' + this._escAttr(ses.titulo || '') + '" placeholder="Título de la sesión">'
+      + '<button type="button" class="btn-remove-sm" onclick="' + removeFn + '" title="Eliminar sesión">✕</button>';
+    header.onclick = function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'TEXTAREA') return;
+      var body = this.nextElementSibling;
+      if (!body) return;
+      this.classList.toggle('collapsed');
+      body.classList.toggle('hidden');
+    };
+    div.appendChild(header);
+
+    var body = document.createElement('div');
+    body.className = 'h-body';
+
+    var contWrap = document.createElement('div');
+    contWrap.className = 'h-contenido-items';
+    contWrap.id = 'contenido-' + ci + '-' + mi + '-' + si;
+
+    var raw = ses.contenido || [];
+    var items = typeof raw === 'string' ? [] : raw;
+    items.forEach(function(item, ii) {
+      contWrap.appendChild(self._createContenidoItem(item, ci, mi, si, ii));
+    });
+
+    var addBar = document.createElement('div');
+    addBar.className = 'h-add-bar';
+    addBar.innerHTML = '<button type="button" class="btn-add-xs" onclick="Admin.addContenidoItem(' + ci + ',' + mi + ',' + si + ',\'subtitulo\')">+ Subtítulo</button>'
+      + '<button type="button" class="btn-add-xs" onclick="Admin.addContenidoItem(' + ci + ',' + mi + ',' + si + ',\'texto\')">+ Texto</button>'
+      + '<button type="button" class="btn-add-xs" onclick="Admin.addContenidoItem(' + ci + ',' + mi + ',' + si + ',\'lista\')">+ Lista</button>';
+    contWrap.appendChild(addBar);
+
+    body.appendChild(contWrap);
+    div.appendChild(body);
+    return div;
+  },
+
+  _createStandaloneModuloElement: function(mod, mi) {
+    var self = this;
+    var div = document.createElement('div');
+    div.className = 'h-level curso-level standalone-modulo-level';
+    div.dataset.mi = mi;
+
+    var totalMods = (this.currentState.modulos || []).length;
+
+    var header = document.createElement('div');
+    header.className = 'h-header curso-header';
+    header.innerHTML = '<span class="h-badge modulo-badge">MÓDULO</span>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveModuloStandalone(' + mi + ',-1)"' + (mi === 0 ? ' disabled' : '') + ' title="Subir">▲</button>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveModuloStandalone(' + mi + ',1)"' + (mi === totalMods - 1 ? ' disabled' : '') + ' title="Bajar">▼</button>'
+      + '<span class="h-arrow">▼</span>'
+      + '<input class="h-input modulo-titulo" value="' + this._escAttr(mod.titulo || '') + '" placeholder="Título del módulo">'
+      + '<button type="button" class="btn-remove-sm" onclick="Admin.removeModuloStandalone(' + mi + ')" title="Eliminar módulo">✕</button>';
+    header.onclick = function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'TEXTAREA') return;
+      var body = this.nextElementSibling;
+      if (!body) return;
+      this.classList.toggle('collapsed');
+      body.classList.toggle('hidden');
+    };
+    div.appendChild(header);
+
+    var body = document.createElement('div');
+    body.className = 'h-body';
+    var sesWrap = document.createElement('div');
+    sesWrap.className = 'h-children sesiones-wrap';
+    var sesiones = mod.sesiones || [];
+    sesiones.forEach(function(ses, si) {
+      sesWrap.appendChild(self._createSesionElement(ses, -1, mi, si));
+    });
+    var addBtn = document.createElement('button');
+    addBtn.type = 'button';
+    addBtn.className = 'btn-add-sm';
+    addBtn.textContent = '+ Añadir Sesión';
+    addBtn.onclick = function() { Admin._addSesionToModulo(-1, mi); };
+    sesWrap.appendChild(addBtn);
+    body.appendChild(sesWrap);
+    div.appendChild(body);
+    return div;
+  },
+
+  _createStandaloneSesionElement: function(ses, si) {
+    var self = this;
+    var div = document.createElement('div');
+    div.className = 'h-level sesion-level standalone-sesion-level';
+    div.dataset.ci = -2;
+    div.dataset.mi = -1;
+    div.dataset.si = si;
+
+    var totalSesiones = (this._getSesionesByPath(-2, -1) || []).length;
+
+    var header = document.createElement('div');
+    header.className = 'h-header sesion-header';
+    header.innerHTML = '<span class="h-badge sesion-badge">SESIÓN</span>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveSesion(-2,-1,' + si + ',-1)"' + (si === 0 ? ' disabled' : '') + ' title="Subir">▲</button>'
+      + '<button type="button" class="btn-move-sm" onclick="Admin.moveSesion(-2,-1,' + si + ',1)"' + (si === totalSesiones - 1 ? ' disabled' : '') + ' title="Bajar">▼</button>'
+      + '<span class="h-arrow">▼</span>'
+      + '<input class="h-input sesion-titulo" value="' + this._escAttr(ses.titulo || '') + '" placeholder="Título de la sesión">'
+      + '<button type="button" class="btn-remove-sm" onclick="Admin.removeSesionStandaloneItem(' + si + ')" title="Eliminar sesión">✕</button>';
+    header.onclick = function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'TEXTAREA') return;
+      var body = this.nextElementSibling;
+      if (!body) return;
+      this.classList.toggle('collapsed');
+      body.classList.toggle('hidden');
+    };
+    div.appendChild(header);
+
+    var body = document.createElement('div');
+    body.className = 'h-body';
+
+    var contWrap = document.createElement('div');
+    contWrap.className = 'h-contenido-items';
+    contWrap.id = 'contenido--2--1-' + si;
+
+    var raw = ses.contenido || [];
+    var items = typeof raw === 'string' ? [] : raw;
+    items.forEach(function(item, ii) {
+      contWrap.appendChild(self._createContenidoItem(item, -2, -1, si, ii));
+    });
+
+    var addBar = document.createElement('div');
+    addBar.className = 'h-add-bar';
+    addBar.innerHTML = '<button type="button" class="btn-add-xs" onclick="Admin.addContenidoItem(-2,-1,' + si + ',\'subtitulo\')">+ Subtítulo</button>'
+      + '<button type="button" class="btn-add-xs" onclick="Admin.addContenidoItem(-2,-1,' + si + ',\'texto\')">+ Texto</button>'
+      + '<button type="button" class="btn-add-xs" onclick="Admin.addContenidoItem(-2,-1,' + si + ',\'lista\')">+ Lista</button>';
+    contWrap.appendChild(addBar);
+
+    body.appendChild(contWrap);
+    div.appendChild(body);
+    return div;
+  },
+
+  _createContenidoItem: function(item, ci, mi, si, ii) {
+    var self = this;
+    var badgeClass = item.tipo === 'subtitulo' ? 'subtitulo-badge'
+      : item.tipo === 'texto' ? 'texto-badge' : 'lista-badge';
+
+    var totalItems = (this._getSesionesByPath(ci, mi)?.[si]?.contenido || []).length;
+
+    var div = document.createElement('div');
+    div.className = 'h-contenido-item';
+    div.dataset.ii = ii;
+
+    var headerRow = document.createElement('div');
+    headerRow.className = 'h-contenido-header';
+    headerRow.innerHTML = '<span class="h-badge ' + badgeClass + '">' + (item.tipo || 'lista').toUpperCase() + '</span>'
+      + '<button type="button" class="btn-move-xs" onclick="Admin.moveContenidoItem(' + ci + ',' + mi + ',' + si + ',' + ii + ',-1)"' + (ii === 0 ? ' disabled' : '') + ' title="Subir">▲</button>'
+      + '<button type="button" class="btn-move-xs" onclick="Admin.moveContenidoItem(' + ci + ',' + mi + ',' + si + ',' + ii + ',1)"' + (ii === totalItems - 1 ? ' disabled' : '') + ' title="Bajar">▼</button>'
+      + '<input class="h-input contenido-texto" value="' + this._escAttr(item.texto || '') + '" placeholder="Texto del ' + (item.tipo || 'elemento') + '">'
+      + '<button type="button" class="btn-remove-xs" onclick="Admin.removeContenidoItem(' + ci + ',' + mi + ',' + si + ',' + ii + ')" title="Eliminar">✕</button>';
+    div.appendChild(headerRow);
+
+    if (item.tipo === 'lista') {
+      var elemWrap = document.createElement('div');
+      elemWrap.className = 'h-elementos-wrap';
+      var elementos = item.elementos || [];
+      elementos.forEach(function(elem, ei) {
+        var row = document.createElement('div');
+        row.className = 'h-elemento-row';
+        row.innerHTML = '<span class="h-elem-bullet"></span>'
+          + '<input class="h-input elemento-texto" value="' + self._escAttr(elem) + '" placeholder="Elemento">'
+          + '<button type="button" class="btn-remove-xs" onclick="Admin.removeListaElement(' + ci + ',' + mi + ',' + si + ',' + ii + ',' + ei + ')" title="Eliminar">✕</button>';
+        elemWrap.appendChild(row);
+      });
+      var addBtn = document.createElement('button');
+      addBtn.type = 'button';
+      addBtn.className = 'btn-add-xs';
+      addBtn.textContent = '+ elemento';
+      addBtn.onclick = function() { Admin.addListaElement(ci, mi, si, ii); };
+      elemWrap.appendChild(addBtn);
+      div.appendChild(elemWrap);
+    }
+
+    return div;
+  },
+
+  // ─── ADD ITEMS TO HIERARCHY ───
+  addCurso: function() {
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    cursos.push({ tipo: 'curso', titulo: 'CURSO ' + (cursos.length + 1) + ': NUEVO CURSO', lecturasPrevias: '', modulos: [], sesiones: [] });
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  addModuloGlobal: function() {
+    this.syncStateFromForm();
+    var modulos = this.currentState.modulos || [];
+    modulos.push({ tipo: 'modulo', titulo: 'MÓDULO ' + (modulos.length + 1) + ': NUEVO MÓDULO', sesiones: [] });
+    this.currentState.modulos = modulos;
+    this.renderTemarioHierarchy();
+  },
+
+  addSesionGlobal: function() {
+    this.syncStateFromForm();
+    var modulos = this.currentState.modulos || [];
+
+    if (modulos.length > 0) {
+      // Add to last standalone módulo
+      var mi = modulos.length - 1;
+      var sesiones = modulos[mi].sesiones || [];
+      sesiones.push({ tipo: 'sesion', titulo: 'SESIÓN ' + (sesiones.length + 1) + ': NUEVA SESIÓN', contenido: [] });
+      modulos[mi].sesiones = sesiones;
+      this.currentState.modulos = modulos;
+    } else {
+      var cursos = this.currentState.cursos || [];
+      if (cursos.length > 0) {
+        var ci = cursos.length - 1;
+        var cModulos = cursos[ci].modulos || [];
+        if (cModulos.length > 0) {
+          var mi = cModulos.length - 1;
+          var sesiones = cModulos[mi].sesiones || [];
+          sesiones.push({ tipo: 'sesion', titulo: 'SESIÓN ' + (sesiones.length + 1) + ': NUEVA SESIÓN', contenido: [] });
+          cModulos[mi].sesiones = sesiones;
+          cursos[ci].modulos = cModulos;
+        } else {
+          var sesiones = cursos[ci].sesiones || [];
+          sesiones.push({ tipo: 'sesion', titulo: 'SESIÓN ' + (sesiones.length + 1) + ': NUEVA SESIÓN', contenido: [] });
+          cursos[ci].sesiones = sesiones;
+        }
+        this.currentState.cursos = cursos;
+      } else {
+        // No cursos, no modulos → standalone sesion
+        var sesiones = this.currentState.sesiones || [];
+        sesiones.push({ tipo: 'sesion', titulo: 'SESIÓN ' + (sesiones.length + 1) + ': NUEVA SESIÓN', contenido: [] });
+        this.currentState.sesiones = sesiones;
+      }
+    }
+
+    this.renderTemarioHierarchy();
+  },
+
+  _addModuloToCurso: function(ci) {
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    if (!cursos[ci]) return;
+    var modulos = cursos[ci].modulos || [];
+    modulos.push({ tipo: 'modulo', titulo: 'MÓDULO ' + (modulos.length + 1) + ': NUEVO MÓDULO', sesiones: [] });
+    cursos[ci].modulos = modulos;
+    // Clear direct sesiones when adding first modulo
+    cursos[ci].sesiones = [];
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  _addSesionToCurso: function(ci) {
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    if (!cursos[ci]) return;
+    var sesiones = cursos[ci].sesiones || [];
+    sesiones.push({ tipo: 'sesion', titulo: 'SESIÓN ' + (sesiones.length + 1) + ': NUEVA SESIÓN', contenido: [] });
+    cursos[ci].sesiones = sesiones;
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  _addSesionToModulo: function(ci, mi) {
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones) return;
+    sesiones.push({ tipo: 'sesion', titulo: 'SESIÓN ' + (sesiones.length + 1) + ': NUEVA SESIÓN', contenido: [] });
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  addContenidoItem: function(ci, mi, si, tipo) {
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones || !sesiones[si]) return;
+    var contenido = sesiones[si].contenido || [];
+    contenido.push({ tipo: tipo, texto: '' });
+    sesiones[si].contenido = contenido;
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  // ─── CRUD: CURSOS ───
+  moveCurso: function(ci, dir) {
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    this._moveArrayItem(cursos, ci, dir);
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  removeCurso: function(ci) {
+    if (!confirm('¿Eliminar este curso y todo su contenido?')) return;
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    cursos.splice(ci, 1);
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  // ─── CRUD: MÓDULOS ───
+  moveModulo: function(ci, mi, dir) {
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    if (!cursos[ci]) return;
+    var modulos = cursos[ci].modulos || [];
+    this._moveArrayItem(modulos, mi, dir);
+    cursos[ci].modulos = modulos;
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  removeModulo: function(ci, mi) {
+    if (!confirm('¿Eliminar este módulo y todas sus sesiones?')) return;
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    if (!cursos[ci]) return;
+    var modulos = cursos[ci].modulos || [];
+    modulos.splice(mi, 1);
+    cursos[ci].modulos = modulos;
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  // ─── CRUD: SESIONES ───
+  moveSesion: function(ci, mi, si, dir) {
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones) return;
+    this._moveArrayItem(sesiones, si, dir);
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  removeSesion: function(ci, mi, si) {
+    if (!confirm('¿Eliminar esta sesión?')) return;
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones || !sesiones[si]) return;
+    sesiones.splice(si, 1);
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  removeSesionDirect: function(ci, si) {
+    if (!confirm('¿Eliminar esta sesión?')) return;
+    this.syncStateFromForm();
+    var cursos = this.currentState.cursos || [];
+    if (!cursos[ci]) return;
+    var sesiones = cursos[ci].sesiones || [];
+    sesiones.splice(si, 1);
+    cursos[ci].sesiones = sesiones;
+    this.currentState.cursos = cursos;
+    this.renderTemarioHierarchy();
+  },
+
+  // ─── STANDALONE CRUD ───
+  moveModuloStandalone: function(mi, dir) {
+    this.syncStateFromForm();
+    var modulos = this.currentState.modulos || [];
+    this._moveArrayItem(modulos, mi, dir);
+    this.currentState.modulos = modulos;
+    this.renderTemarioHierarchy();
+  },
+
+  removeModuloStandalone: function(mi) {
+    if (!confirm('¿Eliminar este módulo y todas sus sesiones?')) return;
+    this.syncStateFromForm();
+    var modulos = this.currentState.modulos || [];
+    modulos.splice(mi, 1);
+    this.currentState.modulos = modulos;
+    this.renderTemarioHierarchy();
+  },
+
+  removeSesionStandalone: function(mi, si) {
+    if (!confirm('¿Eliminar esta sesión?')) return;
+    this.syncStateFromForm();
+    var modulos = this.currentState.modulos || [];
+    if (!modulos[mi]) return;
+    var sesiones = modulos[mi].sesiones || [];
+    sesiones.splice(si, 1);
+    modulos[mi].sesiones = sesiones;
+    this.currentState.modulos = modulos;
+    this.renderTemarioHierarchy();
+  },
+
+  removeSesionStandaloneItem: function(si) {
+    if (!confirm('¿Eliminar esta sesión?')) return;
+    this.syncStateFromForm();
+    var sesiones = this.currentState.sesiones || [];
+    sesiones.splice(si, 1);
+    this.currentState.sesiones = sesiones;
+    this.renderTemarioHierarchy();
+  },
+
+  // ─── CRUD: CONTENIDO ITEMS ───
+  moveContenidoItem: function(ci, mi, si, ii, dir) {
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones || !sesiones[si]) return;
+    var contenido = sesiones[si].contenido || [];
+    this._moveArrayItem(contenido, ii, dir);
+    sesiones[si].contenido = contenido;
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  removeContenidoItem: function(ci, mi, si, ii) {
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones || !sesiones[si]) return;
+    var contenido = sesiones[si].contenido || [];
+    contenido.splice(ii, 1);
+    sesiones[si].contenido = contenido;
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  // ─── CRUD: ELEMENTOS DE LISTA ───
+  addListaElement: function(ci, mi, si, ii) {
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones || !sesiones[si]) return;
+    var contenido = sesiones[si].contenido || [];
+    if (!contenido[ii]) return;
+    var elementos = contenido[ii].elementos || [];
+    elementos.push('');
+    contenido[ii].elementos = elementos;
+    sesiones[si].contenido = contenido;
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  removeListaElement: function(ci, mi, si, ii, ei) {
+    this.syncStateFromForm();
+    var sesiones = this._getSesionesByPath(ci, mi);
+    if (!sesiones || !sesiones[si]) return;
+    var contenido = sesiones[si].contenido || [];
+    if (!contenido[ii]) return;
+    var elementos = contenido[ii].elementos || [];
+    elementos.splice(ei, 1);
+    contenido[ii].elementos = elementos;
+    sesiones[si].contenido = contenido;
+    this._setSesionesByPath(ci, mi, sesiones);
+    this.renderTemarioHierarchy();
+  },
+
+  // ─── SYNC HIERARCHY FROM DOM ───
+  syncStateFromForm: function() {
+    var container = document.getElementById('temarioHierarchy');
+    if (!container) return;
+    var cursos = [];
+    var modulos = [];
+    var standaloneSesiones = [];
+
+    container.querySelectorAll(':scope > .curso-level').forEach(function(cursoEl) {
+      // Skip standalone modulos
+      if (cursoEl.classList.contains('standalone-modulo-level')) return;
+
+      var titulo = cursoEl.querySelector('.curso-titulo')?.value || '';
+      var lecturas = cursoEl.querySelector('.curso-lecturas')?.value || '';
+      var modulosCurso = [];
+      var sesiones = [];
+
+      var modEls = cursoEl.querySelectorAll('.modulos-wrap > .modulo-level');
+      if (modEls.length > 0) {
+        modEls.forEach(function(modEl) {
+          var modTitulo = modEl.querySelector('.modulo-titulo')?.value || '';
+          var modSesiones = [];
+          modEl.querySelectorAll('.sesiones-wrap > .sesion-level').forEach(function(sesEl) {
+            modSesiones.push(Admin._readSesionFromDOM(sesEl));
+          });
+          modulosCurso.push({ tipo: 'modulo', titulo: modTitulo, sesiones: modSesiones });
+        });
+      }
+
+      if (modulosCurso.length === 0) {
+        cursoEl.querySelectorAll('.sesiones-wrap > .sesion-level').forEach(function(sesEl) {
+          sesiones.push(Admin._readSesionFromDOM(sesEl));
+        });
+      }
+
+      cursos.push({ tipo: 'curso', titulo: titulo, lecturasPrevias: lecturas, modulos: modulosCurso, sesiones: sesiones });
+    });
+
+    // Standalone módulos
+    container.querySelectorAll(':scope > .standalone-modulo-level').forEach(function(modEl) {
+      var titulo = modEl.querySelector('.modulo-titulo')?.value || '';
+      var sesiones = [];
+      modEl.querySelectorAll('.sesiones-wrap > .sesion-level').forEach(function(sesEl) {
+        sesiones.push(Admin._readSesionFromDOM(sesEl));
+      });
+      modulos.push({ tipo: 'modulo', titulo: titulo, sesiones: sesiones });
+    });
+
+    // Standalone sesiones
+    container.querySelectorAll(':scope > .standalone-sesion-level').forEach(function(sesEl) {
+      standaloneSesiones.push(Admin._readSesionFromDOM(sesEl));
+    });
+
+    this.currentState.cursos = cursos;
+    this.currentState.modulos = modulos;
+    this.currentState.sesiones = standaloneSesiones;
+  },
+
+  _readSesionFromDOM: function(sesEl) {
+    var titulo = sesEl.querySelector('.sesion-titulo')?.value || '';
+    var contenido = [];
+    var contWrap = sesEl.querySelector('.h-contenido-items');
+    if (contWrap) {
+      contWrap.querySelectorAll('.h-contenido-item').forEach(function(itemEl) {
+        var badge = itemEl.querySelector('.h-badge');
+        var tipo = badge ? badge.textContent.toLowerCase() : 'lista';
+        var texto = itemEl.querySelector('.contenido-texto')?.value || '';
+        var item = { tipo: tipo, texto: texto };
+        if (tipo === 'lista') {
+          var elementos = [];
+          itemEl.querySelectorAll('.elemento-texto').forEach(function(el) {
+            elementos.push(el.value);
+          });
+          item.elementos = elementos;
+        }
+        contenido.push(item);
+      });
+    }
+    return { titulo: titulo, contenido: contenido };
+  },
+
+  _syncHierarchyInput: function() {
+    this.syncStateFromForm();
+    var input = document.getElementById('temarioHierarchicalInput');
+    if (!input) return;
+
+    var data = [];
+    var self = this;
+
+    (this.currentState.cursos || []).forEach(function(curso) {
+      data.push({
+        tipo: 'curso',
+        titulo: curso.titulo,
+        lecturasPrevias: curso.lecturasPrevias || '',
+        modulos: (curso.modulos || []).map(function(m) {
+          return {
+            tipo: 'modulo',
+            titulo: m.titulo,
+            sesiones: (m.sesiones || []).map(function(s) {
+              return { titulo: s.titulo, contenido: s.contenido || [] };
+            })
+          };
+        }),
+        sesiones: (curso.sesiones || []).map(function(s) {
+          return { titulo: s.titulo, contenido: s.contenido || [] };
+        })
+      });
+    });
+
+    (this.currentState.modulos || []).forEach(function(mod) {
+      var item = {
+        tipo: 'modulo',
+        titulo: mod.titulo,
+        sesiones: (mod.sesiones || []).map(function(s) {
+          return { titulo: s.titulo, contenido: s.contenido || [] };
+        })
+      };
+      data.push(item);
+    });
+
+    (this.currentState.sesiones || []).forEach(function(ses) {
+      data.push({
+        tipo: 'sesion',
+        titulo: ses.titulo,
+        contenido: ses.contenido || []
+      });
+    });
+
+    input.value = JSON.stringify(data);
+  },
+
+  _escAttr: function(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/\"/g, '&quot;')
+      .replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  },
+
+  // ─── IMAGE MODAL FUNCTIONS ───
+  subirImagen: function(destino, inputId, previewId) {
+    document.getElementById('subirDestinoHidden').value = destino;
+    document.getElementById('subirInputId').value = inputId;
+    document.getElementById('subirPreviewId').value = previewId;
+    document.getElementById('subirFileInput').value = '';
+    document.getElementById('subirNombre').value = '';
+    document.getElementById('subirPreviewWrap').style.display = 'none';
+    document.getElementById('modalSubirImagen').style.display = 'flex';
+  },
+
+  previewSubirFile: function(input) {
+    var wrap = document.getElementById('subirPreviewWrap');
+    var img = document.getElementById('subirPreviewImg');
+    var dz = document.getElementById('uploadDropzone');
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) { img.src = e.target.result; wrap.style.display = 'block'; };
+      reader.readAsDataURL(input.files[0]);
+      if (dz) dz.classList.add('has-file');
+    } else {
+      if (dz) dz.classList.remove('has-file');
+    }
+  },
+
+  limpiarSubirPreview: function() {
+    var input = document.getElementById('subirFileInput');
+    var wrap = document.getElementById('subirPreviewWrap');
+    var dz = document.getElementById('uploadDropzone');
+    if (input) input.value = '';
+    if (wrap) wrap.style.display = 'none';
+    if (dz) dz.classList.remove('has-file');
+  },
+
+
+  limpiarImagen: function(inputId, previewId, placeholderId) {
+    var inputEl = document.getElementById(inputId);
+    var previewEl = document.getElementById(previewId);
+    var placeholderEl = document.getElementById(placeholderId);
+    if (inputEl) {
+      inputEl.value = '';
+      
+    }
+    if (previewEl) { previewEl.src = ''; previewEl.style.display = 'none'; }
+    if (placeholderEl) placeholderEl.style.display = '';
+  },
+
+  ejecutarSubir: function() {
+    var fileInput = document.getElementById('subirFileInput');
+    if (!fileInput.files || !fileInput.files[0]) {
+      this.showToast('Selecciona un archivo', 'error'); return;
+    }
+    var file = fileInput.files[0];
+    if (file.size > 3 * 1024 * 1024) {
+      this.showToast('El archivo supera los 3MB', 'error'); return;
+    }
+    var destino = document.getElementById('subirDestinoHidden').value;
+    var inputId = document.getElementById('subirInputId').value;
+    var previewId = document.getElementById('subirPreviewId').value;
+    var nombreInput = document.getElementById('subirNombre').value.trim();
+    var nombre = nombreInput || file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 80);
+
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('destino', destino);
+    formData.append('nombre', nombre);
+
+    var self = this;
+    var uploadUrl = 'http://:/api/upload-imagen';
+    fetch(uploadUrl, {
+      method: 'POST',
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]')?.value || '',
+        'Accept': 'application/json'
+      },
+      body: formData
+    })
+    .then(function(r) {
+      if (!r.ok) {
+        return r.json().then(function(err) {
+          throw new Error(err.error || err.message || 'Error del servidor');
+        }).catch(function(e) {
+          if (e instanceof Error) throw e;
+          throw new Error('Error ' + r.status);
+        });
+      }
+      return r.json();
+    })
+    .then(function(data) {
+      if (data.url) {
+        var inputEl = document.getElementById(inputId);
+        var previewEl = document.getElementById(previewId);
+        if (inputEl) {
+          inputEl.value = data.url;
+
+        }
+        if (previewEl) {
+          previewEl.src = window.assetBase + data.url; previewEl.style.display = 'block';
+          var wrap = previewEl.closest('.mm-preview');
+          if (wrap) { var ph = wrap.querySelector('.mm-placeholder'); if (ph) ph.style.display = 'none'; }
+        }
+        self.cerrarModal('modalSubirImagen');
+        self.showToast('Imagen subida correctamente', 'success');
+      } else {
+        self.showToast('Error al subir imagen', 'error');
+      }
+    })
+    .catch(function(err) {
+      self.showToast(err && err.message ? err.message : 'Error de conexión', 'error');
+    });
+  },
+
+  seleccionarImagen: function(destino, inputId, previewId) {
+    document.getElementById('selDestinoHidden').value = destino;
+    document.getElementById('selInputId').value = inputId;
+    document.getElementById('selPreviewId').value = previewId;
+    document.getElementById('selBuscarInput').value = '';
+    document.getElementById('selGallery').innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">Cargando imágenes...</p>';
+    document.getElementById('modalSeleccionarImagen').style.display = 'flex';
+    this.cargarGaleria();
+  },
+
+  _cachedGalleryImages: [],
+
+  cargarGaleria: function() {
+    var destino = document.getElementById('selDestinoHidden').value;
+    var gallery = document.getElementById('selGallery');
+    var self = this;
+    gallery.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">Cargando imágenes...</p>';
+    var listUrl = 'http://:/api/listar-imagenes';
+
+    fetch(listUrl + '?carpeta=' + encodeURIComponent(destino))
+      .then(function(r) {
+        if (!r.ok) throw new Error('Error al obtener imágenes');
+        return r.json();
+      })
+      .then(function(images) {
+        self._cachedGalleryImages = images || [];
+        self._renderGaleria();
+      })
+      .catch(function() {
+        gallery.innerHTML = '<p style="color:#ef4444;font-size:13px;">Error al cargar imágenes. Verifica la conexión.</p>';
+      });
+  },
+
+  _renderGaleria: function() {
+    var gallery = document.getElementById('selGallery');
+    var self = this;
+    var images = this._cachedGalleryImages;
+    var filtro = (document.getElementById('selBuscarInput').value || '').toLowerCase();
+
+    if (!images || images.length === 0) {
+      gallery.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">No hay imágenes en esta carpeta</p>';
+      return;
+    }
+
+    var filtered = filtro
+      ? images.filter(function(img) { return img.name.toLowerCase().indexOf(filtro) !== -1; })
+      : images;
+
+    if (filtered.length === 0) {
+      gallery.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">Ninguna imagen coincide con la búsqueda</p>';
+      return;
+    }
+
+    gallery.innerHTML = '';
+    filtered.forEach(function(img) {
+      var card = document.createElement('div');
+      card.className = 'img-card';
+      card.innerHTML = '<img src="' + window.assetBase + img.url + '" alt="' + self._escAttr(img.name) + '"><span>' + self._escAttr(img.name) + '</span>';
+      card.onclick = function() {
+        var inputId = document.getElementById('selInputId').value;
+        var previewId = document.getElementById('selPreviewId').value;
+        var inputEl = document.getElementById(inputId);
+        var previewEl = document.getElementById(previewId);
+        if (inputEl) {
+          inputEl.value = img.url;
+
+        }
+        if (previewEl) {
+          previewEl.src = window.assetBase + img.url; previewEl.style.display = 'block';
+          var wrap = previewEl.closest('.mm-preview');
+          if (wrap) { var ph = wrap.querySelector('.mm-placeholder'); if (ph) ph.style.display = 'none'; }
+        }
+        self.cerrarModal('modalSeleccionarImagen');
+        self.showToast('Imagen seleccionada', 'success');
+      };
+      gallery.appendChild(card);
+    });
+  },
+
+  filtrarGaleria: function() {
+    this._renderGaleria();
+  },
+
+  cerrarModal: function(id) {
+    document.getElementById(id).style.display = 'none';
+  },
+
+  // ─── PROFESOR SELECTOR FUNCTIONS ───
+  _profesoresData: [],
+  _selectedProfesoresIds: [],
+
+  initProfesores: function() {
+    this._profesoresData = window.profesoresData || [];
+    this._selectedProfesoresIds = window.selectedProfesoresIds || [];
+    this.renderProfesoresPlantilla();
+  },
+
+  renderProfesoresPlantilla: function() {
+    var grid = document.getElementById('profesoresPlantillaGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    var self = this;
+    var selected = this._selectedProfesoresIds;
+    if (selected.length === 0) {
+      grid.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;grid-column:1/-1;">Ningún profesor seleccionado</p>';
+    } else {
+      selected.forEach(function(id) {
+        var prof = self._findProfesor(id);
+        if (!prof) return;
+        var card = document.createElement('div');
+        card.className = 'prof-card';
+        var photoUrl = prof.photo ? (prof.photo.match(/^https?:\/\//) ? prof.photo : window.assetBase + 'storage/' + prof.photo) : '';
+        card.innerHTML = '<div class="prof-card-img-wrap">'
+          + (photoUrl ? '<img src="' + photoUrl + '">' : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--texto-medio);font-size:24px;">👤</div>')
+          + '</div><div class="prof-card-info"><h4>' + self._escAttr(prof.name) + '</h4></div>'
+          + '<div class="prof-card-actions"><button type="button" class="btn-delete-sm" onclick="Admin.quitarProfesor(' + id + ')" style="padding:4px 8px;font-size:11px;">✕ Quitar</button></div>';
+        grid.appendChild(card);
+      });
+    }
+    this._syncProfesoresHiddenInputs();
+  },
+
+  _findProfesor: function(id) {
+    for (var i = 0; i < this._profesoresData.length; i++) {
+      if (this._profesoresData[i].id === id) return this._profesoresData[i];
+    }
+    return null;
+  },
+
+  _syncProfesoresHiddenInputs: function() {
+    var container = document.getElementById('profesoresHiddenInputs');
+    if (!container) return;
+    container.innerHTML = '';
+    this._selectedProfesoresIds.forEach(function(id) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'profesor_ids[]';
+      input.value = id;
+      container.appendChild(input);
+    });
+  },
+
+  abrirSelectorProfesores: function() {
+    var input = document.getElementById('profSelectorBuscar');
+    if (input) input.value = '';
+    document.getElementById('modalSeleccionarProfesores').style.display = 'flex';
+    this._renderProfesoresChecklist();
+  },
+
+  _renderProfesoresChecklist: function() {
+    var grid = document.getElementById('profesoresSelectorGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    var self = this;
+    var selected = this._selectedProfesoresIds;
+    var filter = (document.getElementById('profSelectorBuscar') || {}).value || '';
+    var term = filter.toLowerCase().trim();
+
+    if (this._profesoresData.length === 0) {
+      grid.innerHTML = '<p style="color:var(--texto-medio);font-size:13px;">No hay profesores disponibles. Créalos en <a href="/admin/profesores" target="_blank">Gestión de Profesores</a>.</p>';
+    } else {
+      this._profesoresData.forEach(function(prof) {
+        var fullName = (prof.name || '').toLowerCase();
+        if (term && fullName.indexOf(term) === -1) return;
+        var isSelected = selected.indexOf(prof.id) !== -1;
+        var label = document.createElement('label');
+        label.className = 'prof-checkbox-item';
+        var name = self._escAttr(prof.name);
+        label.innerHTML = '<input type="checkbox" value="' + prof.id + '"' + (isSelected ? ' checked' : '') + '>'
+          + '<span>' + name + '</span>';
+        grid.appendChild(label);
+      });
+    }
+  },
+
+  filtrarProfesores: function() {
+    this._renderProfesoresChecklist();
+  },
+
+  confirmarSeleccionProfesores: function() {
+    var checks = document.querySelectorAll('#profesoresSelectorGrid input[type=checkbox]:checked');
+    var ids = [];
+    checks.forEach(function(cb) { ids.push(parseInt(cb.value)); });
+    this._selectedProfesoresIds = ids;
+    this.cerrarModal('modalSeleccionarProfesores');
+    this.renderProfesoresPlantilla();
+    this.showToast('Profesores actualizados', 'success');
+  },
+
+  quitarProfesor: function(id) {
+    var idx = this._selectedProfesoresIds.indexOf(id);
+    if (idx !== -1) {
+      this._selectedProfesoresIds.splice(idx, 1);
+      this.renderProfesoresPlantilla();
+    }
+  }
+};
+
+// ─── TYPE / MODE SELECTORS ───
+function selectType(type) {
+  document.getElementById('typeInput').value = type;
+  document.querySelectorAll('.type-tab').forEach(function(t) { t.classList.remove('active'); });
+  var tab = document.querySelector('.type-tab[data-type="' + type + '"]');
+  if (tab) tab.classList.add('active');
+  var tipoProg = document.getElementById('tipoPrograma');
+  if (tipoProg) {
+    tipoProg.value = type.charAt(0).toUpperCase() + type.slice(1);
+  }
+  var lbl = document.getElementById('headerTypeLabel');
+  if (lbl) lbl.textContent = type === 'diplomado' ? 'Diplomado' : 'Curso';
+}
+
+function selectMode(mode) {
+  document.getElementById('modeInput').value = mode;
+  document.querySelectorAll('.mode-tab').forEach(function(t) { t.classList.remove('active'); });
+  var tab = document.querySelector('.mode-tab[data-mode="' + mode + '"]');
+  if (tab) tab.classList.add("active");
+  var fechaFinGroup = document.getElementById("fechaFinGroup");
+  if (fechaFinGroup) {
+    fechaFinGroup.style.display = mode === "en_vivo" ? "" : "none";
+  }
+  var fechaInicioGroup = document.getElementById("fechaInicioGroup");
+  if (fechaInicioGroup) {
+    fechaInicioGroup.style.display = mode === "en_vivo" ? "" : "none";
+  }
+  var etiquetasRow = document.getElementById("etiquetasGrabadoRow");
+  if (etiquetasRow) {
+    etiquetasRow.style.display = mode === "grabado" ? "" : "none";
+  }
+}
+function syncTypeSelect() {
+  var val = document.getElementById('tipoPrograma')?.value || 'Curso';
+  selectType(val.toLowerCase());
+}
+
+
+
+// ─── FILE PREVIEW ───
+function previewFile(input, imgId) {
+  var img = document.getElementById(imgId);
+  if (!img) return;
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      img.src = e.target.result;
+      img.style.display = 'block';
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+// ─── INIT ───
+// ─── PROFESOR DATA FROM PHP ───
+window.profesoresData = [{"id":2,"name":"Dr. Marlon Prieto Hormaza","primer_nombre":"Marlon","photo":"profesores\/DT9HnUMAM8suKSvNwvPkA0bPjbNgvjCa419wD0lf.jpg"},{"id":3,"name":"Ing. David Prada Camero","primer_nombre":"David","photo":"profesores\/gqXvJpIX8GhaFsB7j2MaTP6jr4bfT6EjO0dePbv1.jpg"},{"id":4,"name":"Bchll Joao","primer_nombre":"marco","photo":"profesores\/4Qg6PaEJj4v2my9gjORNe0b8mR0Y1BGp31JzYZ7n.jpg"}];
+window.selectedProfesoresIds = [];
+window.assetBase = 'http://:/';
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Cargar app-core.js si no está
+  if (typeof RCEngine === 'undefined') {
+    var script = document.createElement('script');
+    script.src = 'http://:/js/app-core.js';
+    document.body.appendChild(script);
+    script.onload = function() { Admin.init(); };
+  } else {
+    Admin.init();
+  }
+
+  Admin.initProfesores();
+
+  // Sync inicial: siempre reflejar portada en OG URL
+  var _syncOg = function() {
+    var portada = document.getElementById('imgPortadaVideo');
+    var og = document.getElementById('ogImageURL');
+    if (portada && og && portada.value) {
+      og.value = portada.value.match(/^https?:\/\//) ? portada.value : window.assetBase + portada.value;
+    }
+  };
+  _syncOg();
+
+  // Sincronizar jerarquía al hacer submit
+  document.getElementById('cursoForm')?.addEventListener('submit', function() {
+    Admin._syncHierarchyInput();
+  });
+});
+</script>
+</main>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-container-full">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="footer-logo-box">
+                    <img src="http://:/img/added/logofooter.webp" alt="R&C Consulting" class="footer-logo">
+                </div>
+                <h3>Contáctanos:</h3>
+                <div class="contact-info">
+                    <p>Av. Petit Thouars 2166.<br/>Lince, Lima - Perú</p>
+                    <p>Lunes a Viernes de 8:30 a 6:00 pm</p>
+                    <p><a href="mailto:informes@rc-consulting.org" class="email-link">informes@rc-consulting.org</a></p>
+                    <p>012661067 anexo: 100, 101, 104</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <h3>Enlaces</h3>
+                <ul class="footer-links">
+                    <li><a href="http://:/cursos-virtuales#">Cursos</a></li>
+                    <li><a href="http://:/diplomas-virtuales#">Diplomados</a></li>
+                    <li><a href="http://:/inhouse#">Inhouse</a></li>
+                    <li><a href="http://:/consultoria-asistencia-tecnica">Consultorías</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h3>Información</h3>
+                <ul class="footer-links mb-4">
+                    <li><a href="http://:/politicas-de-proteccion-de-datos">Políticas de privacidad</a></li>
+                    <li><a href="http://:/terminos-y-condiciones">Términos y condiciones</a></li>
+                    <li><a href="http://:/contacto">Contáctanos</a></li>
+                </ul>
+                <h4 class="payment-title">Métodos de pago</h4>
+                <img src="http://:/img/added/payment.webp" alt="Métodos de pago" class="payment-img">
+            </div>
+
+            <div class="col-md-3">
+                <h3>Certificados</h3>
+                <a href="http://:/certificados#" class="btn-cert-f">
+                    <i class="fas fa-search"></i> Consulta tu certificado
+                </a>
+                
+                <div class="reclamaciones-box">
+                    <img src="http://:/img/added/lreclamaciones.svg" alt="Libro de reclamaciones">
+                    <a href="http://:/libro-de-reclamaciones#">Libro de reclamaciones</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://pe.linkedin.com/company/ryc-consulting" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/rycconsulting_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@CursosGestionPublica" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/rcconsultingperu/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@ryc_consulting" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>R&C Consulting 2026 — Todos los derechos reservados</p>
+        </div>
+    </div>
+</footer>
+<!-- Inyectar datos del usuario autenticado para React -->
+<script>
+window.user = null;
+</script>
+
+<!-- Scripts JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

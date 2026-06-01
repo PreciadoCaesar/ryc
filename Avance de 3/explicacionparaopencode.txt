@@ -1,0 +1,15 @@
+Necesito un formulario React/HTML que tenga:
+Campos simples: título, tipo (dropdown), subtítulo, frase, descripción, fecha inicio, sesiones, horas, imagen promo, link brochure, nombre especialización, link niubiz, datos asesora, imágenes inhouse.
+Campos dinámicos con "Agregar más":
+
+Objetivos: título + descripción (repetible)
+Participantes: icono (dropdown) + descripción (repetible)
+Temario: sesiones anidadas, cada sesión tiene título + array de temas (doblemente repetible)
+Profesores: nombre + foto + array de formación + array de experiencia (repetible con sub-arrays)
+Precios: 3 bloques fijos (flash, pronto pago, regular) con fecha/descripción + monto
+
+Al final debe generar un JSON o directamente el HTML con los valores insertados en la plantilla. 
+necesito que sea un formulario profesional osea rellenando el formulario se complete los datos y ahora necesito quer osea mmm a ver si me entien des sea coomo que un  enpoint que si alguien busca y le
+sale la carpeta digamos /curso-preparacion-oece no es que haya una carpeta si no solo es un endpoint que carga los datos osea estos datos deben de irse a un array o una bd como mejor lo vea sbueno sies una bd por
+el momento sera array 
+y entonces osea solo tener una plantilla y vaya cargando el contenido del array segun el endpoint que se cargue pero igual debe tener seo entiendes? empezemos 
